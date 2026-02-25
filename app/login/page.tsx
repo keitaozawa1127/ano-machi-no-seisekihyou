@@ -1,10 +1,10 @@
 "use client";
 
 import { signIn } from "next-auth/react";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function LoginPage() {
+function LoginContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get("callbackUrl") || "/admin/redevelopment";
@@ -97,5 +97,13 @@ export default function LoginPage() {
                 </form>
             </div>
         </main>
+    );
+}
+
+export default function LoginPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">Loading...</div>}>
+            <LoginContent />
+        </Suspense>
     );
 }
