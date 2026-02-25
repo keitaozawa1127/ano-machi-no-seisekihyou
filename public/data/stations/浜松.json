@@ -1,0 +1,14 @@
+[
+    {
+        "id": "hamamatsu-1",
+        "station_name": "浜松",
+        "project_name": "スズキ 浜松駅南オフィスビル",
+        "search_keyword": "スズキ 浜松駅南 オフィスビル 計画",
+        "category": "Infrastructure",
+        "schedule": "2029年3月竣工予定",
+        "description": "地上10階/延床3.5万㎡。浜松駅南口。スズキが建設する大規模オフィスビル。本社機能の一部を移転・集約し、デジタル人材の確保と採用強化を目指す。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:30:00Z"
+    }
+]

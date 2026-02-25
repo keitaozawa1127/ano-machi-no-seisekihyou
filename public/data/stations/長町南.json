@@ -1,0 +1,14 @@
+[
+    {
+        "id": "nagamachiminami-1",
+        "station_name": "長町南",
+        "project_name": "ウエリス仙台長町南",
+        "search_keyword": "ウエリス仙台長町南 竣工予定",
+        "category": "Mansion",
+        "schedule": "2027年9月竣工予定",
+        "description": "地上15階/107戸。NTT社宅跡地の広大な敷地を活かした大規模レジデンス。全戸分平置き駐車場を確保。商業施設が集積する長町南エリアの利便性と、太子堂駅(JR)の双方を享受可能。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T20:50:00Z"
+    }
+]

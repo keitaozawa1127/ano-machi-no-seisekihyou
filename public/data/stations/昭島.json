@@ -1,0 +1,14 @@
+[
+    {
+        "id": "akishima-1",
+        "station_name": "昭島",
+        "project_name": "GLP ALFALINK 昭島 (昭和の森跡地)",
+        "search_keyword": "GLP昭島 データセンター",
+        "category": "Redevelopment",
+        "schedule": "2026年より順次竣工",
+        "description": "ゴルフ場跡地等の広大な敷地を活用した超巨大プロジェクト。日本最大級のデータセンター群と先進物流施設を建設し、地域の産業構造を一新する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:30:00Z"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": "hakata-1",
+        "station_name": "博多",
+        "project_name": "西日本シティビル (本店建替え)",
+        "search_keyword": "西日本シティビル 竣工",
+        "category": "Redevelopment",
+        "schedule": "2026年3月竣工予定",
+        "description": "地上14階/約60m。博多駅前の顔となる新本店ビル。地下・地上をつなぐ立体広場「コネクティッドコア」を備え、駅前広場と一体化した賑わいを創出。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:30:00Z"
+    }
+]

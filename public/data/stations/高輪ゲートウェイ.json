@@ -1,0 +1,26 @@
+[
+    {
+        "id": "takanawa-1",
+        "station_name": "高輪ゲートウェイ",
+        "project_name": "TAKANAWA GATEWAY CITY (第1期: The Linkpillar 1)",
+        "search_keyword": "TAKANAWA GATEWAY CITY 開業",
+        "category": "Redevelopment",
+        "schedule": "2025年3月開業済",
+        "description": "街の中核となるツインタワー。品川開発プロジェクトの第1フェーズとして開業。新たなビジネス・文化の拠点を形成する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+        "id": "takanawa-2",
+        "station_name": "高輪ゲートウェイ",
+        "project_name": "TAKANAWA GATEWAY CITY (第2期: 複合棟II・文化創造棟)",
+        "search_keyword": "高輪ゲートウェイシティ 文化創造棟 開業",
+        "category": "Redevelopment",
+        "schedule": "2026年3月まで(2025年度内)開業予定",
+        "description": "街びらきに続く第2フェーズ。隈研吾デザインの「文化創造棟」や、ウェルビーイング機能を備えた「複合棟II」が完成し、南北1.6kmの未来都市が全貌を現す。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:00:00Z"
+    }
+]

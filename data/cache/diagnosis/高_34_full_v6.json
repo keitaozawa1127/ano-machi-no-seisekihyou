@@ -1,0 +1,319 @@
+{
+  "mlit": {
+    "stationName": "高",
+    "score": 1,
+    "marketPrice": 1340000,
+    "trend": "UP",
+    "chartData": [
+      {
+        "name": "2021年",
+        "count": 2,
+        "lastPrice": 1340000
+      },
+      {
+        "name": "2023年",
+        "count": 1,
+        "lastPrice": 300000
+      },
+      {
+        "name": "2024年",
+        "count": 3,
+        "lastPrice": 25000000
+      }
+    ],
+    "rawTransactions": [
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "34210",
+        "Prefecture": "広島県",
+        "Municipality": "庄原市",
+        "DistrictName": "高町",
+        "TradePrice": "2300000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "155",
+        "UnitPrice": "",
+        "LandShape": "不整形",
+        "Frontage": "6",
+        "TotalFloorArea": "100",
+        "BuildingYear": "",
+        "Structure": "",
+        "Use": "",
+        "Purpose": "その他",
+        "Direction": "北西",
+        "Classification": "国道",
+        "Breadth": "9.5",
+        "CityPlanning": "都市計画区域外",
+        "CoverageRatio": "",
+        "FloorAreaRatio": "",
+        "Period": "2021年第2四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "342100190"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "34210",
+        "Prefecture": "広島県",
+        "Municipality": "庄原市",
+        "DistrictName": "高町",
+        "TradePrice": "380000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "185",
+        "UnitPrice": "",
+        "LandShape": "不整形",
+        "Frontage": "19.5",
+        "TotalFloorArea": "",
+        "BuildingYear": "",
+        "Structure": "",
+        "Use": "",
+        "Purpose": "その他",
+        "Direction": "北東",
+        "Classification": "市道",
+        "Breadth": "7.5",
+        "CityPlanning": "都市計画区域外",
+        "CoverageRatio": "",
+        "FloorAreaRatio": "",
+        "Period": "2021年第3四半期",
+        "Renovation": "",
+        "Remarks": "調停・競売等",
+        "DistrictCode": "342100190"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "34210",
+        "Prefecture": "広島県",
+        "Municipality": "庄原市",
+        "DistrictName": "高町",
+        "TradePrice": "300000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "1700",
+        "UnitPrice": "",
+        "LandShape": "不整形",
+        "Frontage": "9999.9",
+        "TotalFloorArea": "200",
+        "BuildingYear": "1981年",
+        "Structure": "鉄骨造",
+        "Use": "工場",
+        "Purpose": "工場",
+        "Direction": "南西",
+        "Classification": "市道",
+        "Breadth": "7",
+        "CityPlanning": "都市計画区域外",
+        "CoverageRatio": "",
+        "FloorAreaRatio": "",
+        "Period": "2023年第1四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "342100190"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "34210",
+        "Prefecture": "広島県",
+        "Municipality": "庄原市",
+        "DistrictName": "高町",
+        "TradePrice": "150000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "185",
+        "UnitPrice": "",
+        "LandShape": "不整形",
+        "Frontage": "25",
+        "TotalFloorArea": "",
+        "BuildingYear": "",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "",
+        "Direction": "北東",
+        "Classification": "農道",
+        "Breadth": "7",
+        "CityPlanning": "都市計画区域外",
+        "CoverageRatio": "",
+        "FloorAreaRatio": "",
+        "Period": "2024年第1四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "342100190"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "34212",
+        "Prefecture": "広島県",
+        "Municipality": "東広島市",
+        "DistrictName": "高屋町桧山",
+        "TradePrice": "25000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "810",
+        "UnitPrice": "",
+        "LandShape": "ほぼ整形",
+        "Frontage": "47",
+        "TotalFloorArea": "360",
+        "BuildingYear": "2007年",
+        "Structure": "木造",
+        "Use": "住宅、その他",
+        "Purpose": "その他",
+        "Direction": "東",
+        "Classification": "市道",
+        "Breadth": "2",
+        "CityPlanning": "市街化調整区域",
+        "CoverageRatio": "70",
+        "FloorAreaRatio": "400",
+        "Period": "2024年第2四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "342121040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "34212",
+        "Prefecture": "広島県",
+        "Municipality": "東広島市",
+        "DistrictName": "高屋町桧山",
+        "TradePrice": "32000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "180",
+        "UnitPrice": "",
+        "LandShape": "長方形",
+        "Frontage": "15",
+        "TotalFloorArea": "105",
+        "BuildingYear": "2019年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "住宅",
+        "Direction": "西",
+        "Classification": "区画街路",
+        "Breadth": "6",
+        "CityPlanning": "市街化調整区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2024年第3四半期",
+        "Renovation": "",
+        "Remarks": "私道を含む取引",
+        "DistrictCode": "342121040"
+      }
+    ],
+    "tx5y": 6,
+    "yoy": 0,
+    "up2y": 0,
+    "trendData": [
+      {
+        "year": 2021,
+        "price": 1340000,
+        "txCount": 2
+      },
+      {
+        "year": 2023,
+        "price": 300000,
+        "txCount": 1
+      },
+      {
+        "year": 2024,
+        "price": 25000000,
+        "txCount": 3
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR芸備線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 53,
+    "hazardRisk": {
+      "flood": {
+        "level": 3,
+        "description": "想定最大規模の浸水深が0.5m〜3.0m（1階浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 4,
+        "description": "「土石流警戒区域」に含まれています。山腹崩壊による土石流発生のリスクがあります。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 33633,
+        "ageStructure": {
+          "0-14": 3440,
+          "15-64": 15597,
+          "65+": 14596
+        }
+      },
+      {
+        "year": 2025,
+        "total": 29909,
+        "ageStructure": {
+          "0-14": 2768,
+          "15-64": 13491,
+          "65+": 13650
+        }
+      },
+      {
+        "year": 2030,
+        "total": 27078,
+        "ageStructure": {
+          "0-14": 2232,
+          "15-64": 12515,
+          "65+": 12331
+        }
+      },
+      {
+        "year": 2035,
+        "total": 24534,
+        "ageStructure": {
+          "0-14": 1945,
+          "15-64": 11433,
+          "65+": 11156
+        }
+      },
+      {
+        "year": 2040,
+        "total": 22175,
+        "ageStructure": {
+          "0-14": 1829,
+          "15-64": 10035,
+          "65+": 10311
+        }
+      },
+      {
+        "year": 2045,
+        "total": 19951,
+        "ageStructure": {
+          "0-14": 1701,
+          "15-64": 8705,
+          "65+": 9545
+        }
+      },
+      {
+        "year": 2050,
+        "total": 17950,
+        "ageStructure": {
+          "0-14": 1545,
+          "15-64": 7778,
+          "65+": 8627
+        }
+      }
+    ],
+    "sourceCity": "庄原市"
+  }
+}

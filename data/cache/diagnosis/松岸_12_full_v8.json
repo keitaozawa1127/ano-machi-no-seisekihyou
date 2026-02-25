@@ -1,0 +1,425 @@
+{
+  "mlit": {
+    "stationName": "松岸",
+    "score": 2,
+    "marketPrice": 2800000,
+    "trend": "DOWN",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 1,
+        "lastPrice": 6800000
+      },
+      {
+        "name": "2023年",
+        "count": 1,
+        "lastPrice": 400000
+      },
+      {
+        "name": "2024年",
+        "count": 4,
+        "lastPrice": 2200000
+      },
+      {
+        "name": "2025年",
+        "count": 3,
+        "lastPrice": 3100000
+      }
+    ],
+    "rawTransactions": [
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12202",
+        "Prefecture": "千葉県",
+        "Municipality": "銚子市",
+        "DistrictName": "松岸町",
+        "TradePrice": "6800000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "190",
+        "UnitPrice": "",
+        "LandShape": "長方形",
+        "Frontage": "9.3",
+        "TotalFloorArea": "120",
+        "BuildingYear": "1977年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "住宅",
+        "Direction": "北西",
+        "Classification": "市道",
+        "Breadth": "4.2",
+        "CityPlanning": "第１種住居地域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2022年第2四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122020890"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12202",
+        "Prefecture": "千葉県",
+        "Municipality": "銚子市",
+        "DistrictName": "松岸町",
+        "TradePrice": "400000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "165",
+        "UnitPrice": "",
+        "LandShape": "ほぼ正方形",
+        "Frontage": "",
+        "TotalFloorArea": "65",
+        "BuildingYear": "1972年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "住宅",
+        "Direction": "南西",
+        "Classification": "私道",
+        "Breadth": "4",
+        "CityPlanning": "近隣商業地域",
+        "CoverageRatio": "80",
+        "FloorAreaRatio": "200",
+        "Period": "2023年第3四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122020890"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12202",
+        "Prefecture": "千葉県",
+        "Municipality": "銚子市",
+        "DistrictName": "松岸町",
+        "TradePrice": "1000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "220",
+        "UnitPrice": "",
+        "LandShape": "ほぼ正方形",
+        "Frontage": "12",
+        "TotalFloorArea": "85",
+        "BuildingYear": "1991年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "住宅",
+        "Direction": "南",
+        "Classification": "市道",
+        "Breadth": "4",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2024年第1四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122020890"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12202",
+        "Prefecture": "千葉県",
+        "Municipality": "銚子市",
+        "DistrictName": "松岸町",
+        "TradePrice": "9800000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "240",
+        "UnitPrice": "",
+        "LandShape": "ほぼ長方形",
+        "Frontage": "13.5",
+        "TotalFloorArea": "100",
+        "BuildingYear": "1992年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "住宅",
+        "Direction": "南西",
+        "Classification": "市道",
+        "Breadth": "7.2",
+        "CityPlanning": "近隣商業地域",
+        "CoverageRatio": "80",
+        "FloorAreaRatio": "200",
+        "Period": "2024年第2四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122020890"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12202",
+        "Prefecture": "千葉県",
+        "Municipality": "銚子市",
+        "DistrictName": "松岸町",
+        "TradePrice": "2800000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "240",
+        "UnitPrice": "",
+        "LandShape": "袋地等",
+        "Frontage": "",
+        "TotalFloorArea": "80",
+        "BuildingYear": "1987年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "",
+        "Direction": "南東",
+        "Classification": "市道",
+        "Breadth": "4",
+        "CityPlanning": "準工業地域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2024年第3四半期",
+        "Renovation": "",
+        "Remarks": "私道を含む取引",
+        "DistrictCode": "122020890"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12202",
+        "Prefecture": "千葉県",
+        "Municipality": "銚子市",
+        "DistrictName": "松岸町",
+        "TradePrice": "1600000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "180",
+        "UnitPrice": "",
+        "LandShape": "ほぼ台形",
+        "Frontage": "13.5",
+        "TotalFloorArea": "110",
+        "BuildingYear": "1981年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "",
+        "Direction": "北西",
+        "Classification": "私道",
+        "Breadth": "5",
+        "CityPlanning": "第１種住居地域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2024年第4四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122020890"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12202",
+        "Prefecture": "千葉県",
+        "Municipality": "銚子市",
+        "DistrictName": "松岸町",
+        "TradePrice": "7000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "420",
+        "UnitPrice": "",
+        "LandShape": "不整形",
+        "Frontage": "",
+        "TotalFloorArea": "150",
+        "BuildingYear": "2003年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "",
+        "Direction": "南東",
+        "Classification": "市道",
+        "Breadth": "3.4",
+        "CityPlanning": "第１種住居地域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2025年第2四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122020890"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12202",
+        "Prefecture": "千葉県",
+        "Municipality": "銚子市",
+        "DistrictName": "松岸町",
+        "TradePrice": "100000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "120",
+        "UnitPrice": "",
+        "LandShape": "長方形",
+        "Frontage": "7.5",
+        "TotalFloorArea": "95",
+        "BuildingYear": "1971年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "",
+        "Direction": "北西",
+        "Classification": "市道",
+        "Breadth": "4",
+        "CityPlanning": "第１種住居地域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2025年第1四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122020890"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12202",
+        "Prefecture": "千葉県",
+        "Municipality": "銚子市",
+        "DistrictName": "松岸町",
+        "TradePrice": "3100000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "130",
+        "UnitPrice": "",
+        "LandShape": "長方形",
+        "Frontage": "9.2",
+        "TotalFloorArea": "55",
+        "BuildingYear": "1969年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "住宅",
+        "Direction": "南東",
+        "Classification": "市道",
+        "Breadth": "3.5",
+        "CityPlanning": "第１種住居地域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2025年第1四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122020890"
+      }
+    ],
+    "tx5y": 9,
+    "yoy": 40.9,
+    "up2y": 675,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 6800000,
+        "txCount": 1
+      },
+      {
+        "year": 2023,
+        "price": 400000,
+        "txCount": 1
+      },
+      {
+        "year": 2024,
+        "price": 2200000,
+        "txCount": 4
+      },
+      {
+        "year": 2025,
+        "price": 3100000,
+        "txCount": 3
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR成田線"
+    },
+    {
+      "name": "JR総武本線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 49,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 58431,
+        "ageStructure": {
+          "0-14": 4475,
+          "15-64": 31811,
+          "65+": 22145
+        }
+      },
+      {
+        "year": 2025,
+        "total": 53079,
+        "ageStructure": {
+          "0-14": 3369,
+          "15-64": 27941,
+          "65+": 21769
+        }
+      },
+      {
+        "year": 2030,
+        "total": 47726,
+        "ageStructure": {
+          "0-14": 2573,
+          "15-64": 24158,
+          "65+": 20995
+        }
+      },
+      {
+        "year": 2035,
+        "total": 42550,
+        "ageStructure": {
+          "0-14": 2109,
+          "15-64": 20554,
+          "65+": 19887
+        }
+      },
+      {
+        "year": 2040,
+        "total": 37622,
+        "ageStructure": {
+          "0-14": 1822,
+          "15-64": 17174,
+          "65+": 18626
+        }
+      },
+      {
+        "year": 2045,
+        "total": 32996,
+        "ageStructure": {
+          "0-14": 1547,
+          "15-64": 14561,
+          "65+": 16888
+        }
+      },
+      {
+        "year": 2050,
+        "total": 28770,
+        "ageStructure": {
+          "0-14": 1271,
+          "15-64": 12402,
+          "65+": 15097
+        }
+      }
+    ],
+    "sourceCity": "銚子市"
+  }
+}

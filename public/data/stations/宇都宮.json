@@ -1,0 +1,26 @@
+[
+    {
+        "id": "utsunomiya-1",
+        "station_name": "宇都宮",
+        "project_name": "アトラスタワー宇都宮 (西口南地区)",
+        "search_keyword": "アトラスタワー宇都宮 竣工",
+        "category": "Mansion",
+        "schedule": "2026年7月竣工予定",
+        "description": "地上20階/82m。宇都宮駅西口徒歩1分の免震タワーマンション。LRT開業で活性化する駅前の新たな顔となる。ZEH-M Oriented認定。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:50:00Z"
+    },
+    {
+        "id": "utsunomiya-2",
+        "station_name": "宇都宮",
+        "project_name": "宇都宮駅西口大通り南地区再開発",
+        "search_keyword": "宇都宮駅西口大通り南地区 計画",
+        "category": "Redevelopment",
+        "schedule": "2030年度竣工予定",
+        "description": "地上29階/100m。駅西口の大通り沿いに建設されるタワーマンションと商業・業務棟。駅前デッキと接続し、回遊性を高める。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:50:00Z"
+    }
+]

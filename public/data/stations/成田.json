@@ -1,0 +1,14 @@
+[
+    {
+        "id": "narita-1",
+        "station_name": "成田",
+        "project_name": "GATEWAY NARITA (ゲートウェイ成田)",
+        "search_keyword": "GATEWAY NARITA 開業時期",
+        "category": "Redevelopment",
+        "schedule": "2027年3月開業予定",
+        "description": "成田空港隣接の国家戦略級拠点。デジタルドーム、ホテル、フードテック研究施設が集積する複合開発。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:50:00Z"
+    }
+]

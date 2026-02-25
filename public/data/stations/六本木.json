@@ -1,0 +1,26 @@
+[
+    {
+        "id": "roppongi-1",
+        "station_name": "六本木",
+        "project_name": "六本木五丁目西地区 (第2六本木ヒルズ)",
+        "search_keyword": "六本木五丁目西地区 計画",
+        "category": "Redevelopment",
+        "schedule": "2030年度竣工予定",
+        "description": "高さ約327m、麻布台ヒルズに迫る超高層タワー。六本木ヒルズに隣接する最後の大規模空白地。展望施設や国際水準のホテルを備え、東京の新たなランドマークとなる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+        "id": "roppongi-2",
+        "station_name": "六本木",
+        "project_name": "西麻布三丁目北東地区再開発",
+        "search_keyword": "西麻布三丁目北東地区再開発 竣工",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上54階/約200m。六本木ヒルズに隣接する西麻布エリアのランドマーク。外資系ラグジュアリーホテルや文化施設を核とし、六本木～西麻布の回遊性を強化する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    }
+]

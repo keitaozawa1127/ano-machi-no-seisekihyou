@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kokusaitenjijo-1",
+        "station_name": "国際展示場",
+        "project_name": "TOKYO DREAM PARK (有明南G1街区)",
+        "search_keyword": "TOKYO DREAM PARK 有明 テレビ朝日",
+        "category": "Redevelopment",
+        "schedule": "2026年3月開業予定",
+        "description": "テレビ朝日による複合エンターテインメント施設。多目的ホール、劇場、デジタルアートミュージアムを備え、湾岸エリアの集客核となる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T16:50:00Z"
+    }
+]

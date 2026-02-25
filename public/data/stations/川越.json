@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kawagoe-1",
+        "station_name": "川越",
+        "project_name": "ザ・パークハウス 川越フロント",
+        "search_keyword": "ザ・パークハウス 川越フロント 価格",
+        "category": "Mansion",
+        "schedule": "2026年頃竣工予定",
+        "description": "地上15階前後。川越駅西口徒歩2分の希少立地。ペデストリアンデッキに近接し、観光都市の玄関口にふさわしい邸宅性と利便性を提供する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:20:00Z"
+    }
+]

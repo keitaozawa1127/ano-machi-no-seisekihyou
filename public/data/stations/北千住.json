@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kitasenju-1",
+        "station_name": "北千住",
+        "project_name": "(仮称)千住大川端C-2地区計画 (千住大橋)",
+        "search_keyword": "千住大橋 C-2街区 三井不動産",
+        "category": "Mansion",
+        "schedule": "2029年12月竣工予定",
+        "description": "地上34階/123m。千住大橋駅前「ポンテグランデTOKYO」最後の大型街区。隅田川の景観を独占する三井不動産のタワーレジデンス。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:20:00Z"
+    }
+]

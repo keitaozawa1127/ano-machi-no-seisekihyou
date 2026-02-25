@@ -1,0 +1,14 @@
+[
+    {
+        "id": "urawa-1",
+        "station_name": "浦和",
+        "project_name": "浦和駅西口南高砂地区再開発 (浦和カルエ)",
+        "search_keyword": "浦和駅西口南高砂地区再開発 テナント",
+        "category": "Redevelopment",
+        "schedule": "2026年6月竣工予定",
+        "description": "地上27階/99m。浦和駅西口。市民会館、商業施設、タワーマンション「URAWA THE TOWER」が入る複合施設。駅前広場も拡張。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:30:00Z"
+    }
+]

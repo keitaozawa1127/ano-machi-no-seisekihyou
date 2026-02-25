@@ -1,0 +1,14 @@
+[
+    {
+        "id": "meguro-1",
+        "station_name": "目黒",
+        "project_name": "JR目黒ビル (駅ビル建替え)",
+        "search_keyword": "JR目黒ビル 建替え 計画",
+        "category": "Redevelopment",
+        "schedule": "2028年度冬竣工予定",
+        "description": "地上9階/延床約1.3万㎡。目黒駅直結。商業とオフィスの複合ビルへ建替え。ZEB Ready認証を取得した環境配慮型ビル。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T14:00:00Z"
+    }
+]

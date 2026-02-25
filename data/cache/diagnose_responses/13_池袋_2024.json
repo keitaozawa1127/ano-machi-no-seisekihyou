@@ -1,0 +1,203 @@
+{
+  "ok": true,
+  "verdict": "caution",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "直近5年の取引件数",
+      "value": "2638 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "4350 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "20.8%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "将来人口（2050推計）",
+      "value": "推計人口指数が 85 と減少傾向です。長期保有時の出口戦略に注意が必要です。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇が強く、過熱局面では期待が先行して価格が伸びやすい一方、前提が崩れると調整も起きやすくなります。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇が急で、短期的な反動（調整）リスクが高まります。購入検討では価格の納得感と資金余力を厚めに見てください。"
+    }
+  ],
+  "note": "データ基準日: 2024年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "池袋",
+    "year": 2024,
+    "tx5y": 2638,
+    "yoy": 20.8,
+    "up2y": 35.9,
+    "prevYear": null,
+    "score": 65
+  },
+  "trendData": [
+    {
+      "year": 2020,
+      "price": 30000000,
+      "txCount": 303
+    },
+    {
+      "year": 2021,
+      "price": 34500000,
+      "txCount": 572
+    },
+    {
+      "year": 2022,
+      "price": 32000000,
+      "txCount": 608
+    },
+    {
+      "year": 2023,
+      "price": 36000000,
+      "txCount": 571
+    },
+    {
+      "year": 2024,
+      "price": 43500000,
+      "txCount": 584
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 85,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 100000,
+        "ageStructure": {
+          "0-14": 15000,
+          "15-64": 60000,
+          "65+": 25000
+        }
+      },
+      {
+        "year": 2030,
+        "total": 95000,
+        "ageStructure": {
+          "0-14": 13000,
+          "15-64": 55000,
+          "65+": 27000
+        }
+      },
+      {
+        "year": 2040,
+        "total": 90000,
+        "ageStructure": {
+          "0-14": 11000,
+          "15-64": 49000,
+          "65+": 30000
+        }
+      },
+      {
+        "year": 2050,
+        "total": 85000,
+        "ageStructure": {
+          "0-14": 9000,
+          "15-64": 44000,
+          "65+": 32000
+        }
+      }
+    ],
+    "sourceCity": "豊島区"
+  },
+  "totalScore": 65,
+  "metrics": {
+    "asset": 41,
+    "safety": 100,
+    "future": 63,
+    "convenience": 64,
+    "liquidity": 56
+  },
+  "lines": [
+    {
+      "name": "JR埼京線"
+    },
+    {
+      "name": "JR山手線"
+    },
+    {
+      "name": "JR湘南新宿ライン"
+    },
+    {
+      "name": "東京メトロ丸ノ内線"
+    },
+    {
+      "name": "東京メトロ有楽町線"
+    },
+    {
+      "name": "東京メトロ副都心線"
+    },
+    {
+      "name": "東武東上本線"
+    },
+    {
+      "name": "西武池袋線"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "id": "ikebukuro-1",
+      "station_name": "池袋",
+      "project_name": "池袋駅西口地区開発計画",
+      "search_keyword": "池袋駅西口地区開発計画 竣工時期",
+      "category": "Redevelopment",
+      "schedule": "2030年代以降順次竣工予定",
+      "description": "地上270m（B街区）。池袋史上最大、戦後の街区を一挙に再編する歴史的事業。3つの超高層ビルと駅を取り囲む広場、デッキ網を整備し「国際アート・カルチャー都市」のシンボルとなる。",
+      "impact_level": 5,
+      "is_future": true,
+      "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+      "id": "ikebukuro-2",
+      "station_name": "池袋",
+      "project_name": "南池袋二丁目C地区 (グランドシティタワー池袋)",
+      "search_keyword": "南池袋二丁目C地区再開発 竣工",
+      "category": "Mansion",
+      "schedule": "2026年3月(北棟)・2027年2月(南棟)竣工予定",
+      "description": "地上52階/190m。総戸数約1,500戸の超高層ツインタワー。子育て支援施設を併設し、区庁舎周辺と連携して「住む街・池袋」のスカイラインを形成する。",
+      "impact_level": 5,
+      "is_future": true,
+      "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+      "id": "ikebukuro-3",
+      "station_name": "池袋",
+      "project_name": "東池袋一丁目地区再開発",
+      "search_keyword": "東池袋一丁目地区再開発 ハレザ",
+      "category": "Commercial",
+      "schedule": "2027年度竣工予定",
+      "description": "地上33階、高さ約180m。Hareza池袋に続く文化・芸術拠点。立体広場「みどりの丘」やIKEBUS拠点を整備し、ウォーカブルな文化都市機能を拡張する。",
+      "impact_level": 4,
+      "is_future": true,
+      "createdAt": "2024-02-16T12:00:00Z"
+    }
+  ],
+  "marketPrice": 36000000,
+  "tx5y": 2638,
+  "trend": "UP",
+  "yoy": 20.8,
+  "dataYear": 2024
+}

@@ -1,0 +1,388 @@
+{
+  "_metadata": {
+    "name": "各自治体開発事業者 公開情報",
+    "version": "2026年2月版"
+  },
+  "projects": [
+    {
+      "station_name": "東京",
+      "project_name": "TOKYO TORCH / Torch Tower",
+      "category": "Redevelopment",
+      "schedule": "2028年3月竣工予定",
+      "description": "日本一の高さ約390mとなるオフィスタワー。大規模な展望施設、商業フロア、イベントスペース、スパ施設を備える。東京駅前の新たなシンボルとして国際金融拠点の機能を強化します。",
+      "source_url": "https://tokyotorch.mec.co.jp/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "東京",
+      "project_name": "TOFROM YAESU（東京駅前八重洲一丁目東地区）",
+      "category": "Redevelopment",
+      "schedule": "2026年2月竣工予定",
+      "description": "東京駅八重洲口正面に位置する大規模再開発。劇場、カンファレンスセンター、医療施設などを備え、バスターミナルも整備。東京の新たな顔となるプロジェクト。",
+      "source_url": "https://www.tatemono.com/",
+      "verified_at": "2026-02-10T18:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "東京",
+      "project_name": "日本橋一丁目中地区第一種市街地再開発事業",
+      "category": "Redevelopment",
+      "schedule": "2026年3月竣工予定",
+      "description": "日本橋川沿いの大規模再開発。地上52階・高さ約284mの超高層ビル。「ウォルドーフ・アストリア東京日本橋」が進出し、最上級のホスピタリティを提供します。",
+      "source_url": "https://www.mitsuifudosan.co.jp/corporate/news/2021/1207_01/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "東京",
+      "project_name": "八重洲二丁目中地区第一種市街地再開発事業",
+      "category": "Redevelopment",
+      "schedule": "2029年1月竣工予定",
+      "description": "地上43階・高さ約227mの超高層ビルを建設し、バスターミナル拡張、インターナショナルスクールなどを整備。八重洲エリアの国際化を推進します。",
+      "source_url": "https://www.mitsuifudosan.co.jp/corporate/news/2024/0826_01/",
+      "verified_at": "2026-02-10T18:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "東京",
+      "project_name": "都心部・臨海地域地下鉄構想",
+      "category": "Infrastructure",
+      "schedule": "2040年頃開業目標",
+      "description": "東京駅から銀座、築地、勝どき、有明・東京ビッグサイト方面へ至る新地下鉄構想。つくばエクスプレス接続で都心と臨海部のアクセスを飛躍的に向上させます。",
+      "source_url": "https://www.tokyo.lg.jp/",
+      "verified_at": "2026-02-10T18:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "新宿",
+      "project_name": "新宿グランドターミナル（新宿駅直近地区）",
+      "category": "Infrastructure",
+      "schedule": "2046年度完了目標",
+      "description": "新宿駅の東西自由通路整備、駅ビル建て替え、歩行者デッキ「新宿スカイウェイ」整備により、ターミナル機能強化と周辺回遊性向上を図る国家プロジェクト級の再開発。",
+      "source_url": "https://www.city.shinjuku.lg.jp/kusei/kuse_index.html",
+      "verified_at": "2026-02-10T18:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "新宿",
+      "project_name": "新宿駅西口地区開発計画",
+      "category": "Redevelopment",
+      "schedule": "2029年度竣工予定",
+      "description": "小田急電鉄・東急不動産・東京メトロが推進。地上48階・高さ約260mの超高層ビルを建設。商業施設、オフィス、駅施設が一体となった新ランドマーク。",
+      "source_url": "https://www.odakyu.jp/news/o5oaa1000002b2f3-att/o5oaa1000002b2fh.pdf",
+      "verified_at": "2026-02-10T18:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "新宿",
+      "project_name": "新宿駅西南口地区開発事業",
+      "category": "Redevelopment",
+      "schedule": "南街区：着工未定、北街区：2040年代",
+      "description": "京王電鉄・JR東日本による再開発。南街区に地上37階、北街区に地上19階のビルを建設。商業・宿泊・業務機能を強化。",
+      "source_url": "https://www.keio.co.jp/news/update/news_release/news_release2023/nr20230802_shinjuku-seinannguchi.pdf",
+      "verified_at": "2026-02-10T18:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "新宿",
+      "project_name": "東急歌舞伎町タワー",
+      "category": "Commercial",
+      "schedule": "2023年4月開業済",
+      "description": "地上48階、高さ約225mの複合施設。ホテル、劇場、映画館、ライブホールを備え、エンターテインメント都市・新宿の新たな核として機能。",
+      "source_url": "https://tokyu-kabukicho-tower.jp/",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "新宿",
+      "project_name": "新宿中央公園再整備（Park-PFI）",
+      "category": "Public",
+      "schedule": "整備済み・活用継続中",
+      "description": "新宿副都心のオアシス・新宿中央公園をPark-PFI制度で再整備。「SHUKNOVA」などの交流拠点がオープンし、芝生広場整備で魅力が向上しました。",
+      "source_url": "https://shinjukuchuo-park.jp/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 3
+    },
+    {
+      "station_name": "渋谷",
+      "project_name": "渋谷スクランブルスクエア（中央棟・西棟）",
+      "category": "Redevelopment",
+      "schedule": "2027年度開業予定",
+      "description": "2019年開業の東棟（高さ約230m）に続き、中央棟と西棟を建設。渋谷駅直上の大規模再開発が完成し、駅機能と商業・オフィス機能が完全一体化します。",
+      "source_url": "https://www.shibuya-scramble-square.com/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "渋谷",
+      "project_name": "Shibuya Sakura Stage（渋谷サクラステージ）",
+      "category": "Redevelopment",
+      "schedule": "2023年11月竣工済み",
+      "description": "渋谷駅桜丘口地区の再開発により誕生した大規模複合施設。オフィス、商業、住宅、サービスアパートメントに加え、起業支援施設や国際医療施設も備える。",
+      "source_url": "https://shibuya-sakura-stage.com/",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "渋谷",
+      "project_name": "渋谷アクシュ（SHIBUYA AXSH）",
+      "category": "Commercial",
+      "schedule": "2024年7月開業",
+      "description": "東口エリア、ヒカリエに隣接する新複合施設。オフィスや商業施設に加え、アートギャラリーなども展開し、渋谷の新たな文化発信拠点を形成。",
+      "source_url": "https://shibuya-axsh.jp/",
+      "verified_at": "2026-02-06T12:00:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "渋谷",
+      "project_name": "道玄坂二丁目南地区第一種市街地再開発事業",
+      "category": "Redevelopment",
+      "schedule": "2027年2月竣工予定",
+      "description": "三菱地所が参画。京王井の頭線渋谷駅直結の大規模開発。地上30階・高さ約155mのオフィス・ホテル棟を建設。広場と緑道も整備。",
+      "source_url": "https://www.mec.co.jp/j/news/archives/mec240116_dogenzaka.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "渋谷",
+      "project_name": "渋谷マルイ（木造商業施設再開発）",
+      "category": "Redevelopment",
+      "schedule": "2026年開業予定",
+      "description": "日本初の本格的な木造商業施設として再生。構造の約60%に木材を使用し、約2,000トンのCO2削減を実現する環境配慮型ビル。",
+      "source_url": "https://www.0101maruigroup.co.jp/",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "池袋",
+      "project_name": "池袋駅西口地区市街地再開発事業",
+      "category": "Redevelopment",
+      "schedule": "計画進行中（2043年度竣工目標）",
+      "description": "東武百貨店を含む西口一帯を再開発し、超高層ビル3棟（最高高さ約270m・地上50階）を建設する巨大プロジェクト。国際アート・カルチャー都市のシンボルに。",
+      "source_url": "https://www.city.toshima.lg.jp/050/machizukuri/ikebukuro/2403151545.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "池袋",
+      "project_name": "南池袋二丁目C地区第一種市街地再開発事業",
+      "category": "Mansion",
+      "schedule": "2027年5月竣工予定",
+      "description": "高さ約190mの超高層ツインタワーマンション（総戸数約1500戸以上）を建設。駅周辺の居住人口を大幅に増加させ、職住近接の都市生活を推進。",
+      "source_url": "https://www.sumitomo-rd-mansion.jp/shuto/gctikebukuro/",
+      "verified_at": "2026-02-10T15:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "池袋",
+      "project_name": "IKE・SUNPARK（としまキッズパーク）",
+      "category": "Public",
+      "schedule": "2020年開園済",
+      "description": "造幣局跡地に整備された区内最大級の防災公園。広大な芝生広場、カフェ、小型SLが走るキッズパークを備え、多世代が交流する憩いの拠点。",
+      "source_url": "https://ikesunpark.jp/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 3
+    },
+    {
+      "station_name": "池袋",
+      "project_name": "東京国際大学 池袋キャンパス",
+      "category": "Public",
+      "schedule": "2023年9月開校済",
+      "description": "旧・豊島区造幣局地区に新キャンパスを開設。約3,500人の学生が通う国際的教育拠点が誕生し、イケ・サンパークと連携してアカデミックな賭わいを創出。",
+      "source_url": "https://www.tiu.ac.jp/campus/ikebukuro/",
+      "verified_at": "2026-02-10T13:00:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "横浜",
+      "project_name": "THE YOKOHAMA FRONT（横浜駅きた西口鶴屋地区）",
+      "category": "Redevelopment",
+      "schedule": "2024年6月商業開業済",
+      "description": "横浜駅直結、地上43階・高さ約178mの超高層複合タワー。高層部は高級レジデンス、低層部は商業施設、ホテル、サービスアパートメントが入居。",
+      "source_url": "https://the-yokohama-front.com/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "横浜",
+      "project_name": "エキサイトよこはま22（横浜駅周辺大改造）",
+      "category": "Redevelopment",
+      "schedule": "進行中（長期計画）",
+      "description": "横浜駅周辺の国際化対応、環境対策、防災機能強化を目指す長期的なまちづくり計画。「THE YOKOHAMA FRONT」の開業など、着実に変貌を遂げつつある。",
+      "source_url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/toshiseibi/suishin/yokokikyoku.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "横浜",
+      "project_name": "横浜市中区海岸通計画（横浜郵船ビル再開発）",
+      "category": "Redevelopment",
+      "schedule": "2027年1月竣工予定",
+      "description": "日本郵船・三菱地所・鹿島建設が推進。歴史的建造物「横浜郵船ビル」をホテルに改修し、隣接地に地上21階の複合ビルを建設。歴史と未来が融合。",
+      "source_url": "https://www.1201.yokohama/",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "横浜",
+      "project_name": "みなとみらい21中央地区52街区開発事業",
+      "category": "Redevelopment",
+      "schedule": "2027年5月竣工予定",
+      "description": "大和ハウス工業が推進。地上29階のオフィス棟と、世界初のゲームアートミュージアム棟を建設。地域熱供給プラントも併設する複合開発。",
+      "source_url": "https://www.daiwahouse.co.jp/about/release/20240222.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "横浜",
+      "project_name": "北仲通北地区A-1・A-2地区プロジェクト",
+      "category": "Redevelopment",
+      "schedule": "2026年11月竣工予定",
+      "description": "大和地所と住友不動産による大規模開発。地上40階建てのタワーに、世界的高級ホテル「コンラッド横浜」（2027年開業）と高級賃貸「ラ・トゥール横浜」が進出。",
+      "source_url": "https://www.sumitomo-rd.co.jp/news/2024/20240410.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "品川",
+      "project_name": "高輪ゲートウェイシティ（TAK ANAWA GATEWAY CITY）",
+      "category": "Redevelopment",
+      "schedule": "2025年3月まちびらき・2026年春グランドオープン",
+      "description": "JR品川車両基地跡地約9.5haを利用した国内最大級の都市開発。オフィス、商業（NEWoMan高輪）、JWマリオット東京、文化施設、レジデンス、インターナショナルスクールを整備。",
+      "source_url": "https://takanawagateway-city.com/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "品川",
+      "project_name": "京急品川駅・駅ビル再開発（品川開発プロジェクト）",
+      "category": "Redevelopment",
+      "schedule": "2025年度着工・2029年度開業予定",
+      "description": "京急品川駅の地平化と駅ビル建て替えを実施。トヨタ自動車の新東京本社が入居。商業・業務・MICE機能を集積し、リニア開業に合わせた機能強化を図る。",
+      "source_url": "https://www.keikyu.co.jp/company/news/2024/20240322HP_23155TE.html",
+      "verified_at": "2026-02-10T15:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "品川",
+      "project_name": "リニア中央新幹線 品川駅新設",
+      "category": "Infrastructure",
+      "schedule": "2027年以降",
+      "description": "東京（品川）と名古屋を最速40分で結ぶリニア中央新幹線の始発駅建設工事。地下深くに巨大なターミナル駅を整備し、スーパー・メガリージョン構想の中核となります。",
+      "source_url": "https://company.jr-central.co.jp/chuoshinkansen/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "品川",
+      "project_name": "品川駅西口地区再開発（高輪三丁目・四丁目）",
+      "category": "Redevelopment",
+      "schedule": "A地区2025年度着工、C地区2026年度着工",
+      "description": "品川駅西口（高輪口）の国道15号上空利用を含む大規模再開発。国際会議場、高級ホテル、オフィスを整備し、MICE（ビジネスイベント）拠点を強化。",
+      "source_url": "https://www.toshiseibi.metro.tokyo.lg.jp/cpproject/intro/shinagawa/index.html",
+      "verified_at": "2026-02-10T15:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "大阪",
+      "project_name": "グラングリーン大阪（うめきた2期）",
+      "category": "Redevelopment",
+      "schedule": "2024年9月一部先行まちびらき",
+      "description": "「みどり」と「イノベーション」の融合を目指す大規模複合開発。うめきた公園を中心に、オフィス、ホテル、商業施設、中核機能施設などが整備されます。",
+      "source_url": "https://umekita.com/",
+      "verified_at": "2026-02-10T13:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "大阪",
+      "project_name": "なにわ筋線（新大阪〜関西空港アクセス）",
+      "category": "Infrastructure",
+      "schedule": "2031年春開業目標",
+      "description": "うめきたエリア（大阪駅地下ホーム）と難波エリアを結ぶ新線。関空へのアクセス時間を短縮し、大阪の南北軸を強化する悲願の鉄道路線。",
+      "source_url": "https://www.kr-railway.co.jp/",
+      "verified_at": "2026-02-10T14:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "大阪",
+      "project_name": "KITTE大阪（JPタワー大阪）",
+      "category": "Commercial",
+      "schedule": "2024年7月開業",
+      "description": "旧大阪中央郵便局跡地に建設されたJPタワー大阪内の商業施設。日本各地の魅力を発信する店舗や、劇場「SkyシアターMBS」などが集積。",
+      "source_url": "https://osaka.jp-kitte.jp/",
+      "verified_at": "2026-02-10T14:00:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "梅田",
+      "project_name": "大阪梅田ツインタワーズ・サウス（阪神梅田本店）",
+      "category": "Redevelopment",
+      "schedule": "2022年全面開業済",
+      "description": "阪神百貨店梅田本店の建て替えによる地上38階・高さ約190mの「サウス」が完成。阪急うめだ本店の「ノース」と合わせ、日本最大級の百貨店ツインタワーを形成。",
+      "source_url": "https://www.city.osaka.lg.jp/kankyo/page/0000218798.html",
+      "verified_at": "2026-02-10T15:00:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "名古屋",
+      "project_name": "リニア中央新幹線 名古屋駅新設工区",
+      "category": "Infrastructure",
+      "schedule": "2027年以降",
+      "description": "東京（品川）からのリニア中央新幹線を受け入れる地下駅の大規模工事。駅前広場の再整備と合わせ、スーパーターミナル駅としての機能を強化し、中京圏の発展を支えます。",
+      "source_url": "https://company.jr-central.co.jp/chuoshinkansen/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "名古屋",
+      "project_name": "名鉄名古屋駅地区再開発計画",
+      "category": "Redevelopment",
+      "schedule": "計画見直し中・スケジュール未定",
+      "description": "名鉄名古屋駅、近鉄名古屋駅、名鉄グランドホテルなどを一体的に建て替え、全長400m級の巨大駅ビルを建設する構想。2025年12月に工事費高騰により計画見直しを発表。",
+      "source_url": "https://www.meitetsu.co.jp/profile/news/2016/1208937_1175.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "名古屋",
+      "project_name": "中日ビル（建て替え）",
+      "category": "Commercial",
+      "schedule": "2024年4月開業済",
+      "description": "栄エリアのランドマーク・中日ビルの建て替え。地上33階・高さ約158mの複合ビルとして再生し、オフィス、ホテル、商業施設、ホールを備え、栄地区の活性化を牽引。",
+      "source_url": "https://chunichi-bldg.jp/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "博多",
+      "project_name": "博多コネクティッド（Hakata Connected）",
+      "category": "Redevelopment",
+      "schedule": "進行中（2028年まで10年間・約20棟の建替目標）",
+      "description": "地下鉄七隈線延伸に合わせた博多駅周辺の規制緩和プロジェクト。「博多コネクティッドボーナス」制度により、耐震性の高いビルへの建て替えや歩行者ネットワークの拡大を促進。",
+      "source_url": "https://www.fukuoka-leapup.jp/user/fuk_leap/hakata-connected.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "博多",
+      "project_name": "福岡市地下鉄七隈線 博多駅延伸",
+      "category": "Infrastructure",
+      "schedule": "2023年3月27日開業済",
+      "description": "天神南駅から博多駅までの延伸区間（中間駅：櫛田神社前駅）が開業。福岡市西部・南部からのアクセスが飛躍的に向上し、天神南〜博多間の移動時間が約14分短縮。",
+      "source_url": "https://subway.city.fukuoka.lg.jp/formation/extension/",
+      "verified_at": "2026-02-10T15:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "博多",
+      "project_name": "博多駅空中都市プロジェクト",
+      "category": "Redevelopment",
+      "schedule": "構想段階",
+      "description": "博多駅の線路上空を利用した新たな都市空間の創出構想。駅機能の拡充とともに、広場や緑地、商業施設を立体的に配置し、アジアの拠点都市としての機能を強化。",
+      "source_url": "https://www.city.fukuoka.lg.jp/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 3
+    }
+  ]
+}

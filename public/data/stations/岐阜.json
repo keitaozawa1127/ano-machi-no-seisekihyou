@@ -1,0 +1,14 @@
+[
+    {
+        "id": "gifu-1",
+        "station_name": "岐阜",
+        "project_name": "岐阜駅北中央東地区再開発",
+        "search_keyword": "岐阜駅北再開発 タワー",
+        "category": "Mansion",
+        "schedule": "2029年度竣工予定",
+        "description": "地上32階/128m。岐阜駅北口の新たなランドマークタワー。駅直結の利便性と超高層の眺望を兼ね備え、まちなか居住を推進する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    }
+]

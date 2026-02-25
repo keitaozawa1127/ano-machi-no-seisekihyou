@@ -1,0 +1,14 @@
+[
+    {
+        "id": "sakae-1",
+        "station_name": "栄",
+        "project_name": "ザ・ランドマーク名古屋栄 (錦三丁目25番街区)",
+        "search_keyword": "ザ・ランドマーク名古屋栄 開業",
+        "category": "Redevelopment",
+        "schedule": "2026年夏全面開業予定 (3月竣工)",
+        "description": "地上41階/211m。栄エリアの新たなシンボルタワー。コンラッドホテル、高機能オフィス、シネコンが集結し、名駅に対抗する拠点を形成する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    }
+]

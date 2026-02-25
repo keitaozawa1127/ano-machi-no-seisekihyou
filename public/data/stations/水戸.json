@@ -1,0 +1,14 @@
+[
+    {
+        "id": "mito-1",
+        "station_name": "水戸",
+        "project_name": "コモンスクエア水戸 (三の丸地区再開発)",
+        "search_keyword": "コモンスクエア水戸 竣工予定",
+        "category": "Redevelopment",
+        "schedule": "2027年2月竣工予定",
+        "description": "地上20階/60m。水戸駅北口直結。旧リヴィン跡地の再生。タワーマンション(184戸)と業務・商業棟、駐車場棟で構成される複合街区。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:15:00Z"
+    }
+]

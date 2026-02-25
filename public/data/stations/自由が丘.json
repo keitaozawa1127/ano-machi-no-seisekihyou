@@ -1,0 +1,26 @@
+[
+    {
+        "id": "jiyugaoka-1",
+        "station_name": "自由が丘",
+        "project_name": "自由が丘一丁目29番地区 (駅北口再開発)",
+        "search_keyword": "自由が丘 1-29地区 再開発 店舗",
+        "category": "Redevelopment",
+        "schedule": "2026年7月竣工予定",
+        "description": "地上15階/60m。駅北口・すずかけ通り沿いのランドマーク。明治屋や「こどもでぱーと」が入居し、自由が丘らしい上質な賑わいを創出。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    },
+    {
+        "id": "jiyugaoka-2",
+        "station_name": "自由が丘",
+        "project_name": "自由が丘駅西北地区 (ピーコック跡地)",
+        "search_keyword": "自由が丘 ピーコック跡地 再開発 三菱地所",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上14階/60m。ピーコックストア跡地を含む再開発。低層部の商業機能と上層部の都市型住宅を融合させ、駅周辺の防災性と回遊性を高める。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    }
+]

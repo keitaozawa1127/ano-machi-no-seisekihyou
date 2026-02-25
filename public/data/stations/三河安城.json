@@ -1,0 +1,14 @@
+[
+    {
+        "id": "mikawaanjo-1",
+        "station_name": "三河安城",
+        "project_name": "三河安城交流拠点 (アリーナ)",
+        "search_keyword": "三河安城交流拠点 アリーナ 竣工予定",
+        "category": "Infrastructure",
+        "schedule": "2028年3月竣工予定",
+        "description": "シーホース三河の本拠地となる5,000席級の多目的アリーナ。Bプレミア基準を充足し、スポーツを核とした地域活性化の拠点。当初計画より延期され、2028年春の完成を目指す。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T20:50:00Z"
+    }
+]

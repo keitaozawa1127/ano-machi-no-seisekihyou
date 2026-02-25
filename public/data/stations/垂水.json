@@ -1,0 +1,14 @@
+[
+    {
+        "id": "tarumi-1",
+        "station_name": "垂水",
+        "project_name": "垂水駅前西地区再開発 (プラウドタワー)",
+        "search_keyword": "垂水駅前再開発 プラウドタワー",
+        "category": "Redevelopment",
+        "schedule": "2026年3月竣工予定",
+        "description": "地上32階/114m。垂水駅西側。野村不動産によるタワーマンションと商業施設の複合開発。駅前ロータリーも拡張整備。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T18:05:00Z"
+    }
+]

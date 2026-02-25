@@ -39,3 +39,30 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI-generated audit and log files
+audit_log.txt
+audit_result.txt
+audit_state.json
+*.log
+
+# AI-generated reports
+quality_assurance_report.html
+*_report.json
+*_audit_report.json
+*_processing_report.json
+*_integration_*_report.json
+*_rebuild_report.json
+*_check.md
+passenger_audit_report_raw.md
+
+# Temporary data files
+temp_reference_stations.json
+*_patch.json
+*_clean_patch.json
+*_fix_patch.json
+
+# EXCLUDE EXCEPTIONS: Keep essential configs
+!package.json
+!package-lock.json
+!tsconfig.json

@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kagoshimachuo-1",
+        "station_name": "鹿児島中央",
+        "project_name": "MJR鹿児島中央駅前ザ・ガーデン",
+        "search_keyword": "MJR鹿児島中央駅前ザ・ガーデン",
+        "category": "Mansion",
+        "schedule": "2026年度竣工予定",
+        "description": "地上27階。鹿児島中央駅西口直結の大規模複合開発。商業施設「AMU WE」やオフィスを併設し、駅周辺の機能を垂直統合する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:00:00Z"
+    }
+]

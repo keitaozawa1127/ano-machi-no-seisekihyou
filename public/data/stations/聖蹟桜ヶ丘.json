@@ -1,0 +1,14 @@
+[
+    {
+        "id": "seisekisakuragaoka-1",
+        "station_name": "聖蹟桜ヶ丘",
+        "project_name": "多摩市本庁舎建替事業 (ネットワーク型庁舎)",
+        "search_keyword": "多摩市役所 建て替え スケジュール",
+        "category": "Infrastructure",
+        "schedule": "2032年度竣工予定 (2027年度より機能分散)",
+        "description": "現在地での建替えと駅周辺への機能分散を組み合わせた「ネットワーク型庁舎」。2027年度頃よりサテライト機能の整備が進み、防災拠点としての強靭化を図る。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T19:00:00Z"
+    }
+]

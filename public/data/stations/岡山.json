@@ -1,0 +1,50 @@
+[
+    {
+        "id": "okayama-1",
+        "station_name": "岡山",
+        "project_name": "岡山ザ・タワー (駅前町一丁目地区)",
+        "search_keyword": "岡山ザ・タワー 竣工",
+        "category": "Mansion",
+        "schedule": "2026年4月竣工予定",
+        "description": "地上31階/108m。岡山駅東口のランドマーク。422戸の住宅、ホテル、商業、コンベンション施設が一体となった複合再開発。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:00:00Z"
+    },
+    {
+        "id": "okayama-2",
+        "station_name": "岡山",
+        "project_name": "岡山駅前広場への路面電車乗り入れ",
+        "search_keyword": "岡山駅 路面電車 乗り入れ 完成",
+        "category": "Infrastructure",
+        "schedule": "2026年度末完了予定",
+        "description": "岡山電気軌道を駅前広場内へ延伸し、JR駅と直結させるインフラ大改造。駅前広場のレイアウトを一新し、乗り換え利便性を飛躍的に高める。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:00:00Z"
+    },
+    {
+        "id": "okayama-3",
+        "station_name": "岡山",
+        "project_name": "岡山市役所 新庁舎",
+        "search_keyword": "岡山市役所 新庁舎 移転",
+        "category": "Infrastructure",
+        "schedule": "2026年5月竣工予定",
+        "description": "地上17階/87m。大供地区に建設中の新行政拠点。ZEB Ready認証を取得した環境配慮型庁舎で、災害時の防災司令塔となる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:00:00Z"
+    },
+    {
+        "id": "okayama-4",
+        "station_name": "岡山",
+        "project_name": "岡山市表町三丁目15番地区再開発",
+        "search_keyword": "表町三丁目再開発 ハレノワ",
+        "category": "Redevelopment",
+        "schedule": "2029年3月竣工予定",
+        "description": "地上20階以上/87m。芸術劇場「ハレノワ」に隣接するタワーマンション計画。文化芸術ゾーンの定住人口を増やし、商店街の活性化を図る。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:00:00Z"
+    }
+]

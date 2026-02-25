@@ -1,0 +1,14 @@
+[
+    {
+        "id": "funabori-1",
+        "station_name": "船堀",
+        "project_name": "船堀四丁目地区再開発",
+        "search_keyword": "船堀 新庁舎 移転",
+        "category": "Redevelopment",
+        "schedule": "2033年開庁予定",
+        "description": "地上26階/99m。船堀駅前。江戸川区新庁舎(21階)と、民間タワーマンション(26階)のツイン開発。区の新たなシンボルとなる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T16:50:00Z"
+    }
+]

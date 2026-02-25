@@ -1,0 +1,14 @@
+[
+    {
+        "id": "higashikurume-1",
+        "station_name": "東久留米",
+        "project_name": "(仮称)東久留米市南沢4丁目計画",
+        "search_keyword": "東久留米 損保ジャパン跡地 マンション",
+        "category": "Mansion",
+        "schedule": "2028年頃竣工予定",
+        "description": "イオンモール東久留米近くの損保ジャパン事務センター跡地(約2.3ha)。長谷工コーポレーションによる大規模マンション開発。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:30:00Z"
+    }
+]

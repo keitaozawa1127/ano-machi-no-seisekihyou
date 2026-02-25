@@ -1,0 +1,26 @@
+[
+    {
+        "id": "nakano-1",
+        "station_name": "中野",
+        "project_name": "パークシティ中野 (囲町東地区)",
+        "search_keyword": "パークシティ中野 価格 竣工",
+        "category": "Mansion",
+        "schedule": "2025年12月竣工予定",
+        "description": "地上24階/100m級ツインタワー。約800戸の大規模レジデンスと商業施設。ペデストリアンデッキで駅周辺と直結し、中野の新たな定住拠点を創出する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:00:00Z"
+    },
+    {
+        "id": "nakano-2",
+        "station_name": "中野",
+        "project_name": "中野駅新北口駅前エリア (サンプラザ跡地)",
+        "search_keyword": "中野サンプラザ再開発 白紙 最新",
+        "category": "Redevelopment",
+        "schedule": "未定 (計画見直し中)",
+        "description": "最大235mのシンボルタワー計画だったが、資材高騰により協定解除。2026年以降に事業スキームを再構築予定。新区役所と連携した「中野の顔」を目指す。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:00:00Z"
+    }
+]

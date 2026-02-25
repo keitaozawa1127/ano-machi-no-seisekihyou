@@ -1,0 +1,14 @@
+[
+    {
+        "id": "izumichuo-1",
+        "station_name": "泉中央",
+        "project_name": "仙台市泉区役所本庁舎建替",
+        "search_keyword": "仙台市 泉区役所 建て替え 竣工時期",
+        "category": "Infrastructure",
+        "schedule": "2026年10月末新庁舎竣工",
+        "description": "泉中央駅直結。老朽化した区役所を免震構造の新庁舎へ建替。2026年の竣工後、旧庁舎跡地には広大な市民広場や民間施設(東北労金本部等)が整備され、駅前の賑わいを刷新する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T20:50:00Z"
+    }
+]

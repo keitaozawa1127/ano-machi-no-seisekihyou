@@ -1,0 +1,14 @@
+[
+    {
+        "id": "minamiosawa-1",
+        "station_name": "南大沢",
+        "project_name": "三井アウトレットパーク多摩南大沢 (B画地建替)",
+        "search_keyword": "南大沢 アウトレット 建替え",
+        "category": "Commercial",
+        "schedule": "2027年度竣工予定",
+        "description": "定期借地権延長に伴う大規模リニューアル。B画地(スーパー・飲食店等)を最新の商業施設へ建替え、機能を強化する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:00:00Z"
+    }
+]

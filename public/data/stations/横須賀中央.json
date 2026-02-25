@@ -1,0 +1,14 @@
+[
+    {
+        "id": "yokosukachuo-1",
+        "station_name": "横須賀中央",
+        "project_name": "若松町1丁目地区再開発",
+        "search_keyword": "横須賀中央 プライム跡地 再開発",
+        "category": "Redevelopment",
+        "schedule": "2029年12月竣工予定",
+        "description": "地上33階/130m。横須賀中央駅直結(Yデッキ接続)。旧プライム跡地。商業、ホテル(京急EXイン)、住宅の複合タワー。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:30:00Z"
+    }
+]

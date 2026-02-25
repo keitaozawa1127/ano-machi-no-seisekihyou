@@ -5,20 +5,41 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "build:data": "tsx scripts/buildStationsJson.ts"
   },
   "dependencies": {
+    "@types/d3": "^7.4.3",
+    "axios": "^1.13.4",
+    "comlink": "^4.4.2",
+    "d3": "^7.9.0",
+    "d3-geo": "^3.1.1",
+    "d3-scale": "^4.0.2",
     "next": "16.1.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "next-auth": "^4.24.13",
+    "papaparse": "^5.4.1",
+    "playwright": "^1.58.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-simple-maps": "^3.0.0",
+    "wanakana": "^5.3.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
+    "@turf/turf": "^7.3.2",
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^20.19.33",
+    "@types/node-fetch": "^2.6.13",
+    "@types/papaparse": "^5.3.14",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.23",
+    "dotenv": "^17.2.3",
+    "eslint": "^8.57.0",
     "eslint-config-next": "16.1.1",
-    "typescript": "^5"
+    "node-fetch": "^3.3.2",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.4"
   }
 }

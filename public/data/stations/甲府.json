@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kofu-1",
+        "station_name": "甲府",
+        "project_name": "岡島百貨店跡地再開発計画",
+        "search_keyword": "岡島百貨店跡地再開発 タカラレーベン",
+        "category": "Redevelopment",
+        "schedule": "2028年秋以降竣工予定",
+        "description": "地上28階/98m。老舗百貨店「岡島」跡地。県内最高層級のタワーマンション(約330戸)と商業・駐車場棟の複合開発。低層部にはシネマコンプレックスの誘致も検討中。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:15:00Z"
+    }
+]

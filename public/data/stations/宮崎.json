@@ -1,0 +1,14 @@
+[
+    {
+        "id": "miyazaki-1",
+        "station_name": "宮崎",
+        "project_name": "レーベン宮崎 ONE TOWER",
+        "search_keyword": "レーベン宮崎 ONE TOWER 竣工",
+        "category": "Mansion",
+        "schedule": "2026年1月竣工済み",
+        "description": "地上20階/約60m。宮崎駅徒歩7分。県内初の20階建てタワーマンション。高千穂通りに面し、宮崎山形屋へも徒歩圏内。スカイラウンジ等を備えたランドマーク。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:30:00Z"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "id": "kawaguchi-1",
+        "station_name": "川口",
+        "project_name": "川口本町4丁目9番地区再開発",
+        "search_keyword": "パークタワー川口本町 価格",
+        "category": "Mansion",
+        "schedule": "2026年8月竣工予定",
+        "description": "地上28階/100m級。川口駅東口。三井不動産レジデンシャルによる制振タワー。避難広場や屋上庭園など高度な防災機能を備える。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:30:00Z"
+    },
+    {
+        "id": "kawaguchi-2",
+        "station_name": "川口",
+        "project_name": "NHK川口施設 (SKIPシティ C街区)",
+        "search_keyword": "SKIPシティ NHK 計画",
+        "category": "Redevelopment",
+        "schedule": "2027年度竣工予定",
+        "description": "映像拠点SKIPシティの最終街区。NHKが最新鋭の巨大制作スタジオを建設。ドラマや映画撮影の拠点となり、関連産業の集積を加速させる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T20:00:00Z"
+    }
+]

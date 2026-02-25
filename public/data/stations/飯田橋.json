@@ -1,0 +1,26 @@
+[
+    {
+        "id": "iidabashi-1",
+        "station_name": "飯田橋",
+        "project_name": "飯田橋駅東地区再開発",
+        "search_keyword": "飯田橋駅東地区再開発 三菱地所",
+        "category": "Redevelopment",
+        "schedule": "2026年11月竣工予定",
+        "description": "地上26階/130m。東西線飯田橋駅直結。駅前広場や地下通路を整備し、オフィス・住宅・商業が一体となった駅前の新たな顔をつくる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    },
+    {
+        "id": "iidabashi-2",
+        "station_name": "飯田橋",
+        "project_name": "飯田橋駅中央地区再開発 (ラムラ建替え)",
+        "search_keyword": "飯田橋駅中央地区再開発 野村不動産",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上40階/206m。飯田橋ラムラ等を含む大規模建替え。地域最高層の超高層タワーとなり、駅周辺の景観を一変させる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    }
+]

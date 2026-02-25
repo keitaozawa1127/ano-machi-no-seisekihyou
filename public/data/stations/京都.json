@@ -1,0 +1,26 @@
+[
+    {
+        "id": "kyoto-1",
+        "station_name": "京都",
+        "project_name": "コートヤード・バイ・マリオット京都駅",
+        "search_keyword": "コートヤード・バイ・マリオット京都駅 開業",
+        "category": "Redevelopment",
+        "schedule": "2026年秋開業予定",
+        "description": "地上9階/270室。京都駅八条口(南側)徒歩3分。マリオット系列のホテルが進出し、駅南側のブランド価値と利便性を向上させる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:40:00Z"
+    },
+    {
+        "id": "kyoto-2",
+        "station_name": "京都",
+        "project_name": "京都中央郵便局建替え計画",
+        "search_keyword": "京都中央郵便局 建替え 高さ規制",
+        "category": "Redevelopment",
+        "schedule": "2029年度以降 (構想段階)",
+        "description": "京都駅前の巨大プロジェクト。郵便局・オフィス・ホテル等の複合ビルへ建替え。高さ規制の特例適用を含め、駅前の顔となる開発を目指す。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:40:00Z"
+    }
+]

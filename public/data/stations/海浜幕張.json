@@ -1,0 +1,26 @@
+[
+    {
+        "id": "kaihimmakuhari-1",
+        "station_name": "海浜幕張",
+        "project_name": "幕張ベイパーク ライズゲートタワー (B-5街区)",
+        "search_keyword": "ライズゲートタワー 価格",
+        "category": "Mansion",
+        "schedule": "2026年2月竣工予定",
+        "description": "地上38階/141m。ベイパーク第5弾。独立した商業棟を併設し、街区全体の利便性を向上させる。2026年3月の入居開始に向け順調に進捗中。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:20:00Z"
+    },
+    {
+        "id": "kaihimmakuhari-2",
+        "station_name": "海浜幕張",
+        "project_name": "幕張ベイパーク ブルームテラスタワー (B-4街区)",
+        "search_keyword": "ブルームテラスタワー 幕張",
+        "category": "Mansion",
+        "schedule": "2027年10月竣工予定",
+        "description": "地上42階/158m。ベイパーク計画の集大成となる第6弾タワー。公園を臨む眺望と最大級のスケールを誇り、幕張新都心の完成形を提示する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:20:00Z"
+    }
+]

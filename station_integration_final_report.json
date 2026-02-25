@@ -1,0 +1,434 @@
+{
+  "timestamp": "2026-01-17T16:55:20.994Z",
+  "summary": {
+    "totalStations": 5084,
+    "totalAreas": 913,
+    "totalMunicipalities": 1715,
+    "avgCoverage": 53.14042553191488
+  },
+  "results": [
+    {
+      "prefCode": "01",
+      "features": 178,
+      "totalStations": 327,
+      "stationAreas": 89,
+      "coverage": "50.0",
+      "successfulMatches": 327,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "02",
+      "features": 40,
+      "totalStations": 148,
+      "stationAreas": 29,
+      "coverage": "72.5",
+      "successfulMatches": 148,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "03",
+      "features": 33,
+      "totalStations": 134,
+      "stationAreas": 21,
+      "coverage": "63.6",
+      "successfulMatches": 134,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "04",
+      "features": 34,
+      "totalStations": 91,
+      "stationAreas": 19,
+      "coverage": "55.9",
+      "successfulMatches": 91,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "05",
+      "features": 25,
+      "totalStations": 62,
+      "stationAreas": 7,
+      "coverage": "28.0",
+      "successfulMatches": 62,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "06",
+      "features": 35,
+      "totalStations": 47,
+      "stationAreas": 15,
+      "coverage": "42.9",
+      "successfulMatches": 47,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "07",
+      "features": 59,
+      "totalStations": 116,
+      "stationAreas": 27,
+      "coverage": "45.8",
+      "successfulMatches": 116,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "08",
+      "features": 44,
+      "totalStations": 78,
+      "stationAreas": 18,
+      "coverage": "40.9",
+      "successfulMatches": 78,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "09",
+      "features": 25,
+      "totalStations": 92,
+      "stationAreas": 11,
+      "coverage": "44.0",
+      "successfulMatches": 92,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "10",
+      "features": 35,
+      "totalStations": 100,
+      "stationAreas": 20,
+      "coverage": "57.1",
+      "successfulMatches": 100,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "11",
+      "features": 62,
+      "totalStations": 133,
+      "stationAreas": 38,
+      "coverage": "61.3",
+      "successfulMatches": 133,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "12",
+      "features": 53,
+      "totalStations": 245,
+      "stationAreas": 43,
+      "coverage": "81.1",
+      "successfulMatches": 245,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "13",
+      "features": 62,
+      "totalStations": 445,
+      "stationAreas": 45,
+      "coverage": "72.6",
+      "successfulMatches": 445,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "14",
+      "features": 28,
+      "totalStations": 83,
+      "stationAreas": 16,
+      "coverage": "57.1",
+      "successfulMatches": 83,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "15",
+      "features": 29,
+      "totalStations": 72,
+      "stationAreas": 15,
+      "coverage": "51.7",
+      "successfulMatches": 72,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "16",
+      "features": 15,
+      "totalStations": 164,
+      "stationAreas": 12,
+      "coverage": "80.0",
+      "successfulMatches": 164,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "17",
+      "features": 19,
+      "totalStations": 68,
+      "stationAreas": 14,
+      "coverage": "73.7",
+      "successfulMatches": 68,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "18",
+      "features": 17,
+      "totalStations": 111,
+      "stationAreas": 14,
+      "coverage": "82.4",
+      "successfulMatches": 111,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "19",
+      "features": 26,
+      "totalStations": 47,
+      "stationAreas": 12,
+      "coverage": "46.2",
+      "successfulMatches": 47,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "20",
+      "features": 76,
+      "totalStations": 134,
+      "stationAreas": 31,
+      "coverage": "40.8",
+      "successfulMatches": 134,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "21",
+      "features": 41,
+      "totalStations": 130,
+      "stationAreas": 23,
+      "coverage": "56.1",
+      "successfulMatches": 130,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "22",
+      "features": 33,
+      "totalStations": 91,
+      "stationAreas": 16,
+      "coverage": "48.5",
+      "successfulMatches": 91,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "23",
+      "features": 53,
+      "totalStations": 214,
+      "stationAreas": 37,
+      "coverage": "69.8",
+      "successfulMatches": 214,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "24",
+      "features": 29,
+      "totalStations": 172,
+      "stationAreas": 24,
+      "coverage": "82.8",
+      "successfulMatches": 172,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "25",
+      "features": 19,
+      "totalStations": 97,
+      "stationAreas": 16,
+      "coverage": "84.2",
+      "successfulMatches": 97,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "26",
+      "features": 25,
+      "totalStations": 107,
+      "stationAreas": 19,
+      "coverage": "76.0",
+      "successfulMatches": 107,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "27",
+      "features": 41,
+      "totalStations": 161,
+      "stationAreas": 32,
+      "coverage": "78.0",
+      "successfulMatches": 161,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "28",
+      "features": 40,
+      "totalStations": 135,
+      "stationAreas": 25,
+      "coverage": "62.5",
+      "successfulMatches": 135,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "29",
+      "features": 39,
+      "totalStations": 80,
+      "stationAreas": 23,
+      "coverage": "59.0",
+      "successfulMatches": 80,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "30",
+      "features": 30,
+      "totalStations": 26,
+      "stationAreas": 4,
+      "coverage": "13.3",
+      "successfulMatches": 26,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "31",
+      "features": 19,
+      "totalStations": 42,
+      "stationAreas": 10,
+      "coverage": "52.6",
+      "successfulMatches": 42,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "32",
+      "features": 19,
+      "totalStations": 48,
+      "stationAreas": 6,
+      "coverage": "31.6",
+      "successfulMatches": 48,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "33",
+      "features": 26,
+      "totalStations": 43,
+      "stationAreas": 10,
+      "coverage": "38.5",
+      "successfulMatches": 43,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "34",
+      "features": 22,
+      "totalStations": 59,
+      "stationAreas": 10,
+      "coverage": "45.5",
+      "successfulMatches": 59,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "35",
+      "features": 19,
+      "totalStations": 60,
+      "stationAreas": 8,
+      "coverage": "42.1",
+      "successfulMatches": 60,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "36",
+      "features": 24,
+      "totalStations": 76,
+      "stationAreas": 15,
+      "coverage": "62.5",
+      "successfulMatches": 76,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "37",
+      "features": 17,
+      "totalStations": 75,
+      "stationAreas": 11,
+      "coverage": "64.7",
+      "successfulMatches": 75,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "38",
+      "features": 20,
+      "totalStations": 78,
+      "stationAreas": 9,
+      "coverage": "45.0",
+      "successfulMatches": 78,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "39",
+      "features": 34,
+      "totalStations": 112,
+      "stationAreas": 12,
+      "coverage": "35.3",
+      "successfulMatches": 112,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "40",
+      "features": 57,
+      "totalStations": 226,
+      "stationAreas": 48,
+      "coverage": "84.2",
+      "successfulMatches": 226,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "41",
+      "features": 20,
+      "totalStations": 66,
+      "stationAreas": 17,
+      "coverage": "85.0",
+      "successfulMatches": 66,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "42",
+      "features": 21,
+      "totalStations": 81,
+      "stationAreas": 9,
+      "coverage": "42.9",
+      "successfulMatches": 81,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "43",
+      "features": 44,
+      "totalStations": 79,
+      "stationAreas": 19,
+      "coverage": "43.2",
+      "successfulMatches": 79,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "44",
+      "features": 18,
+      "totalStations": 2,
+      "stationAreas": 1,
+      "coverage": "5.6",
+      "successfulMatches": 2,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "45",
+      "features": 26,
+      "totalStations": 40,
+      "stationAreas": 7,
+      "coverage": "26.9",
+      "successfulMatches": 40,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "46",
+      "features": 43,
+      "totalStations": 68,
+      "stationAreas": 4,
+      "coverage": "9.3",
+      "successfulMatches": 68,
+      "geometryErrors": 0
+    },
+    {
+      "prefCode": "47",
+      "features": 41,
+      "totalStations": 19,
+      "stationAreas": 2,
+      "coverage": "4.9",
+      "successfulMatches": 19,
+      "geometryErrors": 0
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "ok": true,
+  "verdict": "caution",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "直近5年の取引件数",
+      "value": "3227 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "1900 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "11.8%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "将来人口（2050推計）",
+      "value": "推計人口指数が 85 と減少傾向です。長期保有時の出口戦略に注意が必要です。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇がやや強めです。上昇の背景（再開発・利便性改善など）が継続するかを確認するのが安全です。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年で上昇が見られます。短期の上振れが含まれている可能性を前提にしてください。"
+    }
+  ],
+  "note": "データ基準日: 2024年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "天神",
+    "year": 2024,
+    "tx5y": 3227,
+    "yoy": 11.8,
+    "up2y": 11.8,
+    "prevYear": null,
+    "score": 51
+  },
+  "trendData": [
+    {
+      "year": 2020,
+      "price": 15000000,
+      "txCount": 390
+    },
+    {
+      "year": 2021,
+      "price": 16000000,
+      "txCount": 673
+    },
+    {
+      "year": 2022,
+      "price": 17000000,
+      "txCount": 717
+    },
+    {
+      "year": 2023,
+      "price": 17000000,
+      "txCount": 698
+    },
+    {
+      "year": 2024,
+      "price": 19000000,
+      "txCount": 749
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 85,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 100000,
+        "ageStructure": {
+          "0-14": 15000,
+          "15-64": 60000,
+          "65+": 25000
+        }
+      },
+      {
+        "year": 2030,
+        "total": 95000,
+        "ageStructure": {
+          "0-14": 13000,
+          "15-64": 55000,
+          "65+": 27000
+        }
+      },
+      {
+        "year": 2040,
+        "total": 90000,
+        "ageStructure": {
+          "0-14": 11000,
+          "15-64": 49000,
+          "65+": 30000
+        }
+      },
+      {
+        "year": 2050,
+        "total": 85000,
+        "ageStructure": {
+          "0-14": 9000,
+          "15-64": 44000,
+          "65+": 32000
+        }
+      }
+    ],
+    "sourceCity": "福岡市中央区"
+  },
+  "totalScore": 51,
+  "metrics": {
+    "asset": 22,
+    "safety": 100,
+    "future": 50,
+    "convenience": 15,
+    "liquidity": 63
+  },
+  "lines": [
+    {
+      "name": "福岡市空港線"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "id": "tenjin-1",
+      "station_name": "天神",
+      "project_name": "天神ビジネスセンター2期計画",
+      "search_keyword": "天神ビジネスセンター2期 竣工",
+      "category": "Redevelopment",
+      "schedule": "2026年6月竣工予定",
+      "description": "地上18階/88m。天神ビッグバンの先駆けとなった1期ビルを拡張。一体運用される巨大なオフィスフロアを提供し、クリエイティブ企業の集積を加速させる。",
+      "impact_level": 3,
+      "is_future": true,
+      "createdAt": "2024-02-16T13:30:00Z"
+    },
+    {
+      "id": "tenjin-2",
+      "station_name": "天神",
+      "project_name": "天神1-7計画 (イムズ建替え)",
+      "search_keyword": "イムズ建替え エースホテル福岡",
+      "category": "Redevelopment",
+      "schedule": "2027年5月竣工予定",
+      "description": "地上21階/91m。外装に木材を使用した「木造ハイブリッド高層ビル」。米エースホテルが九州初進出し、天神の新たな文化的アイコンとなる。",
+      "impact_level": 4,
+      "is_future": true,
+      "createdAt": "2024-02-16T13:30:00Z"
+    }
+  ],
+  "marketPrice": 17000000,
+  "tx5y": 3227,
+  "trend": "UP",
+  "yoy": 11.8,
+  "dataYear": 2024
+}

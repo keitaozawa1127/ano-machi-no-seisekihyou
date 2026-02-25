@@ -1,0 +1,226 @@
+{
+  "ok": true,
+  "verdict": "safe",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "直近5年の取引件数",
+      "value": "3286 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "4200 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "5.0%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "将来人口（2050推計）",
+      "value": "人口は維持・増加傾向（113）で、需要の底堅さが期待できます。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇は強くありません。将来の上昇を前提にした判断は避け、住み替え・保有期間の前提でリスクを見てください。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇が急で、短期的な反動（調整）リスクが高まります。購入検討では価格の納得感と資金余力を厚めに見てください。"
+    }
+  ],
+  "note": "データ基準日: 2024年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "横浜",
+    "year": 2024,
+    "tx5y": 3286,
+    "yoy": 5,
+    "up2y": 20,
+    "prevYear": null,
+    "score": 71
+  },
+  "trendData": [
+    {
+      "year": 2020,
+      "price": 28000000,
+      "txCount": 462
+    },
+    {
+      "year": 2021,
+      "price": 38000000,
+      "txCount": 714
+    },
+    {
+      "year": 2022,
+      "price": 35000000,
+      "txCount": 685
+    },
+    {
+      "year": 2023,
+      "price": 40000000,
+      "txCount": 683
+    },
+    {
+      "year": 2024,
+      "price": 42000000,
+      "txCount": 742
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 113,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 104000,
+        "ageStructure": {
+          "0-14": 10000,
+          "15-64": 70000,
+          "65+": 24000
+        }
+      },
+      {
+        "year": 2030,
+        "total": 110000,
+        "ageStructure": {
+          "0-14": 11000,
+          "15-64": 75000,
+          "65+": 24000
+        }
+      },
+      {
+        "year": 2040,
+        "total": 115000,
+        "ageStructure": {
+          "0-14": 12000,
+          "15-64": 78000,
+          "65+": 25000
+        }
+      },
+      {
+        "year": 2050,
+        "total": 118000,
+        "ageStructure": {
+          "0-14": 11000,
+          "15-64": 75000,
+          "65+": 32000
+        }
+      }
+    ],
+    "sourceCity": "横浜市西区"
+  },
+  "totalScore": 71,
+  "metrics": {
+    "asset": 42,
+    "safety": 100,
+    "future": 81,
+    "convenience": 80,
+    "liquidity": 64
+  },
+  "lines": [
+    {
+      "name": "JR京浜東北線"
+    },
+    {
+      "name": "JR東海道本線"
+    },
+    {
+      "name": "JR根岸線"
+    },
+    {
+      "name": "JR横須賀線"
+    },
+    {
+      "name": "JR湘南新宿ライン"
+    },
+    {
+      "name": "京浜急行本線"
+    },
+    {
+      "name": "東急東横線"
+    },
+    {
+      "name": "横浜みなとみらい線"
+    },
+    {
+      "name": "横浜市ブルーライン"
+    },
+    {
+      "name": "相模鉄道本線"
+    },
+    {
+      "name": "JR上野東京ライン"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "station_name": "横浜",
+      "project_name": "THE YOKOHAMA FRONT（横浜駅きた西口鶴屋地区）",
+      "category": "Redevelopment",
+      "schedule": "2024年6月商業開業済",
+      "description": "横浜駅直結、地上43階・高さ約178mの超高層複合タワー。高層部は高級レジデンス、低層部は商業施設、ホテル、サービスアパートメントが入居。",
+      "source_url": "https://the-yokohama-front.com/",
+      "verified_at": "2026-02-09T16:00:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "横浜",
+      "project_name": "北仲通北地区A-1・A-2地区プロジェクト",
+      "category": "Redevelopment",
+      "schedule": "2026年11月竣工予定",
+      "description": "大和地所と住友不動産による大規模開発。地上40階建てのタワーに、世界的高級ホテル「コンラッド横浜」（2027年開業）と高級賃貸「ラ・トゥール横浜」が進出。",
+      "source_url": "https://www.sumitomo-rd.co.jp/news/2024/20240410.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "横浜",
+      "project_name": "横浜市中区海岸通計画（横浜郵船ビル再開発）",
+      "category": "Redevelopment",
+      "schedule": "2027年1月竣工予定",
+      "description": "日本郵船・三菱地所・鹿島建設が推進。歴史的建造物「横浜郵船ビル」をホテルに改修し、隣接地に地上21階の複合ビルを建設。歴史と未来が融合。",
+      "source_url": "https://www.1201.yokohama/",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "横浜",
+      "project_name": "みなとみらい21中央地区52街区開発事業",
+      "category": "Redevelopment",
+      "schedule": "2027年5月竣工予定",
+      "description": "大和ハウス工業が推進。地上29階のオフィス棟と、世界初のゲームアートミュージアム棟を建設。地域熱供給プラントも併設する複合開発。",
+      "source_url": "https://www.daiwahouse.co.jp/about/release/20240222.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "横浜",
+      "project_name": "エキサイトよこはま22（横浜駅周辺大改造）",
+      "category": "Redevelopment",
+      "schedule": "進行中（長期計画）",
+      "description": "横浜駅周辺の国際化対応、環境対策、防災機能強化を目指す長期的なまちづくり計画。「THE YOKOHAMA FRONT」の開業など、着実に変貌を遂げつつある。",
+      "source_url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/toshiseibi/suishin/yokokikyoku.html",
+      "verified_at": "2026-02-10T14:30:00.000Z",
+      "impact_level": 5
+    }
+  ],
+  "marketPrice": 37000000,
+  "tx5y": 3286,
+  "trend": "UP",
+  "yoy": 5,
+  "dataYear": 2024
+}

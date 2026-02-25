@@ -1,0 +1,26 @@
+[
+    {
+        "id": "tamacenter-1",
+        "station_name": "多摩センター",
+        "project_name": "京王多摩センタービル建替計画",
+        "search_keyword": "京王プラザホテル多摩 跡地",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "旧京王プラザホテル多摩の跡地再開発。商業施設と分譲マンションからなる新ランドマーク。多摩ニュータウンの拠点を更新する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:00:00Z"
+    },
+    {
+        "id": "tamacenter-2",
+        "station_name": "多摩センター",
+        "project_name": "KDDI多摩センター第2ビル",
+        "search_keyword": "KDDI多摩センター第2ビル 概要",
+        "category": "Infrastructure",
+        "schedule": "2027年11月竣工予定",
+        "description": "地上8階/延床4.2万㎡。既存データセンター隣接地に建設される巨大通信局舎。AI時代を支える重要インフラ拠点。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:00:00Z"
+    }
+]

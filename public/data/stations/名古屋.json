@@ -1,0 +1,14 @@
+[
+    {
+        "id": "nagoya-1",
+        "station_name": "名古屋",
+        "project_name": "名鉄名古屋駅地区再開発 (全体計画見直し)",
+        "search_keyword": "名鉄名古屋駅再開発 延期 最新",
+        "category": "Redevelopment",
+        "schedule": "2030年代以降 (計画見直し中)",
+        "description": "地上30階程度/180m級。リニア延期に伴い計画を大幅修正。2026年度より解体着手し、南北400mの巨大ターミナルビルを段階的に整備する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:30:00Z"
+    }
+]

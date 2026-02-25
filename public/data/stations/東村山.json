@@ -1,0 +1,26 @@
+[
+    {
+        "id": "higashimurayama-1",
+        "station_name": "東村山",
+        "project_name": "東村山駅西口地区再開発 (駅直結タワー)",
+        "search_keyword": "東村山駅西口再開発 住友不動産",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上26階/98m。住友不動産による駅直結タワーマンション。高架化される新駅舎とデッキで直結し、東村山の新たなランドマークとなる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:30:00Z"
+    },
+    {
+        "id": "higashimurayama-2",
+        "station_name": "東村山",
+        "project_name": "西武線連続立体交差事業 (高架化)",
+        "search_keyword": "東村山駅 高架化 完了時期",
+        "category": "Infrastructure",
+        "schedule": "2025年6月(下り切替) / 2030年度完了予定",
+        "description": "西武新宿線等の高架化事業。5箇所の踏切を除去し、都市の分断を解消する。2025年6月の下り線高架化により、踏切遮断時間が大幅に短縮される。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:30:00Z"
+    }
+]

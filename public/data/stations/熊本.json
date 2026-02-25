@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kumamoto-1",
+        "station_name": "熊本",
+        "project_name": "MJR熊本ゲートタワー",
+        "search_keyword": "MJR熊本ゲートタワー 価格",
+        "category": "Mansion",
+        "schedule": "2026年2月竣工予定",
+        "description": "地上30階/108m。熊本駅白川口(東口)の新たなシンボルタワー。熊本城の石垣をモチーフにしたデザインで、駅前の景観を一新する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:00:00Z"
+    }
+]

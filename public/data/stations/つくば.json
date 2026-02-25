@@ -1,0 +1,14 @@
+[
+    {
+        "id": "tsukuba-1",
+        "station_name": "つくば",
+        "project_name": "(仮称)つくば市吾妻2丁目計画",
+        "search_keyword": "つくば市吾妻2丁目計画 マンション",
+        "category": "Mansion",
+        "schedule": "2030年1月竣工予定 (2027年着工)",
+        "description": "地上14階/延床約7.1万㎡。つくば駅至近の公務員宿舎跡地に建設されるTX沿線最大級の巨大レジデンス。総合地所・長谷工等が推進。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:50:00Z"
+    }
+]

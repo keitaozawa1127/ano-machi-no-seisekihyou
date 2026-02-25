@@ -1,0 +1,14 @@
+[
+    {
+        "id": "fujisawa-1",
+        "station_name": "藤沢",
+        "project_name": "藤沢駅南口391地区再開発",
+        "search_keyword": "藤沢駅南口再開発 名店ビル",
+        "category": "Redevelopment",
+        "schedule": "2031年竣工予定 (計画中)",
+        "description": "地上17階/80m。フジサワ名店ビル等の建替え。駅直結の「開かれた立体路地」を目指し、商業・業務・ホテルを整備。湘南の玄関口を一新する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T20:00:00Z"
+    }
+]

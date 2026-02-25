@@ -1,0 +1,14 @@
+[
+    {
+        "id": "yumeshima-1",
+        "station_name": "夢洲",
+        "project_name": "大阪IR (統合型リゾート)",
+        "search_keyword": "大阪IR 開業時期",
+        "category": "Redevelopment",
+        "schedule": "2030年秋頃開業予定",
+        "description": "MGM・オリックス連合による日本初のカジノを含む統合型リゾート。国際会議場、展示場、ホテル等が集積し、関西経済の起爆剤となる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    }
+]

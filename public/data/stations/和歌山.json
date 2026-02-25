@@ -1,0 +1,14 @@
+[
+    {
+        "id": "wakayama-1",
+        "station_name": "和歌山",
+        "project_name": "和歌山駅前友田町3丁目再開発",
+        "search_keyword": "和歌山駅前友田町3丁目再開発",
+        "category": "Redevelopment",
+        "schedule": "2031年度竣工予定",
+        "description": "地上20階級/81m。JR和歌山駅前の老朽密集地を更新。商業・業務・ホテルに加え、図書館等の文化機能導入も検討される複合ビル計画。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:50:00Z"
+    }
+]

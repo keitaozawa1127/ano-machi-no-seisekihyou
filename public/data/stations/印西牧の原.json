@@ -1,0 +1,14 @@
+[
+    {
+        "id": "inzaimakinohara-1",
+        "station_name": "印西牧の原",
+        "project_name": "印西牧の原データセンター群",
+        "search_keyword": "印西牧の原 データセンター 求人",
+        "category": "Infrastructure",
+        "schedule": "2026年以降順次稼働",
+        "description": "大和ハウス(DPDC)やAirTrunk等が建設する巨大DC群。最新のAI需要に対応したハイパースケールDCが続々と稼働。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T18:05:00Z"
+    }
+]

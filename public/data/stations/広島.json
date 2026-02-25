@@ -1,0 +1,38 @@
+[
+    {
+        "id": "hiroshima-1",
+        "station_name": "広島",
+        "project_name": "KAMIHACHI X (基町相生通地区)",
+        "search_keyword": "カミハチクロス 広島",
+        "category": "Redevelopment",
+        "schedule": "2027年度竣工予定",
+        "description": "地上31階/160m。紙屋町・八丁堀エリア再生の起爆剤。変電所跡地等を活用した超高層ビル。高層部にホテル、中層部にオフィスを整備。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    },
+    {
+        "id": "hiroshima-2",
+        "station_name": "広島",
+        "project_name": "(仮称)広島駅北口計画 (二葉の里)",
+        "search_keyword": "広島駅北口 住友不動産 タワー",
+        "category": "Redevelopment",
+        "schedule": "2029年4月竣工予定 (2026年着工)",
+        "description": "地上31階/124m。広島駅北口(二葉の里)の大規模プロジェクト。住友不動産による住宅・ホテル・温浴施設・オフィスを含む複合タワー。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    },
+    {
+        "id": "hiroshima-3",
+        "station_name": "広島",
+        "project_name": "広島八丁堀3・7地区再開発",
+        "search_keyword": "広島八丁堀再開発 計画",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上28階等/3棟構成。八丁堀交差点近く。老朽ビル群を一体建替えし、都心居住と業務機能を強化する大規模再開発。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    }
+]

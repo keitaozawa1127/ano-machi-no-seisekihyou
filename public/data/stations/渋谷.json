@@ -1,0 +1,98 @@
+[
+    {
+        "id": "shibuya-1",
+        "station_name": "渋谷",
+        "project_name": "渋谷スクランブルスクエア第II期",
+        "search_keyword": "渋谷スクランブルスクエア第2期 竣工時期",
+        "category": "Infrastructure",
+        "schedule": "2034年度竣工予定",
+        "description": "地上13階、高さ約76m。JR渋谷駅真上の最終ピース。中央棟・西棟が完成することで、全線を重層的に繋ぐ歩行者ネットワークの「ハブ」が完成し、駅の乗り換え利便性が極限まで高まる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shibuya-2",
+        "station_name": "渋谷",
+        "project_name": "渋谷二丁目西地区再開発",
+        "search_keyword": "渋谷二丁目西地区再開発",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上41階、高さ約208m。国道246号沿いに位置し、大規模な地下バスターミナルを整備。青山通り周辺の歩行環境を改善し、渋谷の新たな東の玄関口を形成する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shibuya-3",
+        "station_name": "渋谷",
+        "project_name": "道玄坂二丁目南地区再開発",
+        "search_keyword": "道玄坂二丁目南地区再開発 三菱地所",
+        "category": "Redevelopment",
+        "schedule": "2027年2月竣工予定",
+        "description": "地上30階 / 約155m。京王井の頭線渋谷駅直結。ラグジュアリーホテル（TRUNK(HOTEL)）を導入。道玄坂の街路と連動した立体的な広場を整備し、滞在性を大幅に向上させる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shibuya-4",
+        "station_name": "渋谷",
+        "project_name": "Shibuya Upper West Project",
+        "search_keyword": "Shibuya Upper West Project",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上36階、高さ約164m。旧東急百貨店本店跡地。Bunkamuraと一体化し、上質な居住・宿泊・商業機能を提供。松濤の閑静な住宅街と駅前商業地を繋ぐ文化的な結節点となる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shibuya-5",
+        "station_name": "渋谷",
+        "project_name": "宮益坂地区再開発",
+        "search_keyword": "宮益坂地区再開発",
+        "category": "Redevelopment",
+        "schedule": "2031年度竣工予定",
+        "description": "地上33階、高さ約180m。宮益坂の急勾配を解消する屋内動線を整備。表参道方面への歩行をスムーズにし、緑豊かな屋上庭園や高度なオフィス環境を駅前に創出する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shibuya-6",
+        "station_name": "渋谷",
+        "project_name": "渋谷二丁目22地区再開発",
+        "search_keyword": "渋谷二丁目22地区再開発",
+        "category": "Redevelopment",
+        "schedule": "2031年度竣工予定",
+        "description": "地上24階、高さ約160m。青山通り沿いの再構築。歩道拡幅と街路樹整備により歩行環境を改善。スタートアップを支える多様なオフィスと、教育・研究連携機能を備える。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shibuya-7",
+        "station_name": "渋谷",
+        "project_name": "（仮称）MITAKE Link Park",
+        "search_keyword": "MITAKE Link Park 渋谷",
+        "category": "Commercial",
+        "schedule": "2027年度竣工予定",
+        "description": "地上14階、高さ約61m。MIYASHITA PARK北側に位置。建物内にテラスや広場を配置。神南エリアの回遊性の起点となり、若手クリエイターを支えるワークスペースを供給する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shibuya-8",
+        "station_name": "渋谷",
+        "project_name": "Shibuya Upper West Project (東急百貨店本店跡地)",
+        "search_keyword": "Shibuya Upper West Project 開業",
+        "category": "Redevelopment",
+        "schedule": "2027年度竣工予定",
+        "description": "地上36階/164m。東急百貨店本店跡地。Bunkamuraと融合し、世界的なラグジュアリーホテル「The House Collective」が進出。奥渋谷の新たな顔となる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:30:00Z"
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "id": "sapporo-1",
+        "station_name": "札幌",
+        "project_name": "SAPPORO ONE (大通西4南地区)",
+        "search_keyword": "SAPPORO ONE パークハイアット",
+        "category": "Redevelopment",
+        "schedule": "2029年8月竣工予定",
+        "description": "地上34階/185m。大通公園に面した新たなランドマーク。最高級ホテル「パーク ハイアット 札幌」が入居し、札幌の国際競争力を高める。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    },
+    {
+        "id": "sapporo-2",
+        "station_name": "札幌",
+        "project_name": "札幌駅南口北4西3地区 (ヨドバシタワー)",
+        "search_keyword": "札幌駅北4西3再開発 ヨドバシ",
+        "category": "Redevelopment",
+        "schedule": "2028年7月竣工予定",
+        "description": "地上35階/約200m。札幌西武跡地。ヨドバシカメラを核にオフィス・ホテルが入る巨大複合ビル。札幌駅前の新たな顔となる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    },
+    {
+        "id": "sapporo-3",
+        "station_name": "札幌",
+        "project_name": "札幌ダイビル (PIVOT跡地)",
+        "search_keyword": "札幌ダイビル トランクホテル",
+        "category": "Redevelopment",
+        "schedule": "2027年1月竣工予定",
+        "description": "地上19階/94m。ファッションビル「PIVOT」等の跡地。トランクホテル(TRUNK)・オフィス・商業の複合ビル。大通駅直結。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    }
+]

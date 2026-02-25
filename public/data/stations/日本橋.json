@@ -1,0 +1,26 @@
+[
+    {
+        "id": "nihonbashi-1",
+        "station_name": "日本橋",
+        "project_name": "日本橋一丁目中地区再開発",
+        "search_keyword": "日本橋一丁目中地区 ウォルドーフ・アストリア",
+        "category": "Redevelopment",
+        "schedule": "2026年3月竣工予定",
+        "description": "地上52階、高さ284m。東京駅東側エリア最高層級。名門ホテル「ウォルドーフ・アストリア」が進出。首都高地下化を見据え、日本橋川沿いの親水空間を再生する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+        "id": "nihonbashi-2",
+        "station_name": "日本橋",
+        "project_name": "日本橋一丁目東地区再開発",
+        "search_keyword": "日本橋一丁目東地区再開発 計画",
+        "category": "Redevelopment",
+        "schedule": "2032年度以降順次竣工予定",
+        "description": "地上51階/213mなど計5街区。日本橋郵便局周辺の広域再開発。日本橋川の「空を取り戻す」首都高地下化事業と一体化し、水辺のプロムナードと超高層群を創出する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    }
+]

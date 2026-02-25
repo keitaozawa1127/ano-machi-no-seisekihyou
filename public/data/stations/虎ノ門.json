@@ -1,0 +1,26 @@
+[
+    {
+        "id": "toranomon-1",
+        "station_name": "虎ノ門",
+        "project_name": "TORANOGATE (虎ノ門一丁目東地区)",
+        "search_keyword": "TORANOGATE 虎ノ門 竣工",
+        "category": "Redevelopment",
+        "schedule": "2027年10月竣工予定",
+        "description": "地上29階/171m。虎ノ門駅直結の「イノベーション・ゲートウェイ」。官民連携のビジネス創出拠点や、緑豊かな「Live Architecture」を特徴とする。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:00:00Z"
+    },
+    {
+        "id": "toranomon-2",
+        "station_name": "虎ノ門",
+        "project_name": "赤坂二・六丁目地区開発 (赤坂エンタテインメント・シティ)",
+        "search_keyword": "赤坂二・六丁目地区開発 TBS",
+        "category": "Redevelopment",
+        "schedule": "2028年3月竣工予定",
+        "description": "地上40階/207m。TBSと三菱地所による街づくり。最新の劇場・ホールやホテル、インキュベーション施設を整備し、世界へ向けた文化発信拠点を築く。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:00:00Z"
+    }
+]

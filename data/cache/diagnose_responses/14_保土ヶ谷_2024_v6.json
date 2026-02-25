@@ -1,0 +1,139 @@
+{
+  "ok": true,
+  "verdict": "risky",
+  "headline": "市場価格は概ね安定して推移しています",
+  "reasons": [
+    {
+      "label": "直近5年の取引件数",
+      "value": "3497 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "3000 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "-6.3%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "将来人口（2050推計）",
+      "value": "推計人口指数が 0 と低く、過疎化による流動性低下のリスクがあります。"
+    },
+    {
+      "label": "災害リスク（水害）",
+      "value": "中程度の水害リスクがあります。階数選択や避難計画の確認を推奨します。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇は強くありません。将来の上昇を前提にした判断は避け、住み替え・保有期間の前提でリスクを見てください。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇は急ではありません。ただし横ばい＝安全の保証ではなく、金利や需給で変動し得ます。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "保土ヶ谷",
+    "year": 2024,
+    "tx5y": 3497,
+    "yoy": -6.3,
+    "up2y": 0,
+    "prevYear": null,
+    "score": 44
+  },
+  "trendData": [
+    {
+      "year": 2021,
+      "price": 30000000,
+      "txCount": 794
+    },
+    {
+      "year": 2022,
+      "price": 29000000,
+      "txCount": 684
+    },
+    {
+      "year": 2023,
+      "price": 30000000,
+      "txCount": 686
+    },
+    {
+      "year": 2024,
+      "price": 32000000,
+      "txCount": 737
+    },
+    {
+      "year": 2025,
+      "price": 30000000,
+      "txCount": 596
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 0,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    }
+  },
+  "totalScore": 44,
+  "metrics": {
+    "asset": 30,
+    "safety": 70,
+    "future": 25,
+    "convenience": 24,
+    "liquidity": 66
+  },
+  "lines": [
+    {
+      "name": "JR横須賀線"
+    },
+    {
+      "name": "JR湘南新宿ライン"
+    }
+  ],
+  "redevelopmentProjects": [],
+  "marketPrice": 30000000,
+  "tx5y": 3497,
+  "trend": "FLAT",
+  "yoy": -6.3,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "name": "国土交通省「不動産取引価格情報」",
+        "year": 2025
+      },
+      "population": {
+        "name": "国立社会保障・人口問題研究所「日本の地域別将来推計人口」",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "name": "自社独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "name": "国土交通省 ハザードマップポータルサイト（国土地理院推計）",
+        "year": 2026
+      },
+      "redevelopment": {
+        "name": "各自治体開発事業者 公開情報",
+        "version": "2026年2月版"
+      }
+    }
+  }
+}

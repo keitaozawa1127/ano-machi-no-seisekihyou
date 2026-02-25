@@ -1,0 +1,94 @@
+﻿Total projects: 38
+
+笶・[1] TOFROM YAESU・域擲莠ｬ鬧・燕蜈ｫ驥肴ｴｲ荳荳∫岼譚ｱ蝨ｰ蛹ｺ・・ 403 - https://www.tatemono.com/pj/tofrom_yaesu/
+笶・[11] Shibuya Sakura Stage・域ｸ玖ｰｷ繧ｵ繧ｯ繝ｩ繧ｹ繝・・繧ｸ・・ ERROR - getaddrinfo ENOTFOUND shibuya-sakurastage.com - https://shibuya-sakurastage.com/
+笨・[2] 譌･譛ｬ讖倶ｸ荳∫岼荳ｭ蝨ｰ蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: 200
+笶・[6] 譁ｰ螳ｿ鬧・･ｿ蜿｣蝨ｰ蛹ｺ髢狗匱險育判: 404 - https://www.odakyu.jp/ge/development/shinjuku_new_development/
+笨・[5] 譁ｰ螳ｿ鬧・峩霑大慍蛹ｺ蝨溷慍蛹ｺ逕ｻ謨ｴ逅・ｺ区･ｭ・域眠螳ｿ繧ｰ繝ｩ繝ｳ繝峨ち繝ｼ繝溘リ繝ｫ・・ 301
+笶・[3] 蜈ｫ驥肴ｴｲ莠御ｸ∫岼荳ｭ蝨ｰ蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: 404 - https://www.mitsuifudosan.co.jp/corporate/news/2024/0808/
+笨・[8] 譚ｱ諤･豁瑚・莨守伴繧ｿ繝ｯ繝ｼ: 301
+笨・[12] 貂玖ｰｷ繧｢繧ｯ繧ｷ繝･・・HIBUYA AXSH・・ 301
+笨・[10] 貂玖ｰｷ繧ｹ繧ｯ繝ｩ繝ｳ繝悶Ν繧ｹ繧ｯ繧ｨ繧｢・井ｸｭ螟ｮ譽溘・隘ｿ譽滂ｼ・ 200
+笶・[7] 譁ｰ螳ｿ鬧・･ｿ蜊怜哨蝨ｰ蛹ｺ髢狗匱險育判: 404 - https://www.keio.co.jp/company/development/shinjuku_southwest/
+笶・[13] 驕鍋私蝮ゆｺ御ｸ∫岼蜊怜慍蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: 404 - https://www.mitsuifudosan.co.jp/project/redevelopment/shibuya_dogenzaka/
+笨・[17] IKE繝ｻSUNPARK・医→縺励∪繧ｭ繝・ぜ繝代・繧ｯ・・ 200
+笨・[14] 貂玖ｰｷ繝槭Ν繧､・域惠騾蝠・･ｭ譁ｽ險ｭ蜀埼幕逋ｺ・・ 301
+笨・[18] 譚ｱ莠ｬ蝗ｽ髫帛､ｧ蟄ｦ 豎陲九く繝｣繝ｳ繝代せ: 200
+笶・[21] 讓ｪ豬懷ｸゆｸｭ蛹ｺ豬ｷ蟯ｸ騾夊ｨ育判・域ｨｪ豬憺Ψ闊ｹ繝薙Ν蜀埼幕逋ｺ・・ 404 - https://www.nyk.com/news/2024/20240501_01.html
+笶・[15] 豎陲矩ｧ・･ｿ蜿｣蝨ｰ蛹ｺ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: 404 - https://www.city.toshima.lg.jp/050/machizukuri/ikebukuro/1804121029.html
+笨・[16] 蜊玲ｱ陲倶ｺ御ｸ∫岼C蝨ｰ蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: 200
+笶・[20] 繧ｨ繧ｭ繧ｵ繧､繝医ｈ縺薙・縺ｾ22・域ｨｪ豬憺ｧ・捉霎ｺ螟ｧ謾ｹ騾・・ 404 - https://www.city.yokohama.lg.jp/kurashi/machizukuri-toshiseibi/toshiseibi/suishin/yokokikyoku.html
+笶・[30] KITTE螟ｧ髦ｪ・・P繧ｿ繝ｯ繝ｼ螟ｧ髦ｪ・・ ERROR - getaddrinfo ENOTFOUND jp-kitte.jp - https://jp-kitte.jp/
+笶・[22] 縺ｿ縺ｪ縺ｨ縺ｿ繧峨＞21荳ｭ螟ｮ蝨ｰ蛹ｺ52陦怜玄髢狗匱莠区･ｭ: 403 - https://www.daiwahouse.co.jp/business/develop/mm21_52/
+笨・[27] 蜩∝ｷ晞ｧ・･ｿ蜿｣蝨ｰ蛹ｺ蜀埼幕逋ｺ・磯ｫ倩ｼｪ荳我ｸ∫岼繝ｻ蝗帑ｸ∫岼・・ 301
+笶・[23] 蛹嶺ｻｲ騾壼圏蝨ｰ蛹ｺA-1繝ｻA-2蝨ｰ蛹ｺ繝励Ο繧ｸ繧ｧ繧ｯ繝・ 404 - https://www.mec.co.jp/j/news/archives/mec201208_kitanaka.pdf
+笨・[26] 繝ｪ繝九い荳ｭ螟ｮ譁ｰ蟷ｹ邱・蜩∝ｷ晞ｧ・眠險ｭ: 200
+笶・[25] 莠ｬ諤･蜩∝ｷ晞ｧ・・鬧・ン繝ｫ蜀埼幕逋ｺ・亥刀蟾晞幕逋ｺ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ・ 404 - https://www.keikyu.co.jp/company/news/2022/20221129HP_22221KK.html
+笨・[32] 繝ｪ繝九い荳ｭ螟ｮ譁ｰ蟷ｹ邱・蜷榊商螻矩ｧ・眠險ｭ蟾･蛹ｺ: 200
+笨・[24] 鬮倩ｼｪ繧ｲ繝ｼ繝医え繧ｧ繧､繧ｷ繝・ぅ・・AK ANAWA GATEWAY CITY・・ 200
+笨・[9] 譁ｰ螳ｿ荳ｭ螟ｮ蜈ｬ蝨貞・謨ｴ蛯呻ｼ・ark-PFI・・ 200
+笨・[31] 螟ｧ髦ｪ譴・伐繝・う繝ｳ繧ｿ繝ｯ繝ｼ繧ｺ・医し繧ｦ繧ｹ繝ｻ繝弱・繧ｹ・・ 301
+笶・[36] 遖丞ｲ｡蟶ょ慍荳矩延荳・嚠邱・蜊壼､夐ｧ・ｻｶ莨ｸ: 404 - https://subway.city.fukuoka.lg.jp/subway_info/enchosen.html
+笨・[34] 荳ｭ譌･繝薙Ν・亥ｻｺ縺ｦ譖ｿ縺茨ｼ・ 200
+笨・[33] 蜷埼延蜷榊商螻矩ｧ・慍蛹ｺ蜀埼幕逋ｺ險育判: 200
+笨・[0] TOKYO TORCH / Torch Tower: 200
+笶・[4] 驛ｽ蠢・・閾ｨ豬ｷ蝨ｰ荳矩延譁ｰ邱・ 404 - https://www.toshiseibi.metro.tokyo.lg.jp/bunyabetsu/kotsu_logistics/toshinkousou.html
+笶・[35] 蜊壼､壹さ繝阪け繝・ぅ繝・ラ・・akata Connected・・ 404 - https://www.city.fukuoka.lg.jp/jutaku-toshi/toshikekaku/mirai/hakataconnected.html
+笨・[37] 蜊壼､夐ｧ・ｩｺ荳ｭ驛ｽ蟶ゅ・繝ｭ繧ｸ繧ｧ繧ｯ繝・ 200
+笶・[29] 縺ｪ縺ｫ繧冗ｭ狗ｷ夲ｼ域眠螟ｧ髦ｪ縲憺未隘ｿ遨ｺ貂ｯ繧｢繧ｯ繧ｻ繧ｹ・・ 404 - https://www.kr-railway.co.jp/naniwasujisen/
+笨・[28] 繧ｰ繝ｩ繝ｳ繧ｰ繝ｪ繝ｼ繝ｳ螟ｧ髦ｪ・医≧繧√″縺・譛滂ｼ・ 200
+笨・[19] THE YOKOHAMA FRONT・域ｨｪ豬憺ｧ・″縺溯･ｿ蜿｣鮓ｴ螻句慍蛹ｺ・・ 301
+
+===== SUMMARY =====
+Total checked: 38
+Errors: 17
+Success rate: 55.3%
+
+===== ERRORS (17) =====
+[1] TOFROM YAESU・域擲莠ｬ鬧・燕蜈ｫ驥肴ｴｲ荳荳∫岼譚ｱ蝨ｰ蛹ｺ・・ 403 - https://www.tatemono.com/pj/tofrom_yaesu/
+[11] Shibuya Sakura Stage・域ｸ玖ｰｷ繧ｵ繧ｯ繝ｩ繧ｹ繝・・繧ｸ・・ ERROR - getaddrinfo ENOTFOUND shibuya-sakurastage.com - https://shibuya-sakurastage.com/
+[6] 譁ｰ螳ｿ鬧・･ｿ蜿｣蝨ｰ蛹ｺ髢狗匱險育判: 404 - https://www.odakyu.jp/ge/development/shinjuku_new_development/
+[3] 蜈ｫ驥肴ｴｲ莠御ｸ∫岼荳ｭ蝨ｰ蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: 404 - https://www.mitsuifudosan.co.jp/corporate/news/2024/0808/
+[7] 譁ｰ螳ｿ鬧・･ｿ蜊怜哨蝨ｰ蛹ｺ髢狗匱險育判: 404 - https://www.keio.co.jp/company/development/shinjuku_southwest/
+[13] 驕鍋私蝮ゆｺ御ｸ∫岼蜊怜慍蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: 404 - https://www.mitsuifudosan.co.jp/project/redevelopment/shibuya_dogenzaka/
+[21] 讓ｪ豬懷ｸゆｸｭ蛹ｺ豬ｷ蟯ｸ騾夊ｨ育判・域ｨｪ豬憺Ψ闊ｹ繝薙Ν蜀埼幕逋ｺ・・ 404 - https://www.nyk.com/news/2024/20240501_01.html
+[15] 豎陲矩ｧ・･ｿ蜿｣蝨ｰ蛹ｺ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: 404 - https://www.city.toshima.lg.jp/050/machizukuri/ikebukuro/1804121029.html
+[20] 繧ｨ繧ｭ繧ｵ繧､繝医ｈ縺薙・縺ｾ22・域ｨｪ豬憺ｧ・捉霎ｺ螟ｧ謾ｹ騾・・ 404 - https://www.city.yokohama.lg.jp/kurashi/machizukuri-toshiseibi/toshiseibi/suishin/yokokikyoku.html
+[30] KITTE螟ｧ髦ｪ・・P繧ｿ繝ｯ繝ｼ螟ｧ髦ｪ・・ ERROR - getaddrinfo ENOTFOUND jp-kitte.jp - https://jp-kitte.jp/
+[22] 縺ｿ縺ｪ縺ｨ縺ｿ繧峨＞21荳ｭ螟ｮ蝨ｰ蛹ｺ52陦怜玄髢狗匱莠区･ｭ: 403 - https://www.daiwahouse.co.jp/business/develop/mm21_52/
+[23] 蛹嶺ｻｲ騾壼圏蝨ｰ蛹ｺA-1繝ｻA-2蝨ｰ蛹ｺ繝励Ο繧ｸ繧ｧ繧ｯ繝・ 404 - https://www.mec.co.jp/j/news/archives/mec201208_kitanaka.pdf
+[25] 莠ｬ諤･蜩∝ｷ晞ｧ・・鬧・ン繝ｫ蜀埼幕逋ｺ・亥刀蟾晞幕逋ｺ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ・ 404 - https://www.keikyu.co.jp/company/news/2022/20221129HP_22221KK.html
+[36] 遖丞ｲ｡蟶ょ慍荳矩延荳・嚠邱・蜊壼､夐ｧ・ｻｶ莨ｸ: 404 - https://subway.city.fukuoka.lg.jp/subway_info/enchosen.html
+[4] 驛ｽ蠢・・閾ｨ豬ｷ蝨ｰ荳矩延譁ｰ邱・ 404 - https://www.toshiseibi.metro.tokyo.lg.jp/bunyabetsu/kotsu_logistics/toshinkousou.html
+[35] 蜊壼､壹さ繝阪け繝・ぅ繝・ラ・・akata Connected・・ 404 - https://www.city.fukuoka.lg.jp/jutaku-toshi/toshikekaku/mirai/hakataconnected.html
+[29] 縺ｪ縺ｫ繧冗ｭ狗ｷ夲ｼ域眠螟ｧ髦ｪ縲憺未隘ｿ遨ｺ貂ｯ繧｢繧ｯ繧ｻ繧ｹ・・ 404 - https://www.kr-railway.co.jp/naniwasujisen/
+笶・[1] TOFROM YAESU・域擲莠ｬ鬧・燕蜈ｫ驥肴ｴｲ荳荳∫岼譚ｱ蝨ｰ蛹ｺ・・ TIMEOUT - https://www.tatemono.com/pj/tofrom_yaesu/
+笶・[2] 譌･譛ｬ讖倶ｸ荳∫岼荳ｭ蝨ｰ蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: TIMEOUT - https://www.mitsuifudosan.co.jp/corporate/news/2021/1207_01/
+笶・[6] 譁ｰ螳ｿ鬧・･ｿ蜿｣蝨ｰ蛹ｺ髢狗匱險育判: TIMEOUT - https://www.odakyu.jp/ge/development/shinjuku_new_development/
+笶・[5] 譁ｰ螳ｿ鬧・峩霑大慍蛹ｺ蝨溷慍蛹ｺ逕ｻ謨ｴ逅・ｺ区･ｭ・域眠螳ｿ繧ｰ繝ｩ繝ｳ繝峨ち繝ｼ繝溘リ繝ｫ・・ TIMEOUT - https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2022/07/29/14.html
+笶・[3] 蜈ｫ驥肴ｴｲ莠御ｸ∫岼荳ｭ蝨ｰ蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: TIMEOUT - https://www.mitsuifudosan.co.jp/corporate/news/2024/0808/
+笶・[8] 譚ｱ諤･豁瑚・莨守伴繧ｿ繝ｯ繝ｼ: TIMEOUT - https://www.tokyu.co.jp/company/news/list/Pid=post_516.html
+笶・[10] 貂玖ｰｷ繧ｹ繧ｯ繝ｩ繝ｳ繝悶Ν繧ｹ繧ｯ繧ｨ繧｢・井ｸｭ螟ｮ譽溘・隘ｿ譽滂ｼ・ TIMEOUT - https://www.shibuya-scramble-square.com/
+笶・[7] 譁ｰ螳ｿ鬧・･ｿ蜊怜哨蝨ｰ蛹ｺ髢狗匱險育判: TIMEOUT - https://www.keio.co.jp/company/development/shinjuku_southwest/
+笶・[13] 驕鍋私蝮ゆｺ御ｸ∫岼蜊怜慍蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: TIMEOUT - https://www.mitsuifudosan.co.jp/project/redevelopment/shibuya_dogenzaka/
+笶・[17] IKE繝ｻSUNPARK・医→縺励∪繧ｭ繝・ぜ繝代・繧ｯ・・ TIMEOUT - https://ikesunpark.jp/
+笶・[14] 貂玖ｰｷ繝槭Ν繧､・域惠騾蝠・･ｭ譁ｽ險ｭ蜀埼幕逋ｺ・・ TIMEOUT - https://www.0101maruigroup.co.jp/sustainability/theme03/action02.html
+笶・[18] 譚ｱ莠ｬ蝗ｽ髫帛､ｧ蟄ｦ 豎陲九く繝｣繝ｳ繝代せ: TIMEOUT - https://www.tiu.ac.jp/campus/ikebukuro/
+笶・[21] 讓ｪ豬懷ｸゆｸｭ蛹ｺ豬ｷ蟯ｸ騾夊ｨ育判・域ｨｪ豬憺Ψ闊ｹ繝薙Ν蜀埼幕逋ｺ・・ TIMEOUT - https://www.nyk.com/news/2024/20240501_01.html
+笶・[15] 豎陲矩ｧ・･ｿ蜿｣蝨ｰ蛹ｺ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: TIMEOUT - https://www.city.toshima.lg.jp/050/machizukuri/ikebukuro/1804121029.html
+笶・[16] 蜊玲ｱ陲倶ｺ御ｸ∫岼C蝨ｰ蛹ｺ隨ｬ荳遞ｮ蟶り｡怜慍蜀埼幕逋ｺ莠区･ｭ: TIMEOUT - https://www.sumitomo-rd-mansion.jp/shuto/ikebukuro/
+笶・[20] 繧ｨ繧ｭ繧ｵ繧､繝医ｈ縺薙・縺ｾ22・域ｨｪ豬憺ｧ・捉霎ｺ螟ｧ謾ｹ騾・・ TIMEOUT - https://www.city.yokohama.lg.jp/kurashi/machizukuri-toshiseibi/toshiseibi/suishin/yokokikyoku.html
+笶・[27] 蜩∝ｷ晞ｧ・･ｿ蜿｣蝨ｰ蛹ｺ蜀埼幕逋ｺ・磯ｫ倩ｼｪ荳我ｸ∫岼繝ｻ蝗帑ｸ∫岼・・ TIMEOUT - https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2024/04/25/11.html
+笶・[23] 蛹嶺ｻｲ騾壼圏蝨ｰ蛹ｺA-1繝ｻA-2蝨ｰ蛹ｺ繝励Ο繧ｸ繧ｧ繧ｯ繝・ TIMEOUT - https://www.mec.co.jp/j/news/archives/mec201208_kitanaka.pdf
+笶・[26] 繝ｪ繝九い荳ｭ螟ｮ譁ｰ蟷ｹ邱・蜩∝ｷ晞ｧ・眠險ｭ: TIMEOUT - https://company.jr-central.co.jp/chuoshinkansen/
+笶・[25] 莠ｬ諤･蜩∝ｷ晞ｧ・・鬧・ン繝ｫ蜀埼幕逋ｺ・亥刀蟾晞幕逋ｺ繝励Ο繧ｸ繧ｧ繧ｯ繝茨ｼ・ TIMEOUT - https://www.keikyu.co.jp/company/news/2022/20221129HP_22221KK.html
+笶・[32] 繝ｪ繝九い荳ｭ螟ｮ譁ｰ蟷ｹ邱・蜷榊商螻矩ｧ・眠險ｭ蟾･蛹ｺ: TIMEOUT - https://company.jr-central.co.jp/chuoshinkansen/
+笶・[31] 螟ｧ髦ｪ譴・伐繝・う繝ｳ繧ｿ繝ｯ繝ｼ繧ｺ・医し繧ｦ繧ｹ繝ｻ繝弱・繧ｹ・・ TIMEOUT - https://www.h2o-retailing.co.jp/
+笶・[36] 遖丞ｲ｡蟶ょ慍荳矩延荳・嚠邱・蜊壼､夐ｧ・ｻｶ莨ｸ: TIMEOUT - https://subway.city.fukuoka.lg.jp/subway_info/enchosen.html
+笶・[33] 蜷埼延蜷榊商螻矩ｧ・慍蛹ｺ蜀埼幕逋ｺ險育判: TIMEOUT - https://www.meitetsu.co.jp/profile/news/2016/1208937_1175.html
+笶・[0] TOKYO TORCH / Torch Tower: TIMEOUT - https://tokyotorch.mec.co.jp/
+笶・[4] 驛ｽ蠢・・閾ｨ豬ｷ蝨ｰ荳矩延譁ｰ邱・ TIMEOUT - https://www.toshiseibi.metro.tokyo.lg.jp/bunyabetsu/kotsu_logistics/toshinkousou.html
+笶・[35] 蜊壼､壹さ繝阪け繝・ぅ繝・ラ・・akata Connected・・ TIMEOUT - https://www.city.fukuoka.lg.jp/jutaku-toshi/toshikekaku/mirai/hakataconnected.html
+笶・[37] 蜊壼､夐ｧ・ｩｺ荳ｭ驛ｽ蟶ゅ・繝ｭ繧ｸ繧ｧ繧ｯ繝・ TIMEOUT - https://www.city.fukuoka.lg.jp/
+笶・[28] 繧ｰ繝ｩ繝ｳ繧ｰ繝ｪ繝ｼ繝ｳ螟ｧ髦ｪ・医≧繧√″縺・譛滂ｼ・ TIMEOUT - https://umekita.com/
+笶・[19] THE YOKOHAMA FRONT・域ｨｪ豬憺ｧ・″縺溯･ｿ蜿｣鮓ｴ螻句慍蛹ｺ・・ TIMEOUT - https://the-yokohama-front.com/

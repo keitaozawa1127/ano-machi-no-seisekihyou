@@ -1,0 +1,182 @@
+[
+    {
+        "station_name": "新宿",
+        "project_name": "新宿駅周辺プロジェクト",
+        "category": "Infrastructure",
+        "schedule": "2046年度完了予定",
+        "description": "東西自由通路が開通し、西口改札と東口改札の行き来が約5分から1分へ劇的に短縮されました。駅周辺の再編整備により、防災機能の向上と歩行者空間の拡充が図られています。",
+        "source_url": "https://www.city.shinjuku.lg.jp/kusei/file03_00030.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "渋谷",
+        "project_name": "渋谷駅周辺プロジェクト",
+        "category": "Redevelopment",
+        "schedule": "2027年度完了予定",
+        "description": "大改造が進む渋谷駅周辺では、地上47階建てのスクランブルスクエア第2期棟の建設が進行中。ハチ公前広場の拡張工事も始まり、滞留空間が約1.5倍に拡大します。",
+        "source_url": "https://www.city.shibuya.tokyo.jp/shisetsu/saikaihatu/saikaihatsu_keikaku.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "池袋",
+        "project_name": "池袋駅周辺プロジェクト",
+        "category": "Redevelopment",
+        "schedule": "2030年代完了予定",
+        "description": "西口地区では3棟の超高層ビルの建設が計画されており、延べ床面積は約58万平方メートルに達します。駅上空デッキの整備により、東西の回遊性が向上します。",
+        "source_url": "https://www.city.toshima.lg.jp/296/machizukuri/toshikeikaku/shigaichisaikaihatsu/006883.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "高輪ゲートウェイ",
+        "project_name": "高輪ゲートウェイ駅周辺プロジェクト",
+        "category": "Mansion",
+        "schedule": "2025年3月開業",
+        "description": "街開きを迎える高輪ゲートウェイシティには、外国人ビジネスワーカー向けの住宅約860戸が整備されます。MICE施設やインターナショナルスクールも併設。",
+        "source_url": "https://www.city.minato.tokyo.jp/toshikeikaku/takanawagateway.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "中野",
+        "project_name": "中野駅周辺プロジェクト",
+        "category": "Infrastructure",
+        "schedule": "2029年度竣工予定",
+        "description": "中野サンプラザ跡地を含むエリアに、最大7,000人収容の多目的ホールを建設。駅西側には新たな南北自由通路が整備され、アクセスが改善されます。",
+        "source_url": "https://www.city.tokyo-nakano.lg.jp/dept/462000/d026367.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "武蔵小杉",
+        "project_name": "武蔵小杉駅周辺プロジェクト",
+        "category": "Mansion",
+        "schedule": "完了",
+        "description": "再開発エリアには、地上53階建てを含む複数のタワーマンションが林立し、約5,000戸の住宅が供給されました。駅新南口の開設により混雑緩和が図られています。",
+        "source_url": "https://www.city.kawasaki.jp/500/page/0000008436.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "十条",
+        "project_name": "十条駅周辺プロジェクト",
+        "category": "Mansion",
+        "schedule": "2024年度完了予定",
+        "description": "駅前広場と一体的に整備されるタワーマンションは地上39階建て、総戸数578戸。下層階には商業・業務施設が入り、地域の利便性が向上します。",
+        "source_url": "https://www.city.kita.tokyo.jp/machizukuri/toshikeikaku/saikaihatsu/jujo/nishiguchi/index.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "立石",
+        "project_name": "立石駅周辺プロジェクト",
+        "category": "Infrastructure",
+        "schedule": "2028年度以降",
+        "description": "京成押上線の高架化工事により、打かずの踏切11箇所が解消されます。駅北口には区役所新庁舎が移転し、地上13階建ての複合施設として生まれ変わります。",
+        "source_url": "https://www.city.katsushika.lg.jp/machizukuri/1000058/1001716.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "小岩",
+        "project_name": "小岩駅周辺プロジェクト",
+        "category": "Mansion",
+        "schedule": "2026年度完了予定",
+        "description": "南小岩六丁目地区には地上33階建ての再開発ビルが完成予定。商業施設とともに約600戸の住宅が供給され、駅周辺の定住人口増加が見込まれます。",
+        "source_url": "https://www.city.edogawa.tokyo.jp/kenchiku/toshikeikaku/saikaihatsu/koiwa_fukugou/index.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "大井町",
+        "project_name": "大井町駅周辺プロジェクト",
+        "category": "Redevelopment",
+        "schedule": "2025年度開業予定",
+        "description": "広町地区開発では、オフィス・商業・ホテルの複合施設に加え、約290戸の賃貸住宅を整備。品川区役所の新庁舎も移転し、防災拠点としての機能が強化されます。",
+        "source_url": "https://www.city.shinagawa.tokyo.jp/PC/kuseizyoho/kuseizyoho-cp/saikaihatsu/oimachi/index.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "大阪",
+        "project_name": "大阪駅周辺プロジェクト",
+        "category": "Infrastructure",
+        "schedule": "2027年度全体完了",
+        "description": "うめきた2期（グラングリーン大阪）には約4.5ヘクタールの都市公園が誕生。新駅開業により、関西国際空港への所要時間が約20分短縮されます。",
+        "source_url": "https://www.city.osaka.lg.jp/toshikeikaku/page/0000370960.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "札幌",
+        "project_name": "札幌駅周辺プロジェクト",
+        "category": "Infrastructure",
+        "schedule": "2029年度竣工予定",
+        "description": "北海道新幹線札幌延伸に伴い、駅南口に地上43階、高さ約245mの超高層ビルを建設。バスターミナル機能も集約され、道内交通のハブ機能が強化されます。",
+        "source_url": "https://www.city.sapporo.jp/kikaku/downtown/sapporoeki/kita5nishi1_2.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "天神",
+        "project_name": "天神周辺プロジェクト",
+        "category": "Redevelopment",
+        "schedule": "2026年まで継続",
+        "description": "「天神ビッグバン」により、高さ制限や容積率が緩和され、福ビル跡地などに地上19階建ての高機能オフィスビルが誕生。雇用創出効果も期待されます。",
+        "source_url": "https://www.city.fukuoka.lg.jp/jutaku-toshi/toshikeikaku/business/tenjin_bigbang.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "広島",
+        "project_name": "広島駅周辺プロジェクト",
+        "category": "Infrastructure",
+        "schedule": "2025年春開業予定",
+        "description": "新駅ビルへの路面電車乗り入れにより、JRとの乗り換え時間が大幅に短縮。地上20階建てのホテル棟も併設され、広域観光拠点としての機能が高まります。",
+        "source_url": "https://www.city.hiroshima.lg.jp/soshiki/360/17158.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "三ノ宮",
+        "project_name": "三ノ宮駅周辺プロジェクト",
+        "category": "Infrastructure",
+        "schedule": "2029年度新駅ビル開業",
+        "description": "JR三ノ宮新駅ビルは地上32階、高さ約160m。駅周辺のデッキ網を再編し、地下鉄・私鉄を含む6路線の乗り換え利便性を向上させます。",
+        "source_url": "https://www.city.kobe.lg.jp/a00685/toshiseibi/sannomiya/index.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "虎ノ門ヒルズ",
+        "project_name": "虎ノ門周辺プロジェクト",
+        "category": "Redevelopment",
+        "schedule": "2023年完了",
+        "description": "ステーションタワーの完成により、虎ノ門ヒルズ駅と直結する新たなビジネス拠点が誕生。地上49階、高さ約266mのタワーにはオフィスのほかホテルも入居。",
+        "source_url": "https://www.city.minato.tokyo.jp/toshikeikaku/toranomon_azabudai.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "海老名",
+        "project_name": "海老名駅周辺プロジェクト",
+        "category": "Mansion",
+        "schedule": "2025年度完了予定",
+        "description": "駅間開発地区「ビナガーデンズ」には、地上31階建てのタワーマンション2棟（計1,000戸）が完成。都心へのアクセス向上に伴い、ベッドタウンとしての人気が高まっています。",
+        "source_url": "https://www.city.ebina.kanagawa.jp/guide/machizukuri/1004944/index.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "橋本",
+        "project_name": "橋本駅周辺プロジェクト",
+        "category": "Infrastructure",
+        "schedule": "2027年以降",
+        "description": "リニア中央新幹線神奈川県駅（仮称）の設置に向け、南口エリアで大規模な土地区画整理が進行中。広域交流拠点としての産業用地や広場が整備されます。",
+        "source_url": "https://www.city.sagamihara.kanagawa.jp/kurashi/machizukuri/redevelopment/hashimoto_s/index.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "千葉",
+        "project_name": "千葉駅周辺プロジェクト",
+        "category": "Redevelopment",
+        "schedule": "2020年代後半",
+        "description": "千葉駅西口地区では、病院・スポーツ施設・住宅を含む３棟の複合ビルが完成。東口の歩行者デッキ改修も進み、中心市街地の回遊性が向上しています。",
+        "source_url": "https://www.city.chiba.jp/toshi/toshi/shigaichi/chibaeki_shuuhen_grand_design.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    },
+    {
+        "station_name": "浦和",
+        "project_name": "浦和駅周辺プロジェクト",
+        "category": "Mansion",
+        "schedule": "2026年度竣工予定",
+        "description": "西口南高砂地区には地上27階、高さ約99mのタワーマンションが建設されます。市民会館などの公益施設も入居し、駅前の賑わいと防災機能が強化されます。",
+        "source_url": "https://www.city.saitama.lg.jp/001/010/015/004/p013238.html",
+        "verified_at": "2026-02-07T14:40:00.000Z"
+    }
+]

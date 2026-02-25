@@ -1,0 +1,14 @@
+[
+    {
+        "id": "tokushima-1",
+        "station_name": "徳島",
+        "project_name": "新町西地区市街地再開発 (エンブレム徳島)",
+        "search_keyword": "エンブレム徳島 竣工",
+        "category": "Redevelopment",
+        "schedule": "2027年9月入居予定 (ホテル棟は2026年6月竣工)",
+        "description": "地上15階/延床3.1万㎡。徳島駅徒歩圏。住宅棟「エンブレム徳島」と、「ザ・テラスホテルズ」が進出するホテル棟、商業施設、川の駅が一体となった複合開発。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:30:00Z"
+    }
+]

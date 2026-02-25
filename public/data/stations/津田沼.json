@@ -1,0 +1,26 @@
+[
+    {
+        "id": "tsudanuma-1",
+        "station_name": "津田沼",
+        "project_name": "津田沼駅南口地区再開発 (モリシア跡地)",
+        "search_keyword": "津田沼駅南口再開発 中断 理由",
+        "category": "Redevelopment",
+        "schedule": "事業一時中断 (2031年竣工は困難)",
+        "description": "地上52階/187mの巨大プロジェクトだったが、建築費高騰により事業中断。モリシア津田沼の営業継続も含め、計画の抜本的な見直しが行われている。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:20:00Z"
+    },
+    {
+        "id": "tsudanuma-2",
+        "station_name": "津田沼",
+        "project_name": "津田沼駅北口 (旧パルコA館跡地)",
+        "search_keyword": "津田沼パルコ跡地 マンション",
+        "category": "Mansion",
+        "schedule": "2028年3月竣工予定",
+        "description": "地上15階/45m。三井不動産レジデンシャルによる板状型マンション。タワーではなく現実的な規模で早期の再生を図る。2026年6月まで解体工事。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:20:00Z"
+    }
+]

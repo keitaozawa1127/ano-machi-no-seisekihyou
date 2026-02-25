@@ -1,0 +1,26 @@
+[
+    {
+        "id": "gotanda-1",
+        "station_name": "五反田",
+        "project_name": "大崎リバーウォークガーデン (東五反田二丁目)",
+        "search_keyword": "大崎リバーウォークガーデン 竣工",
+        "category": "Redevelopment",
+        "schedule": "2027年3月竣工予定",
+        "description": "地上39階/150m。五反田・大崎間をつなぐ目黒川沿いの大規模再開発。タワーマンションと業務棟、親水広場を一体整備。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    },
+    {
+        "id": "gotanda-2",
+        "station_name": "五反田",
+        "project_name": "新TOCビル計画 (延期)",
+        "search_keyword": "TOCビル 建て替え 延期 最新",
+        "category": "Redevelopment",
+        "schedule": "未定 (当面現行ビル存続)",
+        "description": "地上30階/150m級の計画だったが、資材高騰により着工を2033年以降へ延期。現在は既存のTOCビルが営業を再開している。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    }
+]

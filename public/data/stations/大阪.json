@@ -1,0 +1,50 @@
+[
+    {
+        "id": "osaka-1",
+        "station_name": "大阪",
+        "project_name": "グラングリーン大阪 THE SOUTH RESIDENCE",
+        "search_keyword": "グラングリーン大阪 南街区 分譲",
+        "category": "Mansion",
+        "schedule": "2028年7月竣工予定",
+        "description": "地上47階/184m。うめきた2期・南街区の分譲棟。公園の南側に位置するエリア最高峰のタワー。ウォルドーフ・アストリア大阪も近接。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:00:00Z"
+    },
+    {
+        "id": "osaka-2",
+        "station_name": "大阪",
+        "project_name": "グラングリーン大阪 THE NORTH RESIDENCE",
+        "search_keyword": "グラングリーン大阪 北街区 中古",
+        "category": "Mansion",
+        "schedule": "2026年3月入居開始",
+        "description": "地上46階/172m。うめきた2期・北街区の分譲棟。キャノピーbyヒルトン大阪梅田を併設。カーギャラリー付き住戸など超富裕層向け仕様。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:00:00Z"
+    },
+    {
+        "id": "osaka-3",
+        "station_name": "大阪",
+        "project_name": "パークタワー大阪堂島浜",
+        "search_keyword": "パークタワー大阪堂島浜 竣工",
+        "category": "Mansion",
+        "schedule": "2027年春竣工予定",
+        "description": "地上40階/161m。三井不動産の「パークタワー」と「三井ガーデンホテルズプレミア」が垂直統合。堂島川の景色を取り込む水辺のランドマーク。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:00:00Z"
+    },
+    {
+        "id": "osaka-4",
+        "station_name": "淀屋橋",
+        "project_name": "淀屋橋駅 東・西地区再開発 (ツインタワー)",
+        "search_keyword": "淀屋橋駅再開発 竣工",
+        "category": "Redevelopment",
+        "schedule": "2025年夏〜冬順次竣工予定",
+        "description": "御堂筋を挟んで東地区(135m)と西地区(135m)にランドマークタワーが同時誕生。梅田徒歩圏のビジネス中心地「淀屋橋」の景観を一新する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:30:00Z"
+    }
+]

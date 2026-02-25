@@ -1,0 +1,190 @@
+{
+  "ok": true,
+  "verdict": "caution",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "直近5年の取引件数",
+      "value": "2491 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "4500 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "2.3%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇は強くありません。将来の上昇を前提にした判断は避け、住み替え・保有期間の前提でリスクを見てください。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇は急ではありません。ただし横ばい＝安全の保証ではなく、金利や需給で変動し得ます。"
+    }
+  ],
+  "note": "データ基準日: 2024年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "大宮",
+    "year": 2024,
+    "tx5y": 2491,
+    "yoy": 2.3,
+    "up2y": 2.3,
+    "prevYear": null,
+    "score": 68
+  },
+  "trendData": [
+    {
+      "year": 2020,
+      "price": 39000000,
+      "txCount": 382
+    },
+    {
+      "year": 2021,
+      "price": 40000000,
+      "txCount": 565
+    },
+    {
+      "year": 2022,
+      "price": 44000000,
+      "txCount": 480
+    },
+    {
+      "year": 2023,
+      "price": 44000000,
+      "txCount": 504
+    },
+    {
+      "year": 2024,
+      "price": 45000000,
+      "txCount": 560
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 95,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 118491,
+        "ageStructure": {
+          "0-14": 15000,
+          "15-64": 78000,
+          "65+": 25491
+        }
+      },
+      {
+        "year": 2030,
+        "total": 122000,
+        "ageStructure": {
+          "0-14": 14000,
+          "15-64": 79000,
+          "65+": 29000
+        }
+      },
+      {
+        "year": 2040,
+        "total": 118000,
+        "ageStructure": {
+          "0-14": 13000,
+          "15-64": 73000,
+          "65+": 32000
+        }
+      },
+      {
+        "year": 2050,
+        "total": 113000,
+        "ageStructure": {
+          "0-14": 12000,
+          "15-64": 66000,
+          "65+": 35000
+        }
+      }
+    ],
+    "sourceCity": "さいたま市大宮区"
+  },
+  "totalScore": 68,
+  "metrics": {
+    "asset": 48,
+    "safety": 100,
+    "future": 47,
+    "convenience": 90,
+    "liquidity": 54
+  },
+  "lines": [
+    {
+      "name": "JR京浜東北線"
+    },
+    {
+      "name": "JR埼京線"
+    },
+    {
+      "name": "JR宇都宮線"
+    },
+    {
+      "name": "JR川越線"
+    },
+    {
+      "name": "JR湘南新宿ライン"
+    },
+    {
+      "name": "JR高崎線"
+    },
+    {
+      "name": "上越新幹線"
+    },
+    {
+      "name": "埼玉新都市交通伊奈線"
+    },
+    {
+      "name": "東北新幹線"
+    },
+    {
+      "name": "東武野田線"
+    },
+    {
+      "name": "北陸新幹線"
+    },
+    {
+      "name": "阪急京都本線"
+    },
+    {
+      "name": "JR上野東京ライン"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "id": "omiya-1",
+      "station_name": "大宮",
+      "project_name": "大宮駅西口第3-A・D地区 (大宮サクラスクエア隣接)",
+      "search_keyword": "大宮駅西口第3-A・D地区 再開発 遅延",
+      "category": "Redevelopment",
+      "schedule": "2029年度以降 (計画見直し中)",
+      "description": "地上27階/105m。大宮GCS構想の先行プロジェクトだが、資材高騰によりスケジュール遅延中。オフィス・住宅・商業の複合開発を目指す。",
+      "impact_level": 4,
+      "is_future": true,
+      "createdAt": "2024-02-16T13:00:00Z"
+    }
+  ],
+  "marketPrice": 43000000,
+  "tx5y": 2491,
+  "trend": "UP",
+  "yoy": 2.3,
+  "dataYear": 2024
+}

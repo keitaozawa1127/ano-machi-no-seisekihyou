@@ -1,0 +1,26 @@
+[
+    {
+        "id": "hachioji-1",
+        "station_name": "八王子",
+        "project_name": "八王子駅南口集いの拠点 (ミライテラス)",
+        "search_keyword": "八王子ミライテラス 開館日",
+        "category": "Redevelopment",
+        "schedule": "2026年10月開館予定",
+        "description": "医療刑務所跡地を再生した「学び・交流・防災」の拠点。公園、ライブラリ、ミュージアムを一体整備し、市民に開かれたサードプレイスを創出する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:30:00Z"
+    },
+    {
+        "id": "hachioji-2",
+        "station_name": "八王子",
+        "project_name": "八王子インター北地区 (イオンモール八王子IC北)",
+        "search_keyword": "イオンモール八王子インター北 開業",
+        "category": "Redevelopment",
+        "schedule": "2026年春(商業棟)・秋(物流棟)開業予定",
+        "description": "次世代型イオンモールと最先端物流施設(CFC)が融合。シネコンも併設し、リアル店舗とネットスーパー拠点を兼ね備えた地域の新ハブとなる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:30:00Z"
+    }
+]

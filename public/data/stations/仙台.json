@@ -1,0 +1,62 @@
+[
+    {
+        "id": "sendai-1",
+        "station_name": "仙台",
+        "project_name": "仙台市役所本庁舎建替 (第1期)",
+        "search_keyword": "仙台市役所 建替え デザイン",
+        "category": "Infrastructure",
+        "schedule": "2027年11月竣工予定",
+        "description": "地上15階/80m。老朽化した市役所の建替え。勾当台公園と一体となった「杜の都」を象徴する庁舎・広場を整備する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    },
+    {
+        "id": "sendai-2",
+        "station_name": "仙台",
+        "project_name": "パークホームズ仙台中央",
+        "search_keyword": "パークホームズ仙台中央 価格",
+        "category": "Mansion",
+        "schedule": "2026年3月竣工予定",
+        "description": "地上25階/89m。仙台駅徒歩5分。三井不動産レジデンシャルの免震タワーマンション。ZEH-M Orientedを取得し環境性能を高めた都心邸宅。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    },
+    {
+        "id": "sendai-3",
+        "station_name": "仙台",
+        "project_name": "プラウドタワー仙台五橋",
+        "search_keyword": "プラウドタワー仙台五橋 中古",
+        "category": "Mansion",
+        "schedule": "2026年2月竣工予定",
+        "description": "地上19階。地下鉄五橋駅前。東北学院大学新キャンパスに近い文教エリアに誕生する大規模レジデンス。職住近接のライフスタイルを提案。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    },
+    {
+        "id": "sendai-4",
+        "station_name": "仙台",
+        "project_name": "青葉区一番町プロジェクト (旧佐々重)",
+        "search_keyword": "仙台一番町 プリンスホテル",
+        "category": "Redevelopment",
+        "schedule": "2029年2月竣工予定",
+        "description": "地上14階。西武・プリンスホテルズワールドワイドが運営するホテルが入居予定。一番町エリアの新たな滞在・MICE拠点となる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:30:00Z"
+    },
+    {
+        "id": "sendai-5",
+        "station_name": "仙台",
+        "project_name": "一番町三丁目七番地区再開発 (北街区)",
+        "search_keyword": "一番町三丁目七番地区再開発 竣工時期",
+        "category": "Redevelopment",
+        "schedule": "2029年9月竣工予定",
+        "description": "地上24階/135m。電力ビル周辺の巨大再開発。北街区には高機能オフィス、商業、ホテルが入居。南街区(180m級)は2035年以降の予定。仙台のスカイラインを塗り替える最重要拠点。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T20:50:00Z"
+    }
+]

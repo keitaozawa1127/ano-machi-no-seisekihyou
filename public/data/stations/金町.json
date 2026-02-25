@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kanamachi-1",
+        "station_name": "金町",
+        "project_name": "クロス金町 (東金町一丁目西地区)",
+        "search_keyword": "クロス金町 タワー棟 竣工",
+        "category": "Redevelopment",
+        "schedule": "2030年10月全体竣工予定",
+        "description": "地上40階/150m。自動車教習所とイトーヨーカドー跡地の一体開発。屋上教習所を備えた商業棟(1期)に続き、超高層タワー(2期)が建設される。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:20:00Z"
+    }
+]

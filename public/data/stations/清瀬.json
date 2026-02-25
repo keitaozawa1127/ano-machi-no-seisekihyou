@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kiyose-1",
+        "station_name": "清瀬",
+        "project_name": "清瀬駅南口地区再開発",
+        "search_keyword": "清瀬駅南口再開発 マンション",
+        "category": "Mansion",
+        "schedule": "2029年3月竣工予定",
+        "description": "地上24階/100m。西武池袋線・清瀬駅南口。低層密集地を高さ100mのタワーへ建替え。商業施設も整備し、駅前の顔を一新する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:00:00Z"
+    }
+]

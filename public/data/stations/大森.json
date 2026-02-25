@@ -1,0 +1,14 @@
+[
+    {
+        "id": "omori-1",
+        "station_name": "大森",
+        "project_name": "パークタワー大森",
+        "search_keyword": "パークタワー大森 価格",
+        "category": "Mansion",
+        "schedule": "2026年3月竣工予定",
+        "description": "地上23階/77m。大森駅徒歩圏。三井不動産レジデンシャルの免震タワーマンション。ZEH-M Oriented認定。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T14:00:00Z"
+    }
+]

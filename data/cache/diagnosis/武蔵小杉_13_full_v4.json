@@ -1,0 +1,140 @@
+{
+  "mlit": {
+    "stationName": "武蔵小杉",
+    "score": 85,
+    "marketPrice": 88500000,
+    "trend": "UP",
+    "chartData": [
+      {
+        "name": "2020",
+        "count": 45,
+        "lastPrice": 78000000
+      },
+      {
+        "name": "2021",
+        "count": 52,
+        "lastPrice": 81000000
+      },
+      {
+        "name": "2022",
+        "count": 48,
+        "lastPrice": 83500000
+      },
+      {
+        "name": "2023",
+        "count": 60,
+        "lastPrice": 86000000
+      },
+      {
+        "name": "2024",
+        "count": 55,
+        "lastPrice": 88500000
+      }
+    ],
+    "rawTransactions": [],
+    "tx5y": 260,
+    "yoy": 2.9,
+    "up2y": 6,
+    "trendData": [
+      {
+        "year": 2020,
+        "price": 78000000,
+        "txCount": 45
+      },
+      {
+        "year": 2021,
+        "price": 81000000,
+        "txCount": 52
+      },
+      {
+        "year": 2022,
+        "price": 83500000,
+        "txCount": 48
+      },
+      {
+        "year": 2023,
+        "price": 86000000,
+        "txCount": 60
+      },
+      {
+        "year": 2024,
+        "price": 88500000,
+        "txCount": 55
+      }
+    ],
+    "dataYear": 2024,
+    "latestYear": 2024
+  },
+  "lines": [
+    {
+      "name": "JR南武線"
+    },
+    {
+      "name": "JR横須賀線"
+    },
+    {
+      "name": "JR湘南新宿ライン"
+    },
+    {
+      "name": "東急東横線"
+    },
+    {
+      "name": "東急目黒線"
+    },
+    {
+      "name": "相鉄・JR直通線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 85,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 121500,
+        "ageStructure": {
+          "0-14": 14580,
+          "15-64": 72900,
+          "65+": 34020
+        }
+      },
+      {
+        "year": 2030,
+        "total": 115425,
+        "ageStructure": {
+          "0-14": 12696,
+          "15-64": 66946,
+          "65+": 35781
+        }
+      },
+      {
+        "year": 2040,
+        "total": 109350,
+        "ageStructure": {
+          "0-14": 10935,
+          "15-64": 60142,
+          "65+": 38272
+        }
+      },
+      {
+        "year": 2050,
+        "total": 103275,
+        "ageStructure": {
+          "0-14": 9294,
+          "15-64": 53703,
+          "65+": 40277
+        }
+      }
+    ],
+    "sourceCity": "川崎市中原区"
+  }
+}

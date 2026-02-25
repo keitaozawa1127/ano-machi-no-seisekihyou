@@ -1,0 +1,38 @@
+[
+    {
+        "id": "akabane-1",
+        "station_name": "赤羽",
+        "project_name": "プラウドタワー赤羽 (赤羽二丁目Ⅱ計画)",
+        "search_keyword": "プラウドタワー赤羽 価格",
+        "category": "Mansion",
+        "schedule": "2028年3月竣工予定",
+        "description": "地上32階/126m。赤羽駅東口・スズラン通り商店街に隣接。ダイエー赤羽店跡地に建設される大規模タワー。商業・住宅複合で地域の核となる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:20:00Z"
+    },
+    {
+        "id": "akabane-2",
+        "station_name": "赤羽",
+        "project_name": "赤羽一丁目第一地区再開発",
+        "search_keyword": "赤羽一丁目第一地区再開発 計画",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上26階/110m。赤羽駅東口・一番街エリアの密集地を更新。丸紅主導。防災性を高めつつ、商業・住宅を一体整備する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:20:00Z"
+    },
+    {
+        "id": "akabane-3",
+        "station_name": "赤羽",
+        "project_name": "ザ・パークハウス 赤羽台タワー＆レジデンス",
+        "search_keyword": "ザ・パークハウス 赤羽台タワー 価格",
+        "category": "Mansion",
+        "schedule": "2028年10月竣工予定",
+        "description": "地上29階/101m。赤羽駅西口の高台(赤羽台団地建替え)。空を広く望む絶好のロケーションに建つ免震タワー。三菱地所レジデンス等が推進。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:20:00Z"
+    }
+]

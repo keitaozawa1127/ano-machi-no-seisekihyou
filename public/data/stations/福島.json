@@ -1,0 +1,14 @@
+[
+    {
+        "id": "fukushima-1",
+        "station_name": "福島",
+        "project_name": "福島駅東口地区再開発",
+        "search_keyword": "福島駅東口地区第一種市街地再開発事業 竣工時期",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上12階/延床7.3万㎡。福島駅東口直結。商業、ホテル、オフィス、1,500席の大ホール、野村不動産の住宅が一体となった巨大複合施設。資材高騰により計画が見直され、2028年度の完成を目指す。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:15:00Z"
+    }
+]

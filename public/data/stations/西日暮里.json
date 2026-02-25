@@ -1,0 +1,14 @@
+[
+    {
+        "id": "nishinippori-1",
+        "station_name": "西日暮里",
+        "project_name": "西日暮里駅前地区再開発",
+        "search_keyword": "西日暮里駅前再開発 着工",
+        "category": "Redevelopment",
+        "schedule": "2031年3月竣工予定 (2027年着工)",
+        "description": "地上46階/170m。JR西日暮里駅前の大規模再開発。荒川区最大級のタワーマンション、ホール、商業施設を整備。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T14:00:00Z"
+    }
+]

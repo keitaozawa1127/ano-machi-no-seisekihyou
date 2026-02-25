@@ -1,0 +1,26 @@
+[
+    {
+        "id": "itabashi-1",
+        "station_name": "板橋",
+        "project_name": "板橋駅西口地区再開発",
+        "search_keyword": "板橋駅西口再開発 野村不動産",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上38階/142m。駅前ロータリーに面した西口の顔。野村不動産によるタワーマンションと公益施設。足元には広場を整備。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:20:00Z"
+    },
+    {
+        "id": "itabashi-2",
+        "station_name": "板橋",
+        "project_name": "板橋駅板橋口地区 (駅直結タワー)",
+        "search_keyword": "板橋駅板橋口再開発 JR東日本",
+        "category": "Redevelopment",
+        "schedule": "2027年6月竣工予定",
+        "description": "地上35階/130m。JR東日本による駅ビル一体型タワー。アトレ等の商業施設が入居し、改札直結の利便性を提供する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:20:00Z"
+    }
+]

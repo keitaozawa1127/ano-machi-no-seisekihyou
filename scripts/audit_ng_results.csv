@@ -1,0 +1,4 @@
+station,pref,status,tx,mp_man,year,note
+"大橋","40","OK",485,2300,2024,""
+"琴似","01","NG",,,,"TIMEOUT"
+"熊本","43","NG",,,,"Network Error: "

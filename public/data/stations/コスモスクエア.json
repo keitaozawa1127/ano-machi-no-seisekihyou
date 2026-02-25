@@ -1,0 +1,14 @@
+[
+    {
+        "id": "cosmosquare-1",
+        "station_name": "コスモスクエア",
+        "project_name": "(仮称)コスモスクエア駅前プロジェクト",
+        "search_keyword": "コスモスクエア駅前 マンション",
+        "category": "Redevelopment",
+        "schedule": "2030年3月竣工予定 (2026年着工)",
+        "description": "地上18階/3.1万㎡。駅前の広大な未利用地に建設される大規模複合施設。ホテル・店舗・住宅を備え、夢洲IRのバックアップ機能を担う。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "id": "tokyo-1",
+        "station_name": "東京",
+        "project_name": "TOKYO TORCH (Torch Tower)",
+        "search_keyword": "Torch Tower 竣工時期",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上63階、高さ約390m。日本最高層のランドマーク。大規模広場「TOKYO TORCH Park」を整備し、日本橋川沿いの親水空間を創出。国際観光・ビジネスの新たな拠点となる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "tokyo-new-1",
+        "station_name": "東京",
+        "project_name": "TOFROM YAESU (八重洲一丁目東地区)",
+        "search_keyword": "TOFROM YAESU 竣工",
+        "category": "Redevelopment",
+        "schedule": "2026年7月全体竣工予定",
+        "description": "地上51階/250m。東京駅八重洲口の正面に位置する新たなランドマーク。劇場、医療施設、バスターミナルを内包し、ミッドタウン八重洲と共に駅前のスカイラインを決定づける。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+        "id": "tokyo-2",
+        "station_name": "東京",
+        "project_name": "日本橋一丁目中地区再開発",
+        "search_keyword": "日本橋一丁目中地区再開発 ウォルドーフ・アストリア",
+        "category": "Redevelopment",
+        "schedule": "2026年9月竣工予定",
+        "description": "地上52階、高さ約284m。日本橋川沿いの再生を象徴する事業。ラグジュアリーホテルを誘致し、首都高地下化と連動した連続的な歩行者空間と親水テラスを整備する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "tokyo-3",
+        "station_name": "東京",
+        "project_name": "八重洲二丁目中地区再開発",
+        "search_keyword": "八重洲二丁目中地区再開発 小学校",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上43階、高さ約227m。オフィス、商業、ホテルに加え区立小学校を包含する超複合開発。地下バスターミナルを拡張し、国内外の交通結節機能を劇的に向上させる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "tokyo-4",
+        "station_name": "東京",
+        "project_name": "八重洲一丁目北地区再開発",
+        "search_keyword": "八重洲一丁目北地区再開発 計画",
+        "category": "Redevelopment",
+        "schedule": "2032年度竣工予定",
+        "description": "地上44階、高さ約218m。日本橋川に隣接する北側の玄関口。歴史的建築物の保存と高度なオフィス機能を両立し、水辺の賑わいを再生する親水広場やデッキを整備する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "tokyo-5",
+        "station_name": "東京",
+        "project_name": "内幸町一丁目街区プロジェクト",
+        "search_keyword": "内幸町一丁目街区 帝国ホテル 建替え",
+        "category": "Redevelopment",
+        "schedule": "2030年代順次竣工予定",
+        "description": "地上46階、高さ約233m。帝国ホテル新本館を含む巨大再開発。日比谷公園と繋がる「パークブリッジ」を整備。次世代電力網を導入した、日本を代表する環境先導型街区を目指す。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "tokyo-6",
+        "station_name": "東京",
+        "project_name": "日本橋一丁目東地区再開発",
+        "search_keyword": "日本橋一丁目東地区再開発",
+        "category": "Redevelopment",
+        "schedule": "2032年度竣工予定",
+        "description": "地上51階、高さ約213m。日本橋駅直結の利便性を活かした住・商・業務の複合開発。日本橋川の景観再生とともに、地下・地上・水辺を繋ぐ立体的なネットワークを形成する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "tokyo-7",
+        "station_name": "東京",
+        "project_name": "京橋三丁目東地区再開発",
+        "search_keyword": "京橋三丁目東地区再開発 東京高速道路",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上35階、高さ約180m。KK線（東京高速道路）の緑化計画「Tokyo Sky Corridor」へのアクセス拠点を整備。銀座エリアとのシームレスな歩行者動線を構築する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "tokyo-8",
+        "station_name": "東京",
+        "project_name": "日本橋本町三井ビル &forest",
+        "search_keyword": "日本橋本町三井ビル &forest",
+        "category": "Commercial",
+        "schedule": "2026年9月竣工予定",
+        "description": "地上18階、高さ約92m。ライフサイエンス分野のイノベーション拠点。大規模な壁面緑化と地上広場「森」を整備し、ワーカーの健康を支えるウェルネスオフィスを実現する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    }
+]

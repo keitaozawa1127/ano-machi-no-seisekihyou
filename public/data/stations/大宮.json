@@ -1,0 +1,14 @@
+[
+    {
+        "id": "omiya-1",
+        "station_name": "大宮",
+        "project_name": "大宮駅西口第3-A・D地区 (大宮サクラスクエア隣接)",
+        "search_keyword": "大宮駅西口第3-A・D地区 再開発 遅延",
+        "category": "Redevelopment",
+        "schedule": "2029年度以降 (計画見直し中)",
+        "description": "地上27階/105m。大宮GCS構想の先行プロジェクトだが、資材高騰によりスケジュール遅延中。オフィス・住宅・商業の複合開発を目指す。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:00:00Z"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "id": "tateishi-1",
+        "station_name": "京成立石",
+        "project_name": "立石駅北口地区 (葛飾区新庁舎)",
+        "search_keyword": "立石駅北口再開発 区役所移転",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上35階(住宅)と13階(区役所)。京成線高架化とセットの巨大事業。葛飾区役所が移転し、防災・行政の拠点として生まれ変わる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:20:00Z"
+    },
+    {
+        "id": "tateishi-2",
+        "station_name": "京成立石",
+        "project_name": "立石駅南口西地区再開発",
+        "search_keyword": "立石駅南口再開発 野村不動産",
+        "category": "Redevelopment",
+        "schedule": "2031年度竣工予定",
+        "description": "地上34階/125m。「呑んべ横丁」跡地を含む再開発。路地空間の継承をテーマに、野村不動産らがタワーと商業施設を整備。※竣工は2031年。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:20:00Z"
+    }
+]

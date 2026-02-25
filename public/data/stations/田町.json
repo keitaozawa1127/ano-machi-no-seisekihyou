@@ -1,0 +1,38 @@
+[
+    {
+        "id": "tamachi-1",
+        "station_name": "田町",
+        "project_name": "TAKANAWA GATEWAY CITY (高輪ゲートウェイシティ)",
+        "search_keyword": "高輪ゲートウェイシティ 開業日",
+        "category": "Redevelopment",
+        "schedule": "2026年3月グランドオープン予定",
+        "description": "地上30階〜44階。田町駅徒歩圏。JR東日本主導の国家戦略プロジェクト。オフィス、ホテル、商業、文化施設が集積し、国際交流拠点が誕生する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T14:00:00Z"
+    },
+    {
+        "id": "tamachi-2",
+        "station_name": "田町",
+        "project_name": "三田小山町西地区再開発",
+        "search_keyword": "三田小山町西地区再開発 マンション",
+        "category": "Mansion",
+        "schedule": "2028年5月竣工予定",
+        "description": "地上42階/165m。麻布十番・田町エリア。三井不動産レジデンシャル等による大規模ツインタワーマンション(計1400戸超)。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T14:00:00Z"
+    },
+    {
+        "id": "tamachi-3",
+        "station_name": "田町",
+        "project_name": "田町駅西口駅前地区 (森永プラザビル建替)",
+        "search_keyword": "森永プラザビル 建替え いつ",
+        "category": "Redevelopment",
+        "schedule": "2029年3月建物完成予定",
+        "description": "地上24階/125m。田町駅西口の顔、森永プラザビルを建替え。JR駅直結の最新オフィス・商業ビルへ生まれ変わる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T14:00:00Z"
+    }
+]

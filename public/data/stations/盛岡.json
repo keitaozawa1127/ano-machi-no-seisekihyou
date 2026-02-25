@@ -1,0 +1,14 @@
+[
+    {
+        "id": "morioka-1",
+        "station_name": "盛岡",
+        "project_name": "ザ・ミッドシティ盛岡駅西通",
+        "search_keyword": "ザ・ミッドシティ盛岡駅西通 竣工",
+        "category": "Mansion",
+        "schedule": "2027年1月竣工予定",
+        "description": "地上16階/延床2万㎡。盛岡駅西口徒歩5分。新昭和等による大規模複合レジデンス。敷地内にドラッグストア等の商業施設を併設し、西口エリアの生活利便性を向上させる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:15:00Z"
+    }
+]

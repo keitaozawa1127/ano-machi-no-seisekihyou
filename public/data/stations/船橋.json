@@ -1,0 +1,14 @@
+[
+    {
+        "id": "funabashi-1",
+        "station_name": "船橋",
+        "project_name": "プレミストタワー船橋 (本町1丁目特定街区)",
+        "search_keyword": "プレミストタワー船橋 価格 竣工時期",
+        "category": "Mansion",
+        "schedule": "2028年3月竣工予定",
+        "description": "地上51階/193m。千葉県最高層となる超高層タワー。西武船橋店跡地を再生し、商業・ホール・住宅が一体化。ペデストリアンデッキで駅直結。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:00:00Z"
+    }
+]

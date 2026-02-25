@@ -1,0 +1,14 @@
+[
+    {
+        "id": "keikyu-kawasaki-1",
+        "station_name": "京急川崎",
+        "project_name": "川崎新！アリーナシティ計画",
+        "search_keyword": "川崎アリーナシティ 開業日",
+        "category": "Redevelopment",
+        "schedule": "2030年10月開業予定",
+        "description": "地上17階のアリーナ棟と24階の高層棟。最大1万人収容の「川崎ブレイブサンダース」新本拠地。ホテル・商業・オフィスを一体整備し、世界に開かれたエンタメ拠点を築く。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    }
+]

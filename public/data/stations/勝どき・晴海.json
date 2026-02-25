@@ -1,0 +1,26 @@
+[
+    {
+        "id": "kachidoki-harumi-1",
+        "station_name": "勝どき",
+        "project_name": "THE TOYOMI TOWER MARINE & SKY (豊海地区)",
+        "search_keyword": "THE TOYOMI TOWER MARINE & SKY 竣工",
+        "category": "Mansion",
+        "schedule": "2027年竣工予定",
+        "description": "地上53階/189mのツインタワー。総戸数2,046戸。築地市場跡地の対岸に位置する湾岸エリア最大級のプロジェクト。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    },
+    {
+        "id": "kachidoki-harumi-2",
+        "station_name": "勝どき",
+        "project_name": "HARUMI FLAG SKY DUO",
+        "search_keyword": "晴海フラッグ SKY DUO 入居",
+        "category": "Mansion",
+        "schedule": "2025年秋竣工・順次入居中",
+        "description": "地上50階/180m。選手村跡地のシンボルタワー。2026年には街びらきが完了し、BRTと共に都心近接の新しいライフスタイルが定着する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    }
+]

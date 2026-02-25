@@ -1,0 +1,14 @@
+[
+    {
+        "id": "oyama-1",
+        "station_name": "大山",
+        "project_name": "大山町ピッコロ・スクエア周辺地区",
+        "search_keyword": "大山町ピッコロ・スクエア 計画",
+        "category": "Redevelopment",
+        "schedule": "2033年12月竣工予定",
+        "description": "地上28階/107m。ハッピーロード大山商店街の中ほどを再開発。住友不動産によるツインタワー。駅周辺連続立体交差事業と連動。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T16:50:00Z"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": "tsunashima-1",
+        "station_name": "綱島",
+        "project_name": "綱島駅東口駅前地区再開発",
+        "search_keyword": "綱島駅東口再開発 延期",
+        "category": "Redevelopment",
+        "schedule": "2028年度以降竣工予定 (調整中)",
+        "description": "地上27階/100m。綱島駅東口のバス乗り場周辺を再編。新綱島駅とデッキで接続し、商業・住宅ツインタワーを建設。※コスト高騰により遅延傾向。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T20:00:00Z"
+    }
+]

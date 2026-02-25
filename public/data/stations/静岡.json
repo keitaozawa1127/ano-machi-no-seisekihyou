@@ -1,0 +1,26 @@
+[
+    {
+        "id": "shizuoka-1",
+        "station_name": "静岡",
+        "project_name": "静岡駅南口東地区再開発",
+        "search_keyword": "静岡駅南口東地区再開発 マンション",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上24階/約100m。静岡駅南口(新幹線側)の新たなランドマーク。タワーマンションに加え、医療・子育て支援施設を整備する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:50:00Z"
+    },
+    {
+        "id": "shizuoka-2",
+        "station_name": "静岡",
+        "project_name": "紺屋町・御幸町地区再開発",
+        "search_keyword": "静岡市 紺屋町再開発 延期",
+        "category": "Redevelopment",
+        "schedule": "2032年11月竣工予定 (計画延期)",
+        "description": "地上27階/110m。静岡駅北口・繁華街の中心地における大規模再開発。地下道整備を含め、都心の回遊性と防災性を飛躍的に高める。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:50:00Z"
+    }
+]

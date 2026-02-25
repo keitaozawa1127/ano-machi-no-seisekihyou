@@ -1,0 +1,86 @@
+[
+    {
+        "id": "shinjuku-1",
+        "station_name": "新宿",
+        "project_name": "新宿駅西口地区開発計画",
+        "search_keyword": "新宿駅西口地区開発計画 竣工時期",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上48階、高さ約260m。小田急百貨店跡地の巨大プロジェクト。新宿グランドターミナルの核として「スカイコリドー」を整備し、東西の歩行者動線を立体的に統合する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shinjuku-2",
+        "station_name": "新宿",
+        "project_name": "新宿駅南西口地区開発計画",
+        "search_keyword": "新宿駅南西口地区開発計画 概要",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上37階、高さ約225m。甲州街道を跨ぐ大規模デッキを新設し、新宿御苑方面への回遊性を向上。滞在型空間「新宿テラス」を創出し、都市の新たな「縁側」を形成する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shinjuku-3",
+        "station_name": "新宿",
+        "project_name": "西新宿三丁目西地区再開発",
+        "search_keyword": "西新宿三丁目西地区再開発 竣工",
+        "category": "Mansion",
+        "schedule": "2033年度竣工予定",
+        "description": "地上63階、高さ約229m。国内最高層クラスのツインタワーマンション（約3,200戸）。木造住宅密集地を解消し、防災性を根本から強化。新宿駅から伸びるデッキも延伸される。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shinjuku-4",
+        "station_name": "新宿",
+        "project_name": "西新宿一丁目地区プロジェクト",
+        "search_keyword": "西新宿一丁目地区プロジェクト 明治安田生命",
+        "category": "Commercial",
+        "schedule": "2026年8月竣工予定",
+        "description": "地上23階、高さ約126m。明治安田生命新宿ビル等の跡地。駅前広場の再編と連動し、立体的な歩行者空間を構成。観光案内所や帰宅困難者支援機能を備えた次世代型オフィス。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shinjuku-5",
+        "station_name": "新宿",
+        "project_name": "西新宿五丁目中央南地区",
+        "search_keyword": "西新宿五丁目中央南地区再開発",
+        "category": "Redevelopment",
+        "schedule": "2028年度竣工予定",
+        "description": "地上43階、高さ約155m。住宅、商業、子育て支援機能が融合。神田川周辺との高低差を解消し、緑豊かな公開空地を整備。防災備蓄倉庫を確保し、密集市街地の再開発モデルとなる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shinjuku-6",
+        "station_name": "新宿",
+        "project_name": "（仮称）西新宿二丁目計画",
+        "search_keyword": "西新宿二丁目計画 住友不動産",
+        "category": "Commercial",
+        "schedule": "2026年3月竣工予定",
+        "description": "地上35階、高さ約165m。官民連携によるスマートシティ化を推進。新宿中央公園と連動した緑のネットワークを構築し、スタートアップ支援施設を導入して産業創出機能を強化する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-15T12:00:00Z"
+    },
+    {
+        "id": "shinjuku-7",
+        "station_name": "新宿",
+        "project_name": "西新宿三丁目西地区再開発 (ツインタワー)",
+        "search_keyword": "西新宿三丁目西地区 再開発 竣工時期",
+        "category": "Mansion",
+        "schedule": "2031年度竣工予定",
+        "description": "地上63階/235mのツインタワー。総戸数約3,200戸という日本最大級の規模。初台・都庁前エリアと新宿駅を繋ぐ、西新宿最後の巨大再開発。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:30:00Z"
+    }
+]

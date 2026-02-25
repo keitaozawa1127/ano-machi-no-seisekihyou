@@ -1,0 +1,14 @@
+[
+    {
+        "id": "nagano-1",
+        "station_name": "長野",
+        "project_name": "長野駅前B-1地区再開発",
+        "search_keyword": "長野駅前B-1地区再開発 計画",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上28階/100m級。長野駅善光寺口。末広町交差点の一角を再生。商業・オフィス・約200戸の住宅からなる県下最大級の複合タワー。2025年度末に解体着手予定。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:15:00Z"
+    }
+]

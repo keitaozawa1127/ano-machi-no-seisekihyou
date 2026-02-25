@@ -1,0 +1,456 @@
+{
+  "mlit": {
+    "stationName": "榎戸",
+    "score": 10,
+    "marketPrice": 12500000,
+    "trend": "DOWN",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 1,
+        "lastPrice": 11000000
+      },
+      {
+        "name": "2023年",
+        "count": 4,
+        "lastPrice": 31000000
+      },
+      {
+        "name": "2024年",
+        "count": 3,
+        "lastPrice": 14000000
+      },
+      {
+        "name": "2025年",
+        "count": 2,
+        "lastPrice": 3250000
+      }
+    ],
+    "rawTransactions": [
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "11000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "310",
+        "UnitPrice": "",
+        "LandShape": "ほぼ台形",
+        "Frontage": "",
+        "TotalFloorArea": "115",
+        "BuildingYear": "1989年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "",
+        "Direction": "南",
+        "Classification": "私道",
+        "Breadth": "4",
+        "CityPlanning": "第１種中高層住居専用地域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2022年第3四半期",
+        "Renovation": "",
+        "Remarks": "私道を含む取引",
+        "DistrictCode": "122300040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "2000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "360",
+        "UnitPrice": "",
+        "LandShape": "ほぼ長方形",
+        "Frontage": "14.1",
+        "TotalFloorArea": "",
+        "BuildingYear": "",
+        "Structure": "",
+        "Use": "店舗",
+        "Purpose": "",
+        "Direction": "西",
+        "Classification": "市道",
+        "Breadth": "7",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2023年第3四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122300040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "25000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "200",
+        "UnitPrice": "",
+        "LandShape": "台形",
+        "Frontage": "16.6",
+        "TotalFloorArea": "105",
+        "BuildingYear": "1993年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "住宅",
+        "Direction": "南東",
+        "Classification": "私道",
+        "Breadth": "6",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2023年第4四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122300040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "38000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "880",
+        "UnitPrice": "",
+        "LandShape": "不整形",
+        "Frontage": "25",
+        "TotalFloorArea": "210",
+        "BuildingYear": "1994年",
+        "Structure": "軽量鉄骨造",
+        "Use": "共同住宅",
+        "Purpose": "住宅",
+        "Direction": "南東",
+        "Classification": "市道",
+        "Breadth": "6",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2023年第4四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122300040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "37000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "840",
+        "UnitPrice": "",
+        "LandShape": "ほぼ整形",
+        "Frontage": "9",
+        "TotalFloorArea": "330",
+        "BuildingYear": "1995年",
+        "Structure": "軽量鉄骨造",
+        "Use": "共同住宅",
+        "Purpose": "住宅",
+        "Direction": "南西",
+        "Classification": "私道",
+        "Breadth": "6",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2023年第4四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122300040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "72000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "1400",
+        "UnitPrice": "",
+        "LandShape": "不整形",
+        "Frontage": "11.6",
+        "TotalFloorArea": "650",
+        "BuildingYear": "1993年",
+        "Structure": "軽量鉄骨造",
+        "Use": "共同住宅",
+        "Purpose": "住宅",
+        "Direction": "北西",
+        "Classification": "市道",
+        "Breadth": "7.5",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2024年第2四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122300040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "7700000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "150",
+        "UnitPrice": "",
+        "LandShape": "長方形",
+        "Frontage": "10",
+        "TotalFloorArea": "105",
+        "BuildingYear": "1997年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "住宅",
+        "Direction": "北西",
+        "Classification": "市道",
+        "Breadth": "6",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2024年第4四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122300040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "14000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "240",
+        "UnitPrice": "",
+        "LandShape": "ほぼ台形",
+        "Frontage": "16.3",
+        "TotalFloorArea": "95",
+        "BuildingYear": "2002年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "事務所",
+        "Direction": "北",
+        "Classification": "市道",
+        "Breadth": "4",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2024年第4四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122300040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "4000000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "170",
+        "UnitPrice": "",
+        "LandShape": "ほぼ長方形",
+        "Frontage": "9.2",
+        "TotalFloorArea": "80",
+        "BuildingYear": "1983年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "住宅",
+        "Direction": "南東",
+        "Classification": "私道",
+        "Breadth": "4.8",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2025年第1四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122300040"
+      },
+      {
+        "PriceCategory": "不動産取引価格情報",
+        "Type": "宅地(土地と建物)",
+        "Region": "住宅地",
+        "MunicipalityCode": "12230",
+        "Prefecture": "千葉県",
+        "Municipality": "八街市",
+        "DistrictName": "榎戸",
+        "TradePrice": "2500000",
+        "PricePerUnit": "",
+        "FloorPlan": "",
+        "Area": "120",
+        "UnitPrice": "",
+        "LandShape": "長方形",
+        "Frontage": "12.3",
+        "TotalFloorArea": "85",
+        "BuildingYear": "1990年",
+        "Structure": "木造",
+        "Use": "住宅",
+        "Purpose": "その他",
+        "Direction": "北東",
+        "Classification": "私道",
+        "Breadth": "5",
+        "CityPlanning": "市街化区域及び市街化調整区域外の都市計画区域",
+        "CoverageRatio": "60",
+        "FloorAreaRatio": "200",
+        "Period": "2025年第2四半期",
+        "Renovation": "",
+        "Remarks": "",
+        "DistrictCode": "122300040"
+      }
+    ],
+    "tx5y": 10,
+    "yoy": -76.8,
+    "up2y": -89.5,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 11000000,
+        "txCount": 1
+      },
+      {
+        "year": 2023,
+        "price": 31000000,
+        "txCount": 4
+      },
+      {
+        "year": 2024,
+        "price": 14000000,
+        "txCount": 3
+      },
+      {
+        "year": 2025,
+        "price": 3250000,
+        "txCount": 2
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR総武本線"
+    },
+    {
+      "name": "名鉄常滑線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 63,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 67455,
+        "ageStructure": {
+          "0-14": 6295,
+          "15-64": 40045,
+          "65+": 21115
+        }
+      },
+      {
+        "year": 2025,
+        "total": 64061,
+        "ageStructure": {
+          "0-14": 5011,
+          "15-64": 36518,
+          "65+": 22532
+        }
+      },
+      {
+        "year": 2030,
+        "total": 60200,
+        "ageStructure": {
+          "0-14": 4181,
+          "15-64": 32654,
+          "65+": 23365
+        }
+      },
+      {
+        "year": 2035,
+        "total": 55943,
+        "ageStructure": {
+          "0-14": 3574,
+          "15-64": 28583,
+          "65+": 23786
+        }
+      },
+      {
+        "year": 2040,
+        "total": 51413,
+        "ageStructure": {
+          "0-14": 3172,
+          "15-64": 24262,
+          "65+": 23979
+        }
+      },
+      {
+        "year": 2045,
+        "total": 46766,
+        "ageStructure": {
+          "0-14": 2723,
+          "15-64": 21461,
+          "65+": 22582
+        }
+      },
+      {
+        "year": 2050,
+        "total": 42276,
+        "ageStructure": {
+          "0-14": 2268,
+          "15-64": 18860,
+          "65+": 21148
+        }
+      }
+    ],
+    "sourceCity": "八街市"
+  }
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "id": "musashikosugi-1",
+        "station_name": "武蔵小杉",
+        "project_name": "ザ・パークハウス 武蔵小杉タワーズ (日本医大跡地)",
+        "search_keyword": "ザ・パークハウス 武蔵小杉タワーズ 公式",
+        "category": "Mansion",
+        "schedule": "2028年9月竣工予定",
+        "description": "地上50階/177mのツインタワー。日本医大跡地開発の集大成。高齢者住宅や福祉・健康増進施設を併設し、多世代が循環する「ウェルネスシティ」を実現する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T19:00:00Z"
+    },
+    {
+        "id": "musashikosugi-2",
+        "station_name": "武蔵小杉",
+        "project_name": "(仮称)小杉町一丁目計画",
+        "search_keyword": "小杉町一丁目計画 三井不動産",
+        "category": "Redevelopment",
+        "schedule": "2029年10月竣工予定",
+        "description": "地上43階/165m。北口駅前のJX金属社宅跡地等を含む再開発。デッキ網を拡張し、商業・住宅・業務が一体となった新たな駅前の顔をつくる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T19:00:00Z"
+    }
+]

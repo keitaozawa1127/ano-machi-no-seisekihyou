@@ -1,0 +1,215 @@
+{
+  "ok": true,
+  "verdict": "caution",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "直近5年の取引件数",
+      "value": "3651 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "6300 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "1.6%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "将来人口（2050推計）",
+      "value": "人口は維持・増加傾向（121）で、需要の底堅さが期待できます。"
+    },
+    {
+      "label": "災害リスク（水害）",
+      "value": "中程度の水害リスクがあります。階数選択や避難計画の確認を推奨します。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇は強くありません。将来の上昇を前提にした判断は避け、住み替え・保有期間の前提でリスクを見てください。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇は急ではありません。ただし横ばい＝安全の保証ではなく、金利や需給で変動し得ます。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "武蔵小杉",
+    "year": 2024,
+    "tx5y": 3651,
+    "yoy": 1.6,
+    "up2y": 5,
+    "prevYear": null,
+    "score": 64
+  },
+  "trendData": [
+    {
+      "year": 2021,
+      "price": 54000000,
+      "txCount": 763
+    },
+    {
+      "year": 2022,
+      "price": 57000000,
+      "txCount": 709
+    },
+    {
+      "year": 2023,
+      "price": 60000000,
+      "txCount": 717
+    },
+    {
+      "year": 2024,
+      "price": 62000000,
+      "txCount": 851
+    },
+    {
+      "year": 2025,
+      "price": 63000000,
+      "txCount": 611
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 121,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 265000,
+        "ageStructure": {
+          "0-14": 35000,
+          "15-64": 180000,
+          "65+": 50000
+        }
+      },
+      {
+        "year": 2030,
+        "total": 290000,
+        "ageStructure": {
+          "0-14": 40000,
+          "15-64": 200000,
+          "65+": 50000
+        }
+      },
+      {
+        "year": 2040,
+        "total": 310000,
+        "ageStructure": {
+          "0-14": 45000,
+          "15-64": 210000,
+          "65+": 55000
+        }
+      },
+      {
+        "year": 2050,
+        "total": 320000,
+        "ageStructure": {
+          "0-14": 45000,
+          "15-64": 210000,
+          "65+": 65000
+        }
+      }
+    ],
+    "sourceCity": "川崎市中原区"
+  },
+  "totalScore": 64,
+  "metrics": {
+    "asset": 64,
+    "safety": 70,
+    "future": 65,
+    "convenience": 53,
+    "liquidity": 68
+  },
+  "lines": [
+    {
+      "name": "JR南武線"
+    },
+    {
+      "name": "JR横須賀線"
+    },
+    {
+      "name": "JR湘南新宿ライン"
+    },
+    {
+      "name": "東急東横線"
+    },
+    {
+      "name": "東急目黒線"
+    },
+    {
+      "name": "相鉄・JR直通線"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "id": "musashikosugi-1",
+      "station_name": "武蔵小杉",
+      "project_name": "ザ・パークハウス 武蔵小杉タワーズ (日本医大跡地)",
+      "search_keyword": "ザ・パークハウス 武蔵小杉タワーズ 公式",
+      "category": "Mansion",
+      "schedule": "2028年9月竣工予定",
+      "description": "地上50階/177mのツインタワー。日本医大跡地開発の集大成。高齢者住宅や福祉・健康増進施設を併設し、多世代が循環する「ウェルネスシティ」を実現する。",
+      "impact_level": 5,
+      "is_future": true,
+      "createdAt": "2024-02-16T19:00:00Z"
+    },
+    {
+      "id": "musashikosugi-2",
+      "station_name": "武蔵小杉",
+      "project_name": "(仮称)小杉町一丁目計画",
+      "search_keyword": "小杉町一丁目計画 三井不動産",
+      "category": "Redevelopment",
+      "schedule": "2029年10月竣工予定",
+      "description": "地上43階/165m。北口駅前のJX金属社宅跡地等を含む再開発。デッキ網を拡張し、商業・住宅・業務が一体となった新たな駅前の顔をつくる。",
+      "impact_level": 4,
+      "is_future": true,
+      "createdAt": "2024-02-16T19:00:00Z"
+    }
+  ],
+  "marketPrice": 59000000,
+  "tx5y": 3651,
+  "trend": "UP",
+  "yoy": 1.6,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "name": "国土交通省「不動産取引価格情報」",
+        "year": 2025
+      },
+      "population": {
+        "name": "国立社会保障・人口問題研究所「日本の地域別将来推計人口」",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "name": "自社独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "name": "国土交通省 ハザードマップポータルサイト（国土地理院推計）",
+        "year": 2026
+      },
+      "redevelopment": {
+        "name": "各自治体・開発事業者 公開情報",
+        "version": "2026年2月版"
+      }
+    }
+  }
+}

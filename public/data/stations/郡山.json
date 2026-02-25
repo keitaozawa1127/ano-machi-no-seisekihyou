@@ -1,0 +1,14 @@
+[
+    {
+        "id": "koriyama-1",
+        "station_name": "郡山",
+        "project_name": "プラウドタワー郡山",
+        "search_keyword": "プラウドタワー郡山 医療モール",
+        "category": "Mansion",
+        "schedule": "2026年1月竣工済み",
+        "description": "地上21階/70m。郡山駅徒歩3分。旧寿泉堂病院跡地。低層階に透析センター等の高度医療施設を併設した「医住近接」タワーマンション。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:15:00Z"
+    }
+]

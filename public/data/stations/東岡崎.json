@@ -1,0 +1,14 @@
+[
+    {
+        "id": "higashiokazaki-1",
+        "station_name": "東岡崎",
+        "project_name": "東岡崎駅北口地区整備事業 (第2期)",
+        "search_keyword": "東岡崎駅北口再開発 スケジュール",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定 (2027年着工)",
+        "description": "地上9階/1.4万㎡。老朽化した駅ビルと交通広場を一体的に刷新。商業・業務・行政サービスを集約し、岡崎の玄関口を再生する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    }
+]

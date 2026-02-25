@@ -1,0 +1,14 @@
+[
+    {
+        "id": "mukogaokayuen-1",
+        "station_name": "向ヶ丘遊園",
+        "project_name": "向ヶ丘遊園跡地利用計画",
+        "search_keyword": "向ヶ丘遊園跡地 温浴施設",
+        "category": "Commercial",
+        "schedule": "2030年3月竣工予定",
+        "description": "小田急電鉄による跡地再生プロジェクト。温浴施設、グランピング、商業エリアからなる「人と自然が回復しあう丘」を創出。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:30:00Z"
+    }
+]

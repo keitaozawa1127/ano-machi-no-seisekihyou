@@ -1,0 +1,39 @@
+Loaded 16497 txs from C:\Users\kozaw\Desktop\あの街の成績表\data\cache\40_2024.json
+Top keys: ["東京都","神奈川県","大阪府","愛知県","福岡県","北海道","宮城県","埼玉県","千葉県","京都府","兵庫県","広島県","静岡県","岡山県","熊本県","沖縄県"]
+Kanagawa keys: ["横浜市","川崎市中原区","川崎市川崎区","相模原市南区","海老名市"]
+[SAMPLE] 福岡市博多区 博多駅東 -> dist=3.41km
+[SAMPLE] 福岡市博多区 博多駅東 -> dist=3.41km
+[SAMPLE] 福岡市博多区 博多駅東 -> dist=3.41km
+Stats for 大橋:
+  Total Txs: 16497
+  Muni Match: 5206
+  (Sample Muni Fail: 北九州市門司区 [HEX:e58c97e4b99de5b79ee5b882e99680e58fb8e58cba], 北九州市門司区 [HEX:e58c97e4b99de5b79ee5b882e99680e58fb8e58cba], 北九州市門司区 [HEX:e58c97e4b99de5b79ee5b882e99680e58fb8e58cba])
+  Coords Found: 1855
+  (Sample Coords Fail: 福岡市博多区 店屋町, 福岡市博多区 築港本町, 福岡市博多区 築港本町, 福岡市博多区 須崎町, 福岡市博多区 須崎町)
+  Distance OK (<=2km): 104
+Loaded 19554 txs from C:\Users\kozaw\Desktop\あの街の成績表\data\cache\01_2024.json
+Top keys: ["東京都","神奈川県","大阪府","愛知県","福岡県","北海道","宮城県","埼玉県","千葉県","京都府","兵庫県","広島県","静岡県","岡山県","熊本県","沖縄県"]
+Kanagawa keys: ["横浜市","川崎市中原区","川崎市川崎区","相模原市南区","海老名市"]
+[SAMPLE] 札幌市中央区 大通東 -> dist=4.39km
+[SAMPLE] 札幌市中央区 大通東 -> dist=4.39km
+[SAMPLE] 札幌市中央区 大通東 -> dist=4.39km
+Stats for 琴似:
+  Total Txs: 19554
+  Muni Match: 6241
+  (Sample Muni Fail: 札幌市南区 [HEX:e69cade5b98ce5b882e58d97e58cba], 札幌市南区 [HEX:e69cade5b98ce5b882e58d97e58cba], 札幌市南区 [HEX:e69cade5b98ce5b882e58d97e58cba])
+  Coords Found: 149
+  (Sample Coords Fail: 札幌市中央区 北３条東, 札幌市中央区 宮の森３条, 札幌市中央区 宮の森３条, 札幌市中央区 宮の森１条, 札幌市中央区 宮の森１条)
+  Distance OK (<=2km): 0
+Loaded 5594 txs from C:\Users\kozaw\Desktop\あの街の成績表\data\cache\43_2024.json
+Top keys: ["東京都","神奈川県","大阪府","愛知県","福岡県","北海道","宮城県","埼玉県","千葉県","京都府","兵庫県","広島県","静岡県","岡山県","熊本県","沖縄県"]
+Kanagawa keys: ["横浜市","川崎市中原区","川崎市川崎区","相模原市南区","海老名市"]
+[SAMPLE] 熊本市中央区 辛島町 -> dist=2.06km
+[SAMPLE] 熊本市中央区 水前寺 -> dist=3.07km
+[SAMPLE] 熊本市中央区 水前寺 -> dist=3.07km
+Stats for 熊本:
+  Total Txs: 5594
+  Muni Match: 1422
+  (Sample Muni Fail: 熊本市南区 [HEX:e7868ae69cace5b882e58d97e58cba], 熊本市南区 [HEX:e7868ae69cace5b882e58d97e58cba], 熊本市南区 [HEX:e7868ae69cace5b882e58d97e58cba])
+  Coords Found: 144
+  (Sample Coords Fail: 熊本市中央区 九品寺, 熊本市中央区 渡鹿, 熊本市中央区 渡鹿, 熊本市中央区 渡鹿, 熊本市中央区 渡鹿)
+  Distance OK (<=2km): 53

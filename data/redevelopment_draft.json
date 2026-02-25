@@ -1,0 +1,92 @@
+[
+    {
+        "id": "draft_001",
+        "stationName": "高輪ゲートウェイ",
+        "projectName": "TAKANAWA GATEWAY CITY (第I期)",
+        "schedule": "2025年3月27日街びらき",
+        "sourceUrl": "https://www.takanawagateway-city.com/",
+        "aiImpact": "S (National Strategic Zone)",
+        "createdAt": "2026-02-06T12:00:00Z"
+    },
+    {
+        "id": "draft_002",
+        "stationName": "大阪・梅田",
+        "projectName": "グラングリーン大阪 (うめきた2期)",
+        "schedule": "2025年3月21日南館開業",
+        "sourceUrl": "https://umekita.com/",
+        "aiImpact": "S (Global Innovation Hub)",
+        "createdAt": "2026-02-06T12:05:00Z"
+    },
+    {
+        "id": "draft_003",
+        "stationName": "日本橋",
+        "projectName": "日本橋一丁目中地区再開発",
+        "schedule": "2026年竣工予定",
+        "sourceUrl": "https://www.mitsuifudosan.co.jp/unifying/nihonbashi/",
+        "aiImpact": "A (Historical Revitalization)",
+        "createdAt": "2026-02-06T12:10:00Z"
+    },
+    {
+        "id": "draft_004",
+        "stationName": "福岡・天神",
+        "projectName": "ONE FUKUOKA BLDG.",
+        "schedule": "2025年4月開業",
+        "sourceUrl": "https://one-fukuoka-bldg.jp/",
+        "aiImpact": "A (Tenjin Big Bang)",
+        "createdAt": "2026-02-06T12:15:00Z"
+    },
+    {
+        "id": "draft_005",
+        "stationName": "広島",
+        "projectName": "広島駅新駅ビル minamoa",
+        "schedule": "2025年3月24日開業",
+        "sourceUrl": "https://www.westjr.co.jp/",
+        "aiImpact": "A (Regional Hub Upgrade)",
+        "createdAt": "2026-02-06T12:20:00Z"
+    },
+    {
+        "id": "draft_006",
+        "stationName": "渋谷",
+        "projectName": "Shibuya Upper West Project",
+        "schedule": "2027年竣工予定",
+        "sourceUrl": "https://www.tokyu-land.co.jp/",
+        "aiImpact": "S (Cultural Center)",
+        "createdAt": "2026-02-06T12:25:00Z"
+    },
+    {
+        "id": "draft_007",
+        "stationName": "札幌",
+        "projectName": "北4西3地区再開発",
+        "schedule": "2028年竣工予定",
+        "sourceUrl": "https://www.city.sapporo.jp/",
+        "aiImpact": "B (Northern Gateway)",
+        "createdAt": "2026-02-06T12:30:00Z"
+    },
+    {
+        "id": "draft_008",
+        "stationName": "中野",
+        "projectName": "中野駅新北口駅前エリア再整備",
+        "schedule": "2029年完了予定",
+        "sourceUrl": "https://www.city.tokyo-nakano.lg.jp/",
+        "aiImpact": "S (Subculture & Business)",
+        "createdAt": "2026-02-06T12:35:00Z"
+    },
+    {
+        "id": "draft_009",
+        "stationName": "武蔵小杉",
+        "projectName": "ザ・パークハウス 武蔵小杉タワーズ",
+        "schedule": "2027-2028年竣工",
+        "sourceUrl": "https://www.mecsumai.com/tph-musashikosugi-t/",
+        "aiImpact": "S (Residential High-Density)",
+        "createdAt": "2026-02-06T12:40:00Z"
+    },
+    {
+        "id": "draft_010",
+        "stationName": "池袋",
+        "projectName": "グランドシティタワー池袋",
+        "schedule": "2026年竣工予定",
+        "sourceUrl": "https://www.sumitomo-rd-mansion.jp/shuto/ikebukuro/",
+        "aiImpact": "A (Urban Core Renewal)",
+        "createdAt": "2026-02-06T12:45:00Z"
+    }
+]

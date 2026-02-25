@@ -1,0 +1,139 @@
+[
+  {
+    "station": "東京",
+    "project": "東京駅前八重洲一丁目東地区市街地再開発事業",
+    "url": "https://www.tokyo-tatemono.com/yaesu/",
+    "status": "TIMEOUT"
+  },
+  {
+    "station": "東京",
+    "project": "都心・臨海地下鉄新線",
+    "url": "https://www.toshiseibi.metro.tokyo.lg.jp/kiban/chikatetsu/index.html",
+    "status": 404
+  },
+  {
+    "station": "新宿",
+    "project": "新宿駅直近地区土地区画整理事業（新宿グランドターミナル）",
+    "url": "https://www.toshiseibi.metro.tokyo.lg.jp/kotsu_butsuryu/kotsuseisaku/kotsu_suishin/shinjuku",
+    "status": "TIMEOUT"
+  },
+  {
+    "station": "新宿",
+    "project": "新宿駅西口地区開発計画",
+    "url": "https://www.odakyu-dentetsu.co.jp/news/2022/20220929_nishiguchi.pdf",
+    "status": "ERROR",
+    "error": "getaddrinfo ENOTFOUND www.odakyu-dentetsu.co.jp"
+  },
+  {
+    "station": "新宿",
+    "project": "新宿駅西南口地区開発計画",
+    "url": "https://www.keio.co.jp/news/update/news_release/news_release2022/nr20220413_shinjukuseinan.pdf",
+    "status": 404
+  },
+  {
+    "station": "新宿",
+    "project": "新宿中央公園 再整備（Park-PFI）",
+    "url": "https://parks.prtj.or.jp/shinjuku/",
+    "status": "ERROR",
+    "error": "getaddrinfo ENOTFOUND parks.prtj.or.jp"
+  },
+  {
+    "station": "渋谷",
+    "project": "Shibuya Sakura Stage（渋谷サクラステージ）",
+    "url": "https://www.shibuyasakurastage.com/",
+    "status": "ERROR",
+    "error": "getaddrinfo ENOTFOUND www.shibuyasakurastage.com"
+  },
+  {
+    "station": "渋谷",
+    "project": "道玄坂二丁目南地区第一種市街地再開発事業",
+    "url": "https://www.mitsuifudosan.co.jp/corporate/news/2022/0126/",
+    "status": 404
+  },
+  {
+    "station": "池袋",
+    "project": "池袋駅西口地区市街地再開発事業",
+    "url": "https://www.city.toshima.lg.jp/301/machizukuri/ikebukuro/saikaihatsu/index.html",
+    "status": 404
+  },
+  {
+    "station": "池袋",
+    "project": "南池袋二丁目C地区第一種市街地再開発事業",
+    "url": "https://www.sumitomo-rd.co.jp/uploads/20220930_release_minamiikebukuroC_chakko.pdf",
+    "status": 404
+  },
+  {
+    "station": "池袋",
+    "project": "東京国際大学 池袋キャンパス",
+    "url": "https://www.tiu.ac.jp/ikebukuro/",
+    "status": 404
+  },
+  {
+    "station": "横浜",
+    "project": "THE YOKOHAMA FRONT（横浜駅きた西口鶴屋地区）",
+    "url": "https://yokohama-front.com/",
+    "status": "ERROR",
+    "error": "getaddrinfo ENOTFOUND yokohama-front.com"
+  },
+  {
+    "station": "横浜",
+    "project": "エキサイトよこはま22（横浜駅周辺大改造）",
+    "url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-toshiseibi/toshikaidai/ekisa-yoko/",
+    "status": 404
+  },
+  {
+    "station": "品川",
+    "project": "高輪ゲートウェイシティ（Gateway City）",
+    "url": "https://www.jreast.co.jp/press/2023/20230516_ho02.pdf",
+    "status": 403
+  },
+  {
+    "station": "品川",
+    "project": "品川駅西口地区再開発（高輪三丁目・四丁目）",
+    "url": "https://www.city.minato.tokyo.jp/toshikeikaku/shinagawa_west.html",
+    "status": 404
+  },
+  {
+    "station": "大阪",
+    "project": "グラングリーン大阪（うめきた2期）",
+    "url": "https://umekita2.jp/",
+    "status": "TIMEOUT"
+  },
+  {
+    "station": "大阪",
+    "project": "なにわ筋線・うめきた地下駅",
+    "url": "https://www.city.osaka.lg.jp/kensetsu/page/0000406856.html",
+    "status": 404
+  },
+  {
+    "station": "大阪",
+    "project": "イノゲート大阪・JPタワー大阪（KITTE大阪）",
+    "url": "https://kitte-osaka.jp/",
+    "status": "ERROR",
+    "error": "getaddrinfo ENOTFOUND kitte-osaka.jp"
+  },
+  {
+    "station": "梅田",
+    "project": "大阪梅田ツインタワーズ（サウス・ノース）",
+    "url": "https://www.hanshin.co.jp/twintowers/",
+    "status": 404
+  },
+  {
+    "station": "名古屋",
+    "project": "リニア中央新幹線 名古屋駅新設工区",
+    "url": "https://www.city.nagoya.jp/shurin/page/0000109919.html",
+    "status": 404
+  },
+  {
+    "station": "博多",
+    "project": "博多コネクティッド（Hakata Connected）",
+    "url": "https://www.city.fukuoka.lg.jp/jutaku-toshi/hakata-station/index.html",
+    "status": 404
+  },
+  {
+    "station": "博多",
+    "project": "福岡市地下鉄七隈線 博多駅延伸",
+    "url": "https://subway.city.fukuoka.lg.jp/nanakumaline_extension/",
+    "status": 403
+  }
+]

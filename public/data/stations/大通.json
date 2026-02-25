@@ -1,0 +1,14 @@
+[
+    {
+        "id": "odori-1",
+        "station_name": "大通",
+        "project_name": "SAPPORO ONE (大通西4南地区)",
+        "search_keyword": "SAPPORO ONE パークハイアット札幌",
+        "category": "Redevelopment",
+        "schedule": "2029年8月竣工予定",
+        "description": "地上36階/185m。札幌駅前の遅延により、2020年代後半の主役となる超高層ビル。パークハイアット札幌が進出し、大通公園と一体化したラグジュアリー拠点を形成。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:30:00Z"
+    }
+]

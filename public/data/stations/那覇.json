@@ -1,0 +1,14 @@
+[
+    {
+        "id": "naha-1",
+        "station_name": "那覇",
+        "project_name": "MipLa (ミプラ) おもろまち",
+        "search_keyword": "MipLaおもろまち テナント",
+        "category": "Redevelopment",
+        "schedule": "2026年1月竣工予定",
+        "description": "地上11階/約1万㎡。那覇新都心の新たなビジネス・放送拠点。沖縄セルラー等の本社機能が入居し、DX推進のハブとなる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:00:00Z"
+    }
+]

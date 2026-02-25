@@ -1,0 +1,14 @@
+[
+    {
+        "id": "tokorozawa-1",
+        "station_name": "所沢",
+        "project_name": "所沢駅西口開発計画 (西武百貨店跡地)",
+        "search_keyword": "所沢駅西口再開発 西武百貨店跡地",
+        "category": "Redevelopment",
+        "schedule": "2029年度頃竣工予定 (計画中)",
+        "description": "西武所沢S.C.跡地の大改造。総事業費1,000億円級。商業・業務・住宅が一体となった「所沢の本丸」プロジェクト。西武グループの総力を結集する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T20:00:00Z"
+    }
+]

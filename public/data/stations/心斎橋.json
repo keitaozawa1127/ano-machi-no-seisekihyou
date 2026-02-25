@@ -1,0 +1,26 @@
+[
+    {
+        "id": "shinsaibashi-1",
+        "station_name": "心斎橋",
+        "project_name": "クオーツ心斎橋 (旧・心斎橋プロジェクト)",
+        "search_keyword": "クオーツ心斎橋 開業",
+        "category": "Redevelopment",
+        "schedule": "2026年3月竣工予定",
+        "description": "地上28階/132m。心斎橋駅直結。ヒューリックによる新ランドマーク。「ザ・ゲートホテル大阪」や高級ブランド店が入居。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T18:05:00Z"
+    },
+    {
+        "id": "shinsaibashi-2",
+        "station_name": "心斎橋",
+        "project_name": "ザ・パークハウス心斎橋タワー",
+        "search_keyword": "ザ・パークハウス心斎橋タワー 価格",
+        "category": "Mansion",
+        "schedule": "2026年9月竣工予定",
+        "description": "地上35階/125m。本町駅・心斎橋駅の中間。免震構造を採用した三菱地所レジデンスの超高層タワー。DX設備を導入。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T18:05:00Z"
+    }
+]

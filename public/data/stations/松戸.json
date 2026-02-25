@@ -1,0 +1,26 @@
+[
+    {
+        "id": "matsudo-1",
+        "station_name": "松戸",
+        "project_name": "松戸駅改良事業・新駅ビル",
+        "search_keyword": "松戸駅 新駅ビル 開業",
+        "category": "Redevelopment",
+        "schedule": "2027年春開業予定 (通路は2026年春)",
+        "description": "地上6階。線路上空に建設されるJR東日本の新駅ビル。東西通路の拡幅と一体的に整備され、商業機能とバリアフリー動線を劇的に改善する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:20:00Z"
+    },
+    {
+        "id": "matsudo-2",
+        "station_name": "松戸",
+        "project_name": "松戸駅東口地区再開発",
+        "search_keyword": "松戸駅東口再開発",
+        "category": "Redevelopment",
+        "schedule": "計画進行中 (詳細未定)",
+        "description": "駅改良事業と連動し、東口のペデストリアンデッキ延伸や駅前広場の再整備が進む。単独の大型ビル計画は現時点で未確定。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:20:00Z"
+    }
+]

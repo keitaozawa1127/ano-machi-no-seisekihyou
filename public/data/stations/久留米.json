@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kurume-1",
+        "station_name": "久留米",
+        "project_name": "久留米ザ・タワー レジデンシャル",
+        "search_keyword": "久留米ザ・タワー レジデンシャル 竣工時期",
+        "category": "Redevelopment",
+        "schedule": "2027年3月竣工予定",
+        "description": "地上36階/130m。JR久留米駅前。エリア最高層となる36階建てタワーマンション(343戸)とシニア住宅(115戸)の複合開発。低層部には商業施設を配置し、多世代共生型の都市居住を実現。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:30:00Z"
+    }
+]

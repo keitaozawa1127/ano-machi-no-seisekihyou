@@ -1,0 +1,14 @@
+[
+    {
+        "id": "takamatsu-1",
+        "station_name": "高松",
+        "project_name": "マンダリンオリエンタル瀬戸内 (サンポート高松)",
+        "search_keyword": "マンダリンオリエンタル瀬戸内 開業",
+        "category": "Redevelopment",
+        "schedule": "2027年夏開業予定",
+        "description": "地上13階/92室。サンポート高松に開業する世界的ラグジュアリーホテル。瀬戸内観光の最高級拠点として、富裕層を呼び込む。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:00:00Z"
+    }
+]

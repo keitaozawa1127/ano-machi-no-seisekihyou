@@ -1,0 +1,38 @@
+[
+    {
+        "id": "kannai-1",
+        "station_name": "関内",
+        "project_name": "BASEGATE横浜関内 (旧市庁舎街区)",
+        "search_keyword": "BASEGATE横浜関内 イベント",
+        "category": "Redevelopment",
+        "schedule": "2026年春グランドオープン",
+        "description": "旧横浜市庁舎を保存・活用した「OMO7横浜」と、ライブビューイングアリーナを備える新タワーが融合。横浜スタジアムと連携し、スポーツ・エンタメの熱気を街へ広げる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+        "id": "kannai-2",
+        "station_name": "関内",
+        "project_name": "関内駅前港町地区再開発",
+        "search_keyword": "関内駅前港町地区再開発 三菱地所",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上32階/170m。旧市庁舎街区の対面に位置する超高層タワー。グローバル企業の誘致を目指した高機能オフィスと、都心居住機能を整備し、関内駅前の新たな顔となる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+        "id": "kannai-3",
+        "station_name": "関内",
+        "project_name": "関内駅前北口地区再開発",
+        "search_keyword": "関内駅前北口地区再開発 東急不動産",
+        "category": "Redevelopment",
+        "schedule": "2031年1月竣工予定",
+        "description": "地上21階/120m。関内駅北口の交通結節機能を強化。駅前広場やデッキを整備し、商業・業務・住宅が一体となった複合施設により、駅周辺の回遊性を劇的に向上させる。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": "hongosanchome-1",
+        "station_name": "本郷三丁目",
+        "project_name": "(仮称)文京区本郷三丁目計画",
+        "search_keyword": "本郷三丁目 三井不動産 タワー",
+        "category": "Mansion",
+        "schedule": "2028年4月竣工予定",
+        "description": "地上23階/83m。JFAハウス(日本サッカー協会ビル)跡地。文教地区・本郷の高台に建設される三井不動産のパークコート級タワー。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:20:00Z"
+    }
+]

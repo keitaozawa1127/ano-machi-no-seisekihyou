@@ -1,0 +1,14 @@
+[
+    {
+        "id": "matsuyama-1",
+        "station_name": "松山",
+        "project_name": "湊町三丁目C街区地区再開発",
+        "search_keyword": "松山 銀天街 再開発",
+        "category": "Redevelopment",
+        "schedule": "2028年頃竣工予定",
+        "description": "地上20階/72m。松山市駅・銀天街エリアの大規模再開発。商業・住宅・公共施設を一体整備し、中心商店街の居住機能を強化する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:00:00Z"
+    }
+]

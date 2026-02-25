@@ -1,0 +1,14 @@
+[
+    {
+        "id": "yokogawa-1",
+        "station_name": "横川",
+        "project_name": "ザ・ライオンズ横川",
+        "search_keyword": "ザ・ライ Lions横川 竣工予定",
+        "category": "Mansion",
+        "schedule": "2026年3月竣工予定",
+        "description": "地上19階。旧モルテン本社跡地。大京の最高級ブランド「THE LIONS」広島第一号案件。全戸ZEH-M Oriented仕様で、2層吹き抜けのエントランスなど地域のフラッグシップとなる仕様。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T20:50:00Z"
+    }
+]

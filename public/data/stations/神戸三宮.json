@@ -1,0 +1,26 @@
+[
+    {
+        "id": "kobe-sannomiya-1",
+        "station_name": "神戸三宮",
+        "project_name": "神戸三宮TWIN GATE (雲井通5丁目地区)",
+        "search_keyword": "神戸三宮TWIN GATE 開業時期",
+        "category": "Redevelopment",
+        "schedule": "2027年度竣工予定",
+        "description": "地上32階/163m。西日本最大級のバスターミナルを核とした複合ビル。大ホール、図書館、ラグジュアリーホテルが入居し、神戸の玄関口を一新する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:00:00Z"
+    },
+    {
+        "id": "kobe-sannomiya-2",
+        "station_name": "神戸三宮",
+        "project_name": "JR三ノ宮新駅ビル",
+        "search_keyword": "JR三ノ宮新駅ビル 概要",
+        "category": "Redevelopment",
+        "schedule": "2029年度開業予定",
+        "description": "地上30階/156m。JR西日本による駅直上の巨大複合ビル。ホテル・商業・オフィスを集積し、周辺ビルとデッキで直結して回遊性を高める。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T13:00:00Z"
+    }
+]

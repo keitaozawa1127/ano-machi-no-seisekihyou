@@ -1,0 +1,26 @@
+[
+    {
+        "id": "oimachi-1",
+        "station_name": "大井町",
+        "project_name": "OIMACHI TRACKS (広町地区開発)",
+        "search_keyword": "OIMACHI TRACKS 開業日",
+        "category": "Redevelopment",
+        "schedule": "2026年3月開業予定",
+        "description": "地上26階/115m。JR東日本の車両基地跡地開発。オフィス・ホテル・商業に加え、災害時に開放される広大な広場や、新改札と直結する歩行者デッキを整備。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:00:00Z"
+    },
+    {
+        "id": "oimachi-2",
+        "station_name": "大井町",
+        "project_name": "品川区新庁舎整備事業",
+        "search_keyword": "品川区新庁舎 移転時期",
+        "category": "Infrastructure",
+        "schedule": "2027年度竣工予定",
+        "description": "OIMACHI TRACKSに隣接して移転。DXを推進する次世代型庁舎。民間施設とシームレスに繋がり、行政・商業・防災が一体となった拠点を形成する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:00:00Z"
+    }
+]

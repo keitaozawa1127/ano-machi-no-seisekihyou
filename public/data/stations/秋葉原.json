@@ -1,0 +1,14 @@
+[
+    {
+        "id": "akihabara-1",
+        "station_name": "秋葉原",
+        "project_name": "外神田一丁目1・2・3番地区再開発",
+        "search_keyword": "秋葉原 外神田一丁目 再開発",
+        "category": "Redevelopment",
+        "schedule": "2030年度着工予定 (計画中)",
+        "description": "地上21階級。秋葉原電気街の中心部(オノデン・ラオックス周辺)を変革する再開発。神田川親水広場や歩行者デッキを整備。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T14:00:00Z"
+    }
+]

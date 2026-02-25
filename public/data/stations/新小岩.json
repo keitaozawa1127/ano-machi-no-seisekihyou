@@ -1,0 +1,14 @@
+[
+    {
+        "id": "shinkoiwa-1",
+        "station_name": "新小岩",
+        "project_name": "新小岩駅北口地区再開発",
+        "search_keyword": "新小岩駅北口再開発 完了予定",
+        "category": "Redevelopment",
+        "schedule": "2032年度竣工予定",
+        "description": "地上39階級。駅北口の交通広場整備と一体化した大規模再開発。南北自由通路と連携し、防災性を高める。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T13:20:00Z"
+    }
+]

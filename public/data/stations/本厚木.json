@@ -1,0 +1,26 @@
+[
+    {
+        "id": "honatsugi-1",
+        "station_name": "本厚木",
+        "project_name": "厚木市複合施設 (中町第2-2地区)",
+        "search_keyword": "厚木市役所 新庁舎 移転",
+        "category": "Redevelopment",
+        "schedule": "2027年度竣工予定",
+        "description": "市役所本庁舎、図書館、未来館(プラネタリウム)を駅徒歩圏に集約移転。行政と文化が融合した市民交流の核「シビックセンター」を形成する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T20:00:00Z"
+    },
+    {
+        "id": "honatsugi-2",
+        "station_name": "本厚木",
+        "project_name": "中町第2-1地区再開発 (タワー棟)",
+        "search_keyword": "本厚木駅北口再開発 タワーマンション",
+        "category": "Mansion",
+        "schedule": "2028年度竣工予定",
+        "description": "地上25階/85m。複合施設に隣接するタワーマンション。低層部に商業機能を備え、新庁舎・図書館と一体的な街区を構成する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T20:00:00Z"
+    }
+]

@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Realestate Station App
+
+国土交通省「不動産価格（取引価格・相場情報）取得API」等のオープンデータ（またはCSV）をもとに、駅ごとのマンション相場リスクを診断するアプリケーションです。
+
+## Features
+
+- **駅別リスク診断**: 取引件数、価格乖離、短期上昇率からリスク（Safe / Caution / Risky）を自動判定。
+- **根拠の提示**: 判定に至った具体的なルール（例：「取引件数が少なく信頼性が低い」など）を明示。
+- **Premium UI**: モダンで信頼感のあるダークテーマUI。
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: CSS Modules / Custom CSS Variables (Tailwind-like utility approach)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Prepare Data
+
+`data_raw/mlit.csv` をもとに、APIが参照する `data/stations.json` を生成します。
+
+```bash
+# 生成スクリプト実行（npx tsx を使用）
+npx tsx scripts/buildStationsJson.ts
+```
+
+> **Note**: `data/stations.json` が存在しない状態でサーバーを起動すると、APIはデータを返せません。
+
+### 3. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Vercel へのデプロイを推奨します。
 
-## Learn More
+1. リポジトリをGitHub等へプッシュ。
+2. Vercelで新規プロジェクトを作成し、リポジトリをインポート。
+3. Build Settingsはデフォルト（`next build`）でOK。
+4. **重要**: `data/stations.json` もリポジトリに含めるか、ビルドコマンド内で生成する必要があります。
+   - 方法A: `data/stations.json` を git commit する（簡単）。
+   - 方法B: Build Commandを `npx tsx scripts/buildStationsJson.ts && next build` に変更し、`data_raw/mlit.csv` をリポジトリに含める。
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/api/diagnose`: 診断ロジックAPI
+- `components`: UIコンポーネント (`SearchForm`, `DiagnosisResult`)
+- `data_raw`: 元データ (CSV)
+- `data`: 変換後データ (JSON)
+- `scripts`: データ変換・検証用スクリプト
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

@@ -1,0 +1,38 @@
+[
+    {
+        "id": "ebina-1",
+        "station_name": "海老名",
+        "project_name": "ViNA GARDENS (ホテル温浴棟・ファミリー棟)",
+        "search_keyword": "ViNA GARDENS 温泉 ホテル 開業",
+        "category": "Redevelopment",
+        "schedule": "2027年11月竣工予定",
+        "description": "地上12階。駅間開発のラストピース。地下1,300mから湧く天然温泉とホテル、ファミリー向け住宅を整備し、「滞在・癒やし」の機能を強化する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T19:00:00Z"
+    },
+    {
+        "id": "ebina-2",
+        "station_name": "海老名",
+        "project_name": "三井不動産インダストリアルパーク (MFIP) 海老名",
+        "search_keyword": "MFIP海老名 企業",
+        "category": "Redevelopment",
+        "schedule": "2026年6月竣工予定",
+        "description": "地上4階/約4万㎡。次世代型産業拠点。物流機能に加え、オフィスやR&Dラボを併設。木造建築を取り入れ、環境配慮と快適なワークプレイスを提供する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-16T19:00:00Z"
+    },
+    {
+        "id": "ebina-3",
+        "station_name": "海老名",
+        "project_name": "リーフィアタワー海老名クロノスコート",
+        "search_keyword": "リーフィアタワー海老名クロノスコート 価格",
+        "category": "Mansion",
+        "schedule": "2026年10月竣工予定",
+        "description": "地上31階/100m。海老名駅間地区「ViNA GARDENS」最後のタワーマンション。低炭素建築物認定を取得した環境配慮型タワー。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:30:00Z"
+    }
+]

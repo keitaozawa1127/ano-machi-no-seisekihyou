@@ -1,0 +1,26 @@
+[
+    {
+        "id": "yodoyabashi-1",
+        "station_name": "淀屋橋",
+        "project_name": "淀屋橋駅西地区 (淀屋橋ゲートタワー)",
+        "search_keyword": "淀屋橋ゲートタワー テナント",
+        "category": "Redevelopment",
+        "schedule": "2026年7月商業開業予定 (2025年末竣工)",
+        "description": "地上29階/135m。御堂筋の玄関口に相応しい重厚なデザイン。2026年春にオフィス入居、夏に商業施設がグランドオープンし、水辺の賑わいを創出する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    },
+    {
+        "id": "yodoyabashi-2",
+        "station_name": "淀屋橋",
+        "project_name": "(仮称)本町4丁目プロジェクト (相愛学園)",
+        "search_keyword": "本町4丁目プロジェクト 相愛学園 建替え",
+        "category": "Redevelopment",
+        "schedule": "2026年7月竣工予定",
+        "description": "地上26階/124m。本町駅直結・淀屋橋徒歩圏。学校・ホテル・オフィスが一体となった複合超高層ビル。御堂筋のスカイラインを更新する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    }
+]

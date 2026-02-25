@@ -1,0 +1,14 @@
+[
+    {
+        "id": "chofu-1",
+        "station_name": "調布",
+        "project_name": "調布駅南口東地区再開発",
+        "search_keyword": "調布駅南口東地区再開発 東急不動産",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上16階/延床1.7万㎡。調布駅南口・ロータリー東側。商業・業務・住宅が入る複合ビル。東急不動産が事業協力者。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:00:00Z"
+    }
+]

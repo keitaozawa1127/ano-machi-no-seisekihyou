@@ -1,0 +1,14 @@
+[
+    {
+        "id": "toyohashi-1",
+        "station_name": "豊橋",
+        "project_name": "豊橋広小路一丁目北地区再開発",
+        "search_keyword": "豊橋広小路一丁目北地区第一種市街地再開発事業 竣工時期",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上23階/90m。駅東口のメインストリートに誕生する職住近接タワー。低層部には店舗とオフィス、上層階に約100戸の住宅を配置。アーケード「ときわ通り」と直結し、利便性が極めて高い。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T20:50:00Z"
+    }
+]

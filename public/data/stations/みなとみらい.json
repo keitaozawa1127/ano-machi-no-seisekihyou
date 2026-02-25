@@ -1,0 +1,26 @@
+[
+    {
+        "id": "minatomirai-1",
+        "station_name": "みなとみらい",
+        "project_name": "みなとみらい21中央地区52街区開発",
+        "search_keyword": "みなとみらい52街区 ゲームアートミュージアム 開業",
+        "category": "Redevelopment",
+        "schedule": "2027年度開業予定",
+        "description": "地上29階/180m。世界初の「ゲームアートミュージアム」を核としたイノベーション拠点。地域冷暖房施設や広大なオープンスペースを併設し、クリエイティブ産業の集積を図る。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+        "id": "minatomirai-2",
+        "station_name": "みなとみらい",
+        "project_name": "Linkage Terrace (60・61街区)",
+        "search_keyword": "Linkage Terrace みなとみらい 開業",
+        "category": "Redevelopment",
+        "schedule": "2029年2月全体竣工予定",
+        "description": "Kアリーナ横浜に隣接する複合街区。上層部にホテル、低層部に専門学校やミュージアムを配置。「Music Terrace」と連携し、エンタメ・観光・教育が融合した拠点を創出する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    }
+]

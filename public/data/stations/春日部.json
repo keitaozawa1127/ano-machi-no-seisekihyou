@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kasukabe-1",
+        "station_name": "春日部",
+        "project_name": "春日部駅付近連続立体交差事業 (高架化)",
+        "search_keyword": "春日部駅 高架化 完成予想図",
+        "category": "Infrastructure",
+        "schedule": "2031年度完了予定",
+        "description": "「開かずの踏切」10カ所を除去する世紀の大事業。伊勢崎線・野田線を高架化し、巨大な新駅舎と高架下空間を創出。街の分断を解消する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:20:00Z"
+    }
+]

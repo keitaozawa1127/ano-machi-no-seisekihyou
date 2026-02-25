@@ -1,0 +1,14 @@
+[
+    {
+        "id": "oita-1",
+        "station_name": "大分",
+        "project_name": "プレミストタワー大分 (末広町一丁目地区再開発)",
+        "search_keyword": "プレミストタワー大分 竣工予定",
+        "category": "Redevelopment",
+        "schedule": "2027年9月竣工予定",
+        "description": "地上27階/93m。大分駅前。A街区に分譲タワー(217戸)と商業施設、B街区に高齢者向け住宅を整備。駅と商店街をつなぐ交流広場や貫通通路も整備される。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:30:00Z"
+    }
+]

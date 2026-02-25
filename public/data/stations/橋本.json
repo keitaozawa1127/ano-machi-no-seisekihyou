@@ -1,0 +1,26 @@
+[
+    {
+        "id": "hashimoto-1",
+        "station_name": "橋本",
+        "project_name": "橋本駅南口地区 C地区 (リニア駅直上)",
+        "search_keyword": "橋本駅南口 C地区 ツインタワー",
+        "category": "Redevelopment",
+        "schedule": "未定 (2027年度以降・リニア延期影響)",
+        "description": "リニア中央新幹線「神奈川県駅」直上の国家戦略プロジェクト。30階級のツインタワー構想があり、オフィス・ホテル・商業が一体となった「日本のシリコンバレー」ゲートウェイを目指す。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T19:00:00Z"
+    },
+    {
+        "id": "hashimoto-2",
+        "station_name": "橋本",
+        "project_name": "ブランズタワー橋本 (北口)",
+        "search_keyword": "ブランズタワー橋本 価格",
+        "category": "Mansion",
+        "schedule": "2026年6月竣工予定",
+        "description": "地上29階/約100m。リニア開業を見据えた北口の先行タワー。JR東海不動産も参画し、環境先進技術と医療モールを備えた定住拠点を創出。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T19:00:00Z"
+    }
+]

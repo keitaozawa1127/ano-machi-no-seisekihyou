@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kyobashi-1",
+        "station_name": "京橋",
+        "project_name": "イオン京橋跡地 再開発 (本設)",
+        "search_keyword": "イオン京橋跡地 再開発 いつ",
+        "category": "Redevelopment",
+        "schedule": "2028年頃以降竣工予定 (2025年4月暫定終了)",
+        "description": "暫定施設「FULALI」閉鎖後、いよいよ本設ビルの建設へ。オフィス・商業・ホテルを含む巨大複合ビルが計画され、大阪城東部エリアの核となる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    }
+]

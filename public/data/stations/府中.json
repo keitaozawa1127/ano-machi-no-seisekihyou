@@ -1,0 +1,14 @@
+[
+    {
+        "id": "fuchu-1",
+        "station_name": "府中",
+        "project_name": "府中市役所新庁舎 (第2期・はなれ)",
+        "search_keyword": "府中市役所新庁舎 はなれ オープン",
+        "category": "Infrastructure",
+        "schedule": "2027年1月全体供用予定",
+        "description": "第1期「おもや」に続き、市民協働機能を持つ「はなれ」が完成。2027年にグランドオープンし、行政サービスと交流の拠点となる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:00:00Z"
+    }
+]

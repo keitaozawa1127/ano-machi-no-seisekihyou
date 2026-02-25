@@ -1,0 +1,14 @@
+[
+    {
+        "id": "mitaka-1",
+        "station_name": "三鷹",
+        "project_name": "三鷹駅南口中央通り東地区再開発",
+        "search_keyword": "三鷹駅南口再開発 タワー",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上26階/100m級ツインタワー。南口駅前の再編事業。商業・業務・住宅を複合整備し、ペデストリアンデッキを拡張して駅直結の利便性を高める。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:30:00Z"
+    }
+]

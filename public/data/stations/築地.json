@@ -1,0 +1,26 @@
+[
+    {
+        "id": "tsukiji-1",
+        "station_name": "築地",
+        "project_name": "築地地区まちづくり (先行にぎわい施設)",
+        "search_keyword": "築地再開発 先行施設 開業",
+        "category": "Redevelopment",
+        "schedule": "2026年度末開業予定",
+        "description": "市場跡地の広大な敷地に、2029年の本格着工に先駆けてオープンする商業・イベント施設。かつての活気と食文化を継承・発信する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    },
+    {
+        "id": "tsukiji-2",
+        "station_name": "築地",
+        "project_name": "築地地区まちづくり (全体計画・第1期)",
+        "search_keyword": "築地スタジアム 完成予定",
+        "category": "Redevelopment",
+        "schedule": "2032年度竣工予定",
+        "description": "5万人収容のマルチスタジアムを中心とした国家プロジェクト。MICE、ホテル、空飛ぶクルマ拠点などを整備し、東京の国際競争力を牽引する。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T18:00:00Z"
+    }
+]

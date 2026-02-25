@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kariya-1",
+        "station_name": "刈谷",
+        "project_name": "刈谷駅北口・桜町二丁目開発",
+        "search_keyword": "刈谷駅北口 ウイングデッキ 延伸",
+        "category": "Redevelopment",
+        "schedule": "2027年9月デッキ接続予定",
+        "description": "地上20階。駅前の「ウイングデッキ」を延伸し、新設の店舗・住宅複合ビルと直結。信号待ちのないウォーカブルな歩行者ネットワークを形成し、駅周辺の滞留性を向上させる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T20:50:00Z"
+    }
+]

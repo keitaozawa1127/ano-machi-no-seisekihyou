@@ -1,0 +1,14 @@
+[
+    {
+        "id": "yokkaichi-1",
+        "station_name": "四日市",
+        "project_name": "四日市三交ビル アネックス (ホテル棟)",
+        "search_keyword": "四日市三交ビル アネックス 開業",
+        "category": "Redevelopment",
+        "schedule": "2028年春開業予定",
+        "description": "地上13階。近鉄四日市駅前。先行するオフィス棟(本館)に続き、ホテル・商業の複合棟を建設。駅前のビジネス・観光機能を強化する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    }
+]

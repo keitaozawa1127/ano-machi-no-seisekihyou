@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kochi-1",
+        "station_name": "高知",
+        "project_name": "クレアホームズ鷹匠公園ザ・タワー",
+        "search_keyword": "クレアホームズ鷹匠公園ザ・タワー 竣工",
+        "category": "Mansion",
+        "schedule": "2026年4月竣工予定",
+        "description": "地上20階/60m。県庁前電停徒歩2分。高知市役所南別館跡地。県内30年ぶりとなる20階建てタワーマンション。高知城を望む眺望とZEH-M Oriented認定が特徴。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:30:00Z"
+    }
+]

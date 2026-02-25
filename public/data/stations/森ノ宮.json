@@ -1,0 +1,14 @@
+[
+    {
+        "id": "morinomiya-1",
+        "station_name": "森ノ宮",
+        "project_name": "大阪公立大学・森之宮新駅 (2期)",
+        "search_keyword": "森之宮新駅 アリーナ 開業",
+        "category": "Redevelopment",
+        "schedule": "2028年春開業予定",
+        "description": "大阪メトロ中央線の新駅開業に合わせた第2期街びらき。駅ビルや1万人規模のアリーナが整備され、大学キャンパスと一体化した新都心が完成する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:00:00Z"
+    }
+]

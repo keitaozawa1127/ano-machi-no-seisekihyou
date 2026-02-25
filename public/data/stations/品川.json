@@ -1,0 +1,14 @@
+[
+    {
+        "id": "shinagawa-1",
+        "station_name": "品川",
+        "project_name": "品川駅西口地区開発 (高輪口)",
+        "search_keyword": "品川駅西口地区開発 計画",
+        "category": "Redevelopment",
+        "schedule": "2026年度解体着手 / 2030年代竣工予定",
+        "description": "国家戦略特区による超大型再開発。グランドプリンスホテル新高輪などが2026年度に営業終了。国道15号上空にデッキを整備し、駅と街をフラットに繋ぐ未来型都市へ。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-16T12:00:00Z"
+    }
+]

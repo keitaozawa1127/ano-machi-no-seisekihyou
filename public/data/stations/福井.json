@@ -1,0 +1,14 @@
+[
+    {
+        "id": "fukui-1",
+        "station_name": "福井",
+        "project_name": "福井駅前南通り地区 (IIIブロック)",
+        "search_keyword": "福井駅前南通り地区 再開発",
+        "category": "Redevelopment",
+        "schedule": "2028年2月竣工予定",
+        "description": "地上18階。福井駅西口・南通り沿いの複合再開発。住宅・商業に加え、隣接ブロックにはホテルや温浴施設も整備され、新幹線開業後の拠点となる。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T12:50:00Z"
+    }
+]

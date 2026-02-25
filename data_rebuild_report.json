@@ -1,0 +1,287 @@
+{
+  "timestamp": "2026-01-18T02:16:34.156Z",
+  "results": [
+    {
+      "prefCode": "01",
+      "totalStations": 327,
+      "stationAreas": 89,
+      "features": 178
+    },
+    {
+      "prefCode": "02",
+      "totalStations": 148,
+      "stationAreas": 29,
+      "features": 40
+    },
+    {
+      "prefCode": "03",
+      "totalStations": 134,
+      "stationAreas": 21,
+      "features": 33
+    },
+    {
+      "prefCode": "04",
+      "totalStations": 91,
+      "stationAreas": 19,
+      "features": 34
+    },
+    {
+      "prefCode": "05",
+      "totalStations": 62,
+      "stationAreas": 7,
+      "features": 25
+    },
+    {
+      "prefCode": "06",
+      "totalStations": 47,
+      "stationAreas": 15,
+      "features": 35
+    },
+    {
+      "prefCode": "07",
+      "totalStations": 116,
+      "stationAreas": 27,
+      "features": 59
+    },
+    {
+      "prefCode": "08",
+      "totalStations": 78,
+      "stationAreas": 18,
+      "features": 44
+    },
+    {
+      "prefCode": "09",
+      "totalStations": 92,
+      "stationAreas": 11,
+      "features": 25
+    },
+    {
+      "prefCode": "10",
+      "totalStations": 100,
+      "stationAreas": 20,
+      "features": 35
+    },
+    {
+      "prefCode": "11",
+      "totalStations": 133,
+      "stationAreas": 38,
+      "features": 62
+    },
+    {
+      "prefCode": "12",
+      "totalStations": 245,
+      "stationAreas": 43,
+      "features": 53
+    },
+    {
+      "prefCode": "13",
+      "totalStations": 445,
+      "stationAreas": 45,
+      "features": 62
+    },
+    {
+      "prefCode": "14",
+      "totalStations": 83,
+      "stationAreas": 16,
+      "features": 28
+    },
+    {
+      "prefCode": "15",
+      "totalStations": 72,
+      "stationAreas": 15,
+      "features": 29
+    },
+    {
+      "prefCode": "16",
+      "totalStations": 164,
+      "stationAreas": 12,
+      "features": 15
+    },
+    {
+      "prefCode": "17",
+      "totalStations": 68,
+      "stationAreas": 14,
+      "features": 19
+    },
+    {
+      "prefCode": "18",
+      "totalStations": 111,
+      "stationAreas": 14,
+      "features": 17
+    },
+    {
+      "prefCode": "19",
+      "totalStations": 47,
+      "stationAreas": 12,
+      "features": 26
+    },
+    {
+      "prefCode": "20",
+      "totalStations": 134,
+      "stationAreas": 31,
+      "features": 76
+    },
+    {
+      "prefCode": "21",
+      "totalStations": 130,
+      "stationAreas": 23,
+      "features": 41
+    },
+    {
+      "prefCode": "22",
+      "totalStations": 91,
+      "stationAreas": 16,
+      "features": 33
+    },
+    {
+      "prefCode": "23",
+      "totalStations": 214,
+      "stationAreas": 37,
+      "features": 53
+    },
+    {
+      "prefCode": "24",
+      "totalStations": 172,
+      "stationAreas": 24,
+      "features": 29
+    },
+    {
+      "prefCode": "25",
+      "totalStations": 97,
+      "stationAreas": 16,
+      "features": 19
+    },
+    {
+      "prefCode": "26",
+      "totalStations": 107,
+      "stationAreas": 19,
+      "features": 25
+    },
+    {
+      "prefCode": "27",
+      "totalStations": 161,
+      "stationAreas": 32,
+      "features": 41
+    },
+    {
+      "prefCode": "28",
+      "totalStations": 135,
+      "stationAreas": 25,
+      "features": 40
+    },
+    {
+      "prefCode": "29",
+      "totalStations": 80,
+      "stationAreas": 23,
+      "features": 39
+    },
+    {
+      "prefCode": "30",
+      "totalStations": 26,
+      "stationAreas": 4,
+      "features": 30
+    },
+    {
+      "prefCode": "31",
+      "totalStations": 42,
+      "stationAreas": 10,
+      "features": 19
+    },
+    {
+      "prefCode": "32",
+      "totalStations": 48,
+      "stationAreas": 6,
+      "features": 19
+    },
+    {
+      "prefCode": "33",
+      "totalStations": 43,
+      "stationAreas": 10,
+      "features": 26
+    },
+    {
+      "prefCode": "34",
+      "totalStations": 59,
+      "stationAreas": 10,
+      "features": 22
+    },
+    {
+      "prefCode": "35",
+      "totalStations": 60,
+      "stationAreas": 8,
+      "features": 19
+    },
+    {
+      "prefCode": "36",
+      "totalStations": 76,
+      "stationAreas": 15,
+      "features": 24
+    },
+    {
+      "prefCode": "37",
+      "totalStations": 75,
+      "stationAreas": 11,
+      "features": 17
+    },
+    {
+      "prefCode": "38",
+      "totalStations": 78,
+      "stationAreas": 9,
+      "features": 20
+    },
+    {
+      "prefCode": "39",
+      "totalStations": 112,
+      "stationAreas": 12,
+      "features": 34
+    },
+    {
+      "prefCode": "40",
+      "totalStations": 226,
+      "stationAreas": 48,
+      "features": 57
+    },
+    {
+      "prefCode": "41",
+      "totalStations": 66,
+      "stationAreas": 17,
+      "features": 20
+    },
+    {
+      "prefCode": "42",
+      "totalStations": 81,
+      "stationAreas": 9,
+      "features": 21
+    },
+    {
+      "prefCode": "43",
+      "totalStations": 79,
+      "stationAreas": 19,
+      "features": 44
+    },
+    {
+      "prefCode": "44",
+      "totalStations": 2,
+      "stationAreas": 1,
+      "features": 18
+    },
+    {
+      "prefCode": "45",
+      "totalStations": 40,
+      "stationAreas": 7,
+      "features": 26
+    },
+    {
+      "prefCode": "46",
+      "totalStations": 68,
+      "stationAreas": 4,
+      "features": 43
+    },
+    {
+      "prefCode": "47",
+      "totalStations": 19,
+      "stationAreas": 2,
+      "features": 41
+    }
+  ]
+}

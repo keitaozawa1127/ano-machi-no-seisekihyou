@@ -1,0 +1,14 @@
+[
+    {
+        "id": "motoyawata-1",
+        "station_name": "本八幡",
+        "project_name": "本八幡駅北口駅前地区再開発",
+        "search_keyword": "本八幡駅北口再開発 施工",
+        "category": "Redevelopment",
+        "schedule": "2030年頃竣工予定 (2025年組合設立)",
+        "description": "地上44階/160m。本八幡駅直結のタワーマンション計画。京成線・都営線との結節点を強化し、商業・業務・公益施設を一体整備する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:40:00Z"
+    }
+]

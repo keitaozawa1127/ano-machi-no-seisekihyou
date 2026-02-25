@@ -1,0 +1,14 @@
+[
+    {
+        "id": "akita-1",
+        "station_name": "秋田",
+        "project_name": "レーベン秋田 THE IMPERIAL TOWER",
+        "search_keyword": "レーベン秋田 THE IMPERIAL TOWER 竣工",
+        "category": "Mansion",
+        "schedule": "2026年2月竣工予定",
+        "description": "地上20階/60m。秋田駅徒歩4分。旧ホテルハワイ跡地。優良建築物等整備事業として建設されるタワーマンション。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T21:15:00Z"
+    }
+]

@@ -1,0 +1,186 @@
+{
+  "ok": true,
+  "verdict": "caution",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "直近5年の取引件数",
+      "value": "1587 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "1.0 億円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "12.4%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "将来人口（2050推計）",
+      "value": "推計人口指数が 85 と減少傾向です。長期保有時の出口戦略に注意が必要です。"
+    },
+    {
+      "label": "災害リスク（水害）",
+      "value": "中程度の水害リスクがあります。階数選択や避難計画の確認を推奨します。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇が強く、過熱局面では期待が先行して価格が伸びやすい一方、前提が崩れると調整も起きやすくなります。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇が急で、短期的な反動（調整）リスクが高まります。購入検討では価格の納得感と資金余力を厚めに見てください。"
+    }
+  ],
+  "note": "データ基準日: 2024年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "大崎",
+    "year": 2024,
+    "tx5y": 1587,
+    "yoy": 12.4,
+    "up2y": 22,
+    "prevYear": null,
+    "score": 65
+  },
+  "trendData": [
+    {
+      "year": 2020,
+      "price": 60000000,
+      "txCount": 120
+    },
+    {
+      "year": 2021,
+      "price": 73000000,
+      "txCount": 361
+    },
+    {
+      "year": 2022,
+      "price": 82000000,
+      "txCount": 358
+    },
+    {
+      "year": 2023,
+      "price": 89000000,
+      "txCount": 357
+    },
+    {
+      "year": 2024,
+      "price": 100000000,
+      "txCount": 391
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 85,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 100000,
+        "ageStructure": {
+          "0-14": 15000,
+          "15-64": 60000,
+          "65+": 25000
+        }
+      },
+      {
+        "year": 2030,
+        "total": 95000,
+        "ageStructure": {
+          "0-14": 13000,
+          "15-64": 55000,
+          "65+": 27000
+        }
+      },
+      {
+        "year": 2040,
+        "total": 90000,
+        "ageStructure": {
+          "0-14": 11000,
+          "15-64": 49000,
+          "65+": 30000
+        }
+      },
+      {
+        "year": 2050,
+        "total": 85000,
+        "ageStructure": {
+          "0-14": 9000,
+          "15-64": 44000,
+          "65+": 32000
+        }
+      }
+    ],
+    "sourceCity": "品川区"
+  },
+  "totalScore": 65,
+  "metrics": {
+    "asset": 88,
+    "safety": 70,
+    "future": 51,
+    "convenience": 46,
+    "liquidity": 41
+  },
+  "lines": [
+    {
+      "name": "JR埼京線"
+    },
+    {
+      "name": "JR山手線"
+    },
+    {
+      "name": "JR湘南新宿ライン"
+    },
+    {
+      "name": "東京りんかい線"
+    },
+    {
+      "name": "相鉄・JR直通線"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "id": "osaki-1",
+      "station_name": "大崎",
+      "project_name": "大崎駅西口F南地区 (大崎タワーレジデンス)",
+      "search_keyword": "大崎駅西口F南地区 住友不動産",
+      "category": "Mansion",
+      "schedule": "2026年初頭竣工予定",
+      "description": "地上35階/143m。大崎駅西口最後の大型区画。住友不動産によるオフィス・住宅複合タワー。ペデストリアンデッキ網が完結する。",
+      "impact_level": 4,
+      "is_future": true,
+      "createdAt": "2024-02-16T14:20:00Z"
+    },
+    {
+      "id": "osaki-2",
+      "station_name": "大崎",
+      "project_name": "大崎リバーウォークガーデン (東五反田二丁目)",
+      "search_keyword": "大崎リバーウォークガーデン 竣工",
+      "category": "Redevelopment",
+      "schedule": "2027年3月竣工予定",
+      "description": "地上39階/150m。目黒川沿いの親水エリア。公園と一体化した「バイオネスト」や緑地を整備し、環境共生型のタワー街区を創出する。",
+      "impact_level": 4,
+      "is_future": true,
+      "createdAt": "2024-02-16T14:20:00Z"
+    }
+  ],
+  "marketPrice": 83000000,
+  "tx5y": 1587,
+  "trend": "UP",
+  "yoy": 12.4,
+  "dataYear": 2024
+}

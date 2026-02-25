@@ -1,0 +1,14 @@
+[
+    {
+        "id": "nishihiroshima-1",
+        "station_name": "西広島",
+        "project_name": "西広島駅南口西地区再開発",
+        "search_keyword": "西広島駅南口西地区第一種市街地再開発事業 竣工時期",
+        "category": "Redevelopment",
+        "schedule": "2033年竣工予定",
+        "description": "地上45階/162m。広島西部最大の交通結節点。超高層タワー(約450戸)と商業棟をデッキで接続。歴史的な「西国街道」の景観と調和させつつ、ウォーカブルな駅前空間を創出する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T20:50:00Z"
+    }
+]

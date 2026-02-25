@@ -1,0 +1,14 @@
+[
+    {
+        "id": "hoshigaoka-1",
+        "station_name": "星ヶ丘",
+        "project_name": "星が丘ボウル跡地プロジェクト",
+        "search_keyword": "星が丘ボウル跡地プロジェクト 蔦屋書店",
+        "category": "Redevelopment",
+        "schedule": "2027年春〜2028年3月順次竣工",
+        "description": "星が丘ボウル跡地の商・学・住一体開発。「星が丘 蔦屋書店」や「名古屋市星が丘図書館」が入る複合ビル(2027年)と、高質マンション「ブランズ星が丘テラス」(2028年)で構成される。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T20:50:00Z"
+    }
+]

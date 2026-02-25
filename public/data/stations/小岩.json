@@ -1,0 +1,38 @@
+[
+    {
+        "id": "koiwa-1",
+        "station_name": "小岩",
+        "project_name": "パークシティ小岩 ザ タワー (南小岩七丁目)",
+        "search_keyword": "パークシティ小岩 ザ タワー 価格",
+        "category": "Mansion",
+        "schedule": "2027年3月竣工予定",
+        "description": "地上45階/160m。南口の新たなランドマーク。リングロード（周回道路）とペデストリアンデッキで駅直結。商業施設も併設し、エリアのブランドを牽引する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:20:00Z"
+    },
+    {
+        "id": "koiwa-2",
+        "station_name": "小岩",
+        "project_name": "FIRSTA III (南小岩六丁目地区)",
+        "search_keyword": "FIRSTA III 小岩 竣工",
+        "category": "Redevelopment",
+        "schedule": "2026年度竣工予定",
+        "description": "地上33階/110m。ファスタ小岩シリーズの完結編。七丁目地区とデッキで接続され、南口西側の歩行者ネットワークが完成する。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:20:00Z"
+    },
+    {
+        "id": "koiwa-3",
+        "station_name": "小岩",
+        "project_name": "JR小岩駅北口地区再開発",
+        "search_keyword": "小岩駅北口再開発 三井不動産",
+        "category": "Redevelopment",
+        "schedule": "2029年度竣工予定",
+        "description": "地上30階/110m。北口駅前の密集地を解消し、6,000㎡の交通広場を新設。イトーヨーカドー跡地を含む大規模複合開発。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-16T14:20:00Z"
+    }
+]

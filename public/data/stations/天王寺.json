@@ -1,0 +1,14 @@
+[
+    {
+        "id": "tennoji-1",
+        "station_name": "天王寺",
+        "project_name": "グランドメゾン六万体町",
+        "search_keyword": "グランドメゾン六万体町 価格",
+        "category": "Mansion",
+        "schedule": "2026年竣工予定",
+        "description": "地上24階/83m。四天王寺夕陽ヶ丘エリアのタワーレジデンス。歴史ある文教地区の静謐な住環境と都心アクセスを両立する。",
+        "impact_level": 3,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:40:00Z"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": "namba-1",
+        "station_name": "難波",
+        "project_name": "難波千日前地区再開発 (高島屋東側)",
+        "search_keyword": "難波千日前再開発 ハイアット",
+        "category": "Redevelopment",
+        "schedule": "2031年3月竣工予定",
+        "description": "地上28階/128m。南海なんば駅直結。ハイアットのライフスタイルホテル「ハイアット セントリック」とオフィス・商業の複合ビル。",
+        "impact_level": 4,
+        "is_future": true,
+        "createdAt": "2024-02-17T11:40:00Z"
+    }
+]

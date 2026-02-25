@@ -1,0 +1,14 @@
+[
+    {
+        "id": "kamiooka-1",
+        "station_name": "上大岡",
+        "project_name": "上大岡C北地区再開発",
+        "search_keyword": "上大岡C北地区再開発 計画",
+        "category": "Redevelopment",
+        "schedule": "2035年竣工予定",
+        "description": "地上43階/179m。上大岡駅直結。横浜南部最高層となるタワー計画。商業・文化施設を併設し、地域のランドマークとなる。",
+        "impact_level": 5,
+        "is_future": true,
+        "createdAt": "2024-02-17T17:30:00Z"
+    }
+]
