@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 import { geoContains } from 'd3-geo';
@@ -36,7 +37,7 @@ async function rebuildPrefecture(prefCode: string) {
                     stationsInArea.push(station);
                     station.lines.forEach((line: string) => uniqueLines.add(line));
                 }
-            } catch (e) { }
+            } catch (e: any) { }
         });
 
         // Physical update

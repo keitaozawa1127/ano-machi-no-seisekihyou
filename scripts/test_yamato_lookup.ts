@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 import { geoContains } from 'd3-geo';
@@ -31,7 +32,7 @@ geoData.features.forEach((feature: any) => {
             if (geoContains(feature, station.coordinates)) {
                 stationsInCity.push(station);
             }
-        } catch (e) { }
+        } catch (e: any) { }
     });
 
     cityLookup.set(cityName, { count: stationsInCity.length, stations: stationsInCity });

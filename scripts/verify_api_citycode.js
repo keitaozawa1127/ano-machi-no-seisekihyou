@@ -26,3 +26,5 @@ http.get('http://localhost:3000/api/stations?pref=13', (res) => {
         }
     });
 }).on('error', e => console.error('Error:', e));
+
+export {};

@@ -22,3 +22,5 @@ const dc = JSON.parse(fs.readFileSync(dcPath, 'utf-8'));
 if (dc["東京都"] && dc["東京都"]["千代田区"]) {
     console.log("\nDistrict Coords Keys for 千代田区:", Object.keys(dc["東京都"]["千代田区"]));
 }
+
+export {};

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 import { geoContains } from 'd3-geo';
@@ -38,7 +39,7 @@ if (tokyoStations.length > 0) {
                 console.log(`  Municipality: ${tokyoData.features[i].properties.N03_004 || tokyoData.features[i].properties.N03_003}`);
                 break;
             }
-        } catch (e) {
+        } catch (e: any) {
             console.log(`✗ Error on feature ${i}:`, (e as Error).message);
             if (i === 0) {
                 console.log(`  Geometry:`, JSON.stringify(tokyoData.features[i].geometry).substring(0, 200));

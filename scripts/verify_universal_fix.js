@@ -88,3 +88,5 @@ process.env.HOME = userHome;
         if (browser) await browser.close();
     }
 })();
+
+export {};

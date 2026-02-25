@@ -26,3 +26,5 @@ const fetch = require('node-fetch');
         console.log('23 Ward stations count:', wardStations.length);
     }
 })();
+
+export {};

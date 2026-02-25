@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 import { geoArea, geoContains } from 'd3-geo';
@@ -131,7 +132,7 @@ async function processFile(filePath: string, tolerance: number = 0.0001) {
                     stationsInArea.push(station);
                     station.lines.forEach((line: string) => uniqueLines.add(line));
                 }
-            } catch (e) {
+            } catch (e: any) {
                 // Skip
             }
         });

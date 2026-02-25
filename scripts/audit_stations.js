@@ -205,3 +205,5 @@ async function main() {
 }
 
 main().catch(e => { log('FATAL: ' + e.message); process.exit(1); });
+
+export {};

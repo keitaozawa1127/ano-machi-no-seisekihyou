@@ -117,3 +117,5 @@ async function verifySearchLogic() {
 }
 
 verifySearchLogic().catch(console.error);
+
+export {};

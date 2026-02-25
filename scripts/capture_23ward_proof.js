@@ -175,3 +175,5 @@ const ARTIFACT_DIR = 'C:\\Users\\kozaw\\.gemini\\antigravity\\brain\\dd221516-97
         await browser.close();
     }
 })();
+
+export {};

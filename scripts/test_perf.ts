@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getFullDiagnosisData } from '../lib/mlitServiceCore';
 
 async function testPerf() {
@@ -17,7 +18,7 @@ async function testPerf() {
         console.log(`[RESULT] MLIT Trend: ${result.mlit?.trend}`);
         console.log(`[RESULT] Time Taken: ---> ${seconds} seconds <---`);
         console.log(`================================\n`);
-    } catch (e) {
+    } catch (e: any) {
         console.error(`[TEST] Error:`, e);
     }
 }

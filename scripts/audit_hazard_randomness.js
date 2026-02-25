@@ -59,3 +59,5 @@ async function runTest() {
 }
 
 runTest();
+
+export {};

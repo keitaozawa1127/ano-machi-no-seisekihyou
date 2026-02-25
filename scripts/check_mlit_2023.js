@@ -33,3 +33,5 @@ https.get(url, options, (res) => {
         }
     });
 }).on('error', (e) => console.error(e));
+
+export {};

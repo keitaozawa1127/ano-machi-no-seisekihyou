@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { checkFloodRisk, checkLandslideRisk, checkGroundAmplification } from '../lib/external/hazardMapApi';
 

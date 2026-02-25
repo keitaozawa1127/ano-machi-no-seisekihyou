@@ -150,3 +150,5 @@ TARGETS.forEach(target => {
 
 fs.writeFileSync(LOG_FILE, logBuffer, 'utf-8');
 console.log('Log saved to', LOG_FILE);
+
+export {};

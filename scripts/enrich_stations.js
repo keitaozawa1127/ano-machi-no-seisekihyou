@@ -176,3 +176,5 @@ async function enrichStationData() {
 }
 
 enrichStationData().catch(console.error);
+
+export {};

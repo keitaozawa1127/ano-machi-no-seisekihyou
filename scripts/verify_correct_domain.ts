@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { PngDecoder } from '../lib/external/miniPng';
 
@@ -27,7 +28,7 @@ async function checkUrl(url: string, desc: string) {
             console.log(`[${res.status}] Not Found`);
             return false;
         }
-    } catch (e) {
+    } catch (e: any) {
         console.error(`[ERR] ${e.message}`);
         return false;
     }

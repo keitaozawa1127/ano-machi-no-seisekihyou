@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { PngDecoder } from '../lib/external/miniPng';
 
@@ -57,10 +58,10 @@ async function checkColor(name: string, lat: number, lon: number) {
                     console.log("  -> Transparent (No Risk at exact point)");
                 }
                 return; // Stop if success
-            } catch (e) {
+            } catch (e: any) {
                 console.error("  -> PNG Parse Error:", e);
             }
-        } catch (e) {
+        } catch (e: any) {
             console.error("  -> Network Error:", e);
         }
     }

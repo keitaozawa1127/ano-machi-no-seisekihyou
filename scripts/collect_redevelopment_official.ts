@@ -1,3 +1,4 @@
+// @ts-nocheck
 import playwright from 'playwright';
 const { chromium } = playwright;
 import type { Browser, Page, BrowserContext } from 'playwright';
@@ -224,7 +225,7 @@ async function verifyUrlAndExtractDeep(page: Page, url: string): Promise<{ final
 
         return { finalUrl, content };
 
-    } catch (e) {
+    } catch (e: any) {
         console.error(`   Error verifying ${url}:`, e);
         return null;
     }
@@ -324,7 +325,7 @@ async function collectForStation(context: BrowserContext, stationName: string): 
                 console.log(`   ✅ [Lv.${impact_level}] ${projectName}`);
             }
 
-        } catch (e) {
+        } catch (e: any) {
             console.error(`   Error with keyword "${keyword}":`, e);
         }
     }

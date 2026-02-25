@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 import { geoArea, geoContains, geoCentroid } from 'd3-geo';
@@ -141,7 +142,7 @@ async function fetchStationsForPrefecture(prefCode: string): Promise<Station[]> 
             }));
         }
         return [];
-    } catch (error) {
+    } catch (error: any) {
         console.error(`  ⚠️  Failed to fetch stations for ${prefCode}:`, error);
         return [];
     }

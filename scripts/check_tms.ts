@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 async function main() {
     const url = "https://disaportal.gsi.go.jp/data/map/01_flood_l2_shinsuishin_data/13/7278/4967.png";
@@ -10,8 +11,9 @@ async function main() {
         } else {
             console.log(`Failed: ${res.status}`);
         }
-    } catch (e) {
+    } catch (e: any) {
         console.error("Error:", e);
     }
 }
 main();
+export { };

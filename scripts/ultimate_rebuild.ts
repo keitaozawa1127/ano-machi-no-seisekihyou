@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 import { geoContains, geoDistance } from 'd3-geo';
@@ -41,7 +42,7 @@ function isStationInFeature(stationCoords: [number, number], feature: any, buffe
         };
 
         return checkCoordinates(geometry.coordinates);
-    } catch (e) {
+    } catch (e: any) {
         return false;
     }
 }

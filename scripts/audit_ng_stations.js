@@ -110,3 +110,5 @@ function flags(tx, mp, dy) {
     }
     console.log(`=== RE-AUDIT COMPLETE: OK=${okCount}, NG=${ngCount} ===`);
 })();
+
+export {};

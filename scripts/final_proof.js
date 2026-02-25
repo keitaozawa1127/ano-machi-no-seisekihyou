@@ -102,3 +102,5 @@ const APP_URL = 'http://localhost:3000';
         console.log('🏁 Verification Complete');
     }
 })();
+
+export {};

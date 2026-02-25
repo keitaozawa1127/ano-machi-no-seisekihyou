@@ -127,3 +127,5 @@ async function verifyFixes() {
 }
 
 verifyFixes().catch(console.error);
+
+export {};

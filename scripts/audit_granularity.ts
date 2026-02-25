@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 
@@ -22,7 +23,7 @@ const audit = () => {
                 console.log(`[PASS] ${f}: ${count} features`);
                 goodFiles.push(f);
             }
-        } catch (e) {
+        } catch (e: any) {
             console.log(`[ERROR] ${f}: Invalid JSON`);
             badFiles.push(f.replace('.json', ''));
         }

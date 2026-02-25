@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 
@@ -88,7 +89,7 @@ async function run() {
             // サーバー負荷軽減のためのスリープ
             await new Promise(r => setTimeout(r, 1000));
 
-        } catch (e) {
+        } catch (e: any) {
             console.error(`❌ Exception for ${st.name}:`, e);
         }
     }

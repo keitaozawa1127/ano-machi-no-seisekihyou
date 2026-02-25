@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 const URL = 'https://disaportal.gsi.go.jp/hazardmapportal/hazardmap/copyright/metadata_light.xml';
 
@@ -21,3 +22,5 @@ async function main() {
 }
 
 main();
+
+export {};

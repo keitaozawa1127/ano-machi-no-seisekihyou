@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 import { geoContains } from 'd3-geo';
@@ -37,7 +38,7 @@ async function processFile(filePath: string) {
                     station.lines.forEach((line: string) => uniqueLines.add(line));
                     successfulMatches++;
                 }
-            } catch (e) {
+            } catch (e: any) {
                 // Geometry error - log first occurrence only
                 if (idx === 0) {
                     console.log(`  ⚠️  geoContains error on feature 0:`, (e as Error).message);

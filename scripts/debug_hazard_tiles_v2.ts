@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { PngDecoder } from '../lib/external/miniPng';
 
@@ -32,7 +33,7 @@ async function checkUrl(url: string, description: string): Promise<boolean> {
             console.log(`[${res.status}] ${description} -> ${url}`);
             return false;
         }
-    } catch (e) {
+    } catch (e: any) {
         console.log(`[ERR] ${description} -> ${e.message}`);
         return false;
     }

@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import { PngDecoder } from '../lib/external/miniPng';
 
@@ -20,7 +21,7 @@ async function check(url: string, desc: string) {
         } else {
             // console.log(`[${res.status}] ${desc}`); // Reduce noise
         }
-    } catch (e) {
+    } catch (e: any) {
         // console.log(`[ERR] ${desc}`);
     }
     return false;

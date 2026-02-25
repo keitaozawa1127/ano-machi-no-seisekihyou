@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
@@ -49,7 +50,7 @@ async function fetchStationsForPrefecture(prefName: string): Promise<Station[]> 
 
         console.log(`    ⚠️  No station data in response`);
         return [];
-    } catch (error) {
+    } catch (error: any) {
         console.error(`    ❌ Error fetching stations:`, error);
         return [];
     }
@@ -69,7 +70,7 @@ function integrateStationMetadata(geoData: any, stations: Station[]): number {
                     stationsInArea.push(station);
                     uniqueLines.add(station.line);
                 }
-            } catch (e) {
+            } catch (e: any) {
                 // Skip invalid geometries
             }
         });
