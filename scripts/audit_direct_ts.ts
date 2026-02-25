@@ -23,7 +23,7 @@ async function main() {
     const flood = ext.hazardRisk.flood;
     console.log(`Flood Level: ${flood}`);
 
-    if (flood === 3 || flood === 4) {
+    if (flood.level === 3 || flood.level === 4) {
         console.log("SUCCESS: Flood risk reflects elevation data.");
     } else {
         console.log("FAILURE: Flood risk does not match expectation (Expected 3 or 4).");
