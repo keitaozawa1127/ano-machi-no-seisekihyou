@@ -9,18 +9,23 @@ console.log("HELLO FROM MLIT SERVICE TS (UPDATED WITH CACHE)");
 
 const API_KEY = process.env.MLIT_API_KEY;
 const BASE_URL = "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001";
-const CACHE_DIR = path.join(process.cwd(), 'data', 'cache');
+const IS_VERCEL = process.env.VERCEL === "1";
+const CACHE_DIR = IS_VERCEL ? '/tmp/cache' : path.join(process.cwd(), 'data', 'cache');
 const CACHE_DIAG_DIR = path.join(CACHE_DIR, 'diagnosis');
 const CACHE_GEO_FILE = path.join(CACHE_DIR, 'station_coords.json');
 const POPULATION_DATA_FILE = path.join(process.cwd(), 'data', 'population_projection.json');
 
 let populationDataCache: any = null;
 
-if (!fs.existsSync(CACHE_DIR)) {
-    fs.mkdirSync(CACHE_DIR, { recursive: true });
-}
-if (!fs.existsSync(CACHE_DIAG_DIR)) {
-    fs.mkdirSync(CACHE_DIAG_DIR, { recursive: true });
+try {
+    if (!fs.existsSync(CACHE_DIR)) {
+        fs.mkdirSync(CACHE_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(CACHE_DIAG_DIR)) {
+        fs.mkdirSync(CACHE_DIAG_DIR, { recursive: true });
+    }
+} catch (e) {
+    console.warn("[CACHE] Could not create cache directories:", e);
 }
 
 export type Transaction = {

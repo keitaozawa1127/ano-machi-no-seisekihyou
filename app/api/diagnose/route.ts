@@ -8,7 +8,8 @@ import path from 'path';
 
 export const dynamic = 'force-dynamic';
 
-const CACHE_DIR = path.join(process.cwd(), 'data', 'cache', 'diagnose_responses');
+const IS_VERCEL = process.env.VERCEL === "1";
+const CACHE_DIR = IS_VERCEL ? '/tmp/diagnose_responses' : path.join(process.cwd(), 'data', 'cache', 'diagnose_responses');
 
 // 起動時にディレクトリ作成
 (async () => {
