@@ -1,10 +1,4 @@
 import { Metadata } from "next";
-import { Caveat } from "next/font/google";
-
-const caveat = Caveat({
-    subsets: ["latin"],
-    display: "swap",
-});
 
 export const metadata: Metadata = {
     title: "あの街の成績表とは | 街選びの新しいものさし",
@@ -72,6 +66,45 @@ function IconBarChart() {
     );
 }
 
+function IconSparkles() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z" />
+            <path d="M5 3v4" />
+            <path d="M3 5h4" />
+        </svg>
+    );
+}
+
+function IconEye() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+            <circle cx="12" cy="12" r="3" />
+        </svg>
+    );
+}
+
 // Urban Skyline Illustration (Modern Line Art / Non-overlapping)
 function IllustrationTown() {
     return (
@@ -133,12 +166,6 @@ function IllustrationTown() {
 }
 
 export default function AboutPage() {
-    const blobStyles = [
-        { borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" },
-        { borderRadius: "40% 60% 60% 40% / 70% 50% 50% 30%" },
-        { borderRadius: "50% 50% 40% 60% / 40% 60% 40% 60%" },
-    ];
-
     return (
         <main className="min-h-screen w-full flex flex-col font-sans antialiased text-[var(--text-primary)] bg-[var(--bg-primary)] overflow-x-hidden">
             {/* ========================================================
@@ -161,14 +188,7 @@ export default function AboutPage() {
                             </h1>
                         </div>
 
-                        <p
-                            className="text-base md:text-lg text-[var(--text-primary)] tracking-widest leading-loose max-w-2xl opacity-80"
-                            style={{ letterSpacing: "0.08em" }}
-                        >
-                            人生最大の買い物を、誰かの主観に委ねない。
-                            <br />
-                            噂や不確かな情報を排除し、国や自治体の確かなファクトデータのみで、あの街の現在と未来をスコア化します。
-                        </p>
+
                     </section>
                 </div>
             </div>
@@ -182,7 +202,7 @@ export default function AboutPage() {
                         <div className="flex-1">
                             <h2
                                 className="text-2xl sm:text-3xl text-[var(--brand-main)] tracking-widest mb-12"
-                                style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
+                                style={{ fontFamily: "var(--font-sans)", fontWeight: 500 }}
                             >
                                 「本当にこの街でいいのか？」という、終わらない問い。
                             </h2>
@@ -208,28 +228,29 @@ export default function AboutPage() {
             </div>
 
             {/* ========================================================
-        Section 3: Core Values（3つの約束） - Floating Card
+        Section 3: Core Values（5つの約束） - Floating Card
         ======================================================== */}
-            <div className="w-full py-12 px-4 sm:px-6">
+            <div className="w-full py-12 px-4 sm:px-6 mb-24 md:mb-32">
                 <div className="w-full max-w-5xl mx-auto bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] px-8 py-16 md:px-16 md:py-24 text-left">
                     <p className="text-sm tracking-[0.4em] text-[var(--brand-main)] mb-8 uppercase font-medium">
                         Core Values
                     </p>
                     <h2
                         className="text-3xl sm:text-4xl text-[var(--brand-main)] tracking-widest mb-16 md:mb-20"
-                        style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
+                        style={{ fontFamily: "var(--font-sans)", fontWeight: 500 }}
                     >
-                        3つの約束
+                        5つの約束
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-y-20 md:gap-x-16 mb-12 md:mb-20">
+                        {/* Item 1 */}
                         <div>
                             <div className="text-[var(--brand-main)] mb-8">
                                 <IconDatabase />
                             </div>
                             <h3
-                                className="text-xl text-[var(--brand-main)] tracking-widest mb-6"
-                                style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
+                                className="text-xl text-[var(--brand-main)] tracking-widest mb-6 leading-relaxed"
+                                style={{ fontFamily: "var(--font-sans)", fontWeight: 500 }}
                             >
                                 揺るぎない
                                 <br />
@@ -243,13 +264,14 @@ export default function AboutPage() {
                             </p>
                         </div>
 
+                        {/* Item 2 */}
                         <div>
                             <div className="text-[var(--brand-main)] mb-8">
                                 <IconTrendingUp />
                             </div>
                             <h3
-                                className="text-xl text-[var(--brand-main)] tracking-widest mb-6"
-                                style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
+                                className="text-xl text-[var(--brand-main)] tracking-widest mb-6 leading-relaxed"
+                                style={{ fontFamily: "var(--font-sans)", fontWeight: 500 }}
                             >
                                 未来を予測する
                                 <br />
@@ -263,13 +285,14 @@ export default function AboutPage() {
                             </p>
                         </div>
 
+                        {/* Item 3 */}
                         <div>
                             <div className="text-[var(--brand-main)] mb-8">
                                 <IconBarChart />
                             </div>
                             <h3
-                                className="text-xl text-[var(--brand-main)] tracking-widest mb-6"
-                                style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
+                                className="text-xl text-[var(--brand-main)] tracking-widest mb-6 leading-relaxed"
+                                style={{ fontFamily: "var(--font-sans)", fontWeight: 500 }}
                             >
                                 誰でもわかる
                                 <br />
@@ -283,112 +306,48 @@ export default function AboutPage() {
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* ========================================================
-        Section 4: Transparency（信頼の根拠）
-        ======================================================== */}
-            <div className="w-full pt-20 pb-32">
-                <div className="w-full max-w-5xl mx-auto text-left px-6">
-                    <p className="text-sm tracking-[0.4em] text-[var(--brand-main)] mb-8 uppercase font-medium">
-                        Transparency
-                    </p>
-                    <h2
-                        className="text-3xl sm:text-4xl text-[var(--brand-main)] tracking-widest mb-24 md:mb-32 leading-relaxed"
-                        style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
-                    >
-                        徹底した「ファクト」へのこだわり。
-                        <br className="hidden sm:block" />
-                        評価の根拠は、すべて公開されています。
-                    </h2>
-
-                    <div className="space-y-24 md:space-y-32">
-                        {/* 01 */}
-                        <div className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-6 md:gap-12 items-start">
-                            <div className="relative z-10 shrink-0 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
-                                <div
-                                    className="absolute inset-0 bg-[var(--brand-main)] opacity-15 -z-10"
-                                    style={blobStyles[0]}
-                                />
-                                <span
-                                    className={`text-6xl md:text-7xl lg:text-[100px] text-[var(--brand-main)] opacity-50 leading-none ${caveat.className}`}
-                                >
-                                    01
-                                </span>
+                    <div className="grid grid-cols-1 select-none md:grid-cols-2 gap-12 md:gap-16 w-full max-w-4xl mx-auto">
+                        {/* Item 4 */}
+                        <div>
+                            <div className="text-[var(--brand-main)] mb-8">
+                                <IconSparkles />
                             </div>
-                            <div className="mt-1 md:mt-4">
-                                <h3
-                                    className="text-xl sm:text-2xl text-[var(--brand-main)] tracking-widest mb-6"
-                                    style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
-                                >
-                                    揺るぎない過去・現在の公的データ
-                                </h3>
-                                <p
-                                    className="text-base text-[var(--text-primary)] leading-loose opacity-80"
-                                    style={{ letterSpacing: "0.06em" }}
-                                >
-                                    国土交通省の「公示地価・基準地価」に基づく精緻な価格推移や、各自治체가公表する「ハザードマップ（洪水・土砂・液状化等）」など、改ざんのできないオープンデータのみをベースに街の基礎体力を診断しています。
-                                </p>
-                            </div>
+                            <h3
+                                className="text-xl text-[var(--brand-main)] tracking-widest mb-6 leading-relaxed"
+                                style={{ fontFamily: "var(--font-sans)", fontWeight: 500 }}
+                            >
+                                忖度のない
+                                <br />
+                                「完全無広告」
+                            </h3>
+                            <p
+                                className="text-base text-[var(--text-primary)] leading-loose opacity-80"
+                                style={{ letterSpacing: "0.06em" }}
+                            >
+                                バナー広告や企業案件など、一切の広告枠を排除。スポンサーへのバイアスを完全に絶ち、ノイズのない美しいUI/UXで、純粋なファクトだけを直感的に読み取れる環境にこだわっています。
+                            </p>
                         </div>
 
-                        {/* 02 */}
-                        <div className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-6 md:gap-12 items-start">
-                            <div className="relative z-10 shrink-0 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
-                                <div
-                                    className="absolute inset-0 bg-[var(--brand-main)] opacity-15 -z-10"
-                                    style={blobStyles[1]}
-                                />
-                                <span
-                                    className={`text-6xl md:text-7xl lg:text-[100px] text-[var(--brand-main)] opacity-50 leading-none ${caveat.className}`}
-                                >
-                                    02
-                                </span>
+                        {/* Item 5 */}
+                        <div>
+                            <div className="text-[var(--brand-main)] mb-8">
+                                <IconEye />
                             </div>
-                            <div className="mt-1 md:mt-4">
-                                <h3
-                                    className="text-xl sm:text-2xl text-[var(--brand-main)] tracking-widest mb-6"
-                                    style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
-                                >
-                                    噂を排除した「未来の再開発」の裏取り
-                                </h3>
-                                <p
-                                    className="text-base text-[var(--text-primary)] leading-loose opacity-80"
-                                    style={{ letterSpacing: "0.06em" }}
-                                >
-                                    街の将来性を大きく左右する再開発情報。当サービスでは、不確かな噂レベルの開発情報は一切スコアに反映しません。必ず「行政の都市計画決定」「環境アセスメント」「デベロッパーの公式発表」と照合し、正確なスペックや竣工時期が確定しているプロジェクトのみを評価対象としています。
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* 03 */}
-                        <div className="grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-6 md:gap-12 items-start">
-                            <div className="relative z-10 shrink-0 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center">
-                                <div
-                                    className="absolute inset-0 bg-[var(--brand-main)] opacity-15 -z-10"
-                                    style={blobStyles[2]}
-                                />
-                                <span
-                                    className={`text-6xl md:text-7xl lg:text-[100px] text-[var(--brand-main)] opacity-50 leading-none ${caveat.className}`}
-                                >
-                                    03
-                                </span>
-                            </div>
-                            <div className="mt-1 md:mt-4">
-                                <h3
-                                    className="text-xl sm:text-2xl text-[var(--brand-main)] tracking-widest mb-6"
-                                    style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
-                                >
-                                    ご自身で確認できる「透明性」
-                                </h3>
-                                <p
-                                    className="text-base text-[var(--text-primary)] leading-loose opacity-80"
-                                    style={{ letterSpacing: "0.06em" }}
-                                >
-                                    情報の鮮度と透明性を保つため、各街の再開発データには独自の「検索キーワード」を付与しています。ワンタップで行政や公式の一次情報へ直接アクセスでき、ご自身でファクトチェックを行うことが可能です。
-                                </p>
-                            </div>
+                            <h3
+                                className="text-xl text-[var(--brand-main)] tracking-widest mb-6 leading-relaxed"
+                                style={{ fontFamily: "var(--font-sans)", fontWeight: 500 }}
+                            >
+                                すべてを公開する
+                                <br />
+                                「透明性」
+                            </h3>
+                            <p
+                                className="text-base text-[var(--text-primary)] leading-loose opacity-80"
+                                style={{ letterSpacing: "0.06em" }}
+                            >
+                                すべての情報ソースと評価データには、直接アクセスが可能です。ブラックボックス化された独自の採点ではなく、誰もがファクトチェックできる透明性こそが、サービスの根幹です。
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -401,16 +360,20 @@ export default function AboutPage() {
                 <div className="w-full max-w-5xl mx-auto px-6 text-center">
                     <h2
                         className="text-2xl sm:text-3xl text-[var(--brand-main)] tracking-widest mb-12"
-                        style={{ fontFamily: "var(--font-heading)", fontWeight: 500 }}
+                        style={{ fontFamily: "var(--font-sans)", fontWeight: 500 }}
                     >
                         まず、あなたの街を診断してみてください。
                     </h2>
                     <a
                         href="/"
-                        className="inline-block px-12 py-5 bg-[var(--brand-main)] text-white text-lg tracking-widest hover:scale-105 hover:shadow-lg transition-all duration-300 rounded-full font-bold"
+                        className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[var(--brand-main)] px-12 py-5 text-lg font-bold text-white tracking-widest transition-all duration-300 ease-out hover:scale-105 hover:shadow-[0_12px_32px_rgba(112,130,113,0.4)] active:scale-95 active:shadow-none"
                         style={{ letterSpacing: "0.15em" }}
                     >
-                        無料で診断する
+                        {/* ホバー時の白背景。 -inset-[2px] と scale-[1.01] で隙間やボーダーの干渉を防ぐ改善実装 */}
+                        <span className="absolute -inset-[2px] w-[calc(100%+4px)] h-[calc(100%+4px)] -translate-x-full scale-[1.01] bg-white transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
+                        <span className="relative z-10 transition-colors duration-500 ease-out group-hover:text-[var(--brand-main)]">
+                            無料で診断する
+                        </span>
                     </a>
                 </div>
             </div>

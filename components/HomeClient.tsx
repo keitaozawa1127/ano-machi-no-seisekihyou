@@ -165,8 +165,8 @@ export default function HomeClient({ }: Props) {
                     あの街の成績表
                 </h1>
                 <p className="text-base text-[var(--text-primary)] tracking-widest leading-loose font-normal max-w-3xl mx-auto opacity-80">
-                    地価・治安・利便性を多角的にスコア化。<br className="hidden md:block" />
-                    初めての住宅購入で失敗しないための街選び診断サイト
+                    地価・ハザード・将来性などを多角的にスコア化。<br className="hidden md:block" />
+                    広告やバイアスを一切排除した、純粋な街の評価データ。
                 </p>
             </header>
 
