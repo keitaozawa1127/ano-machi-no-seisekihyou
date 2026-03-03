@@ -155,10 +155,7 @@ export default function HomeClient({ }: Props) {
     return (
         <main className="min-h-screen w-full flex flex-col items-center pt-20 px-6 bg-[var(--bg-primary)] overflow-x-hidden">
             {/* Hero Header */}
-            {/* Hero Header */}
-            {/* Hero Header */}
-            {/* Hero Header */}
-            <header className="w-full max-w-4xl text-center mb-16">
+            <header className="w-full max-w-4xl text-center mb-16 min-w-0 px-2">
                 <div className="inline-block mb-6 px-6 py-2 rounded-full bg-[var(--brand-main)]/10 text-[var(--brand-main)] text-sm font-bold tracking-widest border border-[var(--brand-main)]/20">
                     失敗しない街選び診断
                 </div>
@@ -174,7 +171,7 @@ export default function HomeClient({ }: Props) {
             </header>
 
             {/* Search Section */}
-            <section className="w-full max-w-2xl bg-white/50 p-6 md:p-10 rounded-xl shadow-sm mb-20">
+            <section className="w-full max-w-2xl bg-white/50 p-6 md:p-10 rounded-xl shadow-sm mb-20 min-w-0">
                 <SearchForm
                     loading={loading}
                     onSearch={handleSearch}
@@ -186,21 +183,23 @@ export default function HomeClient({ }: Props) {
 
             {/* Error Display */}
             {err && (
-                <div className="card mb-8 text-center" style={{ borderColor: 'hsl(var(--status-risky))', color: 'hsl(var(--status-risky))', backgroundColor: 'hsl(var(--status-risky)/0.1)' }}>
+                <div className="card mb-8 text-center w-full max-w-2xl min-w-0" style={{ borderColor: 'hsl(var(--status-risky))', color: 'hsl(var(--status-risky))', backgroundColor: 'hsl(var(--status-risky)/0.1)' }}>
                     <p className="font-bold">⚠️ {err}</p>
                 </div>
             )}
 
             {/* Stock List */}
-            <StockList
-                stocks={stockedResults}
-                onRemove={removeStock}
-                onCompare={handleCompareStock}
-            />
+            <div className="w-full min-w-0">
+                <StockList
+                    stocks={stockedResults}
+                    onRemove={removeStock}
+                    onCompare={handleCompareStock}
+                />
+            </div>
 
             {/* Comparison View */}
             {comparisonTarget && (
-                <div className="animate-in zoom-in-95 duration-500">
+                <div className="animate-in zoom-in-95 duration-500 w-full min-w-0">
                     <button
                         onClick={() => { setComparisonTarget(null); }}
                         className="mb-4 text-sm text-muted hover:text-white underline"
@@ -213,7 +212,7 @@ export default function HomeClient({ }: Props) {
 
             {/* Single Result Section */}
             {currentResult && !comparisonTarget && (
-                <div ref={resultRef} className="animate-in slide-in-from-bottom-5 duration-500">
+                <div ref={resultRef} className="animate-in slide-in-from-bottom-5 duration-500 w-full flex justify-center min-w-0">
                     <DiagnosisResult
                         data={currentResult}
                         onStock={() => toggleStock(currentResult)}
