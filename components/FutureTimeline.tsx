@@ -204,168 +204,170 @@ export default function FutureTimeline({
     const MAIN_COLOR = "#4A4A4A";
 
     return (
-        <div ref={ref} className="w-full relative">
-            <svg
-                viewBox={`0 0 ${width} ${height}`}
-                className="w-full h-auto block"
-                preserveAspectRatio="xMidYMid meet"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-            >
-                {/* グリッド (破線を薄く) */}
-                {gridLines.map((y, i) => (
+        <div ref={ref} className="w-full relative overflow-x-auto pb-4">
+            <div className="min-w-[500px] md:min-w-full relative">
+                <svg
+                    viewBox={`0 0 ${width} ${height}`}
+                    className="w-full h-auto block"
+                    preserveAspectRatio="xMidYMid meet"
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    {/* グリッド (破線を薄く) */}
+                    {gridLines.map((y, i) => (
+                        <line
+                            key={i}
+                            x1={padding.left}
+                            y1={y}
+                            x2={width - padding.right}
+                            y2={y}
+                            stroke="#E0E0E0"
+                            strokeWidth="1"
+                            strokeDasharray="4 4"
+                        />
+                    ))}
+
+                    {/* X軸 */}
                     <line
-                        key={i}
                         x1={padding.left}
-                        y1={y}
+                        y1={height - padding.bottom}
                         x2={width - padding.right}
-                        y2={y}
-                        stroke="#E0E0E0"
+                        y2={height - padding.bottom}
+                        stroke={MAIN_COLOR}
                         strokeWidth="1"
-                        strokeDasharray="4 4"
                     />
-                ))}
 
-                {/* X軸 */}
-                <line
-                    x1={padding.left}
-                    y1={height - padding.bottom}
-                    x2={width - padding.right}
-                    y2={height - padding.bottom}
-                    stroke={MAIN_COLOR}
-                    strokeWidth="1"
-                />
+                    {/* Y軸（左 - Price） */}
+                    <line
+                        x1={padding.left}
+                        y1={padding.top}
+                        x2={padding.left}
+                        y2={height - padding.bottom}
+                        stroke={MAIN_COLOR}
+                        strokeWidth="1"
+                    />
 
-                {/* Y軸（左 - Price） */}
-                <line
-                    x1={padding.left}
-                    y1={padding.top}
-                    x2={padding.left}
-                    y2={height - padding.bottom}
-                    stroke={MAIN_COLOR}
-                    strokeWidth="1"
-                />
+                    {/* 左Y軸目盛り (Price) */}
+                    {priceTicks.map((tick, i) => (
+                        <text
+                            key={i}
+                            x={padding.left - 8}
+                            y={yScalePrice(tick) + 4}
+                            textAnchor="end"
+                            fill={MAIN_COLOR}
+                            fontSize="9"
+                            fontWeight="normal"
+                            fontFamily="Noto Sans JP, sans-serif"
+                        >
+                            {tick.toLocaleString()}万円
+                        </text>
+                    ))}
 
-                {/* 左Y軸目盛り (Price) */}
-                {priceTicks.map((tick, i) => (
-                    <text
-                        key={i}
-                        x={padding.left - 8}
-                        y={yScalePrice(tick) + 4}
-                        textAnchor="end"
-                        fill={MAIN_COLOR}
-                        fontSize="9"
-                        fontWeight="normal"
-                        fontFamily="Noto Sans JP, sans-serif"
-                    >
-                        {tick.toLocaleString()}万円
-                    </text>
-                ))}
+                    {/* 実績ライン（地価） */}
+                    <path
+                        d={pricePathSolid}
+                        fill="none"
+                        stroke={MAIN_COLOR}
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className={isVisible ? "animate-draw" : ""}
+                        style={{ strokeDasharray: 1000, strokeDashoffset: isVisible ? 0 : 1000 }}
+                    />
 
-                {/* 実績ライン（地価） */}
-                <path
-                    d={pricePathSolid}
-                    fill="none"
-                    stroke={MAIN_COLOR}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={isVisible ? "animate-draw" : ""}
-                    style={{ strokeDasharray: 1000, strokeDashoffset: isVisible ? 0 : 1000 }}
-                />
+                    {/* データポイント */}
+                    {data.map((d, i) => {
+                        const priceY = yScalePrice(d.price || 0);
+                        const priceLabelY = priceY - 12;
+                        const priceLabelX = xScale(d.year);
 
-                {/* データポイント */}
-                {data.map((d, i) => {
-                    const priceY = yScalePrice(d.price || 0);
-                    const priceLabelY = priceY - 12;
-                    const priceLabelX = xScale(d.year);
+                        return (
+                            <g key={i} style={{ opacity: isVisible ? 1 : 0, transition: `opacity 0.5s ease-out ${0.5 + i * 0.1}s` }}>
+                                <circle
+                                    cx={xScale(d.year)}
+                                    cy={priceY}
+                                    r="4"
+                                    fill="white"
+                                    stroke={MAIN_COLOR}
+                                    strokeWidth="2"
+                                />
+                                {/* 地価ラベル (オプション: すべての点にラベル表示すると混雑するかもだが、5点ならOK) */}
+                                <rect
+                                    x={priceLabelX - 24}
+                                    y={priceLabelY - 9}
+                                    width="48"
+                                    height="14"
+                                    rx="2"
+                                    fill="white"
+                                    opacity="0.9"
+                                />
+                                <text
+                                    x={priceLabelX}
+                                    y={priceLabelY}
+                                    textAnchor="middle"
+                                    fill={MAIN_COLOR}
+                                    fontSize="8"
+                                    fontWeight="bold"
+                                    fontFamily="Noto Sans JP, sans-serif"
+                                >
+                                    {d.price?.toLocaleString()}万円
+                                </text>
+                            </g>
+                        );
+                    })}
 
-                    return (
-                        <g key={i} style={{ opacity: isVisible ? 1 : 0, transition: `opacity 0.5s ease-out ${0.5 + i * 0.1}s` }}>
-                            <circle
-                                cx={xScale(d.year)}
-                                cy={priceY}
-                                r="4"
-                                fill="white"
-                                stroke={MAIN_COLOR}
-                                strokeWidth="2"
-                            />
-                            {/* 地価ラベル (オプション: すべての点にラベル表示すると混雑するかもだが、5点ならOK) */}
-                            <rect
-                                x={priceLabelX - 24}
-                                y={priceLabelY - 9}
-                                width="48"
-                                height="14"
-                                rx="2"
-                                fill="white"
-                                opacity="0.9"
-                            />
-                            <text
-                                x={priceLabelX}
-                                y={priceLabelY}
-                                textAnchor="middle"
-                                fill={MAIN_COLOR}
-                                fontSize="8"
-                                fontWeight="bold"
-                                fontFamily="Noto Sans JP, sans-serif"
-                            >
-                                {d.price?.toLocaleString()}万円
-                            </text>
-                        </g>
-                    );
-                })}
+                    {/* X軸ラベル */}
+                    {data.map((d) => (
+                        <text
+                            key={d.year}
+                            x={xScale(d.year)}
+                            y={height - padding.bottom + 16}
+                            textAnchor="middle"
+                            fill={MAIN_COLOR}
+                            fontWeight="bold"
+                            fontSize="9"
+                            fontFamily="Noto Sans JP, sans-serif"
+                        >
+                            {d.year}
+                        </text>
+                    ))}
 
-                {/* X軸ラベル */}
-                {data.map((d) => (
-                    <text
-                        key={d.year}
-                        x={xScale(d.year)}
-                        y={height - padding.bottom + 16}
-                        textAnchor="middle"
-                        fill={MAIN_COLOR}
-                        fontWeight="bold"
-                        fontSize="9"
-                        fontFamily="Noto Sans JP, sans-serif"
-                    >
-                        {d.year}
-                    </text>
-                ))}
+                    {/* インタラクション用透明レイヤー */}
+                    <rect
+                        x={padding.left}
+                        y={padding.top}
+                        width={chartWidth}
+                        height={chartHeight}
+                        fill="transparent"
+                    />
+                </svg>
 
-                {/* インタラクション用透明レイヤー */}
-                <rect
-                    x={padding.left}
-                    y={padding.top}
-                    width={chartWidth}
-                    height={chartHeight}
-                    fill="transparent"
-                />
-            </svg>
-
-            {/* ツールチップ (Fade-in) */}
-            <div
-                className="absolute bg-white/95 backdrop-blur pointer-events-none p-3 rounded-lg shadow-xl border border-gray-200 z-10 text-xs"
-                style={{
-                    top: '15%',
-                    opacity: tooltipVisible && hoverData ? 1 : 0,
-                    transition: 'opacity 0.3s ease-in-out',
-                    visibility: hoverData ? 'visible' : 'hidden',
-                    ...getTooltipStyle()
-                }}
-            >
-                {hoverData && (
-                    <>
-                        <div className="font-bold border-b border-gray-300 pb-1 mb-1 text-center font-sans">
-                            {hoverData.year}年
-                        </div>
-                        <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                            <div className="flex items-center gap-1">
-                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: MAIN_COLOR }}></div>
-                                <span className="text-gray-600 font-sans">地価</span>
+                {/* ツールチップ (Fade-in) */}
+                <div
+                    className="absolute bg-white/95 backdrop-blur pointer-events-none p-3 rounded-lg shadow-xl border border-gray-200 z-10 text-xs"
+                    style={{
+                        top: '15%',
+                        opacity: tooltipVisible && hoverData ? 1 : 0,
+                        transition: 'opacity 0.3s ease-in-out',
+                        visibility: hoverData ? 'visible' : 'hidden',
+                        ...getTooltipStyle()
+                    }}
+                >
+                    {hoverData && (
+                        <>
+                            <div className="font-bold border-b border-gray-300 pb-1 mb-1 text-center font-sans">
+                                {hoverData.year}年
                             </div>
-                            <div className="font-bold text-right font-sans">{hoverData.price?.toLocaleString()}万円</div>
-                        </div>
-                    </>
-                )}
+                            <div className="grid grid-cols-2 gap-x-3 gap-y-1">
+                                <div className="flex items-center gap-1">
+                                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: MAIN_COLOR }}></div>
+                                    <span className="text-gray-600 font-sans">地価</span>
+                                </div>
+                                <div className="font-bold text-right font-sans">{hoverData.price?.toLocaleString()}万円</div>
+                            </div>
+                        </>
+                    )}
+                </div>
             </div>
             <style jsx>{`
                 .animate-draw {

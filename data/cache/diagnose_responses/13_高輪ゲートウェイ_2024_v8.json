@@ -1,0 +1,225 @@
+{
+  "ok": true,
+  "verdict": "safe",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "直近5年の取引件数",
+      "value": "5876 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "1.0 億円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "11.1%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "将来人口（2050推計）",
+      "value": "人口は維持・増加傾向（120）で、需要の底堅さが期待できます。"
+    },
+    {
+      "label": "災害リスク（水害）",
+      "value": "中程度の水害リスクがあります。階数選択や避難計画の確認を推奨します。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇がやや強めです。上昇の背景（再開発・利便性改善など）が継続するかを確認するのが安全です。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇が急で、短期的な反動（調整）リスクが高まります。購入検討では価格の納得感と資金余力を厚めに見てください。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "高輪ゲートウェイ",
+    "year": 2024,
+    "tx5y": 5876,
+    "yoy": 11.1,
+    "up2y": 22,
+    "prevYear": null,
+    "score": 76
+  },
+  "trendData": [
+    {
+      "year": 2022,
+      "price": 71000000,
+      "txCount": 1526
+    },
+    {
+      "year": 2023,
+      "price": 82000000,
+      "txCount": 1612
+    },
+    {
+      "year": 2024,
+      "price": 90000000,
+      "txCount": 1566
+    },
+    {
+      "year": 2025,
+      "price": 100000000,
+      "txCount": 1172
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 120,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 260486,
+        "ageStructure": {
+          "0-14": 34716,
+          "15-64": 182181,
+          "65+": 43589
+        }
+      },
+      {
+        "year": 2025,
+        "total": 269627,
+        "ageStructure": {
+          "0-14": 36197,
+          "15-64": 188845,
+          "65+": 44585
+        }
+      },
+      {
+        "year": 2030,
+        "total": 283075,
+        "ageStructure": {
+          "0-14": 36275,
+          "15-64": 197243,
+          "65+": 49557
+        }
+      },
+      {
+        "year": 2035,
+        "total": 294403,
+        "ageStructure": {
+          "0-14": 36685,
+          "15-64": 201217,
+          "65+": 56501
+        }
+      },
+      {
+        "year": 2040,
+        "total": 303333,
+        "ageStructure": {
+          "0-14": 38125,
+          "15-64": 200409,
+          "65+": 64799
+        }
+      },
+      {
+        "year": 2045,
+        "total": 309348,
+        "ageStructure": {
+          "0-14": 38957,
+          "15-64": 199306,
+          "65+": 71085
+        }
+      },
+      {
+        "year": 2050,
+        "total": 312556,
+        "ageStructure": {
+          "0-14": 38718,
+          "15-64": 197971,
+          "65+": 75867
+        }
+      }
+    ],
+    "sourceCity": "港区"
+  },
+  "totalScore": 76,
+  "metrics": {
+    "asset": 90,
+    "safety": 70,
+    "future": 72,
+    "convenience": 49,
+    "liquidity": 90
+  },
+  "lines": [
+    {
+      "name": "JR京浜東北線"
+    },
+    {
+      "name": "JR山手線"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "id": "takanawa-1",
+      "station_name": "高輪ゲートウェイ",
+      "project_name": "TAKANAWA GATEWAY CITY (第1期: The Linkpillar 1)",
+      "search_keyword": "TAKANAWA GATEWAY CITY 開業",
+      "category": "Redevelopment",
+      "schedule": "2025年3月開業済",
+      "description": "街の中核となるツインタワー。品川開発プロジェクトの第1フェーズとして開業。新たなビジネス・文化の拠点を形成する。",
+      "impact_level": 5,
+      "is_future": true,
+      "createdAt": "2024-02-16T12:00:00Z"
+    },
+    {
+      "id": "takanawa-2",
+      "station_name": "高輪ゲートウェイ",
+      "project_name": "TAKANAWA GATEWAY CITY (第2期: 複合棟II・文化創造棟)",
+      "search_keyword": "高輪ゲートウェイシティ 文化創造棟 開業",
+      "category": "Redevelopment",
+      "schedule": "2026年3月まで(2025年度内)開業予定",
+      "description": "街びらきに続く第2フェーズ。隈研吾デザインの「文化創造棟」や、ウェルビーイング機能を備えた「複合棟II」が完成し、南北1.6kmの未来都市が全貌を現す。",
+      "impact_level": 5,
+      "is_future": true,
+      "createdAt": "2024-02-16T14:00:00Z"
+    }
+  ],
+  "marketPrice": 84500000,
+  "tx5y": 5876,
+  "trend": "UP",
+  "yoy": 11.1,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "name": "国土交通省「不動産取引価格情報」",
+        "year": 2025
+      },
+      "population": {
+        "name": "国立社会保障・人口問題研究所「日本の地域別将来推計人口」",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "name": "自社独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "name": "国土交通省 ハザードマップポータルサイト（国土地理院推計）",
+        "year": 2026
+      },
+      "redevelopment": {
+        "name": "各自治体・開発事業者 公開情報",
+        "version": "2026年2月版"
+      }
+    }
+  }
+}

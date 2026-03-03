@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Link from "next/link";
 import ComparisonView from "./ComparisonView";
 import SearchForm from "./SearchForm";
 import DiagnosisResult from "./DiagnosisResult";
@@ -152,7 +153,7 @@ export default function HomeClient({ }: Props) {
     };
 
     return (
-        <main className="min-h-screen w-full flex flex-col items-center pt-20 px-6 bg-[var(--bg-primary)]">
+        <main className="min-h-screen w-full flex flex-col items-center pt-20 px-6 bg-[var(--bg-primary)] overflow-x-hidden">
             {/* Hero Header */}
             {/* Hero Header */}
             {/* Hero Header */}
@@ -162,7 +163,9 @@ export default function HomeClient({ }: Props) {
                     失敗しない街選び診断
                 </div>
                 <h1 className="hero-title text-4xl md:text-6xl font-medium tracking-widest my-[60px] text-[var(--brand-main)]">
-                    あの街の成績表
+                    <Link href="/" className="hover:opacity-80 transition-opacity duration-300">
+                        あの街の成績表
+                    </Link>
                 </h1>
                 <p className="text-base text-[var(--text-primary)] tracking-widest leading-loose font-normal max-w-3xl mx-auto opacity-80">
                     地価・ハザード・将来性などを多角的にスコア化。<br className="hidden md:block" />

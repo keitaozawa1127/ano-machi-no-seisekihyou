@@ -51,120 +51,122 @@ export default function PopulationPyramid({ data2020, data2050, baseYear = 2020,
     }
 
     return (
-        <div className="w-full">
-            {/* 見出し */}
+        <div className="w-full overflow-x-auto pb-4">
+            <div className="min-w-[500px] md:min-w-full">
+                {/* 見出し */}
 
 
-            {/* グラフ */}
-            <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto block" preserveAspectRatio="xMidYMid meet">
-                {/* グリッド線 (Dynamic Ticks based on Nice Step) */}
-                {ticks.map((tickValue) => {
-                    const ratio = tickValue / domainMax;
-                    const x = padding.left + ratio * chartWidth;
-                    return (
-                        <g key={tickValue}>
-                            <line
-                                x1={x}
-                                y1={padding.top}
-                                x2={x}
-                                y2={height - padding.bottom}
-                                stroke="#E6E1D6"
-                                strokeWidth="1"
-                                strokeDasharray="3 3"
-                            />
-                            <text
-                                x={x}
-                                y={height - padding.bottom + 16}
-                                textAnchor="middle"
-                                fill="#999"
-                                fontSize="9"
-                            >
-                                {tickValue}%
-                            </text>
-                        </g>
-                    );
-                })}
+                {/* グラフ */}
+                <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto block" preserveAspectRatio="xMidYMid meet">
+                    {/* グリッド線 (Dynamic Ticks based on Nice Step) */}
+                    {ticks.map((tickValue) => {
+                        const ratio = tickValue / domainMax;
+                        const x = padding.left + ratio * chartWidth;
+                        return (
+                            <g key={tickValue}>
+                                <line
+                                    x1={x}
+                                    y1={padding.top}
+                                    x2={x}
+                                    y2={height - padding.bottom}
+                                    stroke="#E6E1D6"
+                                    strokeWidth="1"
+                                    strokeDasharray="3 3"
+                                />
+                                <text
+                                    x={x}
+                                    y={height - padding.bottom + 16}
+                                    textAnchor="middle"
+                                    fill="#999"
+                                    fontSize="9"
+                                >
+                                    {tickValue}%
+                                </text>
+                            </g>
+                        );
+                    })}
 
-                {/* Y軸 */}
-                <line
-                    x1={padding.left}
-                    y1={padding.top}
-                    x2={padding.left}
-                    y2={height - padding.bottom}
-                    stroke="#4A4A4A"
-                    strokeWidth="1"
-                />
+                    {/* Y軸 */}
+                    <line
+                        x1={padding.left}
+                        y1={padding.top}
+                        x2={padding.left}
+                        y2={height - padding.bottom}
+                        stroke="#4A4A4A"
+                        strokeWidth="1"
+                    />
 
-                {/* バー描画 */}
-                {data2020.map((d, i) => {
-                    const y = padding.top + i * barHeight;
-                    // Scale based on domainMax
-                    const barWidth2020 = (d.population / domainMax) * chartWidth;
-                    const barWidth2050 = (data2050[i].population / domainMax) * chartWidth;
+                    {/* バー描画 */}
+                    {data2020.map((d, i) => {
+                        const y = padding.top + i * barHeight;
+                        // Scale based on domainMax
+                        const barWidth2020 = (d.population / domainMax) * chartWidth;
+                        const barWidth2050 = (data2050[i].population / domainMax) * chartWidth;
 
-                    return (
-                        <g key={i}>
-                            {/* 2020年実績（塗りつぶし） */}
-                            <rect
-                                x={padding.left}
-                                y={y + barHeight * 0.15}
-                                width={barWidth2020}
-                                height={barHeight * 0.3}
-                                fill="#889E81"
-                                opacity="0.8"
-                            />
+                        return (
+                            <g key={i}>
+                                {/* 2020年実績（塗りつぶし） */}
+                                <rect
+                                    x={padding.left}
+                                    y={y + barHeight * 0.15}
+                                    width={barWidth2020}
+                                    height={barHeight * 0.3}
+                                    fill="#889E81"
+                                    opacity="0.8"
+                                />
 
-                            {/* 2050年予測（アウトライン） */}
-                            <rect
-                                x={padding.left}
-                                y={y + barHeight * 0.55}
-                                width={barWidth2050}
-                                height={barHeight * 0.3}
-                                fill="transparent"
-                                stroke="#889E81"
-                                strokeWidth="2"
-                            />
+                                {/* 2050年予測（アウトライン） */}
+                                <rect
+                                    x={padding.left}
+                                    y={y + barHeight * 0.55}
+                                    width={barWidth2050}
+                                    height={barHeight * 0.3}
+                                    fill="transparent"
+                                    stroke="#889E81"
+                                    strokeWidth="2"
+                                />
 
-                            {/* 年齢層ラベル */}
-                            <text
-                                x={padding.left - 5}
-                                y={y + barHeight / 2}
-                                textAnchor="end"
-                                dominantBaseline="middle"
-                                fill="#4A4A4A"
-                                fontSize="9"
-                                fontWeight="bold"
-                            >
-                                {d.ageGroup}
-                            </text>
+                                {/* 年齢層ラベル */}
+                                <text
+                                    x={padding.left - 5}
+                                    y={y + barHeight / 2}
+                                    textAnchor="end"
+                                    dominantBaseline="middle"
+                                    fill="#4A4A4A"
+                                    fontSize="9"
+                                    fontWeight="bold"
+                                >
+                                    {d.ageGroup}
+                                </text>
 
-                            {/* 2020年の値ラベル */}
-                            <text
-                                x={padding.left + barWidth2020 + 3}
-                                y={y + barHeight * 0.3}
-                                textAnchor="start"
-                                dominantBaseline="middle"
-                                fill="#4A4A4A"
-                                fontSize="8"
-                            >
-                                {d.population.toFixed(1)}%
-                            </text>
+                                {/* 2020年の値ラベル */}
+                                <text
+                                    x={padding.left + barWidth2020 + 3}
+                                    y={y + barHeight * 0.3}
+                                    textAnchor="start"
+                                    dominantBaseline="middle"
+                                    fill="#4A4A4A"
+                                    fontSize="8"
+                                >
+                                    {d.population.toFixed(1)}%
+                                </text>
 
-                            {/* 2050年の値ラベル */}
-                            <text
-                                x={padding.left + barWidth2050 + 3}
-                                y={y + barHeight * 0.7}
-                                textAnchor="start"
-                                dominantBaseline="middle"
-                                fill="#708271"
-                                fontSize="7"
-                            >
-                                {data2050[i].population.toFixed(1)}%
-                            </text>
-                        </g>
-                    );
-                })}
-            </svg>
+                                {/* 2050年の値ラベル */}
+                                <text
+                                    x={padding.left + barWidth2050 + 3}
+                                    y={y + barHeight * 0.7}
+                                    textAnchor="start"
+                                    dominantBaseline="middle"
+                                    fill="#708271"
+                                    fontSize="7"
+                                >
+                                    {data2050[i].population.toFixed(1)}%
+                                </text>
+                            </g>
+                        );
+                    })}
+                </svg>
+            </div>
 
             {/* 凡例 */}
             <div className="flex justify-center gap-6 mt-4 text-[10px]">

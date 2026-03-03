@@ -29,7 +29,6 @@ export const metadata: Metadata = {
 };
 
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 export default function RootLayout({
   children,
@@ -40,7 +39,7 @@ export default function RootLayout({
 
   return (
     <html lang="ja">
-      <body className={`${notoSansJP.variable} ${zenOldMincho.variable} font-sans min-h-screen flex flex-col bg-[#FDFBF7] text-[#4A544C]`}>
+      <body className={`${notoSansJP.variable} ${zenOldMincho.variable} font-sans min-h-screen flex flex-col bg-[#FDFBF7] text-[#4A544C] overflow-x-hidden`}>
         {gaId && (
           <>
             <Script
@@ -57,7 +56,6 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <Header />
         <div className="flex-grow">
           {children}
         </div>

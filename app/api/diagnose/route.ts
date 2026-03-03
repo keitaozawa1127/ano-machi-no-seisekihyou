@@ -483,9 +483,9 @@ async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string, yearRa
         let convenienceScore = defaultScore;
         const lineCount = lines.length;
         if (lineCount) {
-            // 5路線で70点、10路線で85点、15路線で満点
+            // 1路線で約40点、5路線で約68点、10路線で約86点、15路線で満点
             const normalized = Math.min(lineCount / 15, 1);
-            convenienceScore = Math.pow(normalized, 0.7) * 100;
+            convenienceScore = Math.pow(normalized, 0.35) * 100;
         }
 
         // 5. Liquidity Score (15%) - Exponential curve for better differentiation

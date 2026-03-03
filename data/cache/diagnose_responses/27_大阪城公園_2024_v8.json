@@ -1,0 +1,224 @@
+{
+  "ok": true,
+  "verdict": "caution",
+  "headline": "市場価格は概ね安定して推移しています",
+  "reasons": [
+    {
+      "label": "直近5年の取引件数",
+      "value": "1293 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "2400 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "9.1%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "災害リスク（水害）",
+      "value": "中程度の水害リスクがあります。階数選択や避難計画の確認を推奨します。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇がやや強めです。上昇の背景（再開発・利便性改善など）が継続するかを確認するのが安全です。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇は急ではありません。ただし横ばい＝安全の保証ではなく、金利や需給で変動し得ます。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "大阪城公園",
+    "year": 2024,
+    "tx5y": 1293,
+    "yoy": 9.1,
+    "up2y": 0,
+    "prevYear": null,
+    "score": 49
+  },
+  "trendData": [
+    {
+      "year": 2022,
+      "price": 25000000,
+      "txCount": 304
+    },
+    {
+      "year": 2023,
+      "price": 24000000,
+      "txCount": 353
+    },
+    {
+      "year": 2024,
+      "price": 22000000,
+      "txCount": 386
+    },
+    {
+      "year": 2025,
+      "price": 24000000,
+      "txCount": 250
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 95,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 107904,
+        "ageStructure": {
+          "0-14": 11855,
+          "15-64": 69410,
+          "65+": 26639
+        }
+      },
+      {
+        "year": 2025,
+        "total": 108941,
+        "ageStructure": {
+          "0-14": 11326,
+          "15-64": 70327,
+          "65+": 27288
+        }
+      },
+      {
+        "year": 2030,
+        "total": 108831,
+        "ageStructure": {
+          "0-14": 10738,
+          "15-64": 70000,
+          "65+": 28093
+        }
+      },
+      {
+        "year": 2035,
+        "total": 108095,
+        "ageStructure": {
+          "0-14": 10520,
+          "15-64": 68013,
+          "65+": 29562
+        }
+      },
+      {
+        "year": 2040,
+        "total": 106685,
+        "ageStructure": {
+          "0-14": 10374,
+          "15-64": 64397,
+          "65+": 31914
+        }
+      },
+      {
+        "year": 2045,
+        "total": 104627,
+        "ageStructure": {
+          "0-14": 10059,
+          "15-64": 61565,
+          "65+": 33003
+        }
+      },
+      {
+        "year": 2050,
+        "total": 102198,
+        "ageStructure": {
+          "0-14": 9530,
+          "15-64": 59132,
+          "65+": 33536
+        }
+      }
+    ],
+    "sourceCity": "大阪市都島区"
+  },
+  "totalScore": 49,
+  "metrics": {
+    "asset": 24,
+    "safety": 70,
+    "future": 87,
+    "convenience": 39,
+    "liquidity": 36
+  },
+  "lines": [
+    {
+      "name": "JR大阪環状線"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "station_name": "大阪",
+      "project_name": "グラングリーン大阪（うめきた2期）",
+      "category": "Redevelopment",
+      "schedule": "2024年9月一部先行まちびらき",
+      "description": "「みどり」と「イノベーション」の融合を目指す大規模複合開発。うめきた公園を中心に、オフィス、ホテル、商業施設、中核機能施設などが整備されます。",
+      "source_url": "https://umekita.com/",
+      "verified_at": "2026-02-10T13:00:00.000Z",
+      "impact_level": 5
+    },
+    {
+      "station_name": "大阪",
+      "project_name": "KITTE大阪（JPタワー大阪）",
+      "category": "Commercial",
+      "schedule": "2024年7月開業",
+      "description": "旧大阪中央郵便局跡地に建設されたJPタワー大阪内の商業施設。日本各地の魅力を発信する店舗や、劇場「SkyシアターMBS」などが集積。",
+      "source_url": "https://osaka.jp-kitte.jp/",
+      "verified_at": "2026-02-10T14:00:00.000Z",
+      "impact_level": 4
+    },
+    {
+      "station_name": "大阪",
+      "project_name": "なにわ筋線（新大阪〜関西空港アクセス）",
+      "category": "Infrastructure",
+      "schedule": "2031年春開業目標",
+      "description": "うめきたエリア（大阪駅地下ホーム）と難波エリアを結ぶ新線。関空へのアクセス時間を短縮し、大阪の南北軸を強化する悲願の鉄道路線。",
+      "source_url": "https://www.kr-railway.co.jp/",
+      "verified_at": "2026-02-10T14:00:00.000Z",
+      "impact_level": 5
+    }
+  ],
+  "marketPrice": 24000000,
+  "tx5y": 1293,
+  "trend": "FLAT",
+  "yoy": 9.1,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "name": "国土交通省「不動産取引価格情報」",
+        "year": 2025
+      },
+      "population": {
+        "name": "国立社会保障・人口問題研究所「日本の地域別将来推計人口」",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "name": "自社独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "name": "国土交通省 ハザードマップポータルサイト（国土地理院推計）",
+        "year": 2026
+      },
+      "redevelopment": {
+        "name": "各自治体開発事業者 公開情報",
+        "version": "2026年2月版"
+      }
+    }
+  }
+}

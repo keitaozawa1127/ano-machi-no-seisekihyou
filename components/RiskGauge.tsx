@@ -25,17 +25,17 @@ const RiskGauge: React.FC<RiskGaugeProps> = ({ score, rank, rankColor }) => {
             </h3>
 
             <div className="flex justify-between items-center">
-                <div className="flex items-baseline gap-3">
-                    <span className="text-9xl !font-serif font-normal text-slate-800" style={{ fontFamily: 'var(--font-title), serif', fontFeatureSettings: '"pnum" 0, "lnum" 1', fontVariantNumeric: 'lining-nums', verticalAlign: 'baseline' }}>
+                <div className="flex items-baseline gap-2 md:gap-3">
+                    <span className="text-7xl md:text-9xl !font-serif font-normal text-slate-800" style={{ fontFamily: 'var(--font-title), serif', fontFeatureSettings: '"pnum" 0, "lnum" 1', fontVariantNumeric: 'lining-nums', verticalAlign: 'baseline' }}>
                         {Math.round(score)}
                     </span>
-                    <span className="text-2xl !font-serif font-extralight text-slate-300 tracking-wide" style={{ fontFamily: 'var(--font-title), serif' }}>
+                    <span className="text-xl md:text-2xl !font-serif font-extralight text-slate-300 tracking-wide" style={{ fontFamily: 'var(--font-title), serif' }}>
                         / 100
                     </span>
                 </div>
 
                 <div
-                    className="px-8 py-4 rounded-lg flex items-center justify-center shadow-lg backdrop-blur-md mb-4"
+                    className="px-4 py-2 md:px-8 md:py-4 rounded-lg flex items-baseline justify-center shadow-lg backdrop-blur-md mb-4"
                     style={{
                         backgroundColor: 'rgba(255, 255, 255, 0.3)',
                         border: `0.5px solid ${getRankBgColor(rank)}`,
@@ -44,7 +44,7 @@ const RiskGauge: React.FC<RiskGaugeProps> = ({ score, rank, rankColor }) => {
                     }}
                 >
                     <span
-                        className="text-sm tracking-[0.2em] !font-serif mr-3 font-medium"
+                        className="text-xs md:text-sm tracking-[0.2em] !font-serif mr-2 md:mr-3 font-medium"
                         style={{
                             color: getRankBgColor(rank),
                             fontFamily: 'var(--font-title), serif'
@@ -53,7 +53,7 @@ const RiskGauge: React.FC<RiskGaugeProps> = ({ score, rank, rankColor }) => {
                         RANK
                     </span>
                     <span
-                        className="text-5xl font-bold !font-serif"
+                        className="text-4xl md:text-5xl font-bold !font-serif"
                         style={{
                             color: getRankBgColor(rank),
                             fontFamily: 'var(--font-title), serif',

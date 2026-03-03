@@ -98,7 +98,7 @@ const RiskCard = ({ title, level, mainValue, description, action, source, source
     };
 
     return (
-        <div className="bg-white rounded-xl p-8 pb-12 shadow-sm border border-[#E8E6DF] relative overflow-hidden group hover:shadow-md transition-shadow">
+        <div className="bg-white rounded-xl p-5 pb-8 md:p-8 md:pb-12 shadow-sm border border-[#E8E6DF] relative overflow-hidden group hover:shadow-md transition-shadow">
             {/* Top Border Indicator */}
             <div
                 className="absolute top-0 left-0 w-full h-1"
@@ -610,9 +610,9 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
     const currentYear = new Date().getFullYear();
 
     return (
-        <section className="relative mt-8 mb-20 mx-auto" style={{ width: '1000px', maxWidth: '95vw' }}>
+        <section className="relative mt-8 mb-20 mx-auto w-full max-w-[1000px] px-2 md:px-0">
             {/* Main Container - Nordic Paper Style */}
-            <div className="bg-white rounded-[2rem] shadow-xl border border-[var(--bg-primary)] p-8 md:p-12 relative overflow-hidden">
+            <div className="bg-white rounded-[2rem] shadow-xl border border-[var(--bg-primary)] p-5 md:p-12 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[var(--brand-main)] via-[var(--brand-light)] to-[var(--brand-main)] opacity-20"></div>
 
                 {/* 1. Header & Score Overview */}
@@ -621,7 +621,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                         {/* Station Name Heading */}
                         {data.debug.stationName && (
                             <div className="mb-0">
-                                <h1 className="text-7xl !font-serif font-medium tracking-tight mb-4" style={{ fontFamily: '"Zen Old Mincho", serif' }}>
+                                <h1 className="text-4xl md:text-7xl !font-serif font-medium tracking-tight mb-4" style={{ fontFamily: '"Zen Old Mincho", serif' }}>
                                     {data.name || data.debug.stationName}
                                 </h1>
 
@@ -786,7 +786,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                     {activeTab === "asset" && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
                             {/* Market Price Card */}
-                            <div className="bg-white rounded-xl p-8 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center">
+                            <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center">
                                 <div className="text-sm font-bold text-[#7F8C8D] tracking-widest mb-4">市場価格相場(70㎡換算)</div>
                                 <div className="flex items-center h-[40px]">
                                     <div className="flex items-baseline gap-2">
@@ -814,7 +814,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                             </div>
 
                             {/* Land Price Trend Graph */}
-                            <div className="bg-white rounded-xl p-8 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
+                            <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
                                 <h4 className="text-sm font-bold text-[#4A544C] tracking-widest mb-4">
                                     地価推移実績（過去5年）
                                 </h4>
@@ -902,7 +902,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                     {activeTab === "future" && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
                             {/* Future Population */}
-                            <div className="bg-white rounded-xl p-8 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
+                            <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
                                 <div className="mb-4">
                                     <h4 className="text-sm font-bold text-[#4A544C] tracking-widest inline-block mr-2">
                                         将来人口推計
@@ -960,7 +960,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                             </div>
 
                             {/* Redevelopment Timeline */}
-                            <div className="bg-white rounded-xl p-8 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
+                            <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
                                 <RedevelopmentTimeline data={data.redevelopmentProjects} metadata={data.metadata?.sources.redevelopment} />
                             </div>
                         </div>
@@ -970,7 +970,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                     {activeTab === "liquidity" && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
                             {/* Transaction Volume Card */}
-                            <div className="bg-white rounded-xl p-8 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center">
+                            <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center">
                                 <div className="text-sm font-bold text-[#7F8C8D] tracking-widest mb-4">取引件数(5年累計)</div>
                                 <div className="flex items-baseline h-[40px]">
                                     <span className="text-[32px] font-bold text-[#4A544C] font-feature-settings-tnum">
@@ -994,7 +994,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                     {/* 5. 利便性 (Convenience) */}
                     {activeTab === "convenience" && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
-                            <div className="bg-white rounded-xl p-8 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden w-full">
+                            <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden w-full">
                                 <h4 className="text-sm font-bold text-[#4A544C] tracking-widest mb-6">
                                     乗り入れ路線インデックス
                                 </h4>

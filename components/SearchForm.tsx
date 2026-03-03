@@ -360,13 +360,15 @@ export default function SearchForm({ loading, onSearch, onPrefetch, resultRef, e
         if (!stationQuery) return [];
 
         const normalizedInput = wanakana.toHiragana(stationQuery);
+        const normalizedRomaji = wanakana.toRomaji(stationQuery).toLowerCase();
 
         // 1. Local Search (Physical)
         const localMatches = allStations
             .filter(s => {
                 const nameMatch = s.name.startsWith(stationQuery) || s.name.includes(stationQuery);
                 const kanaMatch = s.kana && (s.kana === normalizedInput || s.kana.startsWith(normalizedInput));
-                return nameMatch || kanaMatch;
+                const romajiMatch = s.kana && wanakana.toRomaji(s.kana).toLowerCase().startsWith(normalizedRomaji);
+                return nameMatch || kanaMatch || romajiMatch;
             })
             .sort((a, b) => (b.passengerVolume || 0) - (a.passengerVolume || 0));
 
@@ -397,6 +399,14 @@ export default function SearchForm({ loading, onSearch, onPrefetch, resultRef, e
         let searchTarget = lineQuery.toLowerCase();
         const normalizedKana = wanakana.toHiragana(lineQuery);
 
+        // 変換マップを用いて部分一致する漢字の路線名を収集
+        const matchedKanjiLines = new Set<string>();
+        for (const [key, val] of Object.entries(LINE_KANA_MAP)) {
+            if (key.startsWith(normalizedKana) || key.startsWith(searchTarget)) {
+                matchedKanjiLines.add(val);
+            }
+        }
+
         if (LINE_KANA_MAP[searchTarget]) {
             searchTarget = LINE_KANA_MAP[searchTarget];
         } else {
@@ -408,7 +418,14 @@ export default function SearchForm({ loading, onSearch, onPrefetch, resultRef, e
 
         const allLines = Array.from(new Set(allStations.flatMap(s => s.lines || [])));
         return allLines
-            .filter(line => line.toLowerCase().includes(searchTarget) || line.includes(normalizedKana))
+            .filter(line => {
+                if (line.toLowerCase().includes(searchTarget) || line.includes(normalizedKana)) return true;
+                // マップでマッチした漢字路線名が含まれているかもチェック
+                for (const kanji of matchedKanjiLines) {
+                    if (line.includes(kanji)) return true;
+                }
+                return false;
+            })
             .sort((a, b) => {
                 const volA = lineVolumeMap.get(a) || 0;
                 const volB = lineVolumeMap.get(b) || 0;
@@ -428,6 +445,7 @@ export default function SearchForm({ loading, onSearch, onPrefetch, resultRef, e
 
     // Handlers
     const handleStationSelect = (station: StationData) => {
+        (document.activeElement as HTMLElement)?.blur();
         setStationQuery(station.name);
         setShowStationSuggestions(false);
         const targetPrefCode = station.prefCode;
@@ -437,6 +455,7 @@ export default function SearchForm({ loading, onSearch, onPrefetch, resultRef, e
     };
 
     const handleLineSelect = (line: string) => {
+        (document.activeElement as HTMLElement)?.blur();
         setLineQuery(line);
         setShowLineSuggestions(false);
         setSelectedLineForStation(line);
@@ -444,6 +463,7 @@ export default function SearchForm({ loading, onSearch, onPrefetch, resultRef, e
     };
 
     const handleLineStationChange = (station: StationData) => {
+        (document.activeElement as HTMLElement)?.blur();
         setShowLineStationSelect(false);
         const normalizedName = normalizeStationName(station.name);
         const targetPrefCode = station.prefCode;
