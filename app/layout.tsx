@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  verification: {
+    google: "TgdbO6HqSqcVJhCp7AsfGcdbsu0_jXkWXm8P1Mu085w",
+  },
 };
 
 import Footer from "../components/Footer";

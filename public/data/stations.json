@@ -1296,7 +1296,7 @@
       "JR函館本線",
       "JR留萌本線"
     ],
-    "prefecture": "北���道",
+    "prefecture": "北海道",
     "municipalities": [
       "深川市"
     ],
@@ -15750,7 +15750,7 @@
     "lines": [
       "JR仙石線"
     ],
-    "prefecture": "宮���県",
+    "prefecture": "宮城県",
     "municipalities": [
       "仙台市"
     ],
@@ -27443,7 +27443,7 @@
       "東京メトロ半蔵門線",
       "都営浅草線"
     ],
-    "prefecture": "埼玉県",
+    "prefecture": "東京都",
     "prefCode": "11",
     "municipalities": [],
     "coordinates": [
@@ -36040,7 +36040,7 @@
     "lines": [
       "東武野田線"
     ],
-    "prefecture": "埼玉県",
+    "prefecture": "千葉県",
     "prefCode": "11",
     "municipalities": [
       "野田市"
@@ -40407,7 +40407,7 @@
       "JR総武線",
       "JR総武線快速"
     ],
-    "prefecture": "東京都",
+    "prefecture": "千葉県",
     "prefCode": "13",
     "municipalities": [],
     "coordinates": [
@@ -40442,7 +40442,7 @@
     "lines": [
       "JR総武線"
     ],
-    "prefecture": "東京都",
+    "prefecture": "千葉県",
     "prefCode": "13",
     "municipalities": [],
     "coordinates": [
@@ -40458,7 +40458,7 @@
     "lines": [
       "JR総武線"
     ],
-    "prefecture": "東京都",
+    "prefecture": "千葉県",
     "prefCode": "13",
     "municipalities": [],
     "coordinates": [
@@ -40475,7 +40475,7 @@
       "JR総武線",
       "JR総武線快速"
     ],
-    "prefecture": "東京都",
+    "prefecture": "千葉県",
     "prefCode": "13",
     "municipalities": [],
     "coordinates": [
@@ -40491,7 +40491,7 @@
     "lines": [
       "JR総武線"
     ],
-    "prefecture": "東京都",
+    "prefecture": "千葉県",
     "prefCode": "13",
     "municipalities": [],
     "coordinates": [
@@ -40507,7 +40507,7 @@
     "lines": [
       "JR総武線"
     ],
-    "prefecture": "東京都",
+    "prefecture": "千葉県",
     "prefCode": "13",
     "municipalities": [],
     "coordinates": [
@@ -40523,7 +40523,7 @@
     "lines": [
       "JR総武線"
     ],
-    "prefecture": "東京都",
+    "prefecture": "千葉県",
     "prefCode": "13",
     "municipalities": [],
     "coordinates": [
@@ -40540,7 +40540,7 @@
       "JR総武線",
       "JR総武線快速"
     ],
-    "prefecture": "東京都",
+    "prefecture": "千葉県",
     "prefCode": "13",
     "municipalities": [],
     "coordinates": [
@@ -40556,7 +40556,7 @@
     "lines": [
       "JR総武線"
     ],
-    "prefecture": "東京都",
+    "prefecture": "千葉県",
     "prefCode": "13",
     "municipalities": [],
     "coordinates": [
@@ -46193,7 +46193,7 @@
       "JR東海道本線",
       "JR身延線"
     ],
-    "prefecture": "静���県",
+    "prefecture": "静岡県",
     "municipalities": [
       "富士市"
     ],
@@ -47617,7 +47617,7 @@
     "lines": [
       "JR横浜線"
     ],
-    "prefecture": "東京都",
+    "prefecture": "神奈川県",
     "prefCode": "13",
     "municipalities": [
       "相模原市"
@@ -50638,7 +50638,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50654,7 +50654,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50670,7 +50670,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50705,7 +50705,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50721,7 +50721,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50737,7 +50737,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50753,7 +50753,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50769,7 +50769,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50785,7 +50785,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50801,7 +50801,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50817,7 +50817,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50833,7 +50833,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50849,7 +50849,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50865,7 +50865,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50961,7 +50961,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -50977,7 +50977,7 @@
     "lines": [
       "小田急小田原線"
     ],
-    "prefecture": "神奈川県",
+    "prefecture": "東京都",
     "prefCode": "14",
     "municipalities": [],
     "coordinates": [
@@ -58045,7 +58045,7 @@
     "lines": [
       "横浜市ブルーライン"
     ],
-    "prefecture": "���奈川県",
+    "prefecture": "神奈川県",
     "municipalities": [
       "横浜市"
     ],
@@ -78704,7 +78704,7 @@
     "lines": [
       "JR関西本線"
     ],
-    "prefecture": "京���府",
+    "prefecture": "京都府",
     "municipalities": [
       "相楽郡"
     ],
@@ -84469,7 +84469,7 @@
     "lines": [
       "JR参宮線"
     ],
-    "prefecture": "三���県",
+    "prefecture": "三重県",
     "municipalities": [
       "度会郡"
     ],
@@ -90582,7 +90582,7 @@
     "lines": [
       "JR京都線"
     ],
-    "prefecture": "大阪府",
+    "prefecture": "京都府",
     "prefCode": "27",
     "municipalities": [
       "三島郡"
@@ -94401,7 +94401,7 @@
       "JR福知山線",
       "阪急伊丹線"
     ],
-    "prefecture": "���庫県",
+    "prefecture": "兵庫県",
     "municipalities": [
       "伊丹市"
     ],
@@ -97311,7 +97311,7 @@
     "lines": [
       "阪急京都本線"
     ],
-    "prefecture": "大阪���",
+    "prefecture": "大阪府",
     "municipalities": [
       "茨木市"
     ],
@@ -102353,7 +102353,7 @@
       "阪急宝塚本線",
       "阪急神戸本線"
     ],
-    "prefecture": "大���府",
+    "prefecture": "大阪府",
     "municipalities": [
       "大阪市"
     ],
@@ -118063,7 +118063,7 @@
     "lines": [
       "岡山電軌清輝橋線"
     ],
-    "prefecture": "岡山���",
+    "prefecture": "岡山県",
     "municipalities": [
       "岡山市"
     ],
@@ -133360,7 +133360,7 @@
     "lines": [
       "JR香椎線"
     ],
-    "prefecture": "福岡���",
+    "prefecture": "福岡県",
     "municipalities": [
       "福岡市"
     ],

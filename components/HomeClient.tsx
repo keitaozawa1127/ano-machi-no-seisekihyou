@@ -233,6 +233,11 @@ export default function HomeClient({ }: Props) {
             )}
 
             {/* Footer */}
+            <footer className="w-full mt-24 mb-12 text-center text-sm text-[var(--text-muted)] animate-in fade-in duration-1000 delay-300">
+                <Link href="/stations" className="hover:text-[var(--brand-main)] transition-colors underline-offset-4 hover:underline">
+                    診断可能な駅一覧を見る
+                </Link>
+            </footer>
         </main>
     );
 }

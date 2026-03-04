@@ -1,0 +1,116 @@
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import fs from 'fs/promises';
+import path from 'path';
+import DiagnosisResult from '../../../components/DiagnosisResult';
+import Link from 'next/link';
+import { diagnoseAsync } from '../../../lib/diagnoseLogic';
+
+export const dynamic = 'force-dynamic';
+
+type Props = {
+    params: { id: string };
+};
+
+// Helper function to find prefCode from stations.json
+async function getStationPrefCode(decodedName: string): Promise<string | null> {
+    try {
+        const filePath = path.join(process.cwd(), 'public', 'data', 'stations.json');
+        const fileContent = await fs.readFile(filePath, 'utf-8');
+        const stations = JSON.parse(fileContent);
+
+        // stations.json keys are usually in format "駅名_都道府県", e.g. "新宿_東京"
+        // Also station objects have "name" and "prefCode" properties.
+        for (const key in stations) {
+            const station = stations[key];
+            if (station.name === decodedName) {
+                return String(station.prefCode).padStart(2, '0');
+            }
+        }
+        return null;
+    } catch (e) {
+        console.error("Error loading stations.json:", e);
+        return null; // Fallback handled by diagnoseAsync (defaults to "13")
+    }
+}
+
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const decodedName = decodeURIComponent(params.id);
+    const prefCode = await getStationPrefCode(decodedName) || "13"; // fallback to Tokyo
+
+    const result = await diagnoseAsync(decodedName, prefCode, 2024);
+
+    if (!result.ok) {
+        return {
+            title: `${decodedName}駅の診断結果が見つかりません | あの街の成績表`,
+            description: `あの街の成績表で${decodedName}駅周辺の不動産・街の資産性をチェックしましょう。`,
+        };
+    }
+
+    const { totalScore, verdict, headline, metrics } = result;
+    const verdictLabel = verdict === 'safe' ? '推奨' : verdict === 'caution' ? '注意' : '要確認';
+
+    let breakdown = "";
+    if (metrics) {
+        breakdown = `資産性${metrics.asset} 安全性${metrics.safety} 将来性${metrics.future} 利便性${metrics.convenience} 流動性${metrics.liquidity}`;
+    }
+
+    return {
+        title: `【あの街の成績表】${decodedName}駅の住みやすさ・資産性診断（総合スコア: ${totalScore}点 / ${verdictLabel}）`,
+        description: `${decodedName}駅の不動産価値と街の将来性を独自アルゴリズムで徹底分析。「${headline}」${breakdown}。広告やバイアスを排除した純粋な街の評価データを確認できます。`,
+        openGraph: {
+            title: `${decodedName}駅の資産性診断 | あの街の成績表`,
+            description: `${decodedName}駅の不動産価値と街の将来性を徹底分析。「${headline}」`,
+            url: `https://まちの成績表.com/station/${encodeURIComponent(decodedName)}`, // Replace with actual domain later
+            type: 'article',
+        }
+    };
+}
+
+
+export default async function StationPage({ params }: Props) {
+    const decodedName = decodeURIComponent(params.id);
+    const prefCode = await getStationPrefCode(decodedName) || "13"; // fallback to Tokyo
+
+    const result = await diagnoseAsync(decodedName, prefCode, 2024);
+
+    if (!result.ok) {
+        return (
+            <main className="min-h-screen w-full flex flex-col items-center pt-20 px-6 bg-[var(--bg-primary)] overflow-x-hidden">
+                <header className="w-full max-w-4xl text-center mb-16 min-w-0 px-2">
+                    <h1 className="hero-title text-4xl md:text-5xl font-medium tracking-widest my-[60px] text-[var(--brand-main)] font-serif">
+                        <Link href="/" className="hover:opacity-80 transition-opacity duration-300">
+                            あの街の成績表
+                        </Link>
+                    </h1>
+                </header>
+                <div className="card mb-8 text-center w-full max-w-2xl min-w-0" style={{ borderColor: 'hsl(var(--status-risky))', color: 'hsl(var(--status-risky))', backgroundColor: 'hsl(var(--status-risky)/0.1)' }}>
+                    <p className="font-bold">⚠️ {result.error || `${decodedName}駅のデータが見つかりませんでした。`}</p>
+                    <div className="mt-8">
+                        <Link href="/" className="text-[var(--brand-main)] underline hover:opacity-80 transition-opacity">
+                            トップページに戻る
+                        </Link>
+                    </div>
+                </div>
+            </main>
+        );
+    }
+
+    return (
+        <main className="min-h-screen w-full flex flex-col items-center pt-10 px-6 bg-[var(--bg-primary)] overflow-x-hidden">
+            {/* Header with back link */}
+            <div className="w-[1000px] max-w-full mb-6">
+                <Link href="/" className="inline-flex items-center text-sm font-bold text-[var(--brand-main)] hover:opacity-70 transition-opacity px-2">
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    検索に戻る
+                </Link>
+            </div>
+
+            {/* Northern European Minimalist Premium styling wrapper */}
+            <div className="w-full flex justify-center min-w-0 animate-in slide-in-from-bottom-5 duration-500">
+                <DiagnosisResult data={result} />
+            </div>
+        </main>
+    );
+}
