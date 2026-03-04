@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import ComparisonView from "./ComparisonView";
 import SearchForm from "./SearchForm";
@@ -56,6 +56,16 @@ export default function HomeClient({ }: Props) {
 
     // 診断結果へのref
     const resultRef = useRef<HTMLDivElement>(null);
+
+    // Auto-scroll when search is complete and result is rendered
+    useEffect(() => {
+        if (!loading && currentResult && resultRef.current) {
+            // Small timeout ensures the DOM has fully rendered the new result card
+            setTimeout(() => {
+                resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    }, [loading, currentResult]);
 
     // Prefetch logic
     const handlePrefetch = (stationName: string, prefCode: string) => {

@@ -78,7 +78,7 @@ export default function FutureTimeline({
     const width = isMobile ? 340 : 600;
     const height = isMobile ? 240 : 280;
     const padding = isMobile
-        ? { top: 30, right: 30, bottom: 40, left: 45 }
+        ? { top: 30, right: 30, bottom: 40, left: 60 }
         : { top: 30, right: 50, bottom: 40, left: 65 };
     const chartWidth = width - padding.left - padding.right;
     const chartHeight = height - padding.top - padding.bottom;
