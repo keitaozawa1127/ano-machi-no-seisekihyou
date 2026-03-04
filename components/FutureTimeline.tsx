@@ -20,6 +20,7 @@ export default function FutureTimeline({
     const [hoverPos, setHoverPos] = useState<{ x: number, y: number } | null>(null);
     const [tooltipVisible, setTooltipVisible] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
     // デフォルトデータ
@@ -63,15 +64,26 @@ export default function FutureTimeline({
             observer.observe(ref.current);
         }
 
-        return () => observer.disconnect();
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            observer.disconnect();
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
-    // SVGのサイズ - Padding increased for Y-axis labels
-    const width = 600;
-    const height = 280;
-    const padding = { top: 30, right: 50, bottom: 40, left: 65 };
+    // SVGのサイズ - Responsive based on isMobile
+    const width = isMobile ? 340 : 600;
+    const height = isMobile ? 240 : 280;
+    const padding = isMobile
+        ? { top: 30, right: 30, bottom: 40, left: 45 }
+        : { top: 30, right: 50, bottom: 40, left: 65 };
     const chartWidth = width - padding.left - padding.right;
     const chartHeight = height - padding.top - padding.bottom;
+    const fontSizeLabel = isMobile ? "11" : "9";
+    const fontSizeTick = isMobile ? "10" : "8";
 
     // データの範囲を取得
     const years = data.map(d => d.year);
@@ -204,8 +216,8 @@ export default function FutureTimeline({
     const MAIN_COLOR = "#4A4A4A";
 
     return (
-        <div ref={ref} className="w-full relative overflow-x-auto pb-4">
-            <div className="min-w-[500px] md:min-w-full relative">
+        <div ref={ref} className="w-full relative pb-4">
+            <div className="w-full relative">
                 <svg
                     viewBox={`0 0 ${width} ${height}`}
                     className="w-full h-auto block"
@@ -251,11 +263,11 @@ export default function FutureTimeline({
                     {priceTicks.map((tick, i) => (
                         <text
                             key={i}
-                            x={padding.left - 8}
-                            y={yScalePrice(tick) + 4}
+                            x={padding.left - (isMobile ? 5 : 8)}
+                            y={yScalePrice(tick) + (isMobile ? 3 : 4)}
                             textAnchor="end"
                             fill={MAIN_COLOR}
-                            fontSize="9"
+                            fontSize={fontSizeLabel}
                             fontWeight="normal"
                             fontFamily="Noto Sans JP, sans-serif"
                         >
@@ -306,7 +318,7 @@ export default function FutureTimeline({
                                     y={priceLabelY}
                                     textAnchor="middle"
                                     fill={MAIN_COLOR}
-                                    fontSize="8"
+                                    fontSize={fontSizeTick}
                                     fontWeight="bold"
                                     fontFamily="Noto Sans JP, sans-serif"
                                 >
@@ -325,7 +337,7 @@ export default function FutureTimeline({
                             textAnchor="middle"
                             fill={MAIN_COLOR}
                             fontWeight="bold"
-                            fontSize="9"
+                            fontSize={fontSizeLabel}
                             fontFamily="Noto Sans JP, sans-serif"
                         >
                             {d.year}

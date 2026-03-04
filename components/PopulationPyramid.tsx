@@ -1,4 +1,4 @@
-"use client";
+import { useState, useEffect } from "react";
 
 type PyramidData = {
     ageGroup: string;
@@ -13,10 +13,21 @@ type PopulationPyramidProps = {
 };
 
 export default function PopulationPyramid({ data2020, data2050, baseYear = 2020, targetYear = 2050 }: PopulationPyramidProps) {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     // Match FutureTimeline dimensions
-    const width = 600;
-    const height = 280;
-    const padding = { top: 30, right: 50, bottom: 40, left: 80 };
+    const width = isMobile ? 340 : 600;
+    const height = isMobile ? 300 : 280;
+    const padding = isMobile
+        ? { top: 30, right: 30, bottom: 40, left: 60 }
+        : { top: 30, right: 50, bottom: 40, left: 80 };
     const chartWidth = width - padding.left - padding.right;
     const chartHeight = height - padding.top - padding.bottom;
 
@@ -51,8 +62,8 @@ export default function PopulationPyramid({ data2020, data2050, baseYear = 2020,
     }
 
     return (
-        <div className="w-full overflow-x-auto pb-4">
-            <div className="min-w-[500px] md:min-w-full">
+        <div className="w-full pb-4">
+            <div className="w-full">
                 {/* 見出し */}
 
 
@@ -78,7 +89,7 @@ export default function PopulationPyramid({ data2020, data2050, baseYear = 2020,
                                     y={height - padding.bottom + 16}
                                     textAnchor="middle"
                                     fill="#999"
-                                    fontSize="9"
+                                    fontSize={isMobile ? "11" : "9"}
                                 >
                                     {tickValue}%
                                 </text>
@@ -133,7 +144,7 @@ export default function PopulationPyramid({ data2020, data2050, baseYear = 2020,
                                     textAnchor="end"
                                     dominantBaseline="middle"
                                     fill="#4A4A4A"
-                                    fontSize="9"
+                                    fontSize={isMobile ? "11" : "9"}
                                     fontWeight="bold"
                                 >
                                     {d.ageGroup}
@@ -146,7 +157,7 @@ export default function PopulationPyramid({ data2020, data2050, baseYear = 2020,
                                     textAnchor="start"
                                     dominantBaseline="middle"
                                     fill="#4A4A4A"
-                                    fontSize="8"
+                                    fontSize={isMobile ? "10" : "8"}
                                 >
                                     {d.population.toFixed(1)}%
                                 </text>
@@ -158,7 +169,7 @@ export default function PopulationPyramid({ data2020, data2050, baseYear = 2020,
                                     textAnchor="start"
                                     dominantBaseline="middle"
                                     fill="#708271"
-                                    fontSize="7"
+                                    fontSize={isMobile ? "9" : "7"}
                                 >
                                     {data2050[i].population.toFixed(1)}%
                                 </text>

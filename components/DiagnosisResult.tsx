@@ -758,7 +758,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
 
                 {/* 3. Detail Toggle (5 Tabs) */}
                 <div className="flex justify-center mb-12">
-                    <div className="inline-flex bg-[var(--bg-primary)] p-1.5 rounded-full overflow-x-auto snap-x max-w-full">
+                    <div className="flex flex-wrap justify-center gap-1 md:gap-2 bg-[var(--bg-primary)] p-1.5 md:rounded-full rounded-2xl max-w-full">
                         {[
                             { id: "asset", label: "資産性" },
                             { id: "safety", label: "安全性" },
@@ -769,7 +769,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id as any)}
-                                className={`px-4 md:px-6 py-2.5 rounded-full text-xs font-bold tracking-widest transition-all whitespace-nowrap snap-center
+                                className={`px-3 md:px-6 py-2 md:py-2.5 rounded-full text-[11px] md:text-xs font-bold tracking-widest transition-all
                                     ${activeTab === tab.id
                                         ? "bg-white text-[var(--brand-main)] shadow-sm"
                                         : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"}`}
@@ -788,7 +788,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                             {/* Market Price Card */}
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center">
                                 <div className="text-sm font-bold text-[#7F8C8D] tracking-widest mb-4">市場価格相場(70㎡換算)</div>
-                                <div className="flex items-center h-[40px]">
+                                <div className="flex flex-wrap items-center gap-y-2 min-h-[40px]">
                                     <div className="flex items-baseline gap-2">
                                         <span className="text-[32px] font-bold text-[#4A544C] tracking-tight font-feature-settings-tnum">
                                             {data.marketPrice && data.marketPrice > 0 ? (data.marketPrice / 10000).toLocaleString() : "---"}
@@ -808,7 +808,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                         </div>
                                     )}
                                 </div>
-                                <div className="absolute bottom-4 right-6">
+                                <div className="mt-6 flex justify-end">
                                     <SourceCredit source="国土交通省 不動産取引価格情報" year={data.dataYear} />
                                 </div>
                             </div>
@@ -972,7 +972,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                             {/* Transaction Volume Card */}
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center">
                                 <div className="text-sm font-bold text-[#7F8C8D] tracking-widest mb-4">取引件数(5年累計)</div>
-                                <div className="flex items-baseline h-[40px]">
+                                <div className="flex items-baseline min-h-[40px]">
                                     <span className="text-[32px] font-bold text-[#4A544C] font-feature-settings-tnum">
                                         {data.tx5y !== undefined && data.tx5y > 0 ? data.tx5y : "---"}
                                     </span>
@@ -980,11 +980,11 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                         <span className="text-[14px] ml-1 font-normal text-[#4A544C]">件</span>
                                     )}
                                 </div>
-                                <p className="text-xs text-slate-500 mt-4 max-w-md leading-relaxed">
+                                <p className="text-xs text-slate-500 mt-4 max-w-md leading-relaxed z-10">
                                     過去5年間に駅周辺（半径2km以内）で行われた不動産取引の総件数です。<br />
                                     取引件数が多いほど市場が活発で、売却時に買い手が見つかりやすい「流動性の高さ」を示します。
                                 </p>
-                                <div className="absolute bottom-4 right-6">
+                                <div className="mt-6 flex justify-end z-10">
                                     <SourceCredit source={data.metadata?.sources.realEstate?.name || "国土交通省 不動産取引価格情報"} year={data.metadata?.sources.realEstate?.year || data.dataYear} />
                                 </div>
                             </div>
