@@ -56,14 +56,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         breakdown = `資産性${metrics.asset} 安全性${metrics.safety} 将来性${metrics.future} 利便性${metrics.convenience} 流動性${metrics.liquidity}`;
     }
 
+    const ogImageUrl = `https://anomachi.jp/api/og?station=${encodeURIComponent(decodedName)}&score=${totalScore}&verdict=${encodeURIComponent(verdictLabel)}`;
+
     return {
         title: `【あの街の成績表】${decodedName}駅の住みやすさ・資産性診断（総合スコア: ${totalScore}点 / ${verdictLabel}）`,
         description: `${decodedName}駅の不動産価値と街の将来性を独自アルゴリズムで徹底分析。「${headline}」${breakdown}。広告やバイアスを排除した純粋な街の評価データを確認できます。`,
         openGraph: {
             title: `${decodedName}駅の資産性診断 | あの街の成績表`,
             description: `${decodedName}駅の不動産価値と街の将来性を徹底分析。「${headline}」`,
-            url: `https://まちの成績表.com/station/${encodeURIComponent(decodedName)}`, // Replace with actual domain later
+            url: `https://anomachi.jp/station/${encodeURIComponent(decodedName)}`,
             type: 'article',
+            images: [
+                {
+                    url: ogImageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: `${decodedName}駅の診断結果: スコア ${totalScore} - ${verdictLabel}`,
+                }
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${decodedName}駅の資産性診断 | あの街の成績表`,
+            description: `${decodedName}駅の不動産価値と街の将来性を徹底分析。「${headline}」`,
+            images: [ogImageUrl],
         }
     };
 }
@@ -97,8 +113,39 @@ export default async function StationPage({ params }: Props) {
         );
     }
 
+    const { totalScore, verdict, headline } = result;
+    const verdictLabel = verdict === 'safe' ? '推奨' : verdict === 'caution' ? '注意' : '要確認';
+    const pageUrl = `https://anomachi.jp/station/${encodeURIComponent(decodedName)}`;
+
+    // 構造化データ（JSON-LD）の作成
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "ItemPage",
+        "name": `${decodedName}駅の資産性診断 | あの街の成績表`,
+        "description": `${decodedName}駅の不動産価値と街の将来性を徹底分析。「${headline}」`,
+        "url": pageUrl,
+        "mainEntity": {
+            "@type": "Place",
+            "name": `${decodedName}駅`,
+            "description": "あの街の成績表による独自資産性評価",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": totalScore,
+                "bestRating": 100,
+                "worstRating": 0,
+                "ratingCount": 1
+            }
+        }
+    };
+
     return (
         <main className="min-h-screen w-full flex flex-col items-center pt-10 px-6 bg-[var(--bg-primary)] overflow-x-hidden">
+            {/* 構造化データ（Google検索リッチリザルト用） */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+
             {/* Header with back link */}
             <div className="w-[1000px] max-w-full mb-6">
                 <Link href="/" className="inline-flex items-center text-sm font-bold text-[var(--brand-main)] hover:opacity-70 transition-opacity px-2">
@@ -110,6 +157,23 @@ export default async function StationPage({ params }: Props) {
             {/* Northern European Minimalist Premium styling wrapper */}
             <div className="w-full flex justify-center min-w-0 animate-in slide-in-from-bottom-5 duration-500">
                 <DiagnosisResult data={result} />
+            </div>
+
+            {/* Share Section */}
+            <div className="w-full max-w-2xl mt-12 mb-24 flex justify-center animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
+                <a
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://anomachi.jp/station/${encodeURIComponent(decodedName)}`)}&text=${encodeURIComponent(`あの街の成績表で「${decodedName}駅」の診断結果を確認しました。\n総合スコア: ${totalScore}点 (${verdictLabel})\n`)}&hashtags=あの街の成績表,街選び,不動産`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex flex-col items-center justify-center space-y-2 hover:opacity-70 transition-opacity"
+                >
+                    <div className="w-14 h-14 bg-white/70 rounded-full flex items-center justify-center border border-[var(--border-main)]/50 shadow-sm transition-transform group-hover:-translate-y-1">
+                        <svg className="w-6 h-6 text-[#1DA1F2]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.95H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </div>
+                    <span className="text-xs tracking-widest text-[var(--text-muted)] font-medium">結果をシェア</span>
+                </a>
             </div>
         </main>
     );
