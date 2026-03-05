@@ -230,27 +230,32 @@ function calcRedevelopmentImpact(projects: RedevelopmentProject[]): number {
 // Redevelopment Data Loader
 async function loadRedevelopmentProjects(stationName: string): Promise<{ projects: RedevelopmentProject[], metadata?: any }> {
     try {
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://anomachi.jp';
+
         // 1. Try loading station-specific file first (Official Record Strategy)
-        const stationFilePath = path.join(process.cwd(), 'public', 'data', 'stations', `${stationName}.json`);
+        const stationFileUrl = `${baseUrl}/data/stations/${encodeURIComponent(stationName)}.json`;
         try {
-            await fs.access(stationFilePath);
-            console.error('[REDEVELOPMENT] Loading station-specific file:', stationFilePath);
-            const fileContent = await fs.readFile(stationFilePath, 'utf-8');
-            const parsed = JSON.parse(fileContent);
-            const projects: RedevelopmentProject[] = Array.isArray(parsed) ? parsed : (parsed.projects || []);
-            const metadata = !Array.isArray(parsed) && parsed._metadata ? parsed._metadata : undefined;
-            return { projects, metadata };
+            console.error('[REDEVELOPMENT] Loading station-specific file:', stationFileUrl);
+            const res = await fetch(stationFileUrl, { next: { revalidate: 3600 } });
+            if (res.ok) {
+                const parsed = await res.json();
+                const projects: RedevelopmentProject[] = Array.isArray(parsed) ? parsed : (parsed.projects || []);
+                const metadata = !Array.isArray(parsed) && parsed._metadata ? parsed._metadata : undefined;
+                return { projects, metadata };
+            }
         } catch (e) {
-            // File setup might strictly require creating all files, or we fallback.
-            // For now, if file doesn't exist, we fall through to master file logic.
-            console.error('[REDEVELOPMENT] Station file not found, falling back to master:', stationName);
+            console.error('[REDEVELOPMENT] Station file not found or fetch failed, falling back to master:', stationName);
         }
 
-        const filePath = path.join(process.cwd(), 'public', 'data', 'redevelopment_master.json');
-        console.error('[REDEVELOPMENT] Loading from:', filePath);
+        const masterFileUrl = `${baseUrl}/data/redevelopment_master.json`;
+        console.error('[REDEVELOPMENT] Loading from:', masterFileUrl);
 
-        const fileContent = await fs.readFile(filePath, 'utf-8');
-        const parsed = JSON.parse(fileContent);
+        const res = await fetch(masterFileUrl, { next: { revalidate: 3600 } });
+        if (!res.ok) {
+            throw new Error(`Failed to fetch master data: ${res.status}`);
+        }
+
+        const parsed = await res.json();
         const allProjects: RedevelopmentProject[] = Array.isArray(parsed) ? parsed : (parsed.projects || []);
         const masterMetadata = !Array.isArray(parsed) && parsed._metadata ? parsed._metadata : undefined;
         console.error('[REDEVELOPMENT] Total projects loaded:', allProjects.length);

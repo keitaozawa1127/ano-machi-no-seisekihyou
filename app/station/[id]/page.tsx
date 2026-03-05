@@ -12,12 +12,18 @@ type Props = {
     params: { id: string };
 };
 
-// Helper function to find prefCode from stations.json
+// Helper function to find prefCode from stations.json via fetch for serverless compatibility
 async function getStationPrefCode(decodedName: string): Promise<string | null> {
     try {
-        const filePath = path.join(process.cwd(), 'public', 'data', 'stations.json');
-        const fileContent = await fs.readFile(filePath, 'utf-8');
-        const stations = JSON.parse(fileContent);
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://anomachi.jp';
+        const fileUrl = `${baseUrl}/data/stations.json`;
+
+        const res = await fetch(fileUrl, { next: { revalidate: 3600 } });
+        if (!res.ok) {
+            throw new Error(`Failed to fetch stations.json: ${res.status}`);
+        }
+
+        const stations = await res.json();
 
         // stations.json keys are usually in format "駅名_都道府県", e.g. "新宿_東京"
         // Also station objects have "name" and "prefCode" properties.
@@ -36,7 +42,8 @@ async function getStationPrefCode(decodedName: string): Promise<string | null> {
 
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const decodedName = decodeURIComponent(params.id);
+    const resolvedParams = await params;
+    const decodedName = decodeURIComponent(resolvedParams.id);
     const prefCode = await getStationPrefCode(decodedName) || "13"; // fallback to Tokyo
 
     const result = await diagnoseAsync(decodedName, prefCode, 2024);
@@ -86,7 +93,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 
 export default async function StationPage({ params }: Props) {
-    const decodedName = decodeURIComponent(params.id);
+    const resolvedParams = await params;
+    const decodedName = decodeURIComponent(resolvedParams.id);
     const prefCode = await getStationPrefCode(decodedName) || "13"; // fallback to Tokyo
 
     const result = await diagnoseAsync(decodedName, prefCode, 2024);
