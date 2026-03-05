@@ -187,7 +187,7 @@ export default async function StationPage({ params }: Props) {
         } : undefined,
         totalScore: result.totalScore,
         metrics: result.metrics,
-        redevelopmentProjects: result.redevelopmentProjects?.map((p: any) => ({
+        redevelopmentProjects: result.redevelopmentProjects?.slice(0, 15).map((p: any) => ({
             project_name: p.project_name,
             category: p.category,
             schedule: p.schedule,

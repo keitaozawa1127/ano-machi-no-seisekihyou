@@ -272,6 +272,7 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
                 return false;
             }
             const projectStationNorm = normalizeName(p.station_name);
+            if (!projectStationNorm || !targetNormalized) return false;
             return projectStationNorm.includes(targetNormalized) || targetNormalized.includes(projectStationNorm);
         });
 
