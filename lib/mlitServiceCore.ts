@@ -510,6 +510,11 @@ export async function getFullDiagnosisData(stationName: string, prefCode: string
     }
 
     const fullData: FullDiagnosisData = { mlit: { ...mlit, trend: mlit.trend as "UP" | "DOWN" | "FLAT" }, lines, ext };
+
+    // Core Fix: Physically delete the 9MB raw transaction array before returning to Next.js components
+    // This absolutely guarantees it cannot be injected into the RSC Payload.
+    delete (fullData.mlit as any).rawTransactions;
+
     try { fs.writeFileSync(cachePath, JSON.stringify(fullData, null, 2)); } catch (e: any) { }
     return fullData;
 }
