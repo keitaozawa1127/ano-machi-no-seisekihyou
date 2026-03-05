@@ -8,6 +8,7 @@ const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+  preload: false,
 });
 
 // Headings (Zen Old Mincho)
@@ -15,6 +16,7 @@ const zenOldMincho = Zen_Old_Mincho({
   variable: "--font-title",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
