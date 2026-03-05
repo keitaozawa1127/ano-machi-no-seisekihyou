@@ -5,8 +5,6 @@ import path from 'path';
 import DiagnosisResult from '../../../components/DiagnosisResult';
 import Link from 'next/link';
 import { diagnoseAsync } from '../../../lib/diagnoseLogic';
-import https from 'https';
-import http from 'http';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,25 +13,17 @@ type Props = {
 };
 
 // Helper function to find prefCode from stations.json via fetch for serverless compatibility
-function pureFetchJson(url: string): Promise<any> {
-    return new Promise((resolve, reject) => {
-        const client = url.startsWith('https') ? https : http;
-        client.get(url, (res) => {
-            let data = '';
-            res.on('data', chunk => data += chunk);
-            res.on('end', () => {
-                try { resolve(JSON.parse(data)); } catch (e) { reject(e); }
-            });
-        }).on('error', reject);
-    });
-}
-
 async function getStationPrefCode(decodedName: string): Promise<string | null> {
     try {
         const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://anomachi.jp';
         const fileUrl = `${baseUrl}/data/stations.json`;
 
-        const stations = await pureFetchJson(fileUrl);
+        const res = await fetch(fileUrl, { cache: 'no-store' });
+        if (!res.ok) {
+            throw new Error(`Failed to fetch stations.json: ${res.status}`);
+        }
+
+        const stations = await res.json();
 
         // stations.json keys are usually in format "駅名_都道府県", e.g. "新宿_東京"
         // Also station objects have "name" and "prefCode" properties.

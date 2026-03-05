@@ -1,7 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import https from 'https';
-import http from 'http';
 import { PREFECTURES } from './constants';
 import { fetchExtendedMetrics, ExtendedMetrics } from './mlitApi';
 import { calcDistance, isInBoundingBox, Coordinates } from './geoUtils';
@@ -49,19 +47,6 @@ export type StationMetric = {
 
 const HARDCODED_KEY = "2001ce8821b5494fbd7b8fdb4f974313";
 
-function pureFetchJson(url: string, options: any = {}): Promise<any> {
-    return new Promise((resolve, reject) => {
-        const client = url.startsWith('https') ? https : http;
-        client.get(url, options, (res) => {
-            let data = '';
-            res.on('data', chunk => data += chunk);
-            res.on('end', () => {
-                try { resolve(JSON.parse(data)); } catch (e) { reject(e); }
-            });
-        }).on('error', reject);
-    });
-}
-
 export async function fetchMlitData(year: number, areaCode: string): Promise<Transaction[]> {
     const API_KEY = process.env.MLIT_API_KEY || HARDCODED_KEY;
 
@@ -79,7 +64,9 @@ export async function fetchMlitData(year: number, areaCode: string): Promise<Tra
     const headers = { "Ocp-Apim-Subscription-Key": API_KEY };
 
     try {
-        const json = await pureFetchJson(url, { headers });
+        const res = await fetch(url, { headers, cache: 'no-store' });
+        if (!res.ok) throw new Error(`API Error: ${res.status}`);
+        const json = await res.json();
         if (json.status !== "OK") throw new Error(`API Status: ${json.status}`);
 
         if (json.data) {
@@ -100,7 +87,9 @@ export async function getStationList(prefCode: string) {
 
     try {
         const linesUrl = `https://express.heartrails.com/api/json?method=getLines&prefecture=${encodeURIComponent(pref.name)}`;
-        const linesJson = await pureFetchJson(linesUrl);
+        const linesRes = await fetch(linesUrl, { cache: 'no-store' });
+        if (!linesRes.ok) throw new Error(`API Error`);
+        const linesJson = await linesRes.json();
         if (!linesJson.response || !linesJson.response.line) return [];
 
         const lines: string[] = linesJson.response.line;
@@ -109,8 +98,11 @@ export async function getStationList(prefCode: string) {
         for (const line of lines) {
             const stUrl = `https://express.heartrails.com/api/json?method=getStations&line=${encodeURIComponent(line)}`;
             try {
-                const stJson = await pureFetchJson(stUrl);
-                if (stJson.response?.station) allStations.push(...stJson.response.station);
+                const stRes = await fetch(stUrl, { cache: 'no-store' });
+                if (stRes.ok) {
+                    const stJson = await stRes.json();
+                    if (stJson.response?.station) allStations.push(...stJson.response.station);
+                }
             } catch (e) { }
         }
 
@@ -141,7 +133,9 @@ const STATION_ALIASES: Record<string, string[]> = {
 export async function getStationLines(stationName: string) {
     try {
         const url = `https://express.heartrails.com/api/json?method=getStations&name=${encodeURIComponent(stationName)}`;
-        const json = await pureFetchJson(url);
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) return [];
+        const json = await res.json();
         const stations = json.response?.station;
         if (!stations || !Array.isArray(stations)) return [];
 
@@ -173,7 +167,9 @@ export async function getStationCoords(stationName: string): Promise<StationCoor
 
     try {
         const url = `https://express.heartrails.com/api/json?method=getStations&name=${encodeURIComponent(stationName)}`;
-        const json = await pureFetchJson(url);
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) return null;
+        const json = await res.json();
 
         const stations = json.response?.station;
         if (!stations || !Array.isArray(stations) || stations.length === 0) return null;
@@ -219,7 +215,9 @@ async function geocodeDistrict(prefecture: string, municipality: string, distric
                 const url = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${encodeURIComponent(prefecture)}&city=${encodeURIComponent(municipality)}`;
 
                 try {
-                    const json = await pureFetchJson(url);
+                    const res = await fetch(url, { cache: 'no-store' });
+                    if (!res.ok) return null;
+                    const json = await res.json();
                     const locations = json.response?.location;
 
                     if (locations && Array.isArray(locations)) {
