@@ -235,7 +235,6 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
         // 1. Try loading station-specific file first (Official Record Strategy)
         const stationFileUrl = `${baseUrl}/data/stations/${encodeURIComponent(stationName)}.json`;
         try {
-            console.error('[REDEVELOPMENT] Loading station-specific file:', stationFileUrl);
             const res = await fetch(stationFileUrl, { next: { revalidate: 3600 } });
             if (res.ok) {
                 const parsed = await res.json();
@@ -244,11 +243,9 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
                 return { projects, metadata };
             }
         } catch (e) {
-            console.error('[REDEVELOPMENT] Station file not found or fetch failed, falling back to master:', stationName);
         }
 
         const masterFileUrl = `${baseUrl}/data/redevelopment_master.json`;
-        console.error('[REDEVELOPMENT] Loading from:', masterFileUrl);
 
         const res = await fetch(masterFileUrl, { next: { revalidate: 3600 } });
         if (!res.ok) {
@@ -258,7 +255,6 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
         const parsed = await res.json();
         const allProjects: RedevelopmentProject[] = Array.isArray(parsed) ? parsed : (parsed.projects || []);
         const masterMetadata = !Array.isArray(parsed) && parsed._metadata ? parsed._metadata : undefined;
-        console.error('[REDEVELOPMENT] Total projects loaded:', allProjects.length);
 
         // Normalize station name
         const normalizeName = (s: string) =>
@@ -268,26 +264,22 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
                 .toLowerCase();
 
         const targetNormalized = normalizeName(stationName);
-        console.error('[REDEVELOPMENT] Searching for:', stationName, '→ normalized:', targetNormalized);
 
         // Filter by station name (with null-safety for malformed entries)
         const stationProjects = allProjects.filter(p => {
             // Skip entries with missing station_name (data quality issue)
             if (!p.station_name) {
-                console.error('[REDEVELOPMENT] Skipping entry with missing station_name:', p.project_name);
                 return false;
             }
             const projectStationNorm = normalizeName(p.station_name);
             return projectStationNorm.includes(targetNormalized) || targetNormalized.includes(projectStationNorm);
         });
-        console.error('[REDEVELOPMENT] Station matches found:', stationProjects.length);
 
         // Filter logic (relaxed to show comprehensive development picture):
         // 1. Always include ongoing/planning projects
         // 2. Include projects with year >= current year - 2 (recent completions + all future)
         // 3. Only exclude very old completed projects without clear timeframe
         const currentYear = new Date().getFullYear();
-        console.error('[REDEVELOPMENT] Current year:', currentYear);
 
         const futureProjects = stationProjects.filter(p => {
             const schedule = p.schedule || "";
@@ -295,7 +287,6 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
             // Always include ongoing/planning/under consideration projects
             if (schedule.includes("継続") || schedule.includes("未定") || schedule.includes("検討") ||
                 schedule.includes("計画") || schedule.includes("構想")) {
-                console.error('[REDEVELOPMENT] Including ongoing/planning:', p.project_name, schedule);
                 return true;
             }
 
@@ -306,21 +297,17 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
                 // Include recent + future (within 2 years of completion or future)
                 // This shows recently completed projects that are still relevant
                 const isRecentOrFuture = year >= currentYear - 2;
-                console.error('[REDEVELOPMENT]', p.project_name, '- Year:', year, 'Include:', isRecentOrFuture);
                 return isRecentOrFuture;
             }
 
             // If no year, exclude only if explicitly marked as old/completed
             if (schedule.includes("完了") || schedule.includes("終了")) {
-                console.error('[REDEVELOPMENT] Excluding old completed:', p.project_name, schedule);
                 return false;
             }
 
             // Default: include (be generous to show development activity)
-            console.error('[REDEVELOPMENT] Including (default):', p.project_name, schedule);
             return true;
         });
-        console.error('[REDEVELOPMENT] Future projects after filtering:', futureProjects.length);
 
         // Sort by schedule
         futureProjects.sort((a, b) => {
@@ -331,7 +318,6 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
 
         return { projects: futureProjects, metadata: masterMetadata };
     } catch (error) {
-        console.error('[REDEVELOPMENT] Error loading projects:', error);
         return { projects: [] };
     }
 }
@@ -354,10 +340,8 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
         try {
             const cachedData = await fs.readFile(cacheFilePath, 'utf-8');
             const parsed = JSON.parse(cachedData);
-            console.log(`[DIAGNOSE] Full Response Cache HIT for ${stationName}`);
             return parsed as DiagnoseOkResponse;
         } catch (e) {
-            console.log(`[DIAGNOSE] Cache MISS for ${stationName}, computing...`);
         }
 
         let fullData;
@@ -392,11 +376,9 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
             }
         } catch (e: any) {
             diagnosisError = e;
-            console.error('[DIAGNOSE] Main diagnosis data fetch failed:', e);
         }
 
         // Load redevelopment data regardless of main diagnosis success
-        console.error('[DIAGNOSE] About to load redevelopment projects for:', stationName);
         const redevelopmentData = await loadRedevelopmentProjects(stationName);
         const redevelopmentProjects = redevelopmentData.projects;
         const redevelopmentMetadata = redevelopmentData.metadata;
@@ -404,7 +386,6 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
 
         // If diagnosis failed or missing data, return partial success with only redevelopment data
         if (diagnosisError || !metrics || !extMetrics || !linesRaw) {
-            console.error('[DIAGNOSE] Returning partial success (redevelopment only due to missing data or error)');
             return {
                 ok: false,
                 error: (diagnosisError ? (diagnosisError.message || String(diagnosisError)) : "必須データが取得できませんでした"),
@@ -622,9 +603,7 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
         if (response.ok) {
             try {
                 await fs.writeFile(cacheFilePath, JSON.stringify(response, null, 2));
-                console.log(`[DIAGNOSE] Saved FULL response cache for ${stationName}`);
             } catch (e) {
-                console.error(`[DIAGNOSE] Failed to save response cache for ${stationName}`, e);
             }
         }
 

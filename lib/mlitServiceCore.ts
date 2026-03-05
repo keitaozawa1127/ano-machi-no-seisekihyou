@@ -5,7 +5,6 @@ import { fetchExtendedMetrics, ExtendedMetrics } from './mlitApi';
 import { calcDistance, isInBoundingBox, Coordinates } from './geoUtils';
 import { preloadDistrictCoordinates, filterTransactionsByLocation, StationCoords } from './diagnosisHelpers';
 
-console.log("HELLO FROM MLIT SERVICE TS (UPDATED WITH CACHE)");
 
 const API_KEY = process.env.MLIT_API_KEY;
 const BASE_URL = "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001";
@@ -52,7 +51,6 @@ export async function fetchMlitData(year: number, areaCode: string): Promise<Tra
     const API_KEY = process.env.MLIT_API_KEY || HARDCODED_KEY;
 
     if (!API_KEY) {
-        console.error("[MLIT API] Error: API_KEY is missing");
         return [];
     }
 
@@ -64,7 +62,6 @@ export async function fetchMlitData(year: number, areaCode: string): Promise<Tra
 
     const url = `${BASE_URL}?year=${year}&area=${areaCode}`;
     const headers = { "Ocp-Apim-Subscription-Key": API_KEY };
-    console.log(`[MLIT API] Request: GET ${url}`);
 
     try {
         const res = await fetch(url, { headers });
@@ -76,7 +73,6 @@ export async function fetchMlitData(year: number, areaCode: string): Promise<Tra
             fs.writeFileSync(cacheFile, JSON.stringify(json.data));
             return json.data;
         } else {
-            console.warn(`[MLIT API] Zero results`);
             fs.writeFileSync(cacheFile, JSON.stringify([]));
             return [];
         }
@@ -86,7 +82,6 @@ export async function fetchMlitData(year: number, areaCode: string): Promise<Tra
 }
 
 export async function getStationList(prefCode: string) {
-    console.log(`[StationList] Fetching for PrefCode: ${prefCode}`);
     const pref = PREFECTURES.find(p => p.code === prefCode);
     if (!pref) return [];
 
@@ -216,7 +211,6 @@ async function geocodeDistrict(prefecture: string, municipality: string, distric
             geocodePromiseCache[cacheKey] = (async () => {
                 // Fetch all towns in the municipality at once using HeartRails Geo API
                 const url = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${encodeURIComponent(prefecture)}&city=${encodeURIComponent(municipality)}`;
-                console.log(`[GEOCODE] Fetching towns for ${prefecture} ${municipality}`);
 
                 const res = await fetch(url, { next: { revalidate: 86400 * 7 } }); // Cache for 7 days
                 if (!res.ok) return null;
@@ -242,7 +236,6 @@ async function geocodeDistrict(prefecture: string, municipality: string, distric
                     try {
                         fs.writeFileSync(DISTRICT_COORDS_FILE, JSON.stringify(districtCoords, null, 2));
                     } catch (e) {
-                        console.error("[GEOCODE] Failed to write cache file", e);
                     }
                     return locations;
                 }
@@ -265,7 +258,6 @@ async function geocodeDistrict(prefecture: string, municipality: string, distric
             }
         }
     } catch (e) {
-        console.error(`[GEOCODE] Error geocoding ${municipality}`, e);
     }
     return null;
 }

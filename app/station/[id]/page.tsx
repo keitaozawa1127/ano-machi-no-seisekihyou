@@ -146,6 +146,48 @@ export default async function StationPage({ params }: Props) {
         }
     };
 
+    // クライアントコンポーネント用ペイロード（シリアライズ可能な必要最小限のデータに絞ることで9MBの巨大ペイロードを削減）
+    const clientData = {
+        ok: result.ok,
+        verdict: result.verdict,
+        headline: result.headline,
+        reasons: result.reasons,
+        rules: result.rules,
+        note: result.note,
+        debug: {
+            score: result.debug?.score,
+            stationName: result.debug?.stationName
+        },
+        trendData: result.trendData,
+        marketPrice: result.marketPrice,
+        yoy: result.yoy,
+        tx5y: result.tx5y,
+        trend: result.trend,
+        dataYear: result.dataYear,
+        lines: result.lines?.map((l: any) => ({ name: l.name, color: l.color, passengers: l.passengers })),
+        name: result.debug?.stationName,
+        extendedMetrics: result.extendedMetrics ? {
+            futurePopulationRate: result.extendedMetrics.futurePopulationRate,
+            populationProjection: result.extendedMetrics.populationProjection?.map((p: any) => ({
+                year: p.year,
+                total: p.total,
+                ageStructure: p.ageStructure
+            })),
+            sourceCity: result.extendedMetrics.sourceCity,
+            hazardRisk: result.extendedMetrics.hazardRisk
+        } : undefined,
+        totalScore: result.totalScore,
+        metrics: result.metrics,
+        redevelopmentProjects: result.redevelopmentProjects?.map((p: any) => ({
+            project_name: p.project_name,
+            category: p.category,
+            schedule: p.schedule,
+            description: p.description,
+            source_url: p.source_url
+        })),
+        metadata: result.metadata
+    };
+
     return (
         <main className="min-h-screen w-full flex flex-col items-center pt-10 px-6 bg-[var(--bg-primary)] overflow-x-hidden">
             {/* 構造化データ（Google検索リッチリザルト用） */}
@@ -164,7 +206,7 @@ export default async function StationPage({ params }: Props) {
 
             {/* Northern European Minimalist Premium styling wrapper */}
             <div className="w-full flex justify-center min-w-0 animate-in slide-in-from-bottom-5 duration-500">
-                <DiagnosisResult data={result} />
+                <DiagnosisResult data={clientData} />
             </div>
 
             {/* Share Section */}

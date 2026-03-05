@@ -106,9 +106,9 @@ const RiskCard = ({ title, level, mainValue, description, action, source, source
             ></div>
 
             <div className="flex justify-between items-start mb-4">
-                <h4 className="text-sm font-bold text-[#4A544C] tracking-widest flex items-center gap-2">
+                <h3 className="text-sm font-bold text-[#4A544C] tracking-widest flex items-center gap-2">
                     {title}
-                </h4>
+                </h3>
 
                 {/* Unified Risk Indicator (Badge + Dots) */}
                 <div className="flex flex-col items-center gap-2">
@@ -159,7 +159,7 @@ const RiskCard = ({ title, level, mainValue, description, action, source, source
             </div>
 
             <div className="mt-8 text-right">
-                <div className="text-[9px] text-[#B0B8B2]">出典: {source} {sourceYear ? `(${sourceYear}年版)` : ""}</div>
+                <div className="text-[9px] text-[#6D7C70]">出典: {source} {sourceYear ? `(${sourceYear}年版)` : ""}</div>
             </div>
         </div>
     );
@@ -559,7 +559,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
 
     // Source Label Component
     const SourceCredit = ({ source, year }: { source: string; year?: string | number }) => (
-        <div className="text-[10px] text-[#708271]/50 text-right mt-2 font-medium tracking-wide">
+        <div className="text-[10px] text-[#6D7C70] text-right mt-2 font-medium tracking-wide">
             出典: {source} {year ? `(${year}年版)` : ""}
         </div>
     );
@@ -607,8 +607,6 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
         return { level, mainText, desc, action };
     };
 
-    const currentYear = new Date().getFullYear();
-
     return (
         <section className="relative mt-8 mb-20 mx-auto w-full max-w-[1000px] px-2 md:px-0">
             {/* Main Container - Nordic Paper Style */}
@@ -631,7 +629,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                         {sortedLines
                                             .map((line, idx) => (
                                                 <div
-                                                    key={idx}
+                                                    key={line.name}
                                                     className="inline-flex items-center gap-2.5 px-4 py-2 bg-slate-50 rounded-full border border-slate-200 hover:border-slate-300 transition-all"
                                                 >
                                                     <div
@@ -666,12 +664,12 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
 
                 {/* Logic Explanation: Directly Below RiskGauge */}
                 <div className="mb-12">
-                    <h4 className="text-xs tracking-widest uppercase text-slate-400 mb-6 font-sans">
+                    <h2 className="text-xs tracking-widest uppercase text-slate-500 mb-6 font-sans">
                         判定の根拠
-                    </h4>
+                    </h2>
                     <ul className="space-y-4">
                         {data.rules.map((rule, i) => (
-                            <li key={i} className="flex gap-4 items-start text-sm">
+                            <li key={`rule-${i}`} className="flex gap-4 items-start text-sm">
                                 <span className="text-[var(--brand-main)]/40 font-bold mt-0.5 text-xs">0{i + 1}</span>
                                 <div>
                                     <strong className="block mb-1 font-medium text-slate-700 text-sm">{rule.label}</strong>
@@ -684,10 +682,10 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
 
                 {/* FIXED SUMMARY SECTION (Radar Only) */}
                 <div className="mb-24">
-                    <h3 className="text-sm font-bold text-[#4A544C] tracking-widest uppercase mb-8 flex items-center gap-3">
+                    <h2 className="text-sm font-bold text-[#4A544C] tracking-widest uppercase mb-8 flex items-center gap-3">
                         <span className="w-1 h-5 bg-[#708271] rounded-full"></span>
                         スコア内訳
-                    </h3>
+                    </h2>
 
                     <div className="flex flex-col gap-12">
                         <div className="w-full">
@@ -787,7 +785,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
                             {/* Market Price Card */}
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center">
-                                <div className="text-sm font-bold text-[#7F8C8D] tracking-widest mb-4">市場価格相場(70㎡換算)</div>
+                                <h3 className="text-sm font-bold text-[#5F6E6F] tracking-widest mb-4">市場価格相場(70㎡換算)</h3>
                                 <div className="flex flex-wrap items-center gap-y-2 min-h-[40px]">
                                     <div className="flex items-baseline gap-2">
                                         <span className="text-[32px] font-bold text-[#4A544C] tracking-tight font-feature-settings-tnum">
@@ -800,8 +798,8 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                     {(data.yoy !== undefined && !isNaN(data.yoy)) && (
                                         <div className="ml-6 flex items-center">
                                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white shadow-sm border border-gray-100">
-                                                <span className="text-[10px] font-bold text-[#7F8C8D]">前年比</span>
-                                                <span className={`text-sm font-bold ${data.yoy >= 0 ? 'text-[#708271]' : 'text-[#C06C5F]'}`}>
+                                                <span className="text-[10px] font-bold text-[#5F6E6F]">前年比</span>
+                                                <span className={`text-sm font-bold ${data.yoy >= 0 ? 'text-[#526453]' : 'text-[#C06C5F]'}`}>
                                                     {data.yoy > 0 ? '+' : ''}{data.yoy}%
                                                 </span>
                                             </div>
@@ -815,9 +813,9 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
 
                             {/* Land Price Trend Graph */}
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
-                                <h4 className="text-sm font-bold text-[#4A544C] tracking-widest mb-4">
+                                <h3 className="text-sm font-bold text-[#4A544C] tracking-widest mb-4">
                                     地価推移実績（過去5年）
-                                </h4>
+                                </h3>
                                 <div className="w-full">
                                     <FutureTimeline
                                         historicalData={(data.trendData || []).map(d => ({
@@ -904,9 +902,9 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                             {/* Future Population */}
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
                                 <div className="mb-4">
-                                    <h4 className="text-sm font-bold text-[#4A544C] tracking-widest inline-block mr-2">
+                                    <h3 className="text-sm font-bold text-[#4A544C] tracking-widest inline-block mr-2">
                                         将来人口推計
-                                    </h4>
+                                    </h3>
                                     {data.extendedMetrics?.sourceCity && (
                                         <span className="text-xs text-gray-500">
                                             （{data.extendedMetrics.sourceCity}全体）
@@ -971,7 +969,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
                             {/* Transaction Volume Card */}
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center">
-                                <div className="text-sm font-bold text-[#7F8C8D] tracking-widest mb-4">取引件数(5年累計)</div>
+                                <h3 className="text-sm font-bold text-[#5F6E6F] tracking-widest mb-4">取引件数(5年累計)</h3>
                                 <div className="flex items-baseline min-h-[40px]">
                                     <span className="text-[32px] font-bold text-[#4A544C] font-feature-settings-tnum">
                                         {data.tx5y !== undefined && data.tx5y > 0 ? data.tx5y : "---"}
@@ -995,14 +993,14 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                     {activeTab === "convenience" && (
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden w-full">
-                                <h4 className="text-sm font-bold text-[#4A544C] tracking-widest mb-6">
+                                <h3 className="text-sm font-bold text-[#4A544C] tracking-widest mb-6">
                                     乗り入れ路線インデックス
-                                </h4>
+                                </h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {sortedLines.length > 0 ? (
                                         sortedLines.map((line, idx) => (
                                             <button
-                                                key={idx}
+                                                key={line.name}
                                                 className="w-full text-left bg-[#F8F9FA] hover:bg-[#F0F2F1] hover:border-[var(--brand-main)]/50 transition-colors border text-sm border-[#E8E6DF] rounded-xl p-5 flex items-center justify-between shadow-sm group"
                                                 onClick={() => onLineClick?.(line.name)}
                                             >
