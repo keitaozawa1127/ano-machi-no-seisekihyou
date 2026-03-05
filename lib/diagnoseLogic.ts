@@ -227,6 +227,22 @@ function calcRedevelopmentImpact(projects: RedevelopmentProject[]): number {
     return Math.min(totalImpact * 2, 40);
 }
 
+import https from 'https';
+import http from 'http';
+
+function pureFetchJson(url: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const client = url.startsWith('https') ? https : http;
+        client.get(url, (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => {
+                try { resolve(JSON.parse(data)); } catch (e) { reject(e); }
+            });
+        }).on('error', reject);
+    });
+}
+
 // Redevelopment Data Loader
 async function loadRedevelopmentProjects(stationName: string): Promise<{ projects: RedevelopmentProject[], metadata?: any }> {
     try {
@@ -235,24 +251,16 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
         // 1. Try loading station-specific file first (Official Record Strategy)
         const stationFileUrl = `${baseUrl}/data/stations/${encodeURIComponent(stationName)}.json`;
         try {
-            const res = await fetch(stationFileUrl, { next: { revalidate: 3600 } });
-            if (res.ok) {
-                const parsed = await res.json();
-                const projects: RedevelopmentProject[] = Array.isArray(parsed) ? parsed : (parsed.projects || []);
-                const metadata = !Array.isArray(parsed) && parsed._metadata ? parsed._metadata : undefined;
-                return { projects, metadata };
-            }
+            const parsed = await pureFetchJson(stationFileUrl);
+            const projects: RedevelopmentProject[] = Array.isArray(parsed) ? parsed : (parsed.projects || []);
+            const metadata = !Array.isArray(parsed) && parsed._metadata ? parsed._metadata : undefined;
+            return { projects, metadata };
         } catch (e) {
         }
 
         const masterFileUrl = `${baseUrl}/data/redevelopment_master.json`;
 
-        const res = await fetch(masterFileUrl, { next: { revalidate: 3600 } });
-        if (!res.ok) {
-            throw new Error(`Failed to fetch master data: ${res.status}`);
-        }
-
-        const parsed = await res.json();
+        const parsed = await pureFetchJson(masterFileUrl);
         const allProjects: RedevelopmentProject[] = Array.isArray(parsed) ? parsed : (parsed.projects || []);
         const masterMetadata = !Array.isArray(parsed) && parsed._metadata ? parsed._metadata : undefined;
 
