@@ -174,7 +174,16 @@ export default async function StationPage({ params }: Props) {
                 ageStructure: p.ageStructure
             })),
             sourceCity: result.extendedMetrics.sourceCity,
-            hazardRisk: result.extendedMetrics.hazardRisk
+            hazardRisk: {
+                flood: {
+                    level: result.extendedMetrics.hazardRisk.flood.level,
+                    description: result.extendedMetrics.hazardRisk.flood.description
+                },
+                landslide: {
+                    level: result.extendedMetrics.hazardRisk.landslide.level,
+                    description: result.extendedMetrics.hazardRisk.landslide.description
+                }
+            }
         } : undefined,
         totalScore: result.totalScore,
         metrics: result.metrics,
