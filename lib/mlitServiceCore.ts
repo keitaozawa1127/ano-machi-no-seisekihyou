@@ -1,5 +1,7 @@
 import fs from 'fs';
 import path from 'path';
+import https from 'https';
+import http from 'http';
 import { PREFECTURES } from './constants';
 import { fetchExtendedMetrics, ExtendedMetrics } from './mlitApi';
 import { calcDistance, isInBoundingBox, Coordinates } from './geoUtils';
@@ -47,6 +49,19 @@ export type StationMetric = {
 
 const HARDCODED_KEY = "2001ce8821b5494fbd7b8fdb4f974313";
 
+function pureFetchJson(url: string, options: any = {}): Promise<any> {
+    return new Promise((resolve, reject) => {
+        const client = url.startsWith('https') ? https : http;
+        client.get(url, options, (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => {
+                try { resolve(JSON.parse(data)); } catch (e) { reject(e); }
+            });
+        }).on('error', reject);
+    });
+}
+
 export async function fetchMlitData(year: number, areaCode: string): Promise<Transaction[]> {
     const API_KEY = process.env.MLIT_API_KEY || HARDCODED_KEY;
 
@@ -64,9 +79,7 @@ export async function fetchMlitData(year: number, areaCode: string): Promise<Tra
     const headers = { "Ocp-Apim-Subscription-Key": API_KEY };
 
     try {
-        const res = await fetch(url, { headers });
-        if (!res.ok) throw new Error(`API Error: ${res.status}`);
-        const json = await res.json();
+        const json = await pureFetchJson(url, { headers });
         if (json.status !== "OK") throw new Error(`API Status: ${json.status}`);
 
         if (json.data) {
@@ -87,9 +100,7 @@ export async function getStationList(prefCode: string) {
 
     try {
         const linesUrl = `https://express.heartrails.com/api/json?method=getLines&prefecture=${encodeURIComponent(pref.name)}`;
-        const linesRes = await fetch(linesUrl, { next: { revalidate: 86400 } });
-        if (!linesRes.ok) throw new Error(`API Error`);
-        const linesJson = await linesRes.json();
+        const linesJson = await pureFetchJson(linesUrl);
         if (!linesJson.response || !linesJson.response.line) return [];
 
         const lines: string[] = linesJson.response.line;
@@ -97,11 +108,10 @@ export async function getStationList(prefCode: string) {
 
         for (const line of lines) {
             const stUrl = `https://express.heartrails.com/api/json?method=getStations&line=${encodeURIComponent(line)}`;
-            const stRes = await fetch(stUrl, { next: { revalidate: 86400 } });
-            if (stRes.ok) {
-                const stJson = await stRes.json();
+            try {
+                const stJson = await pureFetchJson(stUrl);
                 if (stJson.response?.station) allStations.push(...stJson.response.station);
-            }
+            } catch (e) { }
         }
 
         const uniqueNames = Array.from(new Set(allStations.map(s => s.name)));
@@ -131,9 +141,7 @@ const STATION_ALIASES: Record<string, string[]> = {
 export async function getStationLines(stationName: string) {
     try {
         const url = `https://express.heartrails.com/api/json?method=getStations&name=${encodeURIComponent(stationName)}`;
-        const res = await fetch(url, { next: { revalidate: 86400 } });
-        if (!res.ok) return [];
-        const json = await res.json();
+        const json = await pureFetchJson(url);
         const stations = json.response?.station;
         if (!stations || !Array.isArray(stations)) return [];
 
@@ -165,10 +173,8 @@ export async function getStationCoords(stationName: string): Promise<StationCoor
 
     try {
         const url = `https://express.heartrails.com/api/json?method=getStations&name=${encodeURIComponent(stationName)}`;
-        const res = await fetch(url, { next: { revalidate: 86400 } });
-        if (!res.ok) return null;
+        const json = await pureFetchJson(url);
 
-        const json = await res.json();
         const stations = json.response?.station;
         if (!stations || !Array.isArray(stations) || stations.length === 0) return null;
 
@@ -212,34 +218,35 @@ async function geocodeDistrict(prefecture: string, municipality: string, distric
                 // Fetch all towns in the municipality at once using HeartRails Geo API
                 const url = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${encodeURIComponent(prefecture)}&city=${encodeURIComponent(municipality)}`;
 
-                const res = await fetch(url, { next: { revalidate: 86400 * 7 } }); // Cache for 7 days
-                if (!res.ok) return null;
+                try {
+                    const json = await pureFetchJson(url);
+                    const locations = json.response?.location;
 
-                const json = await res.json();
-                const locations = json.response?.location;
+                    if (locations && Array.isArray(locations)) {
+                        // Initialize prefecture and municipality in districtCoords if not present
+                        if (!districtCoords[prefecture]) districtCoords[prefecture] = {};
+                        if (!districtCoords[prefecture][municipality]) districtCoords[prefecture][municipality] = {};
 
-                if (locations && Array.isArray(locations)) {
-                    // Initialize prefecture and municipality in districtCoords if not present
-                    if (!districtCoords[prefecture]) districtCoords[prefecture] = {};
-                    if (!districtCoords[prefecture][municipality]) districtCoords[prefecture][municipality] = {};
+                        // Cache all towns for this municipality
+                        locations.forEach((loc: any) => {
+                            const townName = loc.town;
+                            districtCoords[prefecture][municipality][townName] = {
+                                lat: parseFloat(loc.y),
+                                lon: parseFloat(loc.x)
+                            };
+                        });
 
-                    // Cache all towns for this municipality
-                    locations.forEach((loc: any) => {
-                        const townName = loc.town;
-                        districtCoords[prefecture][municipality][townName] = {
-                            lat: parseFloat(loc.y),
-                            lon: parseFloat(loc.x)
-                        };
-                    });
-
-                    // Save to local cache file
-                    try {
-                        fs.writeFileSync(DISTRICT_COORDS_FILE, JSON.stringify(districtCoords, null, 2));
-                    } catch (e) {
+                        // Save to local cache file
+                        try {
+                            fs.writeFileSync(DISTRICT_COORDS_FILE, JSON.stringify(districtCoords, null, 2));
+                        } catch (e) {
+                        }
+                        return locations;
                     }
-                    return locations;
+                    return null;
+                } catch (e) {
+                    return null;
                 }
-                return null;
             })();
         }
 
