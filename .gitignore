@@ -62,6 +62,10 @@ temp_reference_stations.json
 *_clean_patch.json
 *_fix_patch.json
 
+# Large raw data (exclude from git history)
+public/data/*.json
+data_raw/
+
 # EXCLUDE EXCEPTIONS: Keep essential configs
 !package.json
 !package-lock.json
