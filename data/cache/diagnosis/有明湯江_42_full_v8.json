@@ -1,0 +1,268 @@
+{
+  "mlit": {
+    "stationName": "有明湯江",
+    "score": 4,
+    "marketPrice": 5600000,
+    "trend": "UP",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 1,
+        "lastPrice": 2000000
+      },
+      {
+        "name": "2024年",
+        "count": 4,
+        "lastPrice": 6650000
+      }
+    ],
+    "tx5y": 5,
+    "yoy": 0,
+    "up2y": 232.5,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 2000000,
+        "txCount": 1
+      },
+      {
+        "year": 2024,
+        "price": 6650000,
+        "txCount": 4
+      }
+    ],
+    "dataYear": 2024,
+    "latestYear": 2024
+  },
+  "lines": [
+    {
+      "name": "島原鉄道"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 63,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 43338,
+        "ageStructure": {
+          "0-14": 5467,
+          "15-64": 22297,
+          "65+": 15574
+        }
+      },
+      {
+        "year": 2025,
+        "total": 40805,
+        "ageStructure": {
+          "0-14": 4930,
+          "15-64": 20146,
+          "65+": 15729
+        }
+      },
+      {
+        "year": 2030,
+        "total": 38057,
+        "ageStructure": {
+          "0-14": 4232,
+          "15-64": 18404,
+          "65+": 15421
+        }
+      },
+      {
+        "year": 2035,
+        "total": 35282,
+        "ageStructure": {
+          "0-14": 3731,
+          "15-64": 16608,
+          "65+": 14943
+        }
+      },
+      {
+        "year": 2040,
+        "total": 32543,
+        "ageStructure": {
+          "0-14": 3341,
+          "15-64": 14732,
+          "65+": 14470
+        }
+      },
+      {
+        "year": 2045,
+        "total": 29784,
+        "ageStructure": {
+          "0-14": 3025,
+          "15-64": 12986,
+          "65+": 13773
+        }
+      },
+      {
+        "year": 2050,
+        "total": 27091,
+        "ageStructure": {
+          "0-14": 2735,
+          "15-64": 11442,
+          "65+": 12914
+        }
+      }
+    ],
+    "sourceCity": "島原市",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間1件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（1件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.92であり、地震時に揺れが大きくなりやすい軟弱地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.92（弱い）",
+        "scoreImpact": -3
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は平均的です。 駅近の飲食店は少なく、閑静な環境と言えます。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "標準",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は18.3%とやや高く、供給過多や人口減少の兆しがあるため、不動産の流動性に一定の注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "18.3% (注意水準)",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間に人が集まる活発なエリアであり、不動産の流動性や資産価値が維持されやすい傾向にあります。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ビジネス・商業集積地（比率: 104.3%）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -21.8%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -14.6%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積は11.51㎡/人です。都市部としては十分な緑地が確保されています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "11.51㎡/人",
+        "scoreImpact": 1
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "日常生活に必要な買い物環境が標準的に揃っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "499店舗",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "標準的な数の医療機関が点在しており、日常の医療アクセスには困りません。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "106.2（人口10万人当たり）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "標準的な保育環境が整備されています。入園状況については自治体の最新情報をご確認ください。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "26施設",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "全国的に標準的な財政水準です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.44",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-6.98%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

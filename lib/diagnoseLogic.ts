@@ -1,5 +1,5 @@
 import { getFullDiagnosisData } from "./mlitServiceCore";
-import { ExtendedMetrics } from "./mlitApi";
+import { ExtendedMetrics, DynamicAddition } from "./mlitApi";
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -17,6 +17,12 @@ const CACHE_DIR = IS_VERCEL ? '/tmp/diagnose_responses' : path.join(process.cwd(
 
 export type Verdict = "safe" | "caution" | "risky";
 
+export type PrimarySource = {
+    publisher: string;      // 発行元（例: "国土交通省", "新宿区"）
+    document_name: string;  // 資料名（例: "不動産取引価格情報", "都市計画決定"）
+    version?: string;       // バージョンや年度
+};
+
 // Redevelopment Project Type Definition
 export type RedevelopmentProject = {
     project_name: string;
@@ -24,8 +30,10 @@ export type RedevelopmentProject = {
     category: string;
     schedule: string;
     description: string;
-    source_url: string;
+    source_url?: string;
     impact_level?: number;
+    search_keyword?: string;
+    primary_source?: PrimarySource;
 };
 
 export type DiagnoseOkResponse = {
@@ -63,11 +71,12 @@ export type DiagnoseOkResponse = {
     dataYear: number;
     metadata: {
         sources: {
-            realEstate: { name: string; year: number };
-            population: { name: string; version: string; baseYear: number; targetYear: number };
-            algorithm: { name: string; year: number };
-            hazard?: { name: string; year: number };
-            redevelopment?: { name: string; version: string };
+            realEstate: PrimarySource & { year?: number };
+            population: PrimarySource & { baseYear?: number; targetYear?: number };
+            algorithm: PrimarySource & { year?: number };
+            hazard?: PrimarySource & { year?: number };
+            redevelopment?: PrimarySource;
+            [key: string]: any; // 将来の拡張用
         }
     };
 };
@@ -240,7 +249,13 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
                 const parsed = await res.json();
                 const projects: RedevelopmentProject[] = Array.isArray(parsed) ? parsed : (parsed.projects || []);
                 const metadata = !Array.isArray(parsed) && parsed._metadata ? parsed._metadata : undefined;
-                return { projects, metadata };
+
+                // 動的にシステム年を取得
+                const currentYear = new Date().getFullYear();
+
+                // 過去のプロジェクトを除外
+                const futureProjects = filterFutureProjects(projects, currentYear);
+                return { projects: futureProjects, metadata };
             }
         } catch (e) {
         }
@@ -273,52 +288,58 @@ async function loadRedevelopmentProjects(stationName: string): Promise<{ project
             return projectStationNorm.includes(targetNormalized) || targetNormalized.includes(projectStationNorm);
         });
 
-        // Filter logic (relaxed to show comprehensive development picture):
-        // 1. Always include ongoing/planning projects
-        // 2. Include projects with year >= current year - 2 (recent completions + all future)
-        // 3. Only exclude very old completed projects without clear timeframe
+        // 動的にシステム年を取得
         const currentYear = new Date().getFullYear();
 
-        const futureProjects = stationProjects.filter(p => {
-            const schedule = p.schedule || "";
-
-            // Always include ongoing/planning/under consideration projects
-            if (schedule.includes("継続") || schedule.includes("未定") || schedule.includes("検討") ||
-                schedule.includes("計画") || schedule.includes("構想")) {
-                return true;
-            }
-
-            // Extract year from schedule
-            const match = schedule.match(/(\d{4})/);
-            if (match) {
-                const year = parseInt(match[1], 10);
-                // Include recent + future (within 2 years of completion or future)
-                // This shows recently completed projects that are still relevant
-                const isRecentOrFuture = year >= currentYear - 2;
-                return isRecentOrFuture;
-            }
-
-            // If no year, exclude only if explicitly marked as old/completed
-            if (schedule.includes("完了") || schedule.includes("終了")) {
-                return false;
-            }
-
-            // Default: include (be generous to show development activity)
-            return true;
-        });
-
-        // Sort by schedule
-        futureProjects.sort((a, b) => {
-            const yearA = parseInt(a.schedule?.match(/(\d{4})/)?.pop() || '9999');
-            const yearB = parseInt(b.schedule?.match(/(\d{4})/)?.pop() || '9999');
-            return yearA - yearB;
-        });
+        // 過去のプロジェクトを除外
+        const futureProjects = filterFutureProjects(stationProjects, currentYear);
 
         return { projects: futureProjects, metadata: masterMetadata };
     } catch (error) {
         return { projects: [] };
     }
 }
+
+// 過去のプロジェクトを動的に除外するヘルパー関数
+function filterFutureProjects(projects: RedevelopmentProject[], currentYear: number): RedevelopmentProject[] {
+    const validProjects = projects.filter(p => {
+        const schedule = p.schedule || "";
+
+        // 継続・未定・検討・計画・構想等のステータスは「未来」として無条件で包含
+        if (schedule.includes("継続") || schedule.includes("未定") || schedule.includes("検討") ||
+            schedule.includes("計画") || schedule.includes("構想")) {
+            return true;
+        }
+
+        // scheduleから4桁の年を抽出
+        const match = schedule.match(/(\d{4})/);
+        if (match) {
+            const year = parseInt(match[1], 10);
+
+            // 抽出した年が現在のシステム年を「超えている」または「同じ」場合のみ残す
+            // これにより過去（year < currentYear）の完了済みプロジェクトは自動的に除外される
+            return year >= currentYear;
+        }
+
+        // 年数が抽出できない場合で、かつ「完了」や「終了」が含まれる場合は除外
+        if (schedule.includes("完了") || schedule.includes("終了")) {
+            return false;
+        }
+
+        // 年数も完了ステータスもない場合は、安全側に倒して残す（フォールバック）
+        return true;
+    });
+
+    // スケジュール年順にソート
+    validProjects.sort((a, b) => {
+        const yearA = parseInt(a.schedule?.match(/(\d{4})/)?.pop() || '9999');
+        const yearB = parseInt(b.schedule?.match(/(\d{4})/)?.pop() || '9999');
+        return yearA - yearB;
+    });
+
+    return validProjects;
+}
+
 
 export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string, yearRaw: number): Promise<DiagnoseOkResponse | DiagnoseNgResponse> {
     try {
@@ -331,7 +352,7 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
 
         if (!stationName) return { ok: false, error: "stationName が空です" };
 
-        const cacheFileName = `${prefCode}_${stationName}_${year}_v8.json`;
+        const cacheFileName = `${prefCode}_${stationName}_${year}_v10.json`;
         const cacheFilePath = path.join(CACHE_DIR, cacheFileName);
 
         // キャッシュ読み込み
@@ -358,14 +379,13 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
 
         try {
             // Fetch full diagnosis data
-            // fullData = await getFullDiagnosisData(stationName, prefCode); // Original line
             fullData = await getFullDiagnosisData(stationName, prefCode);
             // Extract data when successful
             metrics = fullData.mlit;
             linesRaw = fullData.lines;
             extMetrics = fullData.ext;
             // Population data is part of fullData.ext
-            if (extMetrics && extMetrics.populationProjection) { // Added null check for extMetrics
+            if (extMetrics && extMetrics.populationProjection) {
                 popMetadata = extMetrics.populationProjection.metadata || popMetadata;
                 popBaseYear = extMetrics.populationProjection.baseYear || popBaseYear;
                 popTargetYear = extMetrics.populationProjection.targetYear || popTargetYear;
@@ -378,7 +398,7 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
 
         // Load redevelopment data regardless of main diagnosis success
         const redevelopmentData = await loadRedevelopmentProjects(stationName);
-        const redevelopmentProjects = redevelopmentData.projects;
+        const redevelopmentProjects = redevelopmentData.projects; // Here, projects are already dynamically filtered
         const redevelopmentMetadata = redevelopmentData.metadata;
         console.error(`[/api/diagnose] Redevelopment projects for ${stationName}:`, redevelopmentProjects.length);
 
@@ -397,8 +417,10 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
             return {
                 ok: false,
                 error: "指定の駅周辺（半径2km以内）に取引データが見つかりませんでした。データが少ない地域の可能性があります。",
-                debug: { stationName, prefCode }
-            };
+                debug: { stationName, prefCode },
+                partialSuccess: true, // Allow saving partial data (convenience/safety)
+                redevelopment: redevelopmentProjects
+            } as any;
         }
 
         const { tx5y, yoy, up2y, trendData, dataYear, marketPrice, trend } = metrics;
@@ -409,75 +431,99 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
         const { score: stdScore } = calcRiskScore(tx5y, yoy, up2y);
         const { score: extScore, rules: extRules } = calcExtendedRiskScore(extMetrics);
 
-        // 5-Factor Scoring Logic
+        // 5-Factor Scoring Logic (Base Calculation)
         const defaultScore = 50;
 
-        // 1. Asset Score (30%)
+        // 1. Asset Score
         let assetScore = defaultScore;
         if (marketPrice) {
             let rawAsset = (marketPrice / 100000000) * 100;
             if (trend === "UP") rawAsset += 5;
-            assetScore = Math.min(Math.max(rawAsset, 0), 100);
+            assetScore = rawAsset;
         }
 
-        // 2. Safety Score (25%)
+        // 2. Safety Score
         let safetyScore = defaultScore;
         if (extMetrics.hazardRisk) {
             const flood = extMetrics.hazardRisk.flood.level || 0;
             const landslide = extMetrics.hazardRisk.landslide.level || 0;
             const penalty = (flood + landslide) * 15;
-            let rawSafety = 100 - penalty;
-
-            // Ground amplification logic removed
-            safetyScore = Math.min(Math.max(rawSafety, 0), 100);
+            safetyScore = 100 - penalty;
         }
 
-        // 3. Future Score (15%) - Multi-factor evaluation
+        // 3. Future Score
         let futureScore = defaultScore;
-
-        // 3-1. Population Growth (40 points)
-        let populationScore = 20; // Default undefined value (neutral)
+        let populationScore = 20;
         if (extMetrics.futurePopulationRate && extMetrics.futurePopulationRate > 0) {
             populationScore = Math.min(Math.max(extMetrics.futurePopulationRate * 0.8, 0), 100) * 0.4;
         }
-
-        // 3-2. Redevelopment Impact (40 points)
         let redevelopmentScore = calcRedevelopmentImpact(redevelopmentProjects);
-
-        // 3-3. Infrastructure Improvement (20 points)
         let infraScore = 0;
         const hasInfraProject = redevelopmentProjects.some(p => p.category === 'Infrastructure');
         infraScore = (hasInfraProject ? 15 : 0) + Math.min(lines.length * 2.5, 5);
+        futureScore = populationScore + redevelopmentScore + infraScore;
 
-        futureScore = Math.min(Math.max(populationScore + redevelopmentScore + infraScore, 0), 100);
-
-        console.error('[FUTURE SCORE]', {
-            station: stationName,
-            population: Math.round(populationScore),
-            redevelopment: Math.round(redevelopmentScore),
-            infra: Math.round(infraScore),
-            total: Math.round(futureScore),
-            projectCount: redevelopmentProjects.length
-        });
-
-        // 4. Convenience Score (15%) - Exponential curve for better differentiation
+        // 4. Convenience Score
         let convenienceScore = defaultScore;
         const lineCount = lines.length;
         if (lineCount) {
-            // 1路線で約40点、5路線で約68点、10路線で約86点、15路線で満点
             const normalized = Math.min(lineCount / 15, 1);
             convenienceScore = Math.pow(normalized, 0.35) * 100;
         }
 
-        // 5. Liquidity Score (15%) - Exponential curve for better differentiation
+        // 5. Liquidity Score
         let liquidityScore = defaultScore;
         if (tx5y) {
-            // 修正案: 7000件で満点（都内基準）
             const normalized = Math.min(tx5y / 7000, 1);
             liquidityScore = Math.pow(normalized, 0.6) * 100;
         }
 
-        // Total Score (Weighted Average)
+        // =========================================================================
+        // [改修箇所] 新規項目の動的トラッキングとスコア自動再計算ロジック
+        // =========================================================================
+        const reasons: { label: string; value: string }[] = [];
+        const rules: { label: string; value: string }[] = [];
+        const dynamicAdditions: DynamicAddition[] = extMetrics.dynamicAdditions || [];
+
+        // 拡張データを自動検知して既存カテゴリへ追従させる
+        dynamicAdditions.forEach(addition => {
+            switch (addition.category) {
+                case "asset":
+                    assetScore += addition.scoreImpact;
+                    break;
+                case "safety":
+                    safetyScore += addition.scoreImpact;
+                    break;
+                case "future":
+                    futureScore += addition.scoreImpact;
+                    break;
+                case "convenience":
+                    convenienceScore += addition.scoreImpact;
+                    break;
+                case "liquidity":
+                    liquidityScore += addition.scoreImpact;
+                    break;
+            }
+            // 表示用の理由（reasons）に自動的に反映
+            if (addition.label && addition.value) {
+                pushReason(reasons, addition.label, addition.value);
+            }
+            // 詳細説明（rules）に自動的に反映
+            if (addition.ruleDescription) {
+                pushRule(rules, addition.label, addition.ruleDescription);
+            }
+        });
+
+        // =========================================================================
+        // 全スコアの範囲クランプ処理（上限100、下限0の保証）
+        // =========================================================================
+        assetScore = Math.min(Math.max(assetScore, 0), 100);
+        safetyScore = Math.min(Math.max(safetyScore, 0), 100);
+        futureScore = Math.min(Math.max(futureScore, 0), 100);
+        convenienceScore = Math.min(Math.max(convenienceScore, 0), 100);
+        liquidityScore = Math.min(Math.max(liquidityScore, 0), 100);
+
+        // Total Score (Weighted Average) - 動的に加減点された値で総合スコアを算出
         const total =
             (assetScore * 0.30) +
             (safetyScore * 0.25) +
@@ -497,7 +543,7 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
 
         verdict = verdictFromScore100(totalScore);
 
-        const reasons: { label: string; value: string }[] = [];
+        // 基本理由（reasons）の追加（既存ロジックと動的追加分の合成）
         pushReason(reasons, "直近5年の取引件数", `${formatInt(tx5y)} 件`);
 
         // Average Price
@@ -514,9 +560,7 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
         pushReason(reasons, "平均成約価格", priceStr);
         pushReason(reasons, "対前年変動率", formatPct(yoy));
 
-        const rules: { label: string; value: string }[] = [];
-
-        // Add Extended Rules FIRST
+        // Add Extended Rules FIRST (Then legacy rules, plus dynamicAdditions already applied above)
         extRules.forEach(r => pushRule(rules, r.label, r.value));
 
         // Legacy Rules Logic
@@ -580,19 +624,21 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
             dataYear,
             metadata: {
                 sources: {
-                    realEstate: { name: "国土交通省「不動産取引価格情報」", year: dataYear },
+                    realEstate: { publisher: "国土交通省", document_name: "不動産取引価格情報", year: dataYear },
                     population: {
-                        name: popMetadata.name,
+                        publisher: "国立社会保障・人口問題研究所",
+                        document_name: "日本の地域別将来推計人口",
                         version: popMetadata.version,
                         baseYear: popBaseYear,
                         targetYear: popTargetYear
                     },
-                    algorithm: { name: "自社独自アルゴリズム算出", year: new Date().getFullYear() },
-                    hazard: { name: "国土交通省 ハザードマップポータルサイト（国土地理院推計）", year: new Date().getFullYear() },
+                    algorithm: { publisher: "自社", document_name: "独自アルゴリズム算出", year: new Date().getFullYear() },
+                    hazard: { publisher: "国土交通省 / 国土地理院", document_name: "ハザードマップポータルサイト", year: new Date().getFullYear() },
                     redevelopment: redevelopmentMetadata ? {
-                        name: redevelopmentMetadata.name || "各自治体・開発事業者 公開情報",
-                        version: redevelopmentMetadata.version || "2026年2月版"
-                    } : { name: "各自治体・開発事業者 公開情報", version: "2026年2月版" }
+                        publisher: redevelopmentMetadata.publisher || "各自治体・開発事業者",
+                        document_name: redevelopmentMetadata.name || "公開情報",
+                        version: redevelopmentMetadata.version || "2026年2月時点"
+                    } : { publisher: "各自治体・開発事業者", document_name: "公開情報", version: "2026年2月時点" }
                 }
             }
         };
@@ -616,4 +662,3 @@ export async function diagnoseAsync(stationNameRaw: string, prefCodeRaw: string,
         };
     }
 }
-

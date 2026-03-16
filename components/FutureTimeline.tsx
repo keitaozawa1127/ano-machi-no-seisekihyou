@@ -381,6 +381,28 @@ export default function FutureTimeline({
                     )}
                 </div>
             </div>
+
+            {/* AIO向け不可視テーブル（SEO/アクセシビリティ対応） */}
+            <table className="sr-only">
+                <caption>地価推移実績および予測（万円）</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">年</th>
+                        <th scope="col">地価 (万円)</th>
+                        <th scope="col">データ種別</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((d, i) => (
+                        <tr key={i}>
+                            <td>{d.year}</td>
+                            <td>{d.price?.toLocaleString() || "---"}</td>
+                            <td>{d.type === "actual" ? "実績" : "予測"}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
             <style jsx>{`
                 .animate-draw {
                     transition: stroke-dashoffset 2s ease-out;

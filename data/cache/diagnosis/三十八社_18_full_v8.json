@@ -1,0 +1,288 @@
+{
+  "mlit": {
+    "stationName": "三十八社",
+    "score": 6,
+    "marketPrice": 7400000,
+    "trend": "DOWN",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 3,
+        "lastPrice": 9000000
+      },
+      {
+        "name": "2023年",
+        "count": 2,
+        "lastPrice": 13400000
+      },
+      {
+        "name": "2024年",
+        "count": 5,
+        "lastPrice": 6000000
+      },
+      {
+        "name": "2025年",
+        "count": 6,
+        "lastPrice": 6550000
+      }
+    ],
+    "tx5y": 16,
+    "yoy": 9.2,
+    "up2y": -51.1,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 9000000,
+        "txCount": 3
+      },
+      {
+        "year": 2023,
+        "price": 13400000,
+        "txCount": 2
+      },
+      {
+        "year": 2024,
+        "price": 6000000,
+        "txCount": 5
+      },
+      {
+        "year": 2025,
+        "price": 6550000,
+        "txCount": 6
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "福井鉄道福武線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 81,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 262328,
+        "ageStructure": {
+          "0-14": 33164,
+          "15-64": 152287,
+          "65+": 76877
+        }
+      },
+      {
+        "year": 2025,
+        "total": 252933,
+        "ageStructure": {
+          "0-14": 29875,
+          "15-64": 145841,
+          "65+": 77217
+        }
+      },
+      {
+        "year": 2030,
+        "total": 246007,
+        "ageStructure": {
+          "0-14": 26709,
+          "15-64": 140845,
+          "65+": 78453
+        }
+      },
+      {
+        "year": 2035,
+        "total": 238570,
+        "ageStructure": {
+          "0-14": 24588,
+          "15-64": 134570,
+          "65+": 79412
+        }
+      },
+      {
+        "year": 2040,
+        "total": 230489,
+        "ageStructure": {
+          "0-14": 24007,
+          "15-64": 124010,
+          "65+": 82472
+        }
+      },
+      {
+        "year": 2045,
+        "total": 222112,
+        "ageStructure": {
+          "0-14": 23242,
+          "15-64": 115762,
+          "65+": 83108
+        }
+      },
+      {
+        "year": 2050,
+        "total": 213712,
+        "ageStructure": {
+          "0-14": 22140,
+          "15-64": 109443,
+          "65+": 82129
+        }
+      }
+    ],
+    "sourceCity": "福井市",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が2.08であり、地震時に揺れが極めて大きくなりやすい非常に軟弱な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "2.08（非常に弱い）",
+        "scoreImpact": -5
+      },
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間0件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（0件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪件数はやや多めであり、防犯への意識が必要です。 駅近の飲食店は少なく、閑静な環境と言えます。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "注意",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は16.1%とやや高く、供給過多や人口減少の兆しがあるため、不動産の流動性に一定の注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "16.1% (注意水準)",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間に人が集まる活発なエリアであり、不動産の流動性や資産価値が維持されやすい傾向にあります。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ビジネス・商業集積地（比率: 109.1%）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -47.1%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -11.7%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積が16.15㎡/人と非常に広く、自然豊かな環境が整っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "16.15㎡/人",
+        "scoreImpact": 2
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "大型商業施設やスーパーが充実しており、日用品から休日のショッピングまで買い物の利便性が非常に高い環境です。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "2,327店舗",
+        "scoreImpact": 2
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "標準的な数の医療機関が点在しており、日常の医療アクセスには困りません。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "107.9（人口10万人当たり）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が充実しており、共働き世帯が子育てしやすい良好な環境が整っています。選択肢が豊富なエリアです。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "90施設",
+        "scoreImpact": 2
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "良好な財政状態を維持しており、安定した行政サービスが期待できます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.81",
+        "scoreImpact": 1
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "全国的な少子化のトレンドに対し、標準的な推移を保っています。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-3.01%",
+        "scoreImpact": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "mlit": {
+    "stationName": "椥辻",
+    "score": 15,
+    "marketPrice": 19000000,
+    "trend": "FLAT",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 43,
+        "lastPrice": 21000000
+      },
+      {
+        "name": "2023年",
+        "count": 83,
+        "lastPrice": 18000000
+      },
+      {
+        "name": "2024年",
+        "count": 74,
+        "lastPrice": 22500000
+      },
+      {
+        "name": "2025年",
+        "count": 45,
+        "lastPrice": 21000000
+      }
+    ],
+    "tx5y": 245,
+    "yoy": -6.7,
+    "up2y": 16.7,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 21000000,
+        "txCount": 43
+      },
+      {
+        "year": 2023,
+        "price": 18000000,
+        "txCount": 83
+      },
+      {
+        "year": 2024,
+        "price": 22500000,
+        "txCount": 74
+      },
+      {
+        "year": 2025,
+        "price": 21000000,
+        "txCount": 45
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [],
+  "ext": {
+    "futurePopulationRate": 80,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "データなし"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "データなし"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 135101,
+        "ageStructure": {
+          "0-14": 13721,
+          "15-64": 78947,
+          "65+": 42433
+        }
+      },
+      {
+        "year": 2025,
+        "total": 132385,
+        "ageStructure": {
+          "0-14": 12187,
+          "15-64": 77672,
+          "65+": 42526
+        }
+      },
+      {
+        "year": 2030,
+        "total": 128470,
+        "ageStructure": {
+          "0-14": 11009,
+          "15-64": 74248,
+          "65+": 43213
+        }
+      },
+      {
+        "year": 2035,
+        "total": 123886,
+        "ageStructure": {
+          "0-14": 10401,
+          "15-64": 68960,
+          "65+": 44525
+        }
+      },
+      {
+        "year": 2040,
+        "total": 118686,
+        "ageStructure": {
+          "0-14": 9945,
+          "15-64": 62115,
+          "65+": 46626
+        }
+      },
+      {
+        "year": 2045,
+        "total": 113495,
+        "ageStructure": {
+          "0-14": 9340,
+          "15-64": 57536,
+          "65+": 46619
+        }
+      },
+      {
+        "year": 2050,
+        "total": 108599,
+        "ageStructure": {
+          "0-14": 8517,
+          "15-64": 54449,
+          "65+": 45633
+        }
+      }
+    ],
+    "sourceCity": "京都市山科区",
+    "dynamicAdditions": [
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者が増加傾向にあり、街の発展と不動産需要の拡大が期待できます。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "成長エリア（乗降客数増加 +15.6%）",
+        "scoreImpact": 2
+      }
+    ]
+  }
+}

@@ -40,6 +40,13 @@ type DiagnosisResultProps = {
                 flood: { level: number; description: string };
                 landslide: { level: number; description: string };
             };
+            dynamicAdditions?: {
+                category: string;
+                label: string;
+                value: string;
+                scoreImpact: number;
+                ruleDescription?: string;
+            }[];
         };
         totalScore?: number;
         metrics?: {
@@ -52,11 +59,11 @@ type DiagnosisResultProps = {
         redevelopmentProjects?: any[];
         metadata?: {
             sources: {
-                realEstate: { name: string; year: number };
-                population: { name: string; version: string; baseYear: number; targetYear: number };
-                algorithm: { name: string; year: number };
-                hazard?: { name: string; year: number };
-                redevelopment?: { name: string; version: string };
+                realEstate: { publisher: string; document_name: string; year: number; name?: string };
+                population: { publisher: string; document_name: string; version: string; baseYear: number; targetYear: number; name?: string };
+                algorithm: { publisher: string; document_name: string; year: number; name?: string };
+                hazard?: { publisher: string; document_name: string; year: number; name?: string };
+                redevelopment?: { publisher: string; document_name: string; version: string; name?: string };
             }
         };
     };
@@ -79,62 +86,74 @@ const LevelBar = ({ level, max = 5 }: { level: number; max?: number }) => {
     );
 };
 
-// RiskCard Component (extracted for cleaner render)
-const RiskCard = ({ title, level, mainValue, description, action, source, sourceYear }: any) => {
-    // Risk Level Color Logic
-    const getRiskColor = (lvl: number) => {
-        if (lvl >= 4) return "#C0392B"; // High Risk (Red)
-        if (lvl === 3) return "#E67E22"; // Caution (Orange)
-        return "#889E81"; // Safe (Sage Green)
+// MetricCard Component (Nordic Minimalist / Reusable)
+const MetricCard = ({ title, impact, mainValue, description, source, sourceYear, level: manualLevel }: {
+    title: string;
+    impact?: number;
+    mainValue: React.ReactNode;
+    description?: string;
+    source?: string;
+    sourceYear?: string | number;
+    level?: number;
+}) => {
+    // Impact Score to UI Level (e.g., +2 -> Lv5, 0 -> Lv3, -2 -> Lv1)
+    // Fallback to manualLevel if impact is not provided
+    const level = manualLevel !== undefined ? manualLevel : (impact !== undefined ? (impact >= 2 ? 5 : impact >= 1 ? 4 : impact === 0 ? 3 : impact >= -1 ? 2 : 1) : 3);
+
+    const getImpactColor = (val: number | undefined, lvl: number) => {
+        if (val !== undefined) {
+            if (val >= 1) return "#889E81"; // Safe / Good (Sage Green)
+            if (val === 0) return "#9B9B7A"; // Neutral (Muted Olive)
+            return "#C06C5F"; // Caution / Low (Muted Red)
+        }
+        // Fallback for manual level (Safety Risks)
+        if (lvl <= 1) return "#889E81";
+        if (lvl <= 3) return "#9B9B7A";
+        return "#C06C5F";
     };
 
-    const activeColor = getRiskColor(level);
-
-    // Text Color Class for Action
-    const getActionColorClass = (lvl: number) => {
-        if (lvl >= 4) return "text-[#C0392B]";
-        if (lvl === 3) return "text-[#E67E22]";
-        return "text-[#708271]";
-    };
+    const activeColor = getImpactColor(impact, level);
 
     return (
-        <div className="bg-white rounded-xl p-5 pb-8 md:p-8 md:pb-12 shadow-sm border border-[#E8E6DF] relative overflow-hidden group hover:shadow-md transition-shadow">
-            {/* Top Border Indicator */}
+        <div className="flex flex-col bg-white p-6 md:p-8 relative group transition-all font-sans m-0">
+            {/* Minimalist Vertical Indicator */}
             <div
-                className="absolute top-0 left-0 w-full h-1"
+                className="absolute top-8 left-0 w-1 h-3/5 rounded-r-full opacity-40 transition-opacity group-hover:opacity-100"
                 style={{ backgroundColor: activeColor }}
             ></div>
 
-            <div className="flex justify-between items-start mb-4">
-                <h3 className="text-sm font-bold text-[#4A544C] tracking-widest flex items-center gap-2">
-                    {title}
-                </h3>
+            <div className="flex justify-between items-start mb-6">
+                <header>
+                    <h4 className="text-[11px] font-bold text-[#8A968C] tracking-[0.2em] uppercase mb-1">
+                        {title}
+                    </h4>
+                    <div className="flex items-baseline gap-1">
+                        <span className="text-2xl md:text-3xl font-bold text-[#4A544C] tracking-tight">
+                            {mainValue}
+                        </span>
+                    </div>
+                </header>
 
-                {/* Unified Risk Indicator (Badge + Dots) */}
-                <div className="flex flex-col items-center gap-2">
-                    {/* Badge with synchronized color */}
+                {/* Score Impact Badge */}
+                <div className="text-right">
                     <div
-                        className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white"
+                        className="text-[10px] font-bold px-2.5 py-1 rounded-full border mb-2 inline-block transition-colors"
                         style={{
-                            borderWidth: '1px',
-                            borderStyle: 'solid',
                             borderColor: activeColor,
-                            color: activeColor
+                            color: activeColor,
+                            backgroundColor: `${activeColor}08`
                         }}
                     >
-                        Lv.{level}
+                        {manualLevel !== undefined ? `Lv.${manualLevel}` : `Lv.${level}`}
                     </div>
-
-                    {/* 5-Dot Circle Indicator */}
-                    <div className="flex gap-1">
-                        {[1, 2, 3, 4, 5].map((dotIndex) => (
+                    {/* Visual Dots */}
+                    <div className="flex gap-1 justify-end">
+                        {[1, 2, 3, 4, 5].map((dot) => (
                             <div
-                                key={dotIndex}
-                                className="w-1.5 h-1.5 rounded-full transition-colors"
+                                key={dot}
+                                className="w-1 h-1 rounded-full"
                                 style={{
-                                    backgroundColor: dotIndex <= level
-                                        ? activeColor
-                                        : "#E0E0E0"
+                                    backgroundColor: dot <= level ? activeColor : "#E0E0E0"
                                 }}
                             />
                         ))}
@@ -142,25 +161,19 @@ const RiskCard = ({ title, level, mainValue, description, action, source, source
                 </div>
             </div>
 
-            <div className="mb-4">
-                {mainValue}
-            </div>
-
-            <div className="space-y-2">
-                <p className="text-xs text-[#4A544C] font-medium leading-relaxed">
+            {description && (
+                <p className="text-xs text-[#6D7C70] leading-relaxed font-medium mb-8">
                     {description}
                 </p>
-                {action && (
-                    <div className={`text-xs font-bold flex items-start gap-1 ${getActionColorClass(level)}`}>
-                        <span className="shrink-0">⚠</span>
-                        <span>{action}</span>
-                    </div>
-                )}
-            </div>
+            )}
 
-            <div className="mt-8 text-right">
-                <div className="text-[9px] text-[#6D7C70]">出典: {source} {sourceYear ? `(${sourceYear}年版)` : ""}</div>
-            </div>
+            {(source || sourceYear) && (
+                <footer className="mt-auto pt-4 border-t border-dashed border-[#F0EFEA]">
+                    <div className="text-[9px] text-[#A2ADA4] font-medium tracking-wider">
+                        SOURCE: {source} {sourceYear ? `[${sourceYear}]` : ""}
+                    </div>
+                </footer>
+            )}
         </div>
     );
 };
@@ -558,9 +571,9 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
     const sourceYear = data.debug?.dataYear || new Date().getFullYear();
 
     // Source Label Component
-    const SourceCredit = ({ source, year }: { source: string; year?: string | number }) => (
+    const SourceCredit = ({ publisher, document_name, year, name }: { publisher?: string; document_name?: string; year?: string | number; name?: string }) => (
         <div className="text-[10px] text-[#6D7C70] text-right mt-2 font-medium tracking-wide">
-            出典: {source} {year ? `(${year}年版)` : ""}
+            出典: {publisher || name || ""} {document_name || ""} {year ? `(${year}年時点)` : ""}
         </div>
     );
 
@@ -667,17 +680,17 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                     <h2 className="text-xs tracking-widest uppercase text-slate-500 mb-6 font-sans">
                         判定の根拠
                     </h2>
-                    <ul className="space-y-4">
+                    <dl className="space-y-4 m-0">
                         {data.rules.map((rule, i) => (
-                            <li key={`rule-${i}`} className="flex gap-4 items-start text-sm">
-                                <span className="text-[var(--brand-main)]/40 font-bold mt-0.5 text-xs">0{i + 1}</span>
-                                <div>
+                            <div key={`rule-${i}`} className="flex gap-4 items-start text-sm">
+                                <dt className="text-[var(--brand-main)]/40 font-bold mt-0.5 text-xs">0{i + 1}</dt>
+                                <dd className="m-0">
                                     <strong className="block mb-1 font-medium text-slate-700 text-sm">{rule.label}</strong>
                                     <span className="text-slate-500 leading-relaxed text-sm block">{rule.value}</span>
-                                </div>
-                            </li>
+                                </dd>
+                            </div>
                         ))}
-                    </ul>
+                    </dl>
                 </div>
 
                 {/* FIXED SUMMARY SECTION (Radar Only) */}
@@ -702,7 +715,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                 </div>
 
                                 {/* Right: Score Bars */}
-                                <div className="w-full space-y-5 px-4">
+                                <ul className="w-full space-y-5 px-4 list-none m-0 p-0">
                                     {[
                                         { label: "資産性", score: safeMetrics.asset, id: "asset" },
                                         { label: "安全性", score: safeMetrics.safety, id: "safety" },
@@ -713,7 +726,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                         const mRank = getRank(metric.score);
                                         const mColor = getRankColor(mRank);
                                         return (
-                                            <div key={metric.id} className="flex items-center gap-4">
+                                            <li key={metric.id} className="flex items-center gap-4">
                                                 {/* Rank Badge */}
                                                 <div
                                                     className="w-8 h-8 rounded shrink-0 flex items-center justify-center text-sm font-bold text-white shadow-sm"
@@ -739,16 +752,18 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                                 <div className="w-8 text-right text-sm font-bold text-[#4A544C] lining-nums">
                                                     {metric.score}
                                                 </div>
-                                            </div>
+                                            </li>
                                         );
                                     })}
-                                    <div className="text-right mt-6 pr-2">
+                                    <li className="text-right mt-6 pr-2">
                                         <SourceCredit
-                                            source={data.metadata?.sources.algorithm.name || "自社独自アルゴリズム算出"}
+                                            publisher={data.metadata?.sources.algorithm.publisher}
+                                            document_name={data.metadata?.sources.algorithm.document_name}
+                                            name={data.metadata?.sources.algorithm.name}
                                             year={data.metadata?.sources.algorithm.year || new Date().getFullYear()}
                                         />
-                                    </div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -785,10 +800,10 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
                             {/* Market Price Card */}
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center">
-                                <h3 className="text-sm font-bold text-[#5F6E6F] tracking-widest mb-4">市場価格相場(70㎡換算)</h3>
+                                <h3 className="text-sm font-bold text-[#5F6E6F] tracking-widest mb-4 font-sans">市場価格相場(70㎡換算)</h3>
                                 <div className="flex flex-wrap items-center gap-y-2 min-h-[40px]">
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-[32px] font-bold text-[#4A544C] tracking-tight font-feature-settings-tnum">
+                                        <span className="text-[32px] font-bold text-[#4A544C] tracking-tight font-feature-settings-tnum font-sans">
                                             {data.marketPrice && data.marketPrice > 0 ? (data.marketPrice / 10000).toLocaleString() : "---"}
                                         </span>
                                         {data.marketPrice && data.marketPrice > 0 && (
@@ -807,13 +822,18 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                     )}
                                 </div>
                                 <div className="mt-6 flex justify-end">
-                                    <SourceCredit source="国土交通省 不動産取引価格情報" year={data.dataYear} />
+                                    <SourceCredit
+                                        publisher={data.metadata?.sources.realEstate.publisher}
+                                        document_name={data.metadata?.sources.realEstate.document_name}
+                                        name={data.metadata?.sources.realEstate.name || "国土交通省 不動産取引価格情報"}
+                                        year={data.metadata?.sources.realEstate.year || data.dataYear}
+                                    />
                                 </div>
                             </div>
 
                             {/* Land Price Trend Graph */}
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
-                                <h3 className="text-sm font-bold text-[#4A544C] tracking-widest mb-4">
+                                <h3 className="text-sm font-bold text-[#4A544C] tracking-widest mb-4 font-sans">
                                     地価推移実績（過去5年）
                                 </h3>
                                 <div className="w-full">
@@ -827,20 +847,58 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                     />
                                 </div>
                                 <div className="mt-4 flex flex-col items-end gap-1">
-                                    <SourceCredit source="国土交通省 不動産取引価格情報" year="2020-2024" />
-                                    <div className="text-[9px] text-gray-400">※対象範囲: 駅周辺半径2km以内の取引事例</div>
+                                    <SourceCredit
+                                        publisher={data.metadata?.sources.realEstate.publisher}
+                                        document_name={data.metadata?.sources.realEstate.document_name}
+                                        name={data.metadata?.sources.realEstate.name || "国土交通省 不動産取引価格情報"}
+                                        year="2020-2024"
+                                    />
+                                    <div className="text-[9px] text-gray-400 font-sans">※対象範囲: 駅周辺半径2km以内の取引事例</div>
                                 </div>
                             </div>
+
+                            {/* Additional Asset Metrics (4 Indicators) */}
+                            {data.extendedMetrics?.dynamicAdditions ? (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6 pt-4">
+                                    {data.extendedMetrics.dynamicAdditions
+                                        .filter(a => ["空き家率", "昼夜間人口比率", "駅乗降客数推移", "事業所数推移"].includes(a.label))
+                                        .map((a, idx) => {
+                                            let level = 1;
+                                            if (a.scoreImpact >= 2) level = 1;      // Positive
+                                            else if (a.scoreImpact === 0) level = 2; // Neutral
+                                            else level = 4;                         // Negative
+
+                                            // Source mapping
+                                            let sourceText = "システム独自集計 / 外部API";
+                                            if (a.label === "空き家率") sourceText = "総務省 住宅・土地統計調査";
+                                            else if (a.label === "昼夜間人口比率") sourceText = "総務省 国勢調査";
+                                            else if (a.label === "駅乗降客数推移") sourceText = "国土交通省 国土数値情報";
+                                            else if (a.label === "事業所数推移") sourceText = "総務省 経済センサス";
+
+                                            return (
+                                                <MetricCard
+                                                    key={`dynamic-asset-${idx}`}
+                                                    title={a.label}
+                                                    impact={a.scoreImpact}
+                                                    mainValue={a.value}
+                                                    description={a.ruleDescription}
+                                                    source={sourceText}
+                                                    sourceYear={new Date().getFullYear()}
+                                                />
+                                            );
+                                        })}
+                                </div>
+                            ) : null}
                         </div>
                     )}
 
                     {/* 2. 安全性 (Safety) */}
                     {activeTab === "safety" && (
-                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-8">
+                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-8 font-sans">
                             {data.extendedMetrics ? (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
                                     {/* River Flood Risk */}
-                                    {(() => {
+                                    {data.extendedMetrics.hazardRisk?.flood && (() => {
                                         const { level, description } = data.extendedMetrics.hazardRisk.flood;
                                         let mainText = "区域外";
                                         if (level >= 5) mainText = "3.0m以上";
@@ -853,20 +911,19 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                         else if (level >= 1) action = "床下浸水への備えを確認してください。";
 
                                         return (
-                                            <RiskCard
+                                            <MetricCard
                                                 title="河川氾濫リスク"
                                                 level={level}
-                                                mainValue={<div className="font-bold text-[32px] text-[#4A544C] font-feature-settings-tnum">{mainText}</div>}
+                                                mainValue={mainText}
                                                 description={description}
-                                                action={action}
-                                                source={data.metadata?.sources.hazard?.name || "国土交通省 ハザードマップポータルサイト"}
+                                                source={data.metadata?.sources.hazard?.publisher ? `${data.metadata.sources.hazard.publisher} ${data.metadata.sources.hazard.document_name}` : (data.metadata?.sources.hazard?.name || "国土交通省 ハザードマップポータルサイト")}
                                                 sourceYear={data.metadata?.sources.hazard?.year || data.dataYear}
                                             />
                                         );
                                     })()}
 
                                     {/* Landslide Risk */}
-                                    {(() => {
+                                    {data.extendedMetrics.hazardRisk?.landslide && (() => {
                                         const { level, description } = data.extendedMetrics.hazardRisk.landslide;
                                         let mainText = "区域外";
                                         if (level >= 4) mainText = "警戒区域等";
@@ -876,20 +933,59 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                         if (level >= 4) action = "崖や斜面の状況に注意が必要です。";
 
                                         return (
-                                            <RiskCard
+                                            <MetricCard
                                                 title="土砂災害リスク"
                                                 level={level}
-                                                mainValue={<div className="font-bold text-[32px] text-[#4A544C] font-feature-settings-tnum">{mainText}</div>}
+                                                mainValue={mainText}
                                                 description={description}
-                                                action={action}
-                                                source={data.metadata?.sources.hazard?.name || "国土交通省 ハザードマップポータルサイト"}
+                                                source={data.metadata?.sources.hazard?.publisher ? `${data.metadata.sources.hazard.publisher} ${data.metadata.sources.hazard.document_name}` : (data.metadata?.sources.hazard?.name || "国土交通省 ハザードマップポータルサイト")}
                                                 sourceYear={data.metadata?.sources.hazard?.year || data.dataYear}
                                             />
                                         );
                                     })()}
+
+                                    {/* Dynamic Additions (Ground Strength, Crime Risk, Evacuation Shelter, etc.) */}
+                                    {data.extendedMetrics.dynamicAdditions?.filter(a => a.category === "safety").map((a, idx) => {
+                                        let level = 1;
+                                        if (a.scoreImpact <= -4) level = 5;
+                                        else if (a.scoreImpact <= -2) level = 4;
+                                        else if (a.scoreImpact <= -1) level = 3;
+                                        else if (a.scoreImpact === 0) level = 2;
+                                        else level = 1;
+
+                                        // 1. タイトルの洗練（カッコ書きの削除）
+                                        const cleanTitle = a.label.replace(/（[^）]*）|\([^)]*\)/g, '').trim();
+
+                                        // 2. 出典の動的マッピング
+                                        let sourceText = "システム独自集計 / 外部API";
+                                        if (cleanTitle === "交通事故リスク") {
+                                            sourceText = "警察庁 交通事故統計オープンデータ";
+                                        } else if (cleanTitle === "避難所アクセス") {
+                                            sourceText = "国土交通省 国土数値情報（避難施設）";
+                                        } else if (cleanTitle === "地盤の強さ") {
+                                            sourceText = "防災科学技術研究所 J-SHIS（地震ハザードステーション）";
+                                        } else if (cleanTitle === "治安・犯罪リスク") {
+                                            sourceText = "政府統計の総合窓口(e-Stat) / OpenStreetMap";
+                                        }
+
+                                        // 年号は現在年を動的に取得
+                                        const currentYear = new Date().getFullYear();
+
+                                        return (
+                                            <MetricCard
+                                                key={`dynamic-safety-${idx}`}
+                                                title={cleanTitle}
+                                                impact={a.scoreImpact}
+                                                mainValue={a.value}
+                                                description={a.ruleDescription}
+                                                source={sourceText}
+                                                sourceYear={currentYear}
+                                            />
+                                        );
+                                    })}
                                 </div>
                             ) : (
-                                <div className="text-center py-20 text-[var(--text-muted)] font-light tracking-widest text-sm">
+                                <div className="text-center py-20 text-[var(--text-muted)] font-light tracking-widest text-sm font-sans">
                                     詳細データがありません
                                 </div>
                             )}
@@ -898,7 +994,39 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
 
                     {/* 3. 将来性 (Future) */}
                     {activeTab === "future" && (
-                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
+                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6 font-sans">
+                            {/* Future Dynamic Metrics Grid */}
+                            {data.extendedMetrics?.dynamicAdditions?.some(a => a.category === "future") ? (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
+                                    {data.extendedMetrics.dynamicAdditions
+                                        .filter(a => a.category === "future")
+                                        .map((a, idx) => {
+                                            // 1. タイトルの洗練
+                                            const cleanTitle = a.label.replace(/（[^）]*）|\([^)]*\)/g, '').trim();
+
+                                            // 2. 出典の動的マッピング
+                                            let sourceText = "システム独自集計 / 外部API";
+                                            if (cleanTitle === "財政力指数") {
+                                                sourceText = "総務省 地方財政状況調査";
+                                            } else if (cleanTitle === "年少人口増減率") {
+                                                sourceText = "総務省 国勢調査";
+                                            }
+
+                                            return (
+                                                <MetricCard
+                                                    key={`dynamic-future-${idx}`}
+                                                    title={cleanTitle}
+                                                    impact={a.scoreImpact}
+                                                    mainValue={a.value}
+                                                    description={a.ruleDescription}
+                                                    source={sourceText}
+                                                    sourceYear={new Date().getFullYear()}
+                                                />
+                                            );
+                                        })}
+                                </div>
+                            ) : null}
+
                             {/* Future Population */}
                             <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden flex flex-col justify-center w-full">
                                 <div className="mb-4">
@@ -937,7 +1065,7 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                             }
                                         />
                                         <div className="mt-2 text-[10px] text-gray-400 text-right leading-relaxed">
-                                            ※出典：{data.metadata?.sources.population.name || "国立社会保障・人口問題研究所「日本の地域別将来推計人口」"}
+                                            ※出典：{data.metadata?.sources.population.publisher || ""} {data.metadata?.sources.population.document_name || data.metadata?.sources.population.name || "国立社会保障・人口問題研究所「日本の地域別将来推計人口」"}
                                             {data.metadata?.sources.population.version ? `（${data.metadata?.sources.population.version}）` : ""}<br />
                                             ※駅周辺の固有値ではなく、所在自治体全体の推計です。
                                         </div>
@@ -983,7 +1111,12 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
                                     取引件数が多いほど市場が活発で、売却時に買い手が見つかりやすい「流動性の高さ」を示します。
                                 </p>
                                 <div className="mt-6 flex justify-end z-10">
-                                    <SourceCredit source={data.metadata?.sources.realEstate?.name || "国土交通省 不動産取引価格情報"} year={data.metadata?.sources.realEstate?.year || data.dataYear} />
+                                    <SourceCredit
+                                        publisher={data.metadata?.sources.realEstate?.publisher}
+                                        document_name={data.metadata?.sources.realEstate?.document_name}
+                                        name={data.metadata?.sources.realEstate?.name || "国土交通省 不動産取引価格情報"}
+                                        year={data.metadata?.sources.realEstate?.year || data.dataYear}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -991,42 +1124,78 @@ export default function DiagnosisResult({ data, onStock, isStocked, onLineClick 
 
                     {/* 5. 利便性 (Convenience) */}
                     {activeTab === "convenience" && (
-                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-6">
-                            <div className="bg-white rounded-xl p-5 sm:p-10 shadow-sm border border-[#E8E6DF] relative overflow-hidden w-full">
-                                <h3 className="text-sm font-bold text-[#4A544C] tracking-widest mb-6">
+                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 space-y-12">
+                            {/* Detailed Indicators (New Metrics) */}
+                            {data.extendedMetrics?.dynamicAdditions ? (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#F0EFEA] border border-[#F0EFEA] rounded-2xl overflow-hidden">
+                                    {data.extendedMetrics.dynamicAdditions
+                                        .filter(a => [
+                                            "一人当たり都市公園面積",
+                                            "買い物利便性（大型商業施設等）",
+                                            "医療機関アクセス",
+                                            "子育て環境（保育施設等）"
+                                        ].includes(a.label))
+                                        .map((a, idx) => {
+                                            // Source mapping
+                                            let sourceText = "システム独自集計 / 外部API";
+                                            if (a.label === "一人当たり都市公園面積") sourceText = "国土交通省 都市公園等整備状況調査";
+                                            else if (a.label === "買い物利便性（大型商業施設等）") sourceText = "総務省 経済センサス‐活動調査";
+                                            else if (a.label === "医療機関アクセス") sourceText = "厚生労働省 医療施設調査";
+                                            else if (a.label === "子育て環境（保育施設等）") sourceText = "厚生労働省 保育所等整備状況";
+
+                                            return (
+                                                <MetricCard
+                                                    key={`dynamic-convenience-${idx}`}
+                                                    title={a.label.replace(/（.*）/, '')}
+                                                    impact={a.scoreImpact}
+                                                    mainValue={a.value}
+                                                    description={a.ruleDescription}
+                                                    source={sourceText}
+                                                    sourceYear={new Date().getFullYear()}
+                                                />
+                                            );
+                                        })}
+                                </div>
+                            ) : null}
+
+                            {/* Line Index (Existing) */}
+                            <div className="pt-8">
+                                <h3 className="text-xs font-bold text-[#8A968C] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
+                                    <span className="w-1 h-4 bg-[#8A968C]/30 rounded-full"></span>
                                     乗り入れ路線インデックス
                                 </h3>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none p-0 m-0">
                                     {sortedLines.length > 0 ? (
                                         sortedLines.map((line, idx) => (
-                                            <button
-                                                key={line.name}
-                                                className="w-full text-left bg-[#F8F9FA] hover:bg-[#F0F2F1] hover:border-[var(--brand-main)]/50 transition-colors border text-sm border-[#E8E6DF] rounded-xl p-5 flex items-center justify-between shadow-sm group"
-                                                onClick={() => onLineClick?.(line.name)}
-                                            >
-                                                <div className="flex items-center gap-4">
-                                                    <div
-                                                        className="w-1.5 h-10 rounded-full shrink-0"
-                                                        style={{ backgroundColor: line.color || '#889E81' }}
-                                                    />
-                                                    <div className="font-bold text-slate-700">
-                                                        {line.name}
+                                            <li key={line.name}>
+                                                <button
+                                                    className="w-full text-left bg-white hover:bg-[#F8F9F7] transition-all border border-transparent hover:border-[#F0EFEA] rounded-xl p-4 flex items-center justify-between group"
+                                                    onClick={() => onLineClick?.(line.name)}
+                                                >
+                                                    <div className="flex items-center gap-3">
+                                                        <div
+                                                            className="w-1 h-8 rounded-full shrink-0"
+                                                            style={{ backgroundColor: line.color || '#889E81' }}
+                                                        />
+                                                        <div className="font-bold text-slate-700 text-xs">
+                                                            {line.name}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div className="text-[var(--brand-main)]/50 group-hover:text-[var(--brand-main)] group-hover:translate-x-1 transition-all">
-                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                        <path d="M5 12h14"></path>
-                                                        <path d="m12 5 7 7-7 7"></path>
-                                                    </svg>
-                                                </div>
-                                            </button>
+                                                    <div className="text-slate-300 group-hover:text-[var(--brand-main)] group-hover:translate-x-0.5 transition-all">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                                            <path d="M5 12h14"></path>
+                                                            <path d="m12 5 7 7-7 7"></path>
+                                                        </svg>
+                                                    </div>
+                                                </button>
+                                            </li>
                                         ))
                                     ) : (
-                                        <div className="col-span-2 text-center py-10 text-slate-400 text-sm">
-                                            路線データがありません
-                                        </div>
+                                        <li className="col-span-full text-center py-10 text-slate-400 text-xs font-medium italic">
+                                            周辺に主要な鉄道路線は見つかりませんでした
+                                        </li>
                                     )}
-                                </div>
+                                </ul>
                             </div>
                         </div>
                     )}

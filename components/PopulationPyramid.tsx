@@ -191,6 +191,27 @@ export default function PopulationPyramid({ data2020, data2050, baseYear = 2020,
                 </div>
             </div>
 
+            {/* AIO向け不可視テーブル（SEO/アクセシビリティ対応） */}
+            <table className="sr-only">
+                <caption>将来人口推計（{baseYear}年実績 vs {targetYear}年予測）</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">年齢層</th>
+                        <th scope="col">{baseYear}年実績 (%)</th>
+                        <th scope="col">{targetYear}年予測 (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data2020.map((d, i) => (
+                        <tr key={i}>
+                            <td>{d.ageGroup}</td>
+                            <td>{d.population.toFixed(1)}</td>
+                            <td>{data2050[i]?.population.toFixed(1)}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
             {/* データソース */}
 
         </div>

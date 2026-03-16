@@ -1,0 +1,327 @@
+{
+  "ok": true,
+  "verdict": "caution",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "事故多発地点あり（82件）"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "避難所アクセス懸念"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "2.16（非常に弱い）"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "繁華街エリア"
+    },
+    {
+      "label": "直近5年の取引件数",
+      "value": "29138 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "2700 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "0.0%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "駅周辺500m圏内で年間82件の人身事故が発生しています。件数が多い場合は自転車や車の通行時に注意が必要です。"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "表層地盤増幅率が2.16であり、地震時に揺れが極めて大きくなりやすい非常に軟弱な地盤エリアに該当します。"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "該当エリア（市区町村）の犯罪件数はやや多めであり、防犯への意識が必要です。 ただし、駅周辺は飲食店やバーが密集する(368件)ため、夜間のトラブルや騒音リスクに注意が必要です。"
+    },
+    {
+      "label": "将来人口（2050推計）",
+      "value": "推計人口指数が 76 と低く、過疎化による流動性低下のリスクがあります。"
+    },
+    {
+      "label": "災害リスク（水害）",
+      "value": "中程度の水害リスクがあります。階数選択や避難計画の確認を推奨します。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇は強くありません。将来の上昇を前提にした判断は避け、住み替え・保有期間の前提でリスクを見てください。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇は急ではありません。ただし横ばい＝安全の保証ではなく、金利や需給で変動し得ます。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "大阪",
+    "year": 2024,
+    "tx5y": 29138,
+    "yoy": 0,
+    "up2y": 8,
+    "prevYear": null,
+    "score": 55
+  },
+  "trendData": [
+    {
+      "year": 2022,
+      "price": 24000000,
+      "txCount": 7408
+    },
+    {
+      "year": 2023,
+      "price": 25000000,
+      "txCount": 7492
+    },
+    {
+      "year": 2024,
+      "price": 27000000,
+      "txCount": 8163
+    },
+    {
+      "year": 2025,
+      "price": 27000000,
+      "txCount": 6075
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 76,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 493940,
+        "ageStructure": {
+          "0-14": 52531,
+          "15-64": 298814,
+          "65+": 142595
+        }
+      },
+      {
+        "year": 2025,
+        "total": 478156,
+        "ageStructure": {
+          "0-14": 46110,
+          "15-64": 292578,
+          "65+": 139468
+        }
+      },
+      {
+        "year": 2030,
+        "total": 459365,
+        "ageStructure": {
+          "0-14": 41406,
+          "15-64": 277598,
+          "65+": 140361
+        }
+      },
+      {
+        "year": 2035,
+        "total": 439227,
+        "ageStructure": {
+          "0-14": 38409,
+          "15-64": 254900,
+          "65+": 145918
+        }
+      },
+      {
+        "year": 2040,
+        "total": 418377,
+        "ageStructure": {
+          "0-14": 36499,
+          "15-64": 227113,
+          "65+": 154765
+        }
+      },
+      {
+        "year": 2045,
+        "total": 397796,
+        "ageStructure": {
+          "0-14": 33753,
+          "15-64": 209572,
+          "65+": 154471
+        }
+      },
+      {
+        "year": 2050,
+        "total": 377297,
+        "ageStructure": {
+          "0-14": 30284,
+          "15-64": 196228,
+          "65+": 150785
+        }
+      }
+    ],
+    "sourceCity": "東大阪市",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で年間82件の人身事故が発生しています。件数が多い場合は自転車や車の通行時に注意が必要です。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故多発地点あり（82件）",
+        "scoreImpact": -3
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が2.16であり、地震時に揺れが極めて大きくなりやすい非常に軟弱な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "2.16（非常に弱い）",
+        "scoreImpact": -5
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪件数はやや多めであり、防犯への意識が必要です。 ただし、駅周辺は飲食店やバーが密集する(368件)ため、夜間のトラブルや騒音リスクに注意が必要です。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "繁華街エリア",
+        "scoreImpact": -5
+      }
+    ]
+  },
+  "totalScore": 55,
+  "metrics": {
+    "asset": 31,
+    "safety": 54,
+    "future": 54,
+    "convenience": 63,
+    "liquidity": 100
+  },
+  "lines": [
+    {
+      "name": "JR京都線"
+    },
+    {
+      "name": "JR大阪環状線"
+    },
+    {
+      "name": "JR神戸線"
+    },
+    {
+      "name": "JR福知山線"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "id": "osaka-2",
+      "station_name": "大阪",
+      "project_name": "グラングリーン大阪 THE NORTH RESIDENCE",
+      "search_keyword": "グラングリーン大阪 北街区 中古",
+      "category": "Mansion",
+      "schedule": "2026年3月入居開始",
+      "description": "地上46階/172m。うめきた2期・北街区の分譲棟。キャノピーbyヒルトン大阪梅田を併設。カーギャラリー付き住戸など超富裕層向け仕様。",
+      "impact_level": 4,
+      "is_future": true,
+      "createdAt": "2024-02-16T13:00:00Z"
+    },
+    {
+      "id": "osaka-3",
+      "station_name": "大阪",
+      "project_name": "パークタワー大阪堂島浜",
+      "search_keyword": "パークタワー大阪堂島浜 竣工",
+      "category": "Mansion",
+      "schedule": "2027年春竣工予定",
+      "description": "地上40階/161m。三井不動産の「パークタワー」と「三井ガーデンホテルズプレミア」が垂直統合。堂島川の景色を取り込む水辺のランドマーク。",
+      "impact_level": 4,
+      "is_future": true,
+      "createdAt": "2024-02-16T13:00:00Z"
+    },
+    {
+      "id": "osaka-1",
+      "station_name": "大阪",
+      "project_name": "グラングリーン大阪 THE SOUTH RESIDENCE",
+      "search_keyword": "グラングリーン大阪 南街区 分譲",
+      "category": "Mansion",
+      "schedule": "2028年7月竣工予定",
+      "description": "地上47階/184m。うめきた2期・南街区の分譲棟。公園の南側に位置するエリア最高峰のタワー。ウォルドーフ・アストリア大阪も近接。",
+      "impact_level": 5,
+      "is_future": true,
+      "createdAt": "2024-02-16T13:00:00Z"
+    }
+  ],
+  "marketPrice": 26000000,
+  "tx5y": 29138,
+  "trend": "UP",
+  "yoy": 0,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "publisher": "国土交通省",
+        "document_name": "不動産取引価格情報",
+        "year": 2025
+      },
+      "population": {
+        "publisher": "国立社会保障・人口問題研究所",
+        "document_name": "日本の地域別将来推計人口",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "publisher": "自社",
+        "document_name": "独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "publisher": "国土交通省 / 国土地理院",
+        "document_name": "ハザードマップポータルサイト",
+        "year": 2026
+      },
+      "redevelopment": {
+        "publisher": "各自治体・開発事業者",
+        "document_name": "公開情報",
+        "version": "2026年2月版"
+      }
+    }
+  }
+}

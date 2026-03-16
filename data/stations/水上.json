@@ -1,0 +1,10 @@
+{
+  "ok": false,
+  "error": "指定の駅周辺（半径2km以内）に取引データが見つかりませんでした。データが少ない地域の可能性があります。",
+  "debug": {
+    "stationName": "水上",
+    "prefCode": "10"
+  },
+  "partialSuccess": true,
+  "redevelopment": []
+}

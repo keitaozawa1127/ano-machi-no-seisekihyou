@@ -1,0 +1,288 @@
+{
+  "mlit": {
+    "stationName": "塩釜口",
+    "score": 30,
+    "marketPrice": 37000000,
+    "trend": "FLAT",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 11,
+        "lastPrice": 41000000
+      },
+      {
+        "name": "2023年",
+        "count": 10,
+        "lastPrice": 33500000
+      },
+      {
+        "name": "2024年",
+        "count": 9,
+        "lastPrice": 36000000
+      },
+      {
+        "name": "2025年",
+        "count": 4,
+        "lastPrice": 39000000
+      }
+    ],
+    "tx5y": 34,
+    "yoy": 8.3,
+    "up2y": 16.4,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 41000000,
+        "txCount": 11
+      },
+      {
+        "year": 2023,
+        "price": 33500000,
+        "txCount": 10
+      },
+      {
+        "year": 2024,
+        "price": 36000000,
+        "txCount": 9
+      },
+      {
+        "year": 2025,
+        "price": 39000000,
+        "txCount": 4
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "名古屋市鶴舞線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 91,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 164817,
+        "ageStructure": {
+          "0-14": 20349,
+          "15-64": 106132,
+          "65+": 38336
+        }
+      },
+      {
+        "year": 2025,
+        "total": 159714,
+        "ageStructure": {
+          "0-14": 18785,
+          "15-64": 100550,
+          "65+": 40379
+        }
+      },
+      {
+        "year": 2030,
+        "total": 158783,
+        "ageStructure": {
+          "0-14": 17580,
+          "15-64": 97627,
+          "65+": 43576
+        }
+      },
+      {
+        "year": 2035,
+        "total": 157352,
+        "ageStructure": {
+          "0-14": 17077,
+          "15-64": 92959,
+          "65+": 47316
+        }
+      },
+      {
+        "year": 2040,
+        "total": 155377,
+        "ageStructure": {
+          "0-14": 16990,
+          "15-64": 87180,
+          "65+": 51207
+        }
+      },
+      {
+        "year": 2045,
+        "total": 152705,
+        "ageStructure": {
+          "0-14": 16614,
+          "15-64": 83782,
+          "65+": 52309
+        }
+      },
+      {
+        "year": 2050,
+        "total": 149490,
+        "ageStructure": {
+          "0-14": 15839,
+          "15-64": 81088,
+          "65+": 52563
+        }
+      }
+    ],
+    "sourceCity": "名古屋市天白区",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で年間27件の人身事故が発生しています。件数が多い場合は自転車や車の通行時に注意が必要です。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故多発地点あり（27件）",
+        "scoreImpact": -3
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.27であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.27（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪件数はやや多めであり、防犯への意識が必要です。 駅周辺の飲食店数は適度(7件)であり、過度な繁華街リスクは低いです。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "注意",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は11.9%で、全国的な平均と同等水準の市場環境です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "11.9% (標準)",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間は人が流出する閑静な住宅街・ベッドタウンの性質を持っています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ベッドタウン（比率: 87.6%）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -18.8%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数は安定しており、既存の経済基盤が維持されています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "安定エリア（事業所数横ばい -4.6%）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積は8.02㎡/人です。都市部としては十分な緑地が確保されています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "8.02㎡/人",
+        "scoreImpact": 1
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "日常生活に必要な買い物環境が標準的に揃っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "617店舗",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "標準的な数の医療機関が点在しており、日常の医療アクセスには困りません。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "84.9（人口10万人当たり）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "標準的な保育環境が整備されています。入園状況については自治体の最新情報をご確認ください。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "35施設",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "全国的に標準的な財政水準です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "データなし（標準評価）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "全国的な少子化のトレンドに対し、標準的な推移を保っています。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-2.74%",
+        "scoreImpact": 0
+      }
+    ]
+  }
+}

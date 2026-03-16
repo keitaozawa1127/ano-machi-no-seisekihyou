@@ -3,8 +3,6 @@ import fs from 'fs/promises';
 import path from 'path';
 import Link from 'next/link';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
     title: '駅一覧 | あの街の成績表',
     description: 'あの街の成績表で診断可能な全国の駅一覧です。独自アルゴリズムを用いた不動産価値・将来性スコアを駅ごとに確認できます。',
@@ -21,40 +19,58 @@ type GroupedStations = {
     [prefecture: string]: StationData[];
 };
 
-// データの読み込みとグループ化
+/**
+ * Reads pre-generated station list from filesystem and groups them by prefecture.
+ * This ensures the list only contains stations that have a static page.
+ */
 async function getGroupedStations(): Promise<GroupedStations> {
     try {
-        const filePath = path.join(process.cwd(), 'public', 'data', 'stations.json');
-        const fileContent = await fs.readFile(filePath, 'utf-8');
-        const stationsRaw = JSON.parse(fileContent);
+        const dataDir = path.join(process.cwd(), 'data', 'stations');
+        const masterPath = path.join(process.cwd(), 'public', 'data', 'stations.json');
+        
+        // Ensure directory exists
+        const stats = await fs.stat(dataDir).catch(() => null);
+        if (!stats || !stats.isDirectory()) {
+            console.warn(`[SSG] Data directory not found: ${dataDir}`);
+            return {};
+        }
+
+        // Read pre-generated filenames (station names)
+        const files = await fs.readdir(dataDir);
+        const pregeneratedNames = new Set(
+            files.filter(f => f.endsWith('.json')).map(f => f.replace('.json', ''))
+        );
+
+        // Read master list for metadata (prefecture, lines)
+        const masterContent = await fs.readFile(masterPath, 'utf-8');
+        const masterData = JSON.parse(masterContent);
 
         const grouped: GroupedStations = {};
 
-        for (const key in stationsRaw) {
-            const station = stationsRaw[key];
-            if (!station || !station.name || !station.prefecture) continue;
+        for (const key in masterData) {
+            const station = masterData[key];
+            if (!station || !station.name || !pregeneratedNames.has(station.name)) continue;
 
-            const pref = station.prefecture;
+            const pref = station.prefecture || "不明";
             if (!grouped[pref]) {
                 grouped[pref] = [];
             }
             grouped[pref].push({
                 name: station.name,
-                prefecture: station.prefecture,
-                prefCode: String(station.prefCode).padStart(2, '0'),
+                prefecture: pref,
+                prefCode: String(station.prefCode || "99").padStart(2, '0'),
                 lines: station.lines || [],
             });
         }
 
-        // 各都道府県内で、駅名を五十音順などを厳密にやるのはstations.jsonのキー順に依存。
-        // ここでは単純に文字列ソート（漢字コード順になるが一定の整理にはなる）
+        // Sort stations within each prefecture
         for (const pref in grouped) {
             grouped[pref].sort((a, b) => a.name.localeCompare(b.name, 'ja'));
         }
 
         return grouped;
     } catch (e) {
-        console.error("Error loading stations.json for directory:", e);
+        console.error("Error loading stations for directory:", e);
         return {};
     }
 }

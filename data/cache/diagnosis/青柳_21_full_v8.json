@@ -1,0 +1,258 @@
+{
+  "mlit": {
+    "stationName": "青柳",
+    "score": 5,
+    "marketPrice": 7000000,
+    "trend": "FLAT",
+    "chartData": [
+      {
+        "name": "2024年",
+        "count": 1,
+        "lastPrice": 7000000
+      }
+    ],
+    "tx5y": 1,
+    "yoy": 0,
+    "up2y": 0,
+    "trendData": [
+      {
+        "year": 2024,
+        "price": 7000000,
+        "txCount": 1
+      }
+    ],
+    "dataYear": 2024,
+    "latestYear": 2024
+  },
+  "lines": [
+    {
+      "name": "JR中央本線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 67,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 23360,
+        "ageStructure": {
+          "0-14": 2976,
+          "15-64": 13454,
+          "65+": 6930
+        }
+      },
+      {
+        "year": 2025,
+        "total": 21597,
+        "ageStructure": {
+          "0-14": 2300,
+          "15-64": 12265,
+          "65+": 7032
+        }
+      },
+      {
+        "year": 2030,
+        "total": 20525,
+        "ageStructure": {
+          "0-14": 1690,
+          "15-64": 11641,
+          "65+": 7194
+        }
+      },
+      {
+        "year": 2035,
+        "total": 19377,
+        "ageStructure": {
+          "0-14": 1493,
+          "15-64": 10563,
+          "65+": 7321
+        }
+      },
+      {
+        "year": 2040,
+        "total": 18157,
+        "ageStructure": {
+          "0-14": 1412,
+          "15-64": 9147,
+          "65+": 7598
+        }
+      },
+      {
+        "year": 2045,
+        "total": 16918,
+        "ageStructure": {
+          "0-14": 1312,
+          "15-64": 8086,
+          "65+": 7520
+        }
+      },
+      {
+        "year": 2050,
+        "total": 15679,
+        "ageStructure": {
+          "0-14": 1162,
+          "15-64": 7330,
+          "65+": 7187
+        }
+      }
+    ],
+    "sourceCity": "池田町",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間0件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（0件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が0.79であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "0.79（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は平均的です。 駅近の飲食店は少なく、閑静な環境と言えます。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "標準",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は41.5%とやや高く、供給過多や人口減少の兆しがあるため、不動産の流動性に一定の注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "41.5% (注意水準)",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間は人が流出する閑静な住宅街・ベッドタウンの性質を持っています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ベッドタウン（比率: 98.0%）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "該当エリアの詳細データが取得できないため、標準水準として仮評価しています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "安定エリア（データ欠損・仮評価）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -12.6%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積は13.90㎡/人です。都市部としては十分な緑地が確保されています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "13.90㎡/人",
+        "scoreImpact": 1
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "日常生活に必要な買い物環境が標準的に揃っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "358店舗",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "医療機関の数が比較的少なく、特定の診療科や夜間救急のアクセスについては事前確認が推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "65.6（人口10万人当たり）",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が比較的少なく、保活（保育園探し）には早めの準備とリサーチが推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "18施設",
+        "scoreImpact": -1
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "全国的に標準的な財政水準です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.56",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-9.06%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

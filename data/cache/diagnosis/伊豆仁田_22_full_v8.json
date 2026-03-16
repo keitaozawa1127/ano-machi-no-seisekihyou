@@ -1,0 +1,288 @@
+{
+  "mlit": {
+    "stationName": "伊豆仁田",
+    "score": 22,
+    "marketPrice": 27000000,
+    "trend": "DOWN",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 5,
+        "lastPrice": 32000000
+      },
+      {
+        "name": "2023年",
+        "count": 8,
+        "lastPrice": 28500000
+      },
+      {
+        "name": "2024年",
+        "count": 10,
+        "lastPrice": 26500000
+      },
+      {
+        "name": "2025年",
+        "count": 2,
+        "lastPrice": 21000000
+      }
+    ],
+    "tx5y": 25,
+    "yoy": -20.8,
+    "up2y": -26.3,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 32000000,
+        "txCount": 5
+      },
+      {
+        "year": 2023,
+        "price": 28500000,
+        "txCount": 8
+      },
+      {
+        "year": 2024,
+        "price": 26500000,
+        "txCount": 10
+      },
+      {
+        "year": 2025,
+        "price": 21000000,
+        "txCount": 2
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "伊豆箱根鉄道駿豆線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 74,
+    "hazardRisk": {
+      "flood": {
+        "level": 3,
+        "description": "想定最大規模の浸水深が0.5m〜3.0m（1階浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 36794,
+        "ageStructure": {
+          "0-14": 4287,
+          "15-64": 20429,
+          "65+": 12078
+        }
+      },
+      {
+        "year": 2025,
+        "total": 35525,
+        "ageStructure": {
+          "0-14": 3804,
+          "15-64": 19605,
+          "65+": 12116
+        }
+      },
+      {
+        "year": 2030,
+        "total": 34017,
+        "ageStructure": {
+          "0-14": 3336,
+          "15-64": 18628,
+          "65+": 12053
+        }
+      },
+      {
+        "year": 2035,
+        "total": 32362,
+        "ageStructure": {
+          "0-14": 3054,
+          "15-64": 17159,
+          "65+": 12149
+        }
+      },
+      {
+        "year": 2040,
+        "total": 30665,
+        "ageStructure": {
+          "0-14": 2909,
+          "15-64": 15303,
+          "65+": 12453
+        }
+      },
+      {
+        "year": 2045,
+        "total": 28979,
+        "ageStructure": {
+          "0-14": 2764,
+          "15-64": 13920,
+          "65+": 12295
+        }
+      },
+      {
+        "year": 2050,
+        "total": 27297,
+        "ageStructure": {
+          "0-14": 2546,
+          "15-64": 12869,
+          "65+": 11882
+        }
+      }
+    ],
+    "sourceCity": "函南町",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が2.11であり、地震時に揺れが極めて大きくなりやすい非常に軟弱な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "2.11（非常に弱い）",
+        "scoreImpact": -5
+      },
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で年間25件の人身事故が発生しています。件数が多い場合は自転車や車の通行時に注意が必要です。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故多発地点あり（25件）",
+        "scoreImpact": -3
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は平均的です。 駅周辺の飲食店数は適度(11件)であり、過度な繁華街リスクは低いです。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "標準",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は23.1%とやや高く、供給過多や人口減少の兆しがあるため、不動産の流動性に一定の注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "23.1% (注意水準)",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間は人が流出する閑静な住宅街・ベッドタウンの性質を持っています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ベッドタウン（比率: 80.6%）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -10.8%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -13.2%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積は9.19㎡/人です。都市部としては十分な緑地が確保されています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "9.19㎡/人",
+        "scoreImpact": 1
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "駅周辺の店舗数が限られており、日常の買い物にはやや工夫が必要な場合があります。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "185店舗",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "医療機関の数が比較的少なく、特定の診療科や夜間救急のアクセスについては事前確認が推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "67.9（人口10万人当たり）",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が比較的少なく、保活（保育園探し）には早めの準備とリサーチが推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "5施設",
+        "scoreImpact": -1
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "良好な財政状態を維持しており、安定した行政サービスが期待できます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.79",
+        "scoreImpact": 1
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-9.04%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

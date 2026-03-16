@@ -47,6 +47,9 @@ export type StationMetric = {
 
 const HARDCODED_KEY = "2001ce8821b5494fbd7b8fdb4f974313";
 
+let lastMlitApiCallTime = 0;
+let mlitApiLock = Promise.resolve();
+
 export async function fetchMlitData(year: number, areaCode: string): Promise<Transaction[]> {
     const API_KEY = process.env.MLIT_API_KEY || HARDCODED_KEY;
 
@@ -63,8 +66,18 @@ export async function fetchMlitData(year: number, areaCode: string): Promise<Tra
     const url = `${BASE_URL}?year=${year}&area=${areaCode}`;
     const headers = { "Ocp-Apim-Subscription-Key": API_KEY };
 
+    // グローバルな実行間隔制御（Global Rate Limiter: 1500ms）
+    await (mlitApiLock = mlitApiLock.then(async () => {
+        const now = Date.now();
+        const elapsed = now - lastMlitApiCallTime;
+        if (elapsed < 1500) {
+            await new Promise(resolve => setTimeout(resolve, 1500 - elapsed));
+        }
+        lastMlitApiCallTime = Date.now();
+    }));
+
     try {
-        const res = await fetch(url, { headers, cache: 'no-store' });
+        const res = await fetch(url, { headers, cache: 'force-cache' });
         if (!res.ok) throw new Error(`API Error: ${res.status}`);
         const json = await res.json();
         if (json.status !== "OK") throw new Error(`API Status: ${json.status}`);
@@ -87,7 +100,7 @@ export async function getStationList(prefCode: string) {
 
     try {
         const linesUrl = `https://express.heartrails.com/api/json?method=getLines&prefecture=${encodeURIComponent(pref.name)}`;
-        const linesRes = await fetch(linesUrl, { cache: 'no-store' });
+        const linesRes = await fetch(linesUrl, { cache: 'force-cache' });
         if (!linesRes.ok) throw new Error(`API Error`);
         const linesJson = await linesRes.json();
         if (!linesJson.response || !linesJson.response.line) return [];
@@ -98,7 +111,7 @@ export async function getStationList(prefCode: string) {
         for (const line of lines) {
             const stUrl = `https://express.heartrails.com/api/json?method=getStations&line=${encodeURIComponent(line)}`;
             try {
-                const stRes = await fetch(stUrl, { cache: 'no-store' });
+                const stRes = await fetch(stUrl, { cache: 'force-cache' });
                 if (stRes.ok) {
                     const stJson = await stRes.json();
                     if (stJson.response?.station) allStations.push(...stJson.response.station);
@@ -133,7 +146,7 @@ const STATION_ALIASES: Record<string, string[]> = {
 export async function getStationLines(stationName: string) {
     try {
         const url = `https://express.heartrails.com/api/json?method=getStations&name=${encodeURIComponent(stationName)}`;
-        const res = await fetch(url, { cache: 'no-store' });
+        const res = await fetch(url, { cache: 'force-cache' });
         if (!res.ok) return [];
         const json = await res.json();
         const stations = json.response?.station;
@@ -167,7 +180,7 @@ export async function getStationCoords(stationName: string): Promise<StationCoor
 
     try {
         const url = `https://express.heartrails.com/api/json?method=getStations&name=${encodeURIComponent(stationName)}`;
-        const res = await fetch(url, { cache: 'no-store' });
+        const res = await fetch(url, { cache: 'force-cache' });
         if (!res.ok) return null;
         const json = await res.json();
 
@@ -215,7 +228,7 @@ async function geocodeDistrict(prefecture: string, municipality: string, distric
                 const url = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${encodeURIComponent(prefecture)}&city=${encodeURIComponent(municipality)}`;
 
                 try {
-                    const res = await fetch(url, { cache: 'no-store' });
+                    const res = await fetch(url, { cache: 'force-cache' });
                     if (!res.ok) return null;
                     const json = await res.json();
                     const locations = json.response?.location;
@@ -356,19 +369,18 @@ export async function getStationDiagnosis(stationName: string, prefCode: string)
 
     const targetYearsToTry = [currentYear, currentYear - 1, currentYear - 2, currentYear - 3, currentYear - 4];
 
-    // 1-Pass Parallel Algorithm for Fetching and Filtering
-    const yearPromises = targetYearsToTry.map(async (testYear) => {
+    // 1-Pass Sequential Algorithm for Fetching and Filtering (Wait 1.5s between requests to comply with MLIT API rate limit: 60 requests/min)
+    const results: { y: number; yearTxs: Transaction[] }[] = [];
+    for (const testYear of targetYearsToTry) {
         try {
             const data = await fetchMlitData(testYear, prefCode);
             const coordsMap = stationCoords ? await preloadDistrictCoordinates(data, prefectureName, getDistrictCoords as any) : new Map();
             const yearTxs = filterTransactionsByLocation(data, stationName, stationCoords, RADIUS_KM, coordsMap, matchTargets, requiredCity);
-            return { y: testYear, yearTxs };
+            results.push({ y: testYear, yearTxs });
         } catch (e: any) {
-            return { y: testYear, yearTxs: [] };
+            results.push({ y: testYear, yearTxs: [] });
         }
-    });
-
-    const results = await Promise.all(yearPromises);
+    }
 
     // Filter valid results and find latest
     const validResults = results.filter(r => r.yearTxs.length > 0);
@@ -470,7 +482,31 @@ export async function getFullDiagnosisData(stationName: string, prefCode: string
     const cachePath = path.join(CACHE_DIAG_DIR, cacheKey);
 
     if (fs.existsSync(cachePath)) {
-        try { return JSON.parse(fs.readFileSync(cachePath, 'utf-8')) as FullDiagnosisData; } catch (e: any) { }
+        try {
+            const cachedData = JSON.parse(fs.readFileSync(cachePath, 'utf-8'));
+            // Structure validation: If top-level keys like 'mlit' or 'ext' are missing, 
+            // but the data looks like a station object, we try to wrap it or return a default.
+            if (cachedData && !cachedData.mlit && cachedData.ext) {
+                // This is a flattened/partial record. Give it a skeleton mlit to avoid crashes.
+                cachedData.mlit = {
+                    stationName: cachedData.station_name || stationName,
+                    score: 0,
+                    marketPrice: 0,
+                    trend: "FLAT",
+                    chartData: [],
+                    tx5y: 0,
+                    yoy: 0,
+                    up2y: 0,
+                    trendData: [],
+                    dataYear: new Date().getFullYear()
+                };
+            }
+            if (cachedData && cachedData.mlit) {
+                return cachedData as FullDiagnosisData;
+            }
+        } catch (e: any) {
+            console.warn(`[CACHE] Failed to parse cache for ${stationName}:`, e.message);
+        }
     }
 
     const coords = await getStationCoords(stationName);

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ComparisonView from "./ComparisonView";
 import SearchForm from "./SearchForm";
@@ -25,15 +26,7 @@ type DiagnoseResponse = {
     tx5y?: number;
     trend?: "UP" | "DOWN" | "FLAT";
     dataYear?: string | number;
-    metadata?: {
-        sources: {
-            realEstate: { name: string; year: number };
-            population: { name: string; version: string; baseYear: number; targetYear: number };
-            algorithm: { name: string; year: number };
-            hazard?: { name: string; year: number };
-            redevelopment?: { name: string; version: string };
-        }
-    };
+    sources: any; // Allow any to match the dynamic PrimarySource structure used in DiagnosisResult
     extendedMetrics?: {
         futurePopulationRate: number;
         hazardRisk: {
@@ -47,6 +40,7 @@ type DiagnoseResponse = {
 type Props = {};
 
 export default function HomeClient({ }: Props) {
+    const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [currentResult, setCurrentResult] = useState<DiagnoseResponse | null>(null);
     const [stockedResults, setStockedResults] = useState<DiagnoseResponse[]>([]);
@@ -87,10 +81,17 @@ export default function HomeClient({ }: Props) {
         setComparisonTarget(null); // Reset comparison view
         setCurrentResult(null);
 
-        // We do not pass year, letting backend default to latest (2024)
-        const year: number | null = null;
-
         try {
+            // 単独検索の場合（SEO/AIO最適化のため /station/[id] へ実際のページ遷移を行う）
+            if (!station2 || !pref2) {
+                // ページ遷移が完了するまでloading状態は保持される（遷移先で解除）
+                router.push(`/station/${encodeURIComponent(station1)}`);
+                return;
+            }
+
+            // 比較検索の場合（SPA描画を維持）
+            const year: number | null = null;
+
             // Fetch 1
             const cacheKey1 = `${station1}_${pref1}`;
             let p1: Promise<any>;
@@ -111,35 +112,39 @@ export default function HomeClient({ }: Props) {
                 diagnosisCache.delete(cacheKey1); // Clear failed cache
                 throw new Error(d1.error);
             }
-            setCurrentResult(d1 as DiagnoseResponse);
 
-            // Handle legacy 2-station search if user uses older form mode (though we might deprecate it for stock-compare)
-            if (station2 && pref2) {
-                const cacheKey2 = `${station2}_${pref2}`;
-                let p2: Promise<any>;
+            // Fetch 2
+            const cacheKey2 = `${station2}_${pref2}`;
+            let p2: Promise<any>;
 
-                if (diagnosisCache.has(cacheKey2)) {
-                    p2 = diagnosisCache.get(cacheKey2)!;
-                } else {
-                    p2 = fetch("/api/diagnose", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ stationName: station2, prefCode: pref2, year }),
-                    }).then(r => r.json());
-                    diagnosisCache.set(cacheKey2, p2);
-                }
-                const d2 = await p2;
-                if (d2 && d2.error) {
-                    diagnosisCache.delete(cacheKey2);
-                    throw new Error(d2.error);
-                }
-                setComparisonTarget([d1, d2]);
+            if (diagnosisCache.has(cacheKey2)) {
+                p2 = diagnosisCache.get(cacheKey2)!;
+            } else {
+                p2 = fetch("/api/diagnose", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ stationName: station2, prefCode: pref2, year }),
+                }).then(r => r.json());
+                diagnosisCache.set(cacheKey2, p2);
             }
+
+            const d2 = await p2;
+            if (d2 && d2.error) {
+                diagnosisCache.delete(cacheKey2);
+                throw new Error(d2.error);
+            }
+
+            setComparisonTarget([d1, d2]);
 
         } catch (e) {
             setErr(e instanceof Error ? e.message : String(e));
+            setLoading(false); // エラー時のみローディングを解除する
         } finally {
-            setLoading(false);
+            // NOTE: 単独検索（router.push）の場合は画面遷移中もローディングUIを出し続けるため
+            // 比較検索の正常終了時のみローディングを解除
+            if (station2 && pref2 && !err) {
+                setLoading(false);
+            }
         }
     }
 

@@ -1,0 +1,267 @@
+{
+  "mlit": {
+    "stationName": "新山口",
+    "score": 0,
+    "marketPrice": 900000,
+    "trend": "FLAT",
+    "chartData": [
+      {
+        "name": "2025年",
+        "count": 1,
+        "lastPrice": 900000
+      }
+    ],
+    "tx5y": 1,
+    "yoy": 0,
+    "up2y": 0,
+    "trendData": [
+      {
+        "year": 2025,
+        "price": 900000,
+        "txCount": 1
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR宇部線"
+    },
+    {
+      "name": "JR山口線"
+    },
+    {
+      "name": "JR山陽本線"
+    },
+    {
+      "name": "山陽新幹線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 60,
+    "hazardRisk": {
+      "flood": {
+        "level": 3,
+        "description": "想定最大規模の浸水深が0.5m〜3.0m（1階浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 28989,
+        "ageStructure": {
+          "0-14": 3430,
+          "15-64": 15128,
+          "65+": 10431
+        }
+      },
+      {
+        "year": 2025,
+        "total": 26646,
+        "ageStructure": {
+          "0-14": 2971,
+          "15-64": 13395,
+          "65+": 10280
+        }
+      },
+      {
+        "year": 2030,
+        "total": 24733,
+        "ageStructure": {
+          "0-14": 2502,
+          "15-64": 12257,
+          "65+": 9974
+        }
+      },
+      {
+        "year": 2035,
+        "total": 22849,
+        "ageStructure": {
+          "0-14": 2070,
+          "15-64": 11155,
+          "65+": 9624
+        }
+      },
+      {
+        "year": 2040,
+        "total": 20990,
+        "ageStructure": {
+          "0-14": 1863,
+          "15-64": 9649,
+          "65+": 9478
+        }
+      },
+      {
+        "year": 2045,
+        "total": 19187,
+        "ageStructure": {
+          "0-14": 1682,
+          "15-64": 8381,
+          "65+": 9124
+        }
+      },
+      {
+        "year": 2050,
+        "total": 17415,
+        "ageStructure": {
+          "0-14": 1508,
+          "15-64": 7318,
+          "65+": 8589
+        }
+      }
+    ],
+    "sourceCity": "朝来市",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間4件であり、標準的な交通リスクのエリアです。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "平均的（4件）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.75であり、地震時に揺れが大きくなりやすい軟弱地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.75（弱い）",
+        "scoreImpact": -3
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪件数はやや多めであり、防犯への意識が必要です。 駅周辺の飲食店数は適度(19件)であり、過度な繁華街リスクは低いです。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "注意",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は17.0%とやや高く、供給過多や人口減少の兆しがあるため、不動産の流動性に一定の注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "17.0% (注意水準)",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間に人が集まる活発なエリアであり、不動産の流動性や資産価値が維持されやすい傾向にあります。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ビジネス・商業集積地（比率: 101.4%）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -13.0%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -13.0%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積が15.65㎡/人と非常に広く、自然豊かな環境が整っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "15.65㎡/人",
+        "scoreImpact": 2
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "大型商業施設やスーパーが充実しており、日用品から休日のショッピングまで買い物の利便性が非常に高い環境です。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "1,364店舗",
+        "scoreImpact": 2
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "標準的な数の医療機関が点在しており、日常の医療アクセスには困りません。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "93.3（人口10万人当たり）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "標準的な保育環境が整備されています。入園状況については自治体の最新情報をご確認ください。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "37施設",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "全国的に標準的な財政水準です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.63",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-7.47%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

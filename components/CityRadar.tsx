@@ -147,6 +147,25 @@ export default function CityRadar({
                     );
                 })}
             </svg>
+
+            {/* AIO向け不可視テーブル（SEO/アクセシビリティ対応） */}
+            <table className="sr-only">
+                <caption>都市スコア内訳</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">評価項目</th>
+                        <th scope="col">スコア</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {labels.map((label, i) => (
+                        <tr key={i}>
+                            <td>{label}</td>
+                            <td>{scores[i]}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 }

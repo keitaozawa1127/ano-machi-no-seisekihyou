@@ -1,0 +1,1 @@
+const https = require('https'); const url = 'https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001?year=2024&area=13'; const options = { headers: { 'Ocp-Apim-Subscription-Key': '2001ce8821b5494fbd7b8fdb4f974313' } }; https.get(url, options, (res) => { console.log('Status Code:', res.statusCode); }).on('error', e => console.error(e));

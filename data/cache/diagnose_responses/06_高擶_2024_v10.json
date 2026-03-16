@@ -1,0 +1,209 @@
+{
+  "ok": true,
+  "verdict": "risky",
+  "headline": "取引件数が少なく、指標のブレが大きい可能性があります（慎重に）",
+  "reasons": [
+    {
+      "label": "駅乗降客数推移",
+      "value": "安定エリア（データ欠損・仮評価）"
+    },
+    {
+      "label": "直近5年の取引件数",
+      "value": "4 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "900 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "-55.0%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "駅乗降客数推移",
+      "value": "該当エリアの詳細データが取得できないため、標準水準として仮評価しています。"
+    },
+    {
+      "label": "将来人口（2050推計）",
+      "value": "推計人口指数が 79 と低く、過疎化による流動性低下のリスクがあります。"
+    },
+    {
+      "label": "取引件数（重要）",
+      "value": "直近5年の取引件数が10件未満のため、平均値や上昇率が少数の取引に強く影響されます。価格水準の判断以前に、指標自体の信頼性が低い可能性を前提にしてください。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇は強くありません。将来の上昇を前提にした判断は避け、住み替え・保有期間の前提でリスクを見てください。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇は急ではありません。ただし横ばい＝安全の保証ではなく、金利や需給で変動し得ます。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "高擶",
+    "year": 2024,
+    "tx5y": 4,
+    "yoy": -55,
+    "up2y": 0,
+    "prevYear": null,
+    "score": 40
+  },
+  "trendData": [
+    {
+      "year": 2022,
+      "price": 2670000,
+      "txCount": 2
+    },
+    {
+      "year": 2024,
+      "price": 20000000,
+      "txCount": 1
+    },
+    {
+      "year": 2025,
+      "price": 9000000,
+      "txCount": 1
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 79,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "データなし"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "データなし"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 62140,
+        "ageStructure": {
+          "0-14": 8062,
+          "15-64": 35277,
+          "65+": 18801
+        }
+      },
+      {
+        "year": 2025,
+        "total": 60430,
+        "ageStructure": {
+          "0-14": 7325,
+          "15-64": 33845,
+          "65+": 19260
+        }
+      },
+      {
+        "year": 2030,
+        "total": 58466,
+        "ageStructure": {
+          "0-14": 6633,
+          "15-64": 32428,
+          "65+": 19405
+        }
+      },
+      {
+        "year": 2035,
+        "total": 56346,
+        "ageStructure": {
+          "0-14": 6008,
+          "15-64": 31021,
+          "65+": 19317
+        }
+      },
+      {
+        "year": 2040,
+        "total": 54048,
+        "ageStructure": {
+          "0-14": 5692,
+          "15-64": 28772,
+          "65+": 19584
+        }
+      },
+      {
+        "year": 2045,
+        "total": 51602,
+        "ageStructure": {
+          "0-14": 5385,
+          "15-64": 26479,
+          "65+": 19738
+        }
+      },
+      {
+        "year": 2050,
+        "total": 49037,
+        "ageStructure": {
+          "0-14": 5007,
+          "15-64": 24424,
+          "65+": 19606
+        }
+      }
+    ],
+    "sourceCity": "天童市",
+    "dynamicAdditions": [
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "該当エリアの詳細データが取得できないため、標準水準として仮評価しています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "安定エリア（データ欠損・仮評価）",
+        "scoreImpact": 0
+      }
+    ]
+  },
+  "totalScore": 40,
+  "metrics": {
+    "asset": 12,
+    "safety": 100,
+    "future": 25,
+    "convenience": 50,
+    "liquidity": 1
+  },
+  "lines": [],
+  "redevelopmentProjects": [],
+  "marketPrice": 7000000,
+  "tx5y": 4,
+  "trend": "UP",
+  "yoy": -55,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "publisher": "国土交通省",
+        "document_name": "不動産取引価格情報",
+        "year": 2025
+      },
+      "population": {
+        "publisher": "国立社会保障・人口問題研究所",
+        "document_name": "日本の地域別将来推計人口",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "publisher": "自社",
+        "document_name": "独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "publisher": "国土交通省 / 国土地理院",
+        "document_name": "ハザードマップポータルサイト",
+        "year": 2026
+      },
+      "redevelopment": {
+        "publisher": "各自治体・開発事業者",
+        "document_name": "公開情報",
+        "version": "2026年2月時点"
+      }
+    }
+  }
+}

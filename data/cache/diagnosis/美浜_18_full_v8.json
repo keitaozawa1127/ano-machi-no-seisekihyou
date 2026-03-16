@@ -1,0 +1,288 @@
+{
+  "mlit": {
+    "stationName": "美浜",
+    "score": 3,
+    "marketPrice": 3700000,
+    "trend": "UP",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 10,
+        "lastPrice": 4450000
+      },
+      {
+        "name": "2023年",
+        "count": 2,
+        "lastPrice": 2100000
+      },
+      {
+        "name": "2024年",
+        "count": 4,
+        "lastPrice": 3000000
+      },
+      {
+        "name": "2025年",
+        "count": 6,
+        "lastPrice": 7750000
+      }
+    ],
+    "tx5y": 22,
+    "yoy": 158.3,
+    "up2y": 269,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 4450000,
+        "txCount": 10
+      },
+      {
+        "year": 2023,
+        "price": 2100000,
+        "txCount": 2
+      },
+      {
+        "year": 2024,
+        "price": 3000000,
+        "txCount": 4
+      },
+      {
+        "year": 2025,
+        "price": 7750000,
+        "txCount": 6
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR小浜線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 63,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 9179,
+        "ageStructure": {
+          "0-14": 997,
+          "15-64": 4858,
+          "65+": 3324
+        }
+      },
+      {
+        "year": 2025,
+        "total": 8638,
+        "ageStructure": {
+          "0-14": 897,
+          "15-64": 4438,
+          "65+": 3303
+        }
+      },
+      {
+        "year": 2030,
+        "total": 8085,
+        "ageStructure": {
+          "0-14": 818,
+          "15-64": 4056,
+          "65+": 3211
+        }
+      },
+      {
+        "year": 2035,
+        "total": 7507,
+        "ageStructure": {
+          "0-14": 739,
+          "15-64": 3783,
+          "65+": 2985
+        }
+      },
+      {
+        "year": 2040,
+        "total": 6905,
+        "ageStructure": {
+          "0-14": 671,
+          "15-64": 3430,
+          "65+": 2804
+        }
+      },
+      {
+        "year": 2045,
+        "total": 6344,
+        "ageStructure": {
+          "0-14": 601,
+          "15-64": 3087,
+          "65+": 2656
+        }
+      },
+      {
+        "year": 2050,
+        "total": 5803,
+        "ageStructure": {
+          "0-14": 532,
+          "15-64": 2838,
+          "65+": 2433
+        }
+      }
+    ],
+    "sourceCity": "美浜町",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間3件であり、標準的な交通リスクのエリアです。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "平均的（3件）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.37であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.37（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は低く、治安の面で比較的安心できる地域です。 駅周辺の飲食店数は適度(2件)であり、過度な繁華街リスクは低いです。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "評価高",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの詳細データが取得できないため、全国平均水準（13.8%）として仮評価しています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "13.8% (標準)",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間に人が集まる活発なエリアであり、不動産の流動性や資産価値が維持されやすい傾向にあります。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ビジネス・商業集積地（比率: 106.7%）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -34.9%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -23.0%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積が16.15㎡/人と非常に広く、自然豊かな環境が整っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "16.15㎡/人",
+        "scoreImpact": 2
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "小売店舗が非常に少なく、日常の買い物には隣接自治体への移動や車が必要な可能性が高いエリアです。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "53店舗",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "標準的な数の医療機関が点在しており、日常の医療アクセスには困りません。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "108.9（人口10万人当たり）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が非常に限られています。自治体の子育て支援制度や、隣接自治体を含めた預け先の確保について事前の確認が必要です。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "3施設",
+        "scoreImpact": -2
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "良好な財政状態を維持しており、安定した行政サービスが期待できます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.80",
+        "scoreImpact": 1
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-6.65%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

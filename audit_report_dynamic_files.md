@@ -1,0 +1,1023 @@
+# Vercel 動的処理 原因ファイル（完全ソースコード）
+
+サイト停止の原因となっている「Vercelでの動的サーバー処理（Fluid Active CPUの超過）」を引き起こしているファイル群です。
+これらのファイルには、`force-dynamic`によるSSRの強制、`cache: "no-store"`による静的キャッシュのバイパス、`searchParams`や`fs`モジュールのリクエスト時評価など、SSG（Static Site Generation）を阻害する記述が含まれています。
+
+## app/station/[id]/page.tsx
+
+```typescript
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import fs from 'fs/promises';
+import path from 'path';
+import DiagnosisResult from '../../../components/DiagnosisResult';
+import StationFAQ from '../../../components/StationFAQ';
+import Link from 'next/link';
+import { diagnoseAsync } from '../../../lib/diagnoseLogic';
+
+export const dynamic = 'force-dynamic';
+
+type Props = {
+    params: { id: string };
+};
+
+// Helper function to find prefCode from stations.json via fetch for serverless compatibility
+async function getStationPrefCode(decodedName: string): Promise<string | null> {
+    try {
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://anomachi.jp';
+        const fileUrl = `${baseUrl}/data/stations.json`;
+
+        const res = await fetch(fileUrl, { cache: 'no-store' });
+        if (!res.ok) {
+            throw new Error(`Failed to fetch stations.json: ${res.status}`);
+        }
+
+        const stations = await res.json();
+
+        // stations.json keys are usually in format "駅名_都道府県", e.g. "新宿_東京"
+        // Also station objects have "name" and "prefCode" properties.
+        for (const key in stations) {
+            const station = stations[key];
+            if (station.name === decodedName) {
+                return String(station.prefCode).padStart(2, '0');
+            }
+        }
+        return null;
+    } catch (e) {
+        console.error("Error loading stations.json:", e);
+        return null; // Fallback handled by diagnoseAsync (defaults to "13")
+    }
+}
+
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const resolvedParams = await params;
+    const decodedName = decodeURIComponent(resolvedParams.id);
+    const prefCode = await getStationPrefCode(decodedName) || "13"; // fallback to Tokyo
+
+    const result = await diagnoseAsync(decodedName, prefCode, 2024);
+
+    if (!result.ok) {
+        return {
+            title: `${decodedName}駅の診断結果が見つかりません | あの街の成績表`,
+            description: `あの街の成績表で${decodedName}駅周辺の不動産・街の資産性をチェックしましょう。`,
+        };
+    }
+
+    const { totalScore, verdict, headline, metrics } = result;
+    const verdictLabel = verdict === 'safe' ? '推奨' : verdict === 'caution' ? '注意' : '要確認';
+
+    let breakdown = "";
+    if (metrics) {
+        breakdown = `資産性${metrics.asset} 安全性${metrics.safety} 将来性${metrics.future} 利便性${metrics.convenience} 流動性${metrics.liquidity}`;
+    }
+
+    const ogImageUrl = `https://anomachi.jp/api/og?station=${encodeURIComponent(decodedName)}&score=${totalScore}&verdict=${encodeURIComponent(verdictLabel)}`;
+
+    return {
+        title: `【あの街の成績表】${decodedName}駅の住みやすさ・資産性診断（総合スコア: ${totalScore}点 / ${verdictLabel}）`,
+        description: `${decodedName}駅の不動産価値と街の将来性を独自アルゴリズムで徹底分析。「${headline}」${breakdown}。広告やバイアスを排除した純粋な街の評価データを確認できます。`,
+        openGraph: {
+            title: `${decodedName}駅の資産性診断 | あの街の成績表`,
+            description: `${decodedName}駅の不動産価値と街の将来性を徹底分析。「${headline}」`,
+            url: `https://anomachi.jp/station/${encodeURIComponent(decodedName)}`,
+            type: 'article',
+            images: [
+                {
+                    url: ogImageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: `${decodedName}駅の診断結果: スコア ${totalScore} - ${verdictLabel}`,
+                }
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${decodedName}駅の資産性診断 | あの街の成績表`,
+            description: `${decodedName}駅の不動産価値と街の将来性を徹底分析。「${headline}」`,
+            images: [ogImageUrl],
+        }
+    };
+}
+
+
+export default async function StationPage({ params }: Props) {
+    const resolvedParams = await params;
+    const decodedName = decodeURIComponent(resolvedParams.id);
+    const prefCode = await getStationPrefCode(decodedName) || "13"; // fallback to Tokyo
+
+    const result = await diagnoseAsync(decodedName, prefCode, 2024);
+
+    if (!result.ok) {
+        return (
+            <main className="min-h-screen w-full flex flex-col items-center pt-20 px-6 bg-[var(--bg-primary)] overflow-x-hidden">
+                <header className="w-full max-w-4xl text-center mb-16 min-w-0 px-2">
+                    <h1 className="hero-title text-4xl md:text-5xl font-medium tracking-widest my-[60px] text-[var(--brand-main)] font-serif">
+                        <Link href="/" className="hover:opacity-80 transition-opacity duration-300">
+                            あの街の成績表
+                        </Link>
+                    </h1>
+                </header>
+                <div className="card mb-8 text-center w-full max-w-2xl min-w-0" style={{ borderColor: 'hsl(var(--status-risky))', color: 'hsl(var(--status-risky))', backgroundColor: 'hsl(var(--status-risky)/0.1)' }}>
+                    <p className="font-bold">⚠️ {result.error || `${decodedName}駅のデータが見つかりませんでした。`}</p>
+                    <div className="mt-8">
+                        <Link href="/" className="text-[var(--brand-main)] underline hover:opacity-80 transition-opacity">
+                            トップページに戻る
+                        </Link>
+                    </div>
+                </div>
+            </main>
+        );
+    }
+
+    const { totalScore, verdict, headline } = result;
+    const verdictLabel = verdict === 'safe' ? '推奨' : verdict === 'caution' ? '注意' : '要確認';
+    const pageUrl = `https://anomachi.jp/station/${encodeURIComponent(decodedName)}`;
+
+    // AIO最適化構造化データ（JSON-LD）の作成
+    const jsonLd: any = {
+        "@context": "https://schema.org",
+        "@type": "ItemPage",
+        "name": `${decodedName}駅の資産性診断 | あの街の成績表`,
+        "description": `${decodedName}駅の不動産価値と街の将来性を徹底分析。「${headline}」`,
+        "url": pageUrl,
+        "mainEntity": {
+            "@type": "Place",
+            "name": `${decodedName}駅`,
+            "description": "あの街の成績表による独自資産性評価",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": totalScore,
+                "bestRating": 100,
+                "worstRating": 0,
+                "ratingCount": 1
+            },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "総合スコア",
+                    "value": totalScore,
+                    "unitText": "点"
+                }
+            ]
+        }
+    };
+
+    // metrics（各スコア）が存在する場合に PropertyValue として追加
+    if (result.metrics) {
+        jsonLd.mainEntity.additionalProperty.push(
+            { "@type": "PropertyValue", "name": "資産性", "value": result.metrics.asset, "unitText": "点" },
+            { "@type": "PropertyValue", "name": "安全性", "value": result.metrics.safety, "unitText": "点" },
+            { "@type": "PropertyValue", "name": "将来性", "value": result.metrics.future, "unitText": "点" },
+            { "@type": "PropertyValue", "name": "利便性", "value": result.metrics.convenience, "unitText": "点" },
+            { "@type": "PropertyValue", "name": "流動性", "value": result.metrics.liquidity, "unitText": "点" }
+        );
+    }
+
+    // 各種指標が存在する場合に追加
+    if (result.marketPrice) {
+        jsonLd.mainEntity.additionalProperty.push({
+            "@type": "PropertyValue",
+            "name": "市場価格相場(70㎡換算)",
+            "value": Math.floor(result.marketPrice / 10000),
+            "unitText": "万円"
+        });
+    }
+    if (typeof result.tx5y === 'number') {
+        jsonLd.mainEntity.additionalProperty.push({
+            "@type": "PropertyValue",
+            "name": "5年間取引件数",
+            "value": result.tx5y,
+            "unitText": "件"
+        });
+    }
+    if (typeof result.yoy === 'number') {
+        jsonLd.mainEntity.additionalProperty.push({
+            "@type": "PropertyValue",
+            "name": "前年比変動率",
+            "value": result.yoy,
+            "unitText": "%"
+        });
+    }
+
+    // 出典（citation / PrimarySource対応）の追加
+    if (result.metadata?.sources) {
+        const citations = [];
+        const { realEstate, population, algorithm, hazard, redevelopment } = result.metadata.sources;
+
+        if (realEstate) {
+            citations.push(`${realEstate.publisher || ""} ${realEstate.document_name || ""}`.trim());
+        }
+        if (population) {
+            citations.push(`${population.publisher || ""} ${population.document_name || ""} ${population.version || ""}`.trim());
+        }
+        if (hazard) {
+            citations.push(`${hazard.publisher || ""} ${hazard.document_name || ""}`.trim());
+        }
+        if (algorithm) {
+            citations.push(`${algorithm.publisher || ""} ${algorithm.document_name || ""}`.trim());
+        }
+        if (redevelopment) {
+            citations.push(`${redevelopment.publisher || ""} ${redevelopment.document_name || ""} ${redevelopment.version || ""}`.trim());
+        }
+
+        jsonLd.mainEntity.citation = citations.filter(Boolean);
+    }
+
+    // 再開発情報が存在する場合に ItemList として追加
+    if (result.redevelopmentProjects && result.redevelopmentProjects.length > 0) {
+        jsonLd.mainEntity.subjectOf = {
+            "@type": "ItemList",
+            "name": `${decodedName}駅周辺の再開発プロジェクト`,
+            "itemListElement": result.redevelopmentProjects.slice(0, 5).map((project: any, index: number) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "item": {
+                    "@type": "Thing",
+                    "name": project.project_name,
+                    "description": project.schedule ? `予定完了時期: ${project.schedule}` : project.description
+                }
+            }))
+        };
+    }
+
+    // クライアントコンポーネント用ペイロード（シリアライズ可能な必要最小限のデータに絞ることで9MBの巨大ペイロードを削減）
+    const clientData = {
+        ok: result.ok,
+        verdict: result.verdict,
+        headline: result.headline,
+        reasons: result.reasons,
+        rules: result.rules,
+        note: result.note,
+        debug: {
+            score: result.debug?.score,
+            stationName: result.debug?.stationName
+        },
+        trendData: result.trendData,
+        marketPrice: result.marketPrice,
+        yoy: result.yoy,
+        tx5y: result.tx5y,
+        trend: result.trend,
+        dataYear: result.dataYear,
+        lines: result.lines?.map((l: any) => ({ name: l.name, color: l.color, passengers: l.passengers })),
+        name: result.debug?.stationName,
+        extendedMetrics: result.extendedMetrics ? {
+            futurePopulationRate: result.extendedMetrics.futurePopulationRate,
+            populationProjection: result.extendedMetrics.populationProjection?.map((p: any) => ({
+                year: p.year,
+                total: p.total,
+                ageStructure: p.ageStructure
+            })),
+            sourceCity: result.extendedMetrics.sourceCity,
+            hazardRisk: {
+                flood: {
+                    level: result.extendedMetrics.hazardRisk.flood.level,
+                    description: result.extendedMetrics.hazardRisk.flood.description
+                },
+                landslide: {
+                    level: result.extendedMetrics.hazardRisk.landslide.level,
+                    description: result.extendedMetrics.hazardRisk.landslide.description
+                }
+            },
+            dynamicAdditions: result.extendedMetrics.dynamicAdditions?.map((a: any) => ({
+                category: a.category,
+                label: a.label,
+                value: a.value,
+                scoreImpact: a.scoreImpact,
+                ruleDescription: a.ruleDescription
+            }))
+        } : undefined,
+        totalScore: result.totalScore,
+        metrics: result.metrics,
+        redevelopmentProjects: result.redevelopmentProjects?.slice(0, 15).map((p: any) => ({
+            project_name: p.project_name,
+            category: p.category,
+            schedule: p.schedule,
+            description: p.description,
+            source_url: p.source_url
+        })),
+        metadata: {
+            ...result.metadata,
+            sources: {
+                ...result.metadata?.sources,
+                realEstate: {
+                    ...result.metadata?.sources.realEstate,
+                    year: result.metadata?.sources.realEstate?.year || new Date().getFullYear(),
+                }
+            }
+        } as any
+    };
+
+    return (
+        <main className="min-h-screen w-full flex flex-col items-center pt-10 px-6 bg-[var(--bg-primary)] overflow-x-hidden">
+            {/* 構造化データ（Google検索リッチリザルト用） */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+
+            {/* Header with back link */}
+            <div className="w-[1000px] max-w-full mb-6">
+                <Link href="/" className="inline-flex items-center text-sm font-bold text-[var(--brand-main)] hover:opacity-70 transition-opacity px-2">
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    検索に戻る
+                </Link>
+            </div>
+
+            {/* Northern European Minimalist Premium styling wrapper */}
+            <div className="w-full flex justify-center min-w-0 animate-in slide-in-from-bottom-5 duration-500">
+                <DiagnosisResult data={clientData} />
+            </div>
+
+            {/* AIO FAQ Section */}
+            <div className="w-full max-w-[1000px] flex justify-center min-w-0 animate-in slide-in-from-bottom-5 duration-700 delay-150 px-2 md:px-0">
+                <StationFAQ data={clientData} />
+            </div>
+
+            {/* Share Section */}
+            <div className="w-full max-w-2xl mt-12 mb-24 flex justify-center animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
+                <a
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://anomachi.jp/station/${encodeURIComponent(decodedName)}`)}&text=${encodeURIComponent(`あの街の成績表で「${decodedName}駅」の診断結果を確認しました。\n総合スコア: ${totalScore}点 (${verdictLabel})\n`)}&hashtags=あの街の成績表,街選び,不動産`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex flex-col items-center justify-center space-y-2 hover:opacity-70 transition-opacity"
+                >
+                    <div className="w-14 h-14 bg-white/70 rounded-full flex items-center justify-center border border-[var(--border-main)]/50 shadow-sm transition-transform group-hover:-translate-y-1">
+                        <svg className="w-6 h-6 text-[#1DA1F2]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.95H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </div>
+                    <span className="text-xs tracking-widest text-[var(--text-muted)] font-medium">結果をシェア</span>
+                </a>
+            </div>
+        </main>
+    );
+}
+
+```
+
+## app/api/diagnose/route.ts
+
+```typescript
+import { NextResponse } from "next/server";
+import { diagnoseAsync, DiagnoseNgResponse } from "../../../lib/diagnoseLogic";
+
+// Force Turbopack invalidate
+export const dynamic = 'force-dynamic';
+
+// Input Parser
+async function parseInput(req: Request): Promise<{ stationName: string; prefCode: string; year: number | null }> {
+    try {
+        const ct = req.headers.get("content-type") ?? "";
+        if (ct.includes("application/json")) {
+            const body = (await req.json()) as { stationName?: unknown; prefCode?: unknown; year?: unknown };
+            const stationName = typeof body.stationName === "string" ? body.stationName : "";
+            const prefCode = typeof body.prefCode === "string" ? body.prefCode : "13";
+            const year = typeof body.year === "number" ? body.year : null;
+            return { stationName, prefCode, year };
+        }
+    } catch { /* ignore */ }
+
+    // Fallback to query params
+    const url = new URL(req.url);
+    return {
+        stationName: url.searchParams.get("stationName") ?? "",
+        prefCode: url.searchParams.get("prefCode") ?? "13",
+        year: Number(url.searchParams.get("year")) || null
+    };
+}
+
+export async function GET(req: Request) {
+    try {
+        const { stationName, prefCode, year } = await parseInput(req);
+        const y = year ?? 2024;
+
+        const result = await diagnoseAsync(stationName, prefCode, y);
+        const status = result.ok ? 200 : 400;
+        return NextResponse.json(result, { status });
+    } catch (e) {
+        console.error("[/api/diagnose GET] Unexpected error:", e);
+        return NextResponse.json(
+            { ok: false, error: "サーバー側でエラーが発生しました" } satisfies DiagnoseNgResponse,
+            { status: 500 }
+        );
+    }
+}
+
+export async function POST(req: Request) {
+    try {
+        const { stationName, prefCode, year } = await parseInput(req);
+        const y = year ?? 2024;
+
+        const result = await diagnoseAsync(stationName, prefCode, y);
+        const status = result.ok ? 200 : 400;
+        return NextResponse.json(result, { status });
+    } catch (e) {
+        console.error("[/api/diagnose POST] Unexpected error:", e);
+        return NextResponse.json(
+            { ok: false, error: "サーバー側でエラーが発生しました" } satisfies DiagnoseNgResponse,
+            { status: 500 }
+        );
+    }
+}
+
+// Trigger rebuild
+
+```
+
+## app/api/stations/route.ts
+
+```typescript
+import { NextResponse } from 'next/server';
+import fs from 'fs/promises';
+import path from 'path';
+
+export async function GET(request: Request) {
+    try {
+        const { searchParams } = new URL(request.url);
+        const query = searchParams.get('name') || searchParams.get('q') || '';
+
+        // Read stations data
+        const filePath = path.join(process.cwd(), 'public', 'data', 'stations.json');
+        const fileContent = await fs.readFile(filePath, 'utf-8');
+        const stationsData = JSON.parse(fileContent);
+
+        // Convert stations object to array
+        const stations = Object.values(stationsData);
+
+        // If no query, return all stations (limited)
+        if (!query) {
+            return NextResponse.json({
+                stations: stations.slice(0, 100)
+            });
+        }
+
+        // Filter stations by name (case-insensitive)
+        const normalizedQuery = query.toLowerCase();
+        const filtered = stations.filter((station: any) => {
+            const name = (station.name || '').toLowerCase();
+            const kana = (station.kana || '').toLowerCase();
+            return name.includes(normalizedQuery) || kana.includes(normalizedQuery);
+        });
+
+        // Sort by passenger volume (higher first)
+        filtered.sort((a: any, b: any) => {
+            const volA = a.passengerVolume || 0;
+            const volB = b.passengerVolume || 0;
+            return volB - volA;
+        });
+
+        return NextResponse.json({
+            stations: filtered.slice(0, 50)
+        });
+
+    } catch (error) {
+        console.error('[/api/stations] Error:', error);
+        return NextResponse.json({
+            error: 'Failed to fetch stations',
+            stations: []
+        }, { status: 500 });
+    }
+}
+
+```
+
+## lib/mlitServiceCore.ts
+
+```typescript
+import fs from 'fs';
+import path from 'path';
+import { PREFECTURES } from './constants';
+import { fetchExtendedMetrics, ExtendedMetrics } from './mlitApi';
+import { calcDistance, isInBoundingBox, Coordinates } from './geoUtils';
+import { preloadDistrictCoordinates, filterTransactionsByLocation, StationCoords } from './diagnosisHelpers';
+
+
+const API_KEY = process.env.MLIT_API_KEY;
+const BASE_URL = "https://www.reinfolib.mlit.go.jp/ex-api/external/XIT001";
+const IS_VERCEL = process.env.VERCEL === "1";
+const CACHE_DIR = IS_VERCEL ? '/tmp/cache' : path.join(process.cwd(), 'data', 'cache');
+const CACHE_DIAG_DIR = path.join(CACHE_DIR, 'diagnosis');
+const CACHE_GEO_FILE = path.join(CACHE_DIR, 'station_coords.json');
+const POPULATION_DATA_FILE = path.join(process.cwd(), 'data', 'population_projection.json');
+
+let populationDataCache: any = null;
+
+try {
+    if (!fs.existsSync(CACHE_DIR)) {
+        fs.mkdirSync(CACHE_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(CACHE_DIAG_DIR)) {
+        fs.mkdirSync(CACHE_DIAG_DIR, { recursive: true });
+    }
+} catch (e) {
+    console.warn("[CACHE] Could not create cache directories:", e);
+}
+
+export type Transaction = {
+    Type: string;
+    DistrictName: string;
+    Municipality?: string;
+    TradePrice: string;
+    Period?: string;
+    NearestStation?: string;
+    PriceCategory?: string;
+};
+
+export type StationMetric = {
+    name: string;
+    count: number;
+    lastPrice: number;
+};
+
+
+
+const HARDCODED_KEY = "2001ce8821b5494fbd7b8fdb4f974313";
+
+let lastMlitApiCallTime = 0;
+let mlitApiLock = Promise.resolve();
+
+export async function fetchMlitData(year: number, areaCode: string): Promise<Transaction[]> {
+    const API_KEY = process.env.MLIT_API_KEY || HARDCODED_KEY;
+
+    if (!API_KEY) {
+        return [];
+    }
+
+    const cacheFile = path.join(CACHE_DIR, `${areaCode}_${year}.json`);
+
+    if (fs.existsSync(cacheFile)) {
+        try { return JSON.parse(fs.readFileSync(cacheFile, 'utf-8')); } catch { }
+    }
+
+    const url = `${BASE_URL}?year=${year}&area=${areaCode}`;
+    const headers = { "Ocp-Apim-Subscription-Key": API_KEY };
+
+    // グローバルな実行間隔制御（Global Rate Limiter: 1500ms）
+    await (mlitApiLock = mlitApiLock.then(async () => {
+        const now = Date.now();
+        const elapsed = now - lastMlitApiCallTime;
+        if (elapsed < 1500) {
+            await new Promise(resolve => setTimeout(resolve, 1500 - elapsed));
+        }
+        lastMlitApiCallTime = Date.now();
+    }));
+
+    try {
+        const res = await fetch(url, { headers, cache: 'no-store' });
+        if (!res.ok) throw new Error(`API Error: ${res.status}`);
+        const json = await res.json();
+        if (json.status !== "OK") throw new Error(`API Status: ${json.status}`);
+
+        if (json.data) {
+            fs.writeFileSync(cacheFile, JSON.stringify(json.data));
+            return json.data;
+        } else {
+            fs.writeFileSync(cacheFile, JSON.stringify([]));
+            return [];
+        }
+    } catch (e: any) {
+        throw e;
+    }
+}
+
+export async function getStationList(prefCode: string) {
+    const pref = PREFECTURES.find(p => p.code === prefCode);
+    if (!pref) return [];
+
+    try {
+        const linesUrl = `https://express.heartrails.com/api/json?method=getLines&prefecture=${encodeURIComponent(pref.name)}`;
+        const linesRes = await fetch(linesUrl, { cache: 'no-store' });
+        if (!linesRes.ok) throw new Error(`API Error`);
+        const linesJson = await linesRes.json();
+        if (!linesJson.response || !linesJson.response.line) return [];
+
+        const lines: string[] = linesJson.response.line;
+        const allStations: any[] = [];
+
+        for (const line of lines) {
+            const stUrl = `https://express.heartrails.com/api/json?method=getStations&line=${encodeURIComponent(line)}`;
+            try {
+                const stRes = await fetch(stUrl, { cache: 'no-store' });
+                if (stRes.ok) {
+                    const stJson = await stRes.json();
+                    if (stJson.response?.station) allStations.push(...stJson.response.station);
+                }
+            } catch (e) { }
+        }
+
+        const uniqueNames = Array.from(new Set(allStations.map(s => s.name)));
+        return uniqueNames.map(name => ({ name: name as string, count: 0 }));
+    } catch (e: any) {
+        return [];
+    }
+}
+
+function normalizeStation(s: string): string {
+    if (!s) return "";
+    return s.replace(/[ 　]/g, '').replace(/駅$/, '').trim();
+}
+
+const STATION_ALIASES: Record<string, string[]> = {
+    "梅田": ["大阪", "東梅田", "西梅田", "北新地", "芝田", "茶屋町", "角田町", "大深町"],
+    "川崎": ["京急川崎"],
+    "札幌": ["さっぽろ"],
+    "仙台": ["あおば通"],
+    "博多": ["祇園"],
+    "天王寺": ["大阪阿部野橋"],
+    "武蔵小杉": ["小杉", "小杉町", "新丸子", "中丸子", "市ノ坪", "木月", "下沼部", "上平間"],
+    "渋谷": ["宇田川", "道玄坂", "円山町", "神南", "桜丘町"],
+    "新宿": ["西新宿", "歌舞伎町", "百人町", "北新宿", "新宿"]
+};
+
+export async function getStationLines(stationName: string) {
+    try {
+        const url = `https://express.heartrails.com/api/json?method=getStations&name=${encodeURIComponent(stationName)}`;
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) return [];
+        const json = await res.json();
+        const stations = json.response?.station;
+        if (!stations || !Array.isArray(stations)) return [];
+
+        const lines = new Set<string>();
+        stations.forEach(s => {
+            if (s.line) lines.add(s.line);
+        });
+
+        return Array.from(lines).map(line => ({ name: line }));
+    } catch {
+        return [];
+    }
+}
+
+let coordsCache: Record<string, any> = {};
+
+function loadCoordsCache() {
+    if (Object.keys(coordsCache).length > 0) return;
+    try { if (fs.existsSync(CACHE_GEO_FILE)) coordsCache = JSON.parse(fs.readFileSync(CACHE_GEO_FILE, 'utf-8')); } catch { }
+}
+
+function saveCoordsCache() {
+    try { fs.writeFileSync(CACHE_GEO_FILE, JSON.stringify(coordsCache, null, 2)); } catch { }
+}
+
+export async function getStationCoords(stationName: string): Promise<StationCoords | null> {
+    loadCoordsCache();
+    if (coordsCache[stationName]) return coordsCache[stationName];
+
+    try {
+        const url = `https://express.heartrails.com/api/json?method=getStations&name=${encodeURIComponent(stationName)}`;
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) return null;
+        const json = await res.json();
+
+        const stations = json.response?.station;
+        if (!stations || !Array.isArray(stations) || stations.length === 0) return null;
+
+        const station = stations[0];
+        const coords = { lat: parseFloat(station.y), lon: parseFloat(station.x), name: station.name };
+
+        coordsCache[stationName] = coords;
+        saveCoordsCache();
+        return coords;
+    } catch {
+        return null;
+    }
+}
+
+const DISTRICT_COORDS_FILE = path.join(process.cwd(), 'data', 'district_coords.json');
+const GEOCODE_CACHE_FILE = path.join(CACHE_DIR, 'geocode_cache.json');
+
+let districtCoords: any = {};
+let geocodeCache: any = {};
+
+function loadDistrictCoords() {
+    if (Object.keys(districtCoords).length > 0) return;
+    try { if (fs.existsSync(DISTRICT_COORDS_FILE)) districtCoords = JSON.parse(fs.readFileSync(DISTRICT_COORDS_FILE, 'utf-8')); } catch { }
+}
+
+const geocodePromiseCache: Record<string, Promise<any>> = {};
+
+async function geocodeDistrict(prefecture: string, municipality: string, district: string): Promise<Coordinates | null> {
+    if (!prefecture || !municipality || !district) return null;
+
+    const cacheKey = `${prefecture}_${municipality}`;
+
+    // Return the requested district if found in memory (previously loaded)
+    if (districtCoords[prefecture]?.[municipality]?.[district]) {
+        return districtCoords[prefecture][municipality][district];
+    }
+
+    try {
+        if (!geocodePromiseCache[cacheKey]) {
+            geocodePromiseCache[cacheKey] = (async () => {
+                // Fetch all towns in the municipality at once using HeartRails Geo API
+                const url = `https://geoapi.heartrails.com/api/json?method=getTowns&prefecture=${encodeURIComponent(prefecture)}&city=${encodeURIComponent(municipality)}`;
+
+                try {
+                    const res = await fetch(url, { cache: 'no-store' });
+                    if (!res.ok) return null;
+                    const json = await res.json();
+                    const locations = json.response?.location;
+
+                    if (locations && Array.isArray(locations)) {
+                        // Initialize prefecture and municipality in districtCoords if not present
+                        if (!districtCoords[prefecture]) districtCoords[prefecture] = {};
+                        if (!districtCoords[prefecture][municipality]) districtCoords[prefecture][municipality] = {};
+
+                        // Cache all towns for this municipality
+                        locations.forEach((loc: any) => {
+                            const townName = loc.town;
+                            districtCoords[prefecture][municipality][townName] = {
+                                lat: parseFloat(loc.y),
+                                lon: parseFloat(loc.x)
+                            };
+                        });
+
+                        // Save to local cache file
+                        try {
+                            fs.writeFileSync(DISTRICT_COORDS_FILE, JSON.stringify(districtCoords, null, 2));
+                        } catch (e) {
+                        }
+                        return locations;
+                    }
+                    return null;
+                } catch (e) {
+                    return null;
+                }
+            })();
+        }
+
+        // Wait for the actual fetch to complete if it was ongoing by another parallel request
+        await geocodePromiseCache[cacheKey];
+
+        if (districtCoords[prefecture]?.[municipality]) {
+            // Return the requested district if found
+            if (districtCoords[prefecture][municipality][district]) {
+                return districtCoords[prefecture][municipality][district];
+            }
+
+            const partialMatch = Object.keys(districtCoords[prefecture][municipality]).find(t => district.includes(t) || t.includes(district));
+            if (partialMatch) {
+                return districtCoords[prefecture][municipality][partialMatch];
+            }
+        }
+    } catch (e) {
+    }
+    return null;
+}
+
+export async function getDistrictCoords(prefecture: string, municipality: string, district: string): Promise<Coordinates | null> {
+    if (!district || !prefecture) return null;
+    loadDistrictCoords();
+    const prefData = districtCoords[prefecture];
+    if (prefData) {
+        for (const muniKey of Object.keys(prefData)) {
+            if (municipality && municipality.includes(muniKey)) {
+                if (prefData[muniKey][district]) return prefData[muniKey][district];
+            }
+        }
+    }
+    return await geocodeDistrict(prefecture, municipality, district);
+}
+
+function loadPopulationData() {
+    if (populationDataCache) return;
+    try {
+        if (fs.existsSync(POPULATION_DATA_FILE)) {
+            populationDataCache = JSON.parse(fs.readFileSync(POPULATION_DATA_FILE, 'utf-8'));
+        } else {
+            populationDataCache = {};
+        }
+    } catch {
+        populationDataCache = {};
+    }
+}
+
+export function getCityPopulationProjection(prefecture: string, municipality: string) {
+    loadPopulationData();
+    if (!populationDataCache) return null;
+
+    const strictKey = `${prefecture}_${municipality}`;
+    if (populationDataCache[strictKey]) {
+        const d = populationDataCache[strictKey];
+        d._metadata = populationDataCache._metadata;
+        return d;
+    }
+
+    // fallback: check by municipality name only (for backwards compatibility if needed)
+    if (populationDataCache[municipality]) {
+        const d = populationDataCache[municipality];
+        if (d.prefecture === prefecture) {
+            d._metadata = populationDataCache._metadata;
+            return d;
+        }
+    }
+
+    for (const key of Object.keys(populationDataCache)) {
+        if (key === '_metadata') continue;
+        const cityData = populationDataCache[key];
+        if (cityData.prefecture === prefecture && (municipality.includes(cityData.city) || cityData.city.includes(municipality))) {
+            cityData._metadata = populationDataCache._metadata;
+            return cityData;
+        }
+    }
+
+    // If no matching city is found in the official data, return null instead of generating random dummy data
+    return null;
+}
+
+const STRICT_CITY_FILTER: Record<string, string> = {
+    "梅田": "大阪市北区",
+    "博多": "福岡市博多区",
+    "札幌": "札幌市北区",
+    "仙台": "仙台市青葉区",
+    "名古屋": "名古屋市中村区",
+    "川崎": "川崎市川崎区",
+    "横浜": "横浜市西区",
+    "武蔵小杉": "川崎市中原区"
+};
+
+export async function getStationDiagnosis(stationName: string, prefCode: string) {
+    const currentYear = new Date().getFullYear();
+    const LIMIT_YEAR = currentYear - 15;
+    let latestDataYear = 0;
+    let reliableDataYear = 0;
+
+    const targetNorm = normalizeStation(stationName);
+    const matchTargets = [targetNorm];
+    if (STATION_ALIASES[targetNorm]) matchTargets.push(...STATION_ALIASES[targetNorm].map(normalizeStation));
+    const requiredCity = STRICT_CITY_FILTER[targetNorm] || "";
+
+    const stationCoords = await getStationCoords(stationName);
+    const RADIUS_KM = 2.0;
+    const pref = PREFECTURES.find(p => p.code === prefCode);
+    const prefectureName = pref ? pref.name : "";
+
+    const targetYearsToTry = [currentYear, currentYear - 1, currentYear - 2, currentYear - 3, currentYear - 4];
+
+    // 1-Pass Sequential Algorithm for Fetching and Filtering (Wait 1.5s between requests to comply with MLIT API rate limit: 60 requests/min)
+    const results: { y: number; yearTxs: Transaction[] }[] = [];
+    for (const testYear of targetYearsToTry) {
+        try {
+            const data = await fetchMlitData(testYear, prefCode);
+            const coordsMap = stationCoords ? await preloadDistrictCoordinates(data, prefectureName, getDistrictCoords as any) : new Map();
+            const yearTxs = filterTransactionsByLocation(data, stationName, stationCoords, RADIUS_KM, coordsMap, matchTargets, requiredCity);
+            results.push({ y: testYear, yearTxs });
+        } catch (e: any) {
+            results.push({ y: testYear, yearTxs: [] });
+        }
+    }
+
+    // Filter valid results and find latest
+    const validResults = results.filter(r => r.yearTxs.length > 0);
+    validResults.sort((a, b) => b.y - a.y); // Descending
+
+    if (validResults.length === 0) {
+        throw new Error(`直近5年間にデータが見つかりませんでした (${stationName})`);
+    }
+
+    latestDataYear = validResults[0].y;
+    reliableDataYear = latestDataYear;
+
+    const metrics: StationMetric[] = [];
+    const allRawTxs: Transaction[] = [];
+
+    // Sort ascending to build charts chronologically
+    validResults.sort((a, b) => a.y - b.y);
+
+    for (const res of validResults) {
+        const { y, yearTxs } = res;
+        if (yearTxs.length > 0) {
+            const prices = yearTxs.map(t => parseInt(t.TradePrice)).filter(p => !isNaN(p));
+            prices.sort((a, b) => a - b);
+            let validPrices = prices;
+            if (prices.length >= 10) {
+                const cut = Math.floor(prices.length * 0.05);
+                validPrices = prices.slice(cut, prices.length - cut);
+            }
+            let median = 0;
+            if (validPrices.length > 0) {
+                const mid = Math.floor(validPrices.length / 2);
+                median = validPrices.length % 2 !== 0 ? validPrices[mid] : (validPrices[mid - 1] + validPrices[mid]) / 2;
+            }
+            metrics.push({ name: `${y}年`, count: yearTxs.length, lastPrice: Math.round(median) });
+            allRawTxs.push(...yearTxs);
+        }
+    }
+
+    const totalPrices = allRawTxs.map(t => parseInt(t.TradePrice)).filter(p => !isNaN(p));
+    totalPrices.sort((a, b) => a - b);
+    let globalMedian = 0;
+    if (totalPrices.length > 0) {
+        let validGlobal = totalPrices;
+        if (totalPrices.length >= 10) {
+            const cut = Math.floor(totalPrices.length * 0.05);
+            validGlobal = totalPrices.slice(cut, totalPrices.length - cut);
+        }
+        const mid = Math.floor(validGlobal.length / 2);
+        globalMedian = validGlobal.length % 2 !== 0 ? validGlobal[mid] : (validGlobal[mid - 1] + validGlobal[mid]) / 2;
+    }
+    globalMedian = Math.round(globalMedian);
+
+    const priceCurrent = metrics.find(m => parseInt(m.name) === reliableDataYear)?.lastPrice || 0;
+    const pricePrev = metrics.find(m => parseInt(m.name) === reliableDataYear - 1)?.lastPrice || 0;
+    const price2Ago = metrics.find(m => parseInt(m.name) === reliableDataYear - 2)?.lastPrice || 0;
+
+    const yoy = (pricePrev > 0 && priceCurrent > 0) ? ((priceCurrent - pricePrev) / pricePrev) * 100 : 0;
+    const up2y = (price2Ago > 0 && priceCurrent > 0) ? ((priceCurrent - price2Ago) / price2Ago) * 100 : 0;
+
+    return {
+        stationName,
+        score: getRiskScore(globalMedian),
+        marketPrice: Math.floor(globalMedian),
+        trend: calculateTrend(metrics),
+        chartData: metrics,
+        rawTransactions: allRawTxs,
+        tx5y: allRawTxs.length,
+        yoy: parseFloat(yoy.toFixed(1)),
+        up2y: parseFloat(up2y.toFixed(1)),
+        trendData: metrics.map(m => ({ year: parseInt(m.name), price: m.lastPrice, txCount: m.count })),
+        dataYear: reliableDataYear,
+        latestYear: latestDataYear
+    };
+}
+
+function getRiskScore(price: number): number {
+    let s = Math.floor((price / 120000000) * 100);
+    return s > 100 ? 100 : s;
+}
+
+function calculateTrend(metrics: StationMetric[]): "UP" | "DOWN" | "FLAT" {
+    if (metrics.length < 2) return "FLAT";
+    const start = metrics[0].lastPrice;
+    const end = metrics[metrics.length - 1].lastPrice;
+    if (end > start * 1.05) return "UP";
+    if (end < start * 0.95) return "DOWN";
+    return "FLAT";
+}
+
+export type FullDiagnosisData = {
+    mlit: any;
+    lines: any;
+    ext: ExtendedMetrics;
+};
+
+export async function getFullDiagnosisData(stationName: string, prefCode: string): Promise<FullDiagnosisData> {
+    const safeName = normalizeStation(stationName);
+    const cacheKey = `${safeName}_${prefCode}_full_v8.json`;
+    const cachePath = path.join(CACHE_DIAG_DIR, cacheKey);
+
+    if (fs.existsSync(cachePath)) {
+        try { return JSON.parse(fs.readFileSync(cachePath, 'utf-8')) as FullDiagnosisData; } catch (e: any) { }
+    }
+
+    const coords = await getStationCoords(stationName);
+    let [mlit, lines, ext] = await Promise.all([
+        getStationDiagnosis(stationName, prefCode),
+        getStationLines(stationName),
+        fetchExtendedMetrics(stationName, coords?.lat, coords?.lon)
+    ]);
+
+    const pref = PREFECTURES.find(p => String(p.code) === String(prefCode));
+    if (pref) {
+        let targetCity = STRICT_CITY_FILTER[stationName] || "";
+        if (!targetCity && mlit.rawTransactions.length > 0) {
+            const counts: Record<string, number> = {};
+            mlit.rawTransactions.forEach(t => { if (t.Municipality) counts[t.Municipality] = (counts[t.Municipality] || 0) + 1; });
+            const sortedCities = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+            if (sortedCities.length > 0) targetCity = sortedCities[0];
+        }
+        if (!targetCity) {
+            if (stationName.includes("新宿")) targetCity = "新宿区";
+            if (stationName.includes("渋谷")) targetCity = "渋谷区";
+            if (stationName.includes("池袋")) targetCity = "豊島区";
+            if (stationName.includes("横浜")) targetCity = "横浜市西区";
+            if (stationName.includes("武蔵小杉")) targetCity = "川崎市中原区";
+            if (stationName.includes("大宮")) targetCity = "さいたま市大宮区";
+        }
+        if (targetCity) {
+            const proj = getCityPopulationProjection(pref.name, targetCity);
+            if (proj) {
+                ext.populationProjection = proj.data;
+                ext.sourceCity = proj.city;
+                const p2020 = proj.data.find((d: any) => d.year === 2020)?.total || 1;
+                const p2050 = proj.data.find((d: any) => d.year === 2050)?.total || 1;
+                ext.futurePopulationRate = Math.round((p2050 / p2020) * 100);
+            }
+        }
+    }
+
+    const fullData: FullDiagnosisData = { mlit: { ...mlit, trend: mlit.trend as "UP" | "DOWN" | "FLAT" }, lines, ext };
+
+    // Core Fix: Physically delete the 9MB raw transaction array before returning to Next.js components
+    // This absolutely guarantees it cannot be injected into the RSC Payload.
+    delete (fullData.mlit as any).rawTransactions;
+
+    try { fs.writeFileSync(cachePath, JSON.stringify(fullData, null, 2)); } catch (e: any) { }
+    return fullData;
+}
+// Force Next.js to recompile 2
+
+```
+

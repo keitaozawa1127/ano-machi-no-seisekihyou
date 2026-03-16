@@ -1,0 +1,265 @@
+{
+  "ok": true,
+  "verdict": "risky",
+  "headline": "取引件数が少なく、指標のブレが大きい可能性があります（慎重に）",
+  "reasons": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "事故リスク低（1件）"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "避難所アクセス懸念"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "0.96（強い）"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "評価高"
+    },
+    {
+      "label": "直近5年の取引件数",
+      "value": "1 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "130 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "0.0%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "駅周辺500m圏内で発生した人身事故は年間1件であり、交通リスクは低いエリアにあたります。"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "表層地盤増幅率が0.96であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "該当エリア（市区町村）の犯罪発生率は低く、治安の面で比較的安心できる地域です。 駅周辺の飲食店数は適度(6件)であり、過度な繁華街リスクは低いです。"
+    },
+    {
+      "label": "将来人口（2050推計）",
+      "value": "推計人口指数が 47 と低く、過疎化による流動性低下のリスクがあります。"
+    },
+    {
+      "label": "取引件数（重要）",
+      "value": "直近5年の取引件数が10件未満のため、平均値や上昇率が少数の取引に強く影響されます。価格水準の判断以前に、指標自体の信頼性が低い可能性を前提にしてください。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇は強くありません。将来の上昇を前提にした判断は避け、住み替え・保有期間の前提でリスクを見てください。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇は急ではありません。ただし横ばい＝安全の保証ではなく、金利や需給で変動し得ます。"
+    }
+  ],
+  "note": "データ基準日: 2023年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "大石田",
+    "year": 2024,
+    "tx5y": 1,
+    "yoy": 0,
+    "up2y": 0,
+    "prevYear": null,
+    "score": 36
+  },
+  "trendData": [
+    {
+      "year": 2023,
+      "price": 1300000,
+      "txCount": 1
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 47,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 6577,
+        "ageStructure": {
+          "0-14": 603,
+          "15-64": 3342,
+          "65+": 2632
+        }
+      },
+      {
+        "year": 2025,
+        "total": 5871,
+        "ageStructure": {
+          "0-14": 449,
+          "15-64": 2809,
+          "65+": 2613
+        }
+      },
+      {
+        "year": 2030,
+        "total": 5244,
+        "ageStructure": {
+          "0-14": 342,
+          "15-64": 2452,
+          "65+": 2450
+        }
+      },
+      {
+        "year": 2035,
+        "total": 4664,
+        "ageStructure": {
+          "0-14": 272,
+          "15-64": 2155,
+          "65+": 2237
+        }
+      },
+      {
+        "year": 2040,
+        "total": 4108,
+        "ageStructure": {
+          "0-14": 243,
+          "15-64": 1795,
+          "65+": 2070
+        }
+      },
+      {
+        "year": 2045,
+        "total": 3580,
+        "ageStructure": {
+          "0-14": 210,
+          "15-64": 1448,
+          "65+": 1922
+        }
+      },
+      {
+        "year": 2050,
+        "total": 3082,
+        "ageStructure": {
+          "0-14": 173,
+          "15-64": 1216,
+          "65+": 1693
+        }
+      }
+    ],
+    "sourceCity": "大石田町",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間1件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（1件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が0.96であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "0.96（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は低く、治安の面で比較的安心できる地域です。 駅周辺の飲食店数は適度(6件)であり、過度な繁華街リスクは低いです。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "評価高",
+        "scoreImpact": 2
+      }
+    ]
+  },
+  "totalScore": 36,
+  "metrics": {
+    "asset": 1,
+    "safety": 100,
+    "future": 20,
+    "convenience": 49,
+    "liquidity": 0
+  },
+  "lines": [
+    {
+      "name": "JR奥羽本線"
+    },
+    {
+      "name": "山形新幹線"
+    }
+  ],
+  "redevelopmentProjects": [],
+  "marketPrice": 1300000,
+  "tx5y": 1,
+  "trend": "FLAT",
+  "yoy": 0,
+  "dataYear": 2023,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "publisher": "国土交通省",
+        "document_name": "不動産取引価格情報",
+        "year": 2023
+      },
+      "population": {
+        "publisher": "国立社会保障・人口問題研究所",
+        "document_name": "日本の地域別将来推計人口",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "publisher": "自社",
+        "document_name": "独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "publisher": "国土交通省 / 国土地理院",
+        "document_name": "ハザードマップポータルサイト",
+        "year": 2026
+      },
+      "redevelopment": {
+        "publisher": "各自治体・開発事業者",
+        "document_name": "各自治体開発事業者 公開情報",
+        "version": "2026年2月版"
+      }
+    }
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "ok": true,
+  "verdict": "risky",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "事故多発地点あり（73件）"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "充実（10件）"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "1.28（強い）"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "繁華街エリア"
+    },
+    {
+      "label": "直近5年の取引件数",
+      "value": "199 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "3400 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "25.9%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "駅周辺500m圏内で年間73件の人身事故が発生しています。件数が多い場合は自転車や車の通行時に注意が必要です。"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "駅周辺1km圏内に10件の指定避難所（「興正寺別院」など）があり、災害時の受け入れ体制が充実しています。"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "表層地盤増幅率が1.28であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "該当エリア（市区町村）の犯罪件数はやや多めであり、防犯への意識が必要です。 ただし、駅周辺は飲食店やバーが密集する(219件)ため、夜間のトラブルや騒音リスクに注意が必要です。"
+    },
+    {
+      "label": "災害リスク（水害）",
+      "value": "中程度の水害リスクがあります。階数選択や避難計画の確認を推奨します。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇が強く、過熱局面では期待が先行して価格が伸びやすい一方、前提が崩れると調整も起きやすくなります。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇が強めです。短期上昇の要因が一時的だった場合、伸びが止まる・戻る可能性もあります。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "大通",
+    "year": 2024,
+    "tx5y": 199,
+    "yoy": 25.9,
+    "up2y": 17.2,
+    "prevYear": null,
+    "score": 44
+  },
+  "trendData": [
+    {
+      "year": 2022,
+      "price": 28000000,
+      "txCount": 55
+    },
+    {
+      "year": 2023,
+      "price": 29000000,
+      "txCount": 56
+    },
+    {
+      "year": 2024,
+      "price": 27000000,
+      "txCount": 56
+    },
+    {
+      "year": 2025,
+      "price": 34000000,
+      "txCount": 32
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 92,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 225298,
+        "ageStructure": {
+          "0-14": 23438,
+          "15-64": 144131,
+          "65+": 57729
+        }
+      },
+      {
+        "year": 2025,
+        "total": 226015,
+        "ageStructure": {
+          "0-14": 22047,
+          "15-64": 143415,
+          "65+": 60553
+        }
+      },
+      {
+        "year": 2030,
+        "total": 224864,
+        "ageStructure": {
+          "0-14": 20369,
+          "15-64": 140279,
+          "65+": 64216
+        }
+      },
+      {
+        "year": 2035,
+        "total": 222509,
+        "ageStructure": {
+          "0-14": 19604,
+          "15-64": 134620,
+          "65+": 68285
+        }
+      },
+      {
+        "year": 2040,
+        "total": 218568,
+        "ageStructure": {
+          "0-14": 19211,
+          "15-64": 126030,
+          "65+": 73327
+        }
+      },
+      {
+        "year": 2045,
+        "total": 213053,
+        "ageStructure": {
+          "0-14": 18623,
+          "15-64": 118650,
+          "65+": 75780
+        }
+      },
+      {
+        "year": 2050,
+        "total": 206736,
+        "ageStructure": {
+          "0-14": 17643,
+          "15-64": 112745,
+          "65+": 76348
+        }
+      }
+    ],
+    "sourceCity": "札幌市豊平区",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で年間73件の人身事故が発生しています。件数が多い場合は自転車や車の通行時に注意が必要です。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故多発地点あり（73件）",
+        "scoreImpact": -3
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "充実（10件）",
+        "scoreImpact": 2,
+        "ruleDescription": "駅周辺1km圏内に10件の指定避難所（「興正寺別院」など）があり、災害時の受け入れ体制が充実しています。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.28であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.28（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪件数はやや多めであり、防犯への意識が必要です。 ただし、駅周辺は飲食店やバーが密集する(219件)ため、夜間のトラブルや騒音リスクに注意が必要です。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "繁華街エリア",
+        "scoreImpact": -5
+      }
+    ]
+  },
+  "totalScore": 44,
+  "metrics": {
+    "asset": 34,
+    "safety": 66,
+    "future": 49,
+    "convenience": 57,
+    "liquidity": 12
+  },
+  "lines": [
+    {
+      "name": "札幌市南北線"
+    },
+    {
+      "name": "札幌市東西線"
+    },
+    {
+      "name": "札幌市東豊線"
+    }
+  ],
+  "redevelopmentProjects": [
+    {
+      "id": "odori-1",
+      "station_name": "大通",
+      "project_name": "SAPPORO ONE (大通西4南地区)",
+      "search_keyword": "SAPPORO ONE パークハイアット札幌",
+      "category": "Redevelopment",
+      "schedule": "2029年8月竣工予定",
+      "description": "地上36階/185m。札幌駅前の遅延により、2020年代後半の主役となる超高層ビル。パークハイアット札幌が進出し、大通公園と一体化したラグジュアリー拠点を形成。",
+      "impact_level": 5,
+      "is_future": true,
+      "createdAt": "2024-02-16T13:30:00Z"
+    }
+  ],
+  "marketPrice": 29000000,
+  "tx5y": 199,
+  "trend": "UP",
+  "yoy": 25.9,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "publisher": "国土交通省",
+        "document_name": "不動産取引価格情報",
+        "year": 2025
+      },
+      "population": {
+        "publisher": "国立社会保障・人口問題研究所",
+        "document_name": "日本の地域別将来推計人口",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "publisher": "自社",
+        "document_name": "独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "publisher": "国土交通省 / 国土地理院",
+        "document_name": "ハザードマップポータルサイト",
+        "year": 2026
+      },
+      "redevelopment": {
+        "publisher": "各自治体・開発事業者",
+        "document_name": "公開情報",
+        "version": "2026年2月版"
+      }
+    }
+  }
+}

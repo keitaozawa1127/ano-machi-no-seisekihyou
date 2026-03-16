@@ -1,0 +1,271 @@
+{
+  "mlit": {
+    "stationName": "倶利伽羅",
+    "score": 4,
+    "marketPrice": 5400000,
+    "trend": "DOWN",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 1,
+        "lastPrice": 6500000
+      },
+      {
+        "name": "2023年",
+        "count": 1,
+        "lastPrice": 4300000
+      }
+    ],
+    "tx5y": 2,
+    "yoy": -33.8,
+    "up2y": 0,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 6500000,
+        "txCount": 1
+      },
+      {
+        "year": 2023,
+        "price": 4300000,
+        "txCount": 1
+      }
+    ],
+    "dataYear": 2023,
+    "latestYear": 2023
+  },
+  "lines": [
+    {
+      "name": "IRいしかわ鉄道線"
+    },
+    {
+      "name": "あいの風とやま鉄道線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 87,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 36957,
+        "ageStructure": {
+          "0-14": 5060,
+          "15-64": 22842,
+          "65+": 9055
+        }
+      },
+      {
+        "year": 2025,
+        "total": 36651,
+        "ageStructure": {
+          "0-14": 4555,
+          "15-64": 22302,
+          "65+": 9794
+        }
+      },
+      {
+        "year": 2030,
+        "total": 36057,
+        "ageStructure": {
+          "0-14": 4166,
+          "15-64": 21123,
+          "65+": 10768
+        }
+      },
+      {
+        "year": 2035,
+        "total": 35335,
+        "ageStructure": {
+          "0-14": 3939,
+          "15-64": 19732,
+          "65+": 11664
+        }
+      },
+      {
+        "year": 2040,
+        "total": 34393,
+        "ageStructure": {
+          "0-14": 3814,
+          "15-64": 18029,
+          "65+": 12550
+        }
+      },
+      {
+        "year": 2045,
+        "total": 33308,
+        "ageStructure": {
+          "0-14": 3633,
+          "15-64": 16952,
+          "65+": 12723
+        }
+      },
+      {
+        "year": 2050,
+        "total": 32050,
+        "ageStructure": {
+          "0-14": 3364,
+          "15-64": 16218,
+          "65+": 12468
+        }
+      }
+    ],
+    "sourceCity": "津幡町",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.01であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.01（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間0件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（0件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は平均的です。 駅近の飲食店は少なく、閑静な環境と言えます。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "標準",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は10.0%で、全国的な平均と同等水準の市場環境です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "10.0% (標準)",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間は人が流出する閑静な住宅街・ベッドタウンの性質を持っています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ベッドタウン（比率: 76.0%）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者が増加傾向にあり、街の発展と不動産需要の拡大が期待できます。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "成長エリア（乗降客数増加 +10.8%）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -8.8%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積は14.25㎡/人です。都市部としては十分な緑地が確保されています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "14.25㎡/人",
+        "scoreImpact": 1
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "駅周辺の店舗数が限られており、日常の買い物にはやや工夫が必要な場合があります。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "156店舗",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "医療機関の数が比較的少なく、特定の診療科や夜間救急のアクセスについては事前確認が推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "64.9（人口10万人当たり）",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が比較的少なく、保活（保育園探し）には早めの準備とリサーチが推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "10施設",
+        "scoreImpact": -1
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "全国的に標準的な財政水準です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.56",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-6.97%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

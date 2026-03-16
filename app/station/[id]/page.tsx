@@ -3,52 +3,69 @@ import { notFound } from 'next/navigation';
 import fs from 'fs/promises';
 import path from 'path';
 import DiagnosisResult from '../../../components/DiagnosisResult';
+import StationFAQ from '../../../components/StationFAQ';
 import Link from 'next/link';
-import { diagnoseAsync } from '../../../lib/diagnoseLogic';
-
-export const dynamic = 'force-dynamic';
 
 type Props = {
     params: { id: string };
 };
 
-// Helper function to find prefCode from stations.json via fetch for serverless compatibility
-async function getStationPrefCode(decodedName: string): Promise<string | null> {
+export const dynamicParams = false;
+
+/**
+ * Helper function to read pre-computed diagnosis data from local filesystem.
+ * This ensures no dynamic API calls are made during build or runtime.
+ */
+async function getStationData(id: string) {
     try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://anomachi.jp';
-        const fileUrl = `${baseUrl}/data/stations.json`;
-
-        const res = await fetch(fileUrl, { cache: 'no-store' });
-        if (!res.ok) {
-            throw new Error(`Failed to fetch stations.json: ${res.status}`);
-        }
-
-        const stations = await res.json();
-
-        // stations.json keys are usually in format "駅名_都道府県", e.g. "新宿_東京"
-        // Also station objects have "name" and "prefCode" properties.
-        for (const key in stations) {
-            const station = stations[key];
-            if (station.name === decodedName) {
-                return String(station.prefCode).padStart(2, '0');
-            }
-        }
-        return null;
+        const decodedId = decodeURIComponent(id);
+        const filePath = path.join(process.cwd(), 'data', 'stations', `${decodedId}.json`);
+        const content = await fs.readFile(filePath, 'utf-8');
+        return JSON.parse(content);
     } catch (e) {
-        console.error("Error loading stations.json:", e);
-        return null; // Fallback handled by diagnoseAsync (defaults to "13")
+        console.error(`[SSG] Data not found for station: ${id}`);
+        return null;
     }
 }
 
+/**
+ * Generates static paths for all stations that have a pre-computed JSON file.
+ */
+export async function generateStaticParams() {
+    try {
+        const dataDir = path.join(process.cwd(), 'data', 'stations');
+        
+        // Ensure directory exists
+        const stats = await fs.stat(dataDir).catch(() => null);
+        if (!stats || !stats.isDirectory()) {
+            console.warn(`[SSG] Data directory not found: ${dataDir}`);
+            return [];
+        }
 
+        const files = await fs.readdir(dataDir);
+        const params = files
+            .filter(file => file.endsWith('.json'))
+            .map(file => ({
+                id: file.replace('.json', ''),
+            }));
+            
+        console.log(`[SSG] Generating static params for ${params.length} stations`);
+        return params;
+    } catch (e) {
+        console.error("Error in generateStaticParams:", e);
+        return [];
+    }
+}
+
+/**
+ * Metadata generation using static JSON data.
+ */
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resolvedParams = await params;
+    const result = await getStationData(resolvedParams.id);
     const decodedName = decodeURIComponent(resolvedParams.id);
-    const prefCode = await getStationPrefCode(decodedName) || "13"; // fallback to Tokyo
 
-    const result = await diagnoseAsync(decodedName, prefCode, 2024);
-
-    if (!result.ok) {
+    if (!result || !result.ok) {
         return {
             title: `${decodedName}駅の診断結果が見つかりません | あの街の成績表`,
             description: `あの街の成績表で${decodedName}駅周辺の不動産・街の資産性をチェックしましょう。`,
@@ -91,15 +108,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-
+/**
+ * Main Static Page Component
+ */
 export default async function StationPage({ params }: Props) {
     const resolvedParams = await params;
     const decodedName = decodeURIComponent(resolvedParams.id);
-    const prefCode = await getStationPrefCode(decodedName) || "13"; // fallback to Tokyo
+    
+    // Load pre-calculated data from filesystem
+    const result = await getStationData(resolvedParams.id);
 
-    const result = await diagnoseAsync(decodedName, prefCode, 2024);
-
-    if (!result.ok) {
+    if (!result || !result.ok) {
         return (
             <main className="min-h-screen w-full flex flex-col items-center pt-20 px-6 bg-[var(--bg-primary)] overflow-x-hidden">
                 <header className="w-full max-w-4xl text-center mb-16 min-w-0 px-2">
@@ -110,7 +129,7 @@ export default async function StationPage({ params }: Props) {
                     </h1>
                 </header>
                 <div className="card mb-8 text-center w-full max-w-2xl min-w-0" style={{ borderColor: 'hsl(var(--status-risky))', color: 'hsl(var(--status-risky))', backgroundColor: 'hsl(var(--status-risky)/0.1)' }}>
-                    <p className="font-bold">⚠️ {result.error || `${decodedName}駅のデータが見つかりませんでした。`}</p>
+                    <p className="font-bold">⚠️ {result?.error || `${decodedName}駅のデータが準備中か、見つかりませんでした。`}</p>
                     <div className="mt-8">
                         <Link href="/" className="text-[var(--brand-main)] underline hover:opacity-80 transition-opacity">
                             トップページに戻る
@@ -125,8 +144,8 @@ export default async function StationPage({ params }: Props) {
     const verdictLabel = verdict === 'safe' ? '推奨' : verdict === 'caution' ? '注意' : '要確認';
     const pageUrl = `https://anomachi.jp/station/${encodeURIComponent(decodedName)}`;
 
-    // 構造化データ（JSON-LD）の作成
-    const jsonLd = {
+    // AIO最適化構造化データ（JSON-LD）の作成
+    const jsonLd: any = {
         "@context": "https://schema.org",
         "@type": "ItemPage",
         "name": `${decodedName}駅の資産性診断 | あの街の成績表`,
@@ -142,11 +161,19 @@ export default async function StationPage({ params }: Props) {
                 "bestRating": 100,
                 "worstRating": 0,
                 "ratingCount": 1
-            }
+            },
+            "additionalProperty": [
+                {
+                    "@type": "PropertyValue",
+                    "name": "総合スコア",
+                    "value": totalScore,
+                    "unitText": "点"
+                }
+            ]
         }
     };
 
-    // クライアントコンポーネント用ペイロード（シリアライズ可能な必要最小限のデータに絞ることで9MBの巨大ペイロードを削減）
+    // Client Component data payload optimization (reducing bundle size)
     const clientData = {
         ok: result.ok,
         verdict: result.verdict,
@@ -165,7 +192,7 @@ export default async function StationPage({ params }: Props) {
         trend: result.trend,
         dataYear: result.dataYear,
         lines: result.lines?.map((l: any) => ({ name: l.name, color: l.color, passengers: l.passengers })),
-        name: result.debug?.stationName,
+        name: result.debug?.stationName || decodedName,
         extendedMetrics: result.extendedMetrics ? {
             futurePopulationRate: result.extendedMetrics.futurePopulationRate,
             populationProjection: result.extendedMetrics.populationProjection?.map((p: any) => ({
@@ -183,7 +210,14 @@ export default async function StationPage({ params }: Props) {
                     level: result.extendedMetrics.hazardRisk.landslide.level,
                     description: result.extendedMetrics.hazardRisk.landslide.description
                 }
-            }
+            },
+            dynamicAdditions: result.extendedMetrics.dynamicAdditions?.map((a: any) => ({
+                category: a.category,
+                label: a.label,
+                value: a.value,
+                scoreImpact: a.scoreImpact,
+                ruleDescription: a.ruleDescription
+            }))
         } : undefined,
         totalScore: result.totalScore,
         metrics: result.metrics,
@@ -194,7 +228,16 @@ export default async function StationPage({ params }: Props) {
             description: p.description,
             source_url: p.source_url
         })),
-        metadata: result.metadata
+        metadata: {
+            ...result.metadata,
+            sources: {
+                ...result.metadata?.sources,
+                realEstate: {
+                    ...result.metadata?.sources?.realEstate,
+                    year: result.metadata?.sources?.realEstate?.year || new Date().getFullYear(),
+                }
+            }
+        } as any
     };
 
     return (
@@ -216,6 +259,11 @@ export default async function StationPage({ params }: Props) {
             {/* Northern European Minimalist Premium styling wrapper */}
             <div className="w-full flex justify-center min-w-0 animate-in slide-in-from-bottom-5 duration-500">
                 <DiagnosisResult data={clientData} />
+            </div>
+
+            {/* AIO FAQ Section */}
+            <div className="w-full max-w-[1000px] flex justify-center min-w-0 animate-in slide-in-from-bottom-5 duration-700 delay-150 px-2 md:px-0">
+                <StationFAQ data={clientData} />
             </div>
 
             {/* Share Section */}

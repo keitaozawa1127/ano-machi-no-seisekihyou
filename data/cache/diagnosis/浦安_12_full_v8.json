@@ -1,0 +1,291 @@
+{
+  "mlit": {
+    "stationName": "浦安",
+    "score": 44,
+    "marketPrice": 53000000,
+    "trend": "FLAT",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 530,
+        "lastPrice": 54000000
+      },
+      {
+        "name": "2023年",
+        "count": 505,
+        "lastPrice": 52000000
+      },
+      {
+        "name": "2024年",
+        "count": 548,
+        "lastPrice": 53000000
+      },
+      {
+        "name": "2025年",
+        "count": 410,
+        "lastPrice": 55000000
+      }
+    ],
+    "tx5y": 1993,
+    "yoy": 3.8,
+    "up2y": 5.8,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 54000000,
+        "txCount": 530
+      },
+      {
+        "year": 2023,
+        "price": 52000000,
+        "txCount": 505
+      },
+      {
+        "year": 2024,
+        "price": 53000000,
+        "txCount": 548
+      },
+      {
+        "year": 2025,
+        "price": 55000000,
+        "txCount": 410
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR山陰本線"
+    },
+    {
+      "name": "東京メトロ東西線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 96,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 171362,
+        "ageStructure": {
+          "0-14": 21567,
+          "15-64": 119476,
+          "65+": 30319
+        }
+      },
+      {
+        "year": 2025,
+        "total": 172942,
+        "ageStructure": {
+          "0-14": 19273,
+          "15-64": 120950,
+          "65+": 32719
+        }
+      },
+      {
+        "year": 2030,
+        "total": 172024,
+        "ageStructure": {
+          "0-14": 18020,
+          "15-64": 117616,
+          "65+": 36388
+        }
+      },
+      {
+        "year": 2035,
+        "total": 170516,
+        "ageStructure": {
+          "0-14": 17156,
+          "15-64": 112203,
+          "65+": 41157
+        }
+      },
+      {
+        "year": 2040,
+        "total": 168969,
+        "ageStructure": {
+          "0-14": 17160,
+          "15-64": 106318,
+          "65+": 45491
+        }
+      },
+      {
+        "year": 2045,
+        "total": 166478,
+        "ageStructure": {
+          "0-14": 16824,
+          "15-64": 103000,
+          "65+": 46654
+        }
+      },
+      {
+        "year": 2050,
+        "total": 163769,
+        "ageStructure": {
+          "0-14": 16117,
+          "15-64": 100632,
+          "65+": 47020
+        }
+      }
+    ],
+    "sourceCity": "浦安市",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間1件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（1件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.29であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.29（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は低く、治安の面で比較的安心できる地域です。 駅近の飲食店は少なく、閑静な環境と言えます。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "評価高",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は19.3%とやや高く、供給過多や人口減少の兆しがあるため、不動産の流動性に一定の注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "19.3% (注意水準)",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間は人が流出する閑静な住宅街・ベッドタウンの性質を持っています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ベッドタウン（比率: 94.0%）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -31.0%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -21.3%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積は12.11㎡/人です。都市部としては十分な緑地が確保されています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "12.11㎡/人",
+        "scoreImpact": 1
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "駅周辺の店舗数が限られており、日常の買い物にはやや工夫が必要な場合があります。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "140店舗",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "標準的な数の医療機関が点在しており、日常の医療アクセスには困りません。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "85.5（人口10万人当たり）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が比較的少なく、保活（保育園探し）には早めの準備とリサーチが推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "7施設",
+        "scoreImpact": -1
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "財政力指数が低めであり、将来的な行政サービスやインフラ維持の動向に注視が必要です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.30",
+        "scoreImpact": -1
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-8.38%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

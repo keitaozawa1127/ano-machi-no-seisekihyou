@@ -1,0 +1,453 @@
+{
+  "ok": true,
+  "verdict": "caution",
+  "headline": "市場価格は概ね安定して推移しています",
+  "reasons": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "平均的（5件）"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "避難所アクセス懸念"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "1.06（強い）"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "注意"
+    },
+    {
+      "label": "空き家率",
+      "value": "10.1% (標準)"
+    },
+    {
+      "label": "昼夜間人口比率",
+      "value": "ベッドタウン（比率: 86.8%）"
+    },
+    {
+      "label": "駅乗降客数推移",
+      "value": "衰退懸念エリア（乗降客数減少 -13.3%）"
+    },
+    {
+      "label": "事業所数推移",
+      "value": "経済活動縮小懸念（事業所減少 -11.3%）"
+    },
+    {
+      "label": "一人当たり都市公園面積",
+      "value": "8.02㎡/人"
+    },
+    {
+      "label": "買い物利便性（大型商業施設等）",
+      "value": "577店舗"
+    },
+    {
+      "label": "医療機関アクセス",
+      "value": "67.4（人口10万人当たり）"
+    },
+    {
+      "label": "子育て環境（保育施設等）",
+      "value": "47施設"
+    },
+    {
+      "label": "財政力指数（自治体の財政余力）",
+      "value": "データなし（標準評価）"
+    },
+    {
+      "label": "年少人口増減率（街の若返り度）",
+      "value": "-3.30%"
+    },
+    {
+      "label": "直近5年の取引件数",
+      "value": "56 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "3700 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "23.3%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "駅周辺500m圏内で発生した人身事故は年間5件であり、標準的な交通リスクのエリアです。"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "表層地盤増幅率が1.06であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "該当エリア（市区町村）の犯罪件数はやや多めであり、防犯への意識が必要です。 駅近の飲食店は少なく、閑静な環境と言えます。"
+    },
+    {
+      "label": "空き家率",
+      "value": "該当エリアの空き家率は10.1%で、全国的な平均と同等水準の市場環境です。"
+    },
+    {
+      "label": "昼夜間人口比率",
+      "value": "昼間は人が流出する閑静な住宅街・ベッドタウンの性質を持っています。"
+    },
+    {
+      "label": "駅乗降客数推移",
+      "value": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。"
+    },
+    {
+      "label": "事業所数推移",
+      "value": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。"
+    },
+    {
+      "label": "一人当たり都市公園面積",
+      "value": "一人当たりの都市公園面積は8.02㎡/人です。都市部としては十分な緑地が確保されています。"
+    },
+    {
+      "label": "買い物利便性（大型商業施設等）",
+      "value": "日常生活に必要な買い物環境が標準的に揃っています。"
+    },
+    {
+      "label": "医療機関アクセス",
+      "value": "医療機関の数が比較的少なく、特定の診療科や夜間救急のアクセスについては事前確認が推奨されます。"
+    },
+    {
+      "label": "子育て環境（保育施設等）",
+      "value": "標準的な保育環境が整備されています。入園状況については自治体の最新情報をご確認ください。"
+    },
+    {
+      "label": "財政力指数（自治体の財政余力）",
+      "value": "全国的に標準的な財政水準です。"
+    },
+    {
+      "label": "年少人口増減率（街の若返り度）",
+      "value": "全国的な少子化のトレンドに対し、標準的な推移を保っています。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇が強く、過熱局面では期待が先行して価格が伸びやすい一方、前提が崩れると調整も起きやすくなります。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇は急ではありません。ただし横ばい＝安全の保証ではなく、金利や需給で変動し得ます。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "小幡緑地",
+    "year": 2024,
+    "tx5y": 56,
+    "yoy": 23.3,
+    "up2y": -2.6,
+    "prevYear": null,
+    "score": 46
+  },
+  "trendData": [
+    {
+      "year": 2022,
+      "price": 43000000,
+      "txCount": 10
+    },
+    {
+      "year": 2023,
+      "price": 38000000,
+      "txCount": 18
+    },
+    {
+      "year": 2024,
+      "price": 30000000,
+      "txCount": 15
+    },
+    {
+      "year": 2025,
+      "price": 37000000,
+      "txCount": 13
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 95,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 176587,
+        "ageStructure": {
+          "0-14": 24936,
+          "15-64": 105482,
+          "65+": 46169
+        }
+      },
+      {
+        "year": 2025,
+        "total": 177687,
+        "ageStructure": {
+          "0-14": 23035,
+          "15-64": 106977,
+          "65+": 47675
+        }
+      },
+      {
+        "year": 2030,
+        "total": 177201,
+        "ageStructure": {
+          "0-14": 21678,
+          "15-64": 105622,
+          "65+": 49901
+        }
+      },
+      {
+        "year": 2035,
+        "total": 175826,
+        "ageStructure": {
+          "0-14": 21345,
+          "15-64": 101344,
+          "65+": 53137
+        }
+      },
+      {
+        "year": 2040,
+        "total": 173604,
+        "ageStructure": {
+          "0-14": 21320,
+          "15-64": 94671,
+          "65+": 57613
+        }
+      },
+      {
+        "year": 2045,
+        "total": 170670,
+        "ageStructure": {
+          "0-14": 20856,
+          "15-64": 90377,
+          "65+": 59437
+        }
+      },
+      {
+        "year": 2050,
+        "total": 167223,
+        "ageStructure": {
+          "0-14": 19854,
+          "15-64": 87453,
+          "65+": 59916
+        }
+      }
+    ],
+    "sourceCity": "名古屋市守山区",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間5件であり、標準的な交通リスクのエリアです。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "平均的（5件）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.06であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.06（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪件数はやや多めであり、防犯への意識が必要です。 駅近の飲食店は少なく、閑静な環境と言えます。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "注意",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は10.1%で、全国的な平均と同等水準の市場環境です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "10.1% (標準)",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間は人が流出する閑静な住宅街・ベッドタウンの性質を持っています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ベッドタウン（比率: 86.8%）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -13.3%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -11.3%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積は8.02㎡/人です。都市部としては十分な緑地が確保されています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "8.02㎡/人",
+        "scoreImpact": 1
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "日常生活に必要な買い物環境が標準的に揃っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "577店舗",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "医療機関の数が比較的少なく、特定の診療科や夜間救急のアクセスについては事前確認が推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "67.4（人口10万人当たり）",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "標準的な保育環境が整備されています。入園状況については自治体の最新情報をご確認ください。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "47施設",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "全国的に標準的な財政水準です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "データなし（標準評価）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "全国的な少子化のトレンドに対し、標準的な推移を保っています。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-3.30%",
+        "scoreImpact": 0
+      }
+    ]
+  },
+  "totalScore": 46,
+  "metrics": {
+    "asset": 33,
+    "safety": 97,
+    "future": 33,
+    "convenience": 39,
+    "liquidity": 6
+  },
+  "lines": [
+    {
+      "name": "名古屋ガイドウェイバス"
+    }
+  ],
+  "redevelopmentProjects": [],
+  "marketPrice": 37000000,
+  "tx5y": 56,
+  "trend": "DOWN",
+  "yoy": 23.3,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "publisher": "国土交通省",
+        "document_name": "不動産取引価格情報",
+        "year": 2025
+      },
+      "population": {
+        "publisher": "国立社会保障・人口問題研究所",
+        "document_name": "日本の地域別将来推計人口",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "publisher": "自社",
+        "document_name": "独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "publisher": "国土交通省 / 国土地理院",
+        "document_name": "ハザードマップポータルサイト",
+        "year": 2026
+      },
+      "redevelopment": {
+        "publisher": "各自治体・開発事業者",
+        "document_name": "公開情報",
+        "version": "2026年2月時点"
+      }
+    }
+  }
+}

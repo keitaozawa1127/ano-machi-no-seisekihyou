@@ -1,0 +1,278 @@
+{
+  "mlit": {
+    "stationName": "浦宿",
+    "score": 1,
+    "marketPrice": 2000000,
+    "trend": "UP",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 2,
+        "lastPrice": 2800000
+      },
+      {
+        "name": "2024年",
+        "count": 1,
+        "lastPrice": 1500000
+      },
+      {
+        "name": "2025年",
+        "count": 2,
+        "lastPrice": 5500000
+      }
+    ],
+    "tx5y": 5,
+    "yoy": 266.7,
+    "up2y": 0,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 2800000,
+        "txCount": 2
+      },
+      {
+        "year": 2024,
+        "price": 1500000,
+        "txCount": 1
+      },
+      {
+        "year": 2025,
+        "price": 5500000,
+        "txCount": 2
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR石巻線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 48,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 4,
+        "description": "「土石流警戒区域」に含まれています。山腹崩壊による土石流発生のリスクがあります。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 6430,
+        "ageStructure": {
+          "0-14": 521,
+          "15-64": 3572,
+          "65+": 2337
+        }
+      },
+      {
+        "year": 2025,
+        "total": 5743,
+        "ageStructure": {
+          "0-14": 445,
+          "15-64": 3169,
+          "65+": 2129
+        }
+      },
+      {
+        "year": 2030,
+        "total": 5102,
+        "ageStructure": {
+          "0-14": 379,
+          "15-64": 2830,
+          "65+": 1893
+        }
+      },
+      {
+        "year": 2035,
+        "total": 4510,
+        "ageStructure": {
+          "0-14": 321,
+          "15-64": 2512,
+          "65+": 1677
+        }
+      },
+      {
+        "year": 2040,
+        "total": 3972,
+        "ageStructure": {
+          "0-14": 281,
+          "15-64": 2176,
+          "65+": 1515
+        }
+      },
+      {
+        "year": 2045,
+        "total": 3495,
+        "ageStructure": {
+          "0-14": 241,
+          "15-64": 1889,
+          "65+": 1365
+        }
+      },
+      {
+        "year": 2050,
+        "total": 3062,
+        "ageStructure": {
+          "0-14": 199,
+          "15-64": 1635,
+          "65+": 1228
+        }
+      }
+    ],
+    "sourceCity": "女川町",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間0件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（0件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が0.57であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "0.57（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は低く、治安の面で比較的安心できる地域です。 駅周辺の飲食店数は適度(2件)であり、過度な繁華街リスクは低いです。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "評価高",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの詳細データが取得できないため、全国平均水準（13.8%）として仮評価しています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "13.8% (標準)",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間に人が集まる活発なエリアであり、不動産の流動性や資産価値が維持されやすい傾向にあります。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ビジネス・商業集積地（比率: 126.5%）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "該当エリアの詳細データが取得できないため、標準水準として仮評価しています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "安定エリア（データ欠損・仮評価）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -42.3%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積が18.74㎡/人と非常に広く、自然豊かな環境が整っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "18.74㎡/人",
+        "scoreImpact": 2
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "小売店舗が非常に少なく、日常の買い物には隣接自治体への移動や車が必要な可能性が高いエリアです。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "48店舗",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "医療機関の数が非常に限られています。隣接自治体の医療施設や、緊急時の搬送体制などを事前に確認しておく必要があります。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "31.1（人口10万人当たり）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が非常に限られています。自治体の子育て支援制度や、隣接自治体を含めた預け先の確保について事前の確認が必要です。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "2施設",
+        "scoreImpact": -2
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "財政力指数が1.0を超えており、極めて健全な財政基盤を持ちます。将来的なインフラ維持や行政サービスの拡充に大きな期待が持てます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "1.01",
+        "scoreImpact": 2
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-5.96%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

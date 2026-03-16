@@ -17,6 +17,15 @@ export async function fetchTradeTrend(stationName: string, year: number): Promis
     return [];
 }
 
+// 動的スコア拡張用の型
+export type DynamicAddition = {
+    category: "asset" | "safety" | "future" | "convenience" | "liquidity";
+    label: string;          // 表示ラベル（例：犯罪率、公園アクセス）
+    value: string;          // 値（例：0.5件/千人、豊富）
+    scoreImpact: number;    // スコアへの加減点（例：-5, +10）
+    ruleDescription?: string; // rules に追加する詳細説明（あれば表示）
+};
+
 export type ExtendedMetrics = {
     futurePopulationRate: number; // 2050年時点の推計人口指数 (2020=100)
     populationProjection?: {      // 公的データ (IPSS)
@@ -33,6 +42,7 @@ export type ExtendedMetrics = {
         flood: { level: number; description: string };
         landslide: { level: number; description: string };
     };
+    dynamicAdditions?: DynamicAddition[]; // 新規追加項目動的配列
 };
 
 /**
@@ -69,6 +79,8 @@ export async function fetchExtendedMetrics(stationName: string, lat?: number, lo
 
     return {
         futurePopulationRate: popRate,
-        hazardRisk: hazard
+        hazardRisk: hazard,
+        // ここに将来的にJSON等から動的に算出・取得した配列を注入できます
+        dynamicAdditions: []
     };
 }

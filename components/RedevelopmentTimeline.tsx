@@ -16,7 +16,7 @@ type RedevelopmentProject = {
 
 type RedevelopmentTimelineProps = {
     data?: RedevelopmentProject[];
-    metadata?: { name: string; version: string };
+    metadata?: { publisher?: string; document_name?: string; name?: string; version?: string };
 };
 
 export default function RedevelopmentTimeline({ data, metadata }: RedevelopmentTimelineProps) {
@@ -38,10 +38,10 @@ export default function RedevelopmentTimeline({ data, metadata }: RedevelopmentT
             </h4>
 
             {hasData ? (
-                <div className="relative pl-4 space-y-6">
+                <ol className="relative pl-4 space-y-6 list-none m-0">
                     {/* 垂直線 - 親の左端(Padding Edge)から11pxの位置 (中心11.5px) */}
                     {/* pl-4(16px)のパディング領域内に描画される */}
-                    <div className="absolute top-0 bottom-0 left-[11px] w-px bg-[#E0E0E0]"></div>
+                    <div className="absolute top-0 bottom-0 left-[11px] w-px bg-[#E0E0E0]" aria-hidden="true"></div>
 
                     {sortedProjects.map((item, index) => {
                         const yearMatch = item.schedule.match(/(\d{4})/);
@@ -53,7 +53,7 @@ export default function RedevelopmentTimeline({ data, metadata }: RedevelopmentT
                             : item.source_url;
 
                         return (
-                            <div key={index} className="relative group">
+                            <li key={index} className="relative group">
                                 {/* メインコンテンツ - items-startで上揃え */}
                                 <div className="flex items-start gap-4 group hover:bg-slate-50/50 py-2 px-2 -ml-2 rounded-lg transition-colors">
                                     {/* ドット - 垂直線の中心(11.5px)に合わせて配置 */}
@@ -118,10 +118,10 @@ export default function RedevelopmentTimeline({ data, metadata }: RedevelopmentT
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
                         );
                     })}
-                </div>
+                </ol>
             ) : (
                 <div className="text-center py-10 text-xs text-[#4A544C] tracking-widest opacity-60">
                     現在、主要な再開発計画はありません
@@ -135,7 +135,7 @@ export default function RedevelopmentTimeline({ data, metadata }: RedevelopmentT
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="text-[10px] text-slate-500 tracking-wide">
-                        出典: {metadata?.name || "各自治体・開発事業者 公開情報"} {metadata?.version ? ` ${metadata.version}` : ""}
+                        出典: {metadata?.publisher || metadata?.name || "各自治体・開発事業者"} {metadata?.document_name || "公開情報"} {metadata?.version ? `(${metadata.version})` : ""}
                     </span>
                 </div>
             </div>

@@ -1,0 +1,258 @@
+{
+  "mlit": {
+    "stationName": "大泊",
+    "score": 0,
+    "marketPrice": 1100000,
+    "trend": "FLAT",
+    "chartData": [
+      {
+        "name": "2025年",
+        "count": 1,
+        "lastPrice": 1100000
+      }
+    ],
+    "tx5y": 1,
+    "yoy": 0,
+    "up2y": 0,
+    "trendData": [
+      {
+        "year": 2025,
+        "price": 1100000,
+        "txCount": 1
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR紀勢本線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 52,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 4,
+        "description": "「土石流警戒区域」に含まれています。山腹崩壊による土石流発生のリスクがあります。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 15965,
+        "ageStructure": {
+          "0-14": 1528,
+          "15-64": 7307,
+          "65+": 7130
+        }
+      },
+      {
+        "year": 2025,
+        "total": 14592,
+        "ageStructure": {
+          "0-14": 1336,
+          "15-64": 6555,
+          "65+": 6701
+        }
+      },
+      {
+        "year": 2030,
+        "total": 13191,
+        "ageStructure": {
+          "0-14": 1108,
+          "15-64": 5883,
+          "65+": 6200
+        }
+      },
+      {
+        "year": 2035,
+        "total": 11840,
+        "ageStructure": {
+          "0-14": 937,
+          "15-64": 5188,
+          "65+": 5715
+        }
+      },
+      {
+        "year": 2040,
+        "total": 10577,
+        "ageStructure": {
+          "0-14": 822,
+          "15-64": 4439,
+          "65+": 5316
+        }
+      },
+      {
+        "year": 2045,
+        "total": 9422,
+        "ageStructure": {
+          "0-14": 718,
+          "15-64": 3816,
+          "65+": 4888
+        }
+      },
+      {
+        "year": 2050,
+        "total": 8360,
+        "ageStructure": {
+          "0-14": 615,
+          "15-64": 3297,
+          "65+": 4448
+        }
+      }
+    ],
+    "sourceCity": "熊野市",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間1件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（1件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.09であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.09（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は低く、治安の面で比較的安心できる地域です。 駅周辺の飲食店数は適度(1件)であり、過度な繁華街リスクは低いです。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "評価高",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は32.4%とやや高く、供給過多や人口減少の兆しがあるため、不動産の流動性に一定の注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "32.4% (注意水準)",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間に人が集まる活発なエリアであり、不動産の流動性や資産価値が維持されやすい傾向にあります。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ビジネス・商業集積地（比率: 101.8%）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -12.5%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -26.4%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積は10.11㎡/人です。都市部としては十分な緑地が確保されています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "10.11㎡/人",
+        "scoreImpact": 1
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "駅周辺の店舗数が限られており、日常の買い物にはやや工夫が必要な場合があります。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "206店舗",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "周辺に医療機関が充実しており、万が一の際や日常の通院・小児科等の利用に非常に安心な環境です。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "169.1（人口10万人当たり）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が比較的少なく、保活（保育園探し）には早めの準備とリサーチが推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "7施設",
+        "scoreImpact": -1
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "財政力指数が低めであり、将来的な行政サービスやインフラ維持の動向に注視が必要です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.25",
+        "scoreImpact": -1
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が顕著であり、将来的なインフラ維持や街の活気に関し、長期的な慎重さが求められます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-11.90%",
+        "scoreImpact": -2
+      }
+    ]
+  }
+}

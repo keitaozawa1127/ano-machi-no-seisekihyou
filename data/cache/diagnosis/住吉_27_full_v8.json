@@ -1,0 +1,315 @@
+{
+  "mlit": {
+    "stationName": "住吉",
+    "score": 21,
+    "marketPrice": 26000000,
+    "trend": "UP",
+    "chartData": [
+      {
+        "name": "2022年",
+        "count": 43,
+        "lastPrice": 22000000
+      },
+      {
+        "name": "2023年",
+        "count": 38,
+        "lastPrice": 31000000
+      },
+      {
+        "name": "2024年",
+        "count": 41,
+        "lastPrice": 30000000
+      },
+      {
+        "name": "2025年",
+        "count": 21,
+        "lastPrice": 25000000
+      }
+    ],
+    "tx5y": 143,
+    "yoy": -16.7,
+    "up2y": -19.4,
+    "trendData": [
+      {
+        "year": 2022,
+        "price": 22000000,
+        "txCount": 43
+      },
+      {
+        "year": 2023,
+        "price": 31000000,
+        "txCount": 38
+      },
+      {
+        "year": 2024,
+        "price": 30000000,
+        "txCount": 41
+      },
+      {
+        "year": 2025,
+        "price": 25000000,
+        "txCount": 21
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR三角線"
+    },
+    {
+      "name": "JR神戸線"
+    },
+    {
+      "name": "東京メトロ半蔵門線"
+    },
+    {
+      "name": "神戸新交通六甲ライナー"
+    },
+    {
+      "name": "都営新宿線"
+    },
+    {
+      "name": "長崎電軌本線"
+    },
+    {
+      "name": "長崎電軌赤迫支線"
+    },
+    {
+      "name": "阪堺電軌上町線"
+    },
+    {
+      "name": "阪堺電軌阪堺線"
+    },
+    {
+      "name": "阪神本線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 109,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 103726,
+        "ageStructure": {
+          "0-14": 9641,
+          "15-64": 78030,
+          "65+": 16055
+        }
+      },
+      {
+        "year": 2025,
+        "total": 115685,
+        "ageStructure": {
+          "0-14": 10894,
+          "15-64": 87889,
+          "65+": 16902
+        }
+      },
+      {
+        "year": 2030,
+        "total": 116290,
+        "ageStructure": {
+          "0-14": 10881,
+          "15-64": 87263,
+          "65+": 18146
+        }
+      },
+      {
+        "year": 2035,
+        "total": 116906,
+        "ageStructure": {
+          "0-14": 10668,
+          "15-64": 86054,
+          "65+": 20184
+        }
+      },
+      {
+        "year": 2040,
+        "total": 116800,
+        "ageStructure": {
+          "0-14": 10365,
+          "15-64": 83420,
+          "65+": 23015
+        }
+      },
+      {
+        "year": 2045,
+        "total": 115423,
+        "ageStructure": {
+          "0-14": 10022,
+          "15-64": 80484,
+          "65+": 24917
+        }
+      },
+      {
+        "year": 2050,
+        "total": 113063,
+        "ageStructure": {
+          "0-14": 9503,
+          "15-64": 77264,
+          "65+": 26296
+        }
+      }
+    ],
+    "sourceCity": "大阪市中央区",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.92であり、地震時に揺れが大きくなりやすい軟弱地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.92（弱い）",
+        "scoreImpact": -3
+      },
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間1件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（1件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は平均的です。 駅近の飲食店は少なく、閑静な環境と言えます。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "標準",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は13.5%で、全国的な平均と同等水準の市場環境です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "13.5% (標準)",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間は人が流出する閑静な住宅街・ベッドタウンの性質を持っています。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ベッドタウン（比率: 92.3%）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -27.4%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -11.1%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積は8.70㎡/人です。都市部としては十分な緑地が確保されています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "8.70㎡/人",
+        "scoreImpact": 1
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "駅周辺の店舗数が限られており、日常の買い物にはやや工夫が必要な場合があります。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "257店舗",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "医療機関の数が比較的少なく、特定の診療科や夜間救急のアクセスについては事前確認が推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "55.4（人口10万人当たり）",
+        "scoreImpact": -1
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が比較的少なく、保活（保育園探し）には早めの準備とリサーチが推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "13施設",
+        "scoreImpact": -1
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "全国的に標準的な財政水準です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.53",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-6.96%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

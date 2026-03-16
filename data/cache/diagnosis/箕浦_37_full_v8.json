@@ -1,0 +1,268 @@
+{
+  "mlit": {
+    "stationName": "箕浦",
+    "score": 1,
+    "marketPrice": 2050000,
+    "trend": "FLAT",
+    "chartData": [
+      {
+        "name": "2023年",
+        "count": 1,
+        "lastPrice": 2100000
+      },
+      {
+        "name": "2025年",
+        "count": 1,
+        "lastPrice": 2000000
+      }
+    ],
+    "tx5y": 2,
+    "yoy": 0,
+    "up2y": -4.8,
+    "trendData": [
+      {
+        "year": 2023,
+        "price": 2100000,
+        "txCount": 1
+      },
+      {
+        "year": 2025,
+        "price": 2000000,
+        "txCount": 1
+      }
+    ],
+    "dataYear": 2025,
+    "latestYear": 2025
+  },
+  "lines": [
+    {
+      "name": "JR予讃線"
+    }
+  ],
+  "ext": {
+    "futurePopulationRate": 68,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "ハザードマップの浸水想定区域に含まれていません。"
+      },
+      "landslide": {
+        "level": 4,
+        "description": "「土石流警戒区域」に含まれています。山腹崩壊による土石流発生のリスクがあります。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 57438,
+        "ageStructure": {
+          "0-14": 6732,
+          "15-64": 31132,
+          "65+": 19574
+        }
+      },
+      {
+        "year": 2025,
+        "total": 54530,
+        "ageStructure": {
+          "0-14": 6035,
+          "15-64": 29161,
+          "65+": 19334
+        }
+      },
+      {
+        "year": 2030,
+        "total": 51470,
+        "ageStructure": {
+          "0-14": 5340,
+          "15-64": 27358,
+          "65+": 18772
+        }
+      },
+      {
+        "year": 2035,
+        "total": 48433,
+        "ageStructure": {
+          "0-14": 4799,
+          "15-64": 25518,
+          "65+": 18116
+        }
+      },
+      {
+        "year": 2040,
+        "total": 45380,
+        "ageStructure": {
+          "0-14": 4463,
+          "15-64": 23078,
+          "65+": 17839
+        }
+      },
+      {
+        "year": 2045,
+        "total": 42309,
+        "ageStructure": {
+          "0-14": 4102,
+          "15-64": 20861,
+          "65+": 17346
+        }
+      },
+      {
+        "year": 2050,
+        "total": 39329,
+        "ageStructure": {
+          "0-14": 3700,
+          "15-64": 19131,
+          "65+": 16498
+        }
+      }
+    ],
+    "sourceCity": "観音寺市",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間0件であり、交通リスクは低いエリアにあたります。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "事故リスク低（0件）",
+        "scoreImpact": 1
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.44であり、標準的な地盤の強さを持つエリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.44（普通）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は平均的です。 駅周辺の飲食店数は適度(1件)であり、過度な繁華街リスクは低いです。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "標準",
+        "scoreImpact": 0
+      },
+      {
+        "category": "asset",
+        "label": "空き家率",
+        "ruleDescription": "該当エリアの空き家率は18.6%とやや高く、供給過多や人口減少の兆しがあるため、不動産の流動性に一定の注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "18.6% (注意水準)",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "昼夜間人口比率",
+        "ruleDescription": "昼間に人が集まる活発なエリアであり、不動産の流動性や資産価値が維持されやすい傾向にあります。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "ビジネス・商業集積地（比率: 101.9%）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -72.0%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "asset",
+        "label": "事業所数推移",
+        "ruleDescription": "事業所数の減少が見られ、将来的な地域経済の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "経済活動縮小懸念（事業所減少 -19.8%）",
+        "scoreImpact": -2
+      },
+      {
+        "category": "convenience",
+        "label": "一人当たり都市公園面積",
+        "ruleDescription": "一人当たりの都市公園面積が17.19㎡/人と非常に広く、自然豊かな環境が整っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "17.19㎡/人",
+        "scoreImpact": 2
+      },
+      {
+        "category": "convenience",
+        "label": "買い物利便性（大型商業施設等）",
+        "ruleDescription": "日常生活に必要な買い物環境が標準的に揃っています。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "516店舗",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "医療機関アクセス",
+        "ruleDescription": "標準的な数の医療機関が点在しており、日常の医療アクセスには困りません。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "90.6（人口10万人当たり）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "convenience",
+        "label": "子育て環境（保育施設等）",
+        "ruleDescription": "保育施設が比較的少なく、保活（保育園探し）には早めの準備とリサーチが推奨されます。",
+        "targetMode": [
+          "convenience"
+        ],
+        "value": "12施設",
+        "scoreImpact": -1
+      },
+      {
+        "category": "future",
+        "label": "財政力指数（自治体の財政余力）",
+        "ruleDescription": "全国的に標準的な財政水準です。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "0.61",
+        "scoreImpact": 0
+      },
+      {
+        "category": "future",
+        "label": "年少人口増減率（街の若返り度）",
+        "ruleDescription": "年少人口の減少が比較的進んでおり、街の高齢化が進みつつある傾向が見られます。",
+        "targetMode": [
+          "future"
+        ],
+        "value": "-6.60%",
+        "scoreImpact": -1
+      }
+    ]
+  }
+}

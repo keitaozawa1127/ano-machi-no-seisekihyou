@@ -13,6 +13,14 @@ export default function Footer() {
                 <Link href="/terms" className="text-[10px] text-[#666] tracking-[0.3em] hover:text-black transition-colors">
                     TERMS
                 </Link>
+                <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfYmbKzFWgZoLJhseFdD5FAky2dyT-sAyfQv-uIpR12HRXv2g/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] text-[#666] tracking-[0.3em] hover:text-black transition-colors"
+                >
+                    CONTACT
+                </a>
             </div>
             <div className="max-w-2xl mx-auto px-6 text-xs text-gray-500 mt-8">
                 <p className="font-bold text-gray-700 mb-1">※各データの詳細な出典・取得年次は、診断結果の各項目に記載しています。</p>

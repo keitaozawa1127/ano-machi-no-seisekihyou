@@ -1,0 +1,377 @@
+import fs from 'fs/promises';
+import path from 'path';
+import dotenv from 'dotenv';
+
+// 1. 環境設定
+dotenv.config();
+
+const ESTAT_APP_ID = process.env.ESTAT_APP_ID;
+if (!ESTAT_APP_ID) {
+    console.error("エラー: .env に ESTAT_APP_ID が設定されていません。");
+    process.exit(1);
+}
+
+// コマンドライン引数 --test で先頭10件のみ処理するテストモード
+const TEST_MODE = process.argv.includes('--test');
+const TEST_LIMIT = 10;
+
+const ESTAT_BASE_URL = 'https://api.e-stat.go.jp/rest/3.0/app/json';
+
+// 社会・人口統計体系（市区町村データ - Ａ 人口・世帯）の統計表ID
+const POPULATION_STATS_ID = '0000020201';
+
+// 昼夜間人口比率の cat01 コード（起動時に動的に取得）
+let DAY_NIGHT_POP_CODE = '';
+
+// ==========================================
+// ユーティリティ: スリープ関数
+// ==========================================
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+// e-Stat API用 エクスポネンシャル・バックオフ＋最大3回リトライ
+async function fetchEstatWithRetry(url: string, retryCount = 0): Promise<any> {
+    console.log(`  > [e-Stat API] Fetching: ${url.replace(ESTAT_APP_ID!, '***')} (Retry: ${retryCount})`);
+    try {
+        const response = await fetch(url);
+        await sleep(1500); // 厳格な 1500ms スリープ
+        
+        if (!response.ok) {
+            if (retryCount < 3) {
+                const backoffWaitTime = (retryCount + 1) * 10000; // 10s, 20s, 30s
+                console.log(`  > [e-Stat API] HTTP Error: ${response.status}. ${backoffWaitTime / 1000}秒待機後にリトライします...`);
+                await sleep(backoffWaitTime);
+                return await fetchEstatWithRetry(url, retryCount + 1);
+            }
+            console.error(`  > [e-Stat API] 最終HTTP Error: ${response.status}. リトライ上限到達`);
+            return null;
+        }
+
+        return await response.json();
+    } catch (err: any) {
+        console.error(`  > [e-Stat API] 通信エラー: ${err.message}`);
+        await sleep(1500);
+        
+        if (retryCount < 3) {
+            const backoffWaitTime = (retryCount + 1) * 10000;
+            console.log(`  > [e-Stat API] ネットワークエラー。${backoffWaitTime / 1000}秒待機後にリトライします...`);
+            await sleep(backoffWaitTime);
+            return await fetchEstatWithRetry(url, retryCount + 1);
+        }
+        
+        console.error(`  > [e-Stat API] 最終通信エラー. リトライ上限到達`);
+        return null;
+    }
+}
+
+// ==========================================
+// e-Stat: メタデータ初期化
+// ==========================================
+async function initPopulationMetadata(): Promise<void> {
+    const url = `${ESTAT_BASE_URL}/getMetaInfo?appId=${ESTAT_APP_ID}&statsDataId=${POPULATION_STATS_ID}`;
+    console.log(`> [Init] 人口・世帯統計メタ情報を取得中...`);
+    const json = await fetchEstatWithRetry(url);
+    if (!json) throw new Error("メタ情報の取得に失敗しました");
+
+    const cobjs = json.GET_META_INFO?.METADATA_INF?.CLASS_INF?.CLASS_OBJ;
+    const coarr = Array.isArray(cobjs) ? cobjs : [cobjs];
+
+    for (const co of coarr) {
+        const id = co?.['@id'];
+        const cls = Array.isArray(co?.CLASS) ? co.CLASS : [co?.CLASS];
+        if (id === 'cat01') {
+            const dnPopEntry = cls.find((c: any) => c?.['@code'] === 'A6108' || c?.['@name']?.includes('昼夜間人口比率'));
+            
+            if (dnPopEntry) {
+                DAY_NIGHT_POP_CODE = dnPopEntry['@code'];
+                console.log(`> [Init] 昼夜間人口比率 cat01コード: ${DAY_NIGHT_POP_CODE} (${dnPopEntry['@name']})`);
+            }
+        }
+    }
+    if (!DAY_NIGHT_POP_CODE) {
+        throw new Error(`cat01 の昼夜間人口比率コードが取得できませんでした。`);
+    }
+}
+
+function extractLatestYearValue(json: any): number | null {
+    if (!json) return null;
+    const sd = json?.GET_STATS_DATA;
+    if (!sd) return null;
+
+    const status = sd.RESULT?.STATUS;
+    if (status !== 0) return null;
+
+    const values = sd.STATISTICAL_DATA?.DATA_INF?.VALUE;
+    if (!values) return null;
+
+    const arr: any[] = Array.isArray(values) ? values : [values];
+    if (arr.length === 0) return null;
+
+    let latestEntry: any = null;
+    let latestTimeCode = '';
+
+    // 年度順に降順ソートして最新を取得
+    for (const v of arr) {
+        const timeCode = v['@time'] || '';
+        if (!latestTimeCode || timeCode.localeCompare(latestTimeCode) > 0) {
+            latestTimeCode = timeCode;
+            latestEntry = v;
+        }
+    }
+
+    if (!latestEntry) return null;
+
+    const raw = latestEntry['$'];
+    const num = parseFloat(raw);
+
+    if (isNaN(num)) return null;
+    return num;
+}
+
+// キャッシュを活用したデータ取得
+async function fetchPopulationData(cityCode: string, cache: Record<string, number | null>): Promise<number | null> {
+    if (cache[cityCode] !== undefined) {
+        return cache[cityCode];
+    }
+
+    const url = `${ESTAT_BASE_URL}/getStatsData?appId=${ESTAT_APP_ID}&statsDataId=${POPULATION_STATS_ID}&cdArea=${cityCode}&cdCat01=${DAY_NIGHT_POP_CODE}`;
+    const json = await fetchEstatWithRetry(url);
+    const count = extractLatestYearValue(json);
+    cache[cityCode] = count;
+    return count;
+}
+
+
+// ==========================================
+// 逆ジオコーディング (GSI API)
+// ==========================================
+async function getCityCodeFromLatLng(lat: number, lon: number): Promise<string | null> {
+    try {
+        const url = `https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=${lat}&lon=${lon}`;
+        console.log(`  > [GSI API] 逆ジオコーディング取得中... (lat:${lat}, lon:${lon})`);
+
+        const response = await fetch(url);
+        await sleep(1500);
+
+        if (!response.ok) return null;
+
+        const data = await response.json();
+        if (data && data.results && data.results.muniCd) {
+            return data.results.muniCd;
+        }
+        return null;
+    } catch (err) {
+        console.error(`  > [GSI API] 通信エラー: ${err}`);
+        await sleep(1500);
+        return null;
+    }
+}
+
+// ==========================================
+// メイン関数
+// ==========================================
+async function main() {
+    if (TEST_MODE) {
+        console.log(`=== [テストモード] 先頭 ${TEST_LIMIT} 駅のみ処理 ===`);
+    }
+    console.log("=== 資産性：昼夜間人口比率 自動取得・更新スクリプト開始（全件上書きモード） ===");
+
+    let skipCoordMissingCount = 0;
+    let skipExistingCount = 0;
+    let processedCount = 0;
+
+    // --- 1. 起動時初期化 ---
+    await initPopulationMetadata();
+
+    // --- 2. インメモリキャッシュ ---
+    const cachePopulation: Record<string, number | null> = {};
+
+    // --- 3. データの読み取り ---
+    const targetDir = path.join(process.cwd(), 'data', 'cache', 'diagnosis');
+    const stationsJsonPath = path.join(process.cwd(), 'data', 'stations.json');
+    const coordsCacheFile = path.join(process.cwd(), 'data', 'cache', 'station_coords.json');
+
+    let stationsMap: Record<string, any> = {};
+    let coordsCache: Record<string, any> = {};
+
+    try {
+        const stRaw = await fs.readFile(stationsJsonPath, 'utf-8');
+        const stData = JSON.parse(stRaw);
+        if (stData.stations || Array.isArray(stData)) {
+            const arr = stData.stations || stData;
+            for (const s of arr) {
+                const name = s.station_name || s.name;
+                if (name) stationsMap[name] = s;
+            }
+        }
+        console.log(`> [Info] 駅マスターから ${Object.keys(stationsMap).length} 件の情報をロード`);
+    } catch (e) {
+        console.warn("> [Warn] stations.json を読み込めませんでした。");
+    }
+
+    try {
+        const coordsRaw = await fs.readFile(coordsCacheFile, 'utf-8');
+        coordsCache = JSON.parse(coordsRaw);
+        console.log(`> [Info] 座標キャッシュから ${Object.keys(coordsCache).length} 件の情報をロード`);
+    } catch (e) {
+        console.warn("> [Warn] station_coords.json を読み込めませんでした。");
+    }
+
+    let files: string[] = [];
+    try {
+        files = await fs.readdir(targetDir);
+    } catch (e) {
+        console.error(`エラー: ${targetDir} を読み込めませんでした。`);
+        process.exit(1);
+    }
+
+    let jsonFiles = files.filter(f => f.endsWith('.json') && !f.includes('_v2'));
+
+    if (TEST_MODE) {
+        jsonFiles = jsonFiles.slice(0, TEST_LIMIT);
+        console.log(`> [テスト] 処理対象: ${jsonFiles.length} ファイル`);
+    } else {
+        console.log(`> [Info] 処理対象ファイル数: ${jsonFiles.length} ファイル`);
+    }
+
+    for (const file of jsonFiles) {
+        const filePath = path.join(targetDir, file);
+        let stationName = file.replace('.json', '');
+        if (stationName.includes('_')) stationName = stationName.split('_')[0];
+
+        try {
+            const rawData = await fs.readFile(filePath, 'utf-8');
+            let data = JSON.parse(rawData);
+
+            // 1. 差分更新（Skip）ロジック：既にデータが存在する場合はスキップ
+            if (data.ext && Array.isArray(data.ext.dynamicAdditions)) {
+                const hasExisting = data.ext.dynamicAdditions.some((item: any) => item.label === "昼夜間人口比率");
+                if (hasExisting) {
+                    console.log(`[Skip] ${stationName}: 既に昼夜間人口データが存在します`);
+                    skipExistingCount++;
+                    continue;
+                }
+            }
+
+            let lat: number | undefined;
+            let lon: number | undefined;
+            let cityCode: string | undefined;
+
+            // 1) 自身のJSON
+            if (!Array.isArray(data)) {
+                lat = data.lat || data.ext?.hazardRisk?.lat || data.extendedMetrics?.hazardRisk?.lat || data.debug?.lat;
+                lon = data.lon || data.ext?.hazardRisk?.lon || data.extendedMetrics?.hazardRisk?.lon || data.debug?.lon;
+                cityCode = data.cityCode;
+            }
+
+            // 2) stations.json
+            if (stationsMap[stationName]) {
+                if (!lat) lat = stationsMap[stationName].lat;
+                if (!lon) lon = stationsMap[stationName].lon;
+                if (!cityCode) cityCode = stationsMap[stationName].cityCode || stationsMap[stationName].city_code;
+            }
+
+            // 3) station_coords.json
+            if (coordsCache[stationName]) {
+                if (!lat) lat = coordsCache[stationName].lat;
+                if (!lon) lon = coordsCache[stationName].lon;
+            }
+
+            // 三重フォールバック: 逆ジオコーディング
+            if (typeof lat === 'number' && typeof lon === 'number' && !cityCode) {
+                console.log(`  > [Info] ${stationName} の cityCode が見つからないため逆ジオコーディングを実行します`);
+                const fetchedCityCode = await getCityCodeFromLatLng(lat, lon);
+                if (fetchedCityCode) {
+                    cityCode = fetchedCityCode;
+                }
+            }
+
+            if (typeof lat !== 'number' || typeof lon !== 'number' || !cityCode) {
+                console.error(`- [Error] ${file}: 座標または市区町村コード(cityCode)が完全に欠損しているためスキップします。`);
+                skipCoordMissingCount++;
+                continue;
+            }
+
+            cityCode = cityCode.toString().padStart(5, '0');
+
+            // --- A. 昼夜間人口比率の取得 ---
+            const dayNightPopRatio = await fetchPopulationData(cityCode, cachePopulation);
+
+
+            // ======================================
+            // 評価ロジック（フォールバック対応）
+            // ======================================
+            let scoreImpact = 0;
+            let description = "";
+            let evaluationValue = "";
+            let formattedRate = "";
+
+            if (dayNightPopRatio === null || dayNightPopRatio === 0) {
+                console.warn(`  > [Warn] ${stationName}: データが取得できないため全国平均水準(100.0%)でフォールバックします。`);
+                formattedRate = "100.0%";
+                scoreImpact = 0;
+                evaluationValue = formattedRate + " (標準)";
+                description = "該当エリアの詳細データが取得できないため、全国平均値（100.0%）として仮評価しています。";
+            } else {
+                formattedRate = dayNightPopRatio.toFixed(1) + "%";
+
+                if (dayNightPopRatio >= 100) {
+                    scoreImpact = 2;
+                    evaluationValue = `ビジネス・商業集積地（比率: ${formattedRate}）`;
+                    description = "昼間に人が集まる活発なエリアであり、不動産の流動性や資産価値が維持されやすい傾向にあります。";
+                } else {
+                    scoreImpact = 0;
+                    evaluationValue = `ベッドタウン（比率: ${formattedRate}）`;
+                    description = "昼間は人が流出する閑静な住宅街・ベッドタウンの性質を持っています。";
+                }
+            }
+
+            // ======================================
+            // ファイル上書き保存（差分スキップなし・全件上書き）
+            // ======================================
+            const newItem = {
+                category: "asset",
+                label: "昼夜間人口比率",
+                ruleDescription: description,
+                targetMode: ["asset"],
+                value: evaluationValue,
+                scoreImpact: scoreImpact
+            };
+
+            if (!data.ext) data.ext = {};
+            if (!Array.isArray(data.ext.dynamicAdditions)) {
+                data.ext.dynamicAdditions = [];
+            }
+
+            const existingIndex = data.ext.dynamicAdditions.findIndex((item: any) => item.label === "昼夜間人口比率");
+            if (existingIndex >= 0) {
+                data.ext.dynamicAdditions[existingIndex] = newItem;
+                console.log(`  -> [Update] 駅:${stationName}, ${evaluationValue}, Impact=${scoreImpact}`);
+            } else {
+                data.ext.dynamicAdditions.push(newItem);
+                console.log(`  -> [Add] 駅:${stationName}, ${evaluationValue}, Impact=${scoreImpact}`);
+            }
+
+            await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
+            processedCount++;
+
+        } catch (err: any) {
+            console.error(`- [Error] ${file} (${stationName}) 処理中エラー: ${err.message}`);
+        }
+    }
+
+    console.log("\n===========================================");
+    console.log("=== 直列バッチ処理・完了（全件上書き） ===");
+    console.log("===========================================");
+    if (TEST_MODE) {
+        console.log(`=== [テストモード] 処理終了 ===`);
+    }
+    console.log(` [結果] 処理成功 : ${processedCount} 件`);
+    console.log(` [結果] スキップ : ${skipExistingCount} 件`);
+    console.log(` [警告] データ欠損 : ${skipCoordMissingCount} 件`);
+    console.log("===========================================\n");
+}
+
+main().catch(err => {
+    console.error("予期せぬクリティカルエラー:", err);
+    process.exit(1);
+});

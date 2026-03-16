@@ -1,0 +1,284 @@
+{
+  "ok": true,
+  "verdict": "risky",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "平均的（7件）"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "避難所アクセス懸念"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "1.31（強い）"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "標準"
+    },
+    {
+      "label": "直近5年の取引件数",
+      "value": "99 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "1500 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "20.0%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "交通事故リスク（半径500m）",
+      "value": "駅周辺500m圏内で発生した人身事故は年間7件であり、標準的な交通リスクのエリアです。"
+    },
+    {
+      "label": "避難所アクセス（半径1km）",
+      "value": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。"
+    },
+    {
+      "label": "地盤の強さ（表層地盤増幅率）",
+      "value": "表層地盤増幅率が1.31であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。"
+    },
+    {
+      "label": "治安・犯罪リスク（ハイブリッド評価）",
+      "value": "該当エリア（市区町村）の犯罪発生率は平均的です。 駅周辺の飲食店数は適度(38件)であり、過度な繁華街リスクは低いです。"
+    },
+    {
+      "label": "将来人口（2050推計）",
+      "value": "推計人口指数が 85 と減少傾向です。長期保有時の出口戦略に注意が必要です。"
+    },
+    {
+      "label": "災害リスク（水害）",
+      "value": "中程度の水害リスクがあります。階数選択や避難計画の確認を推奨します。"
+    },
+    {
+      "label": "取引件数",
+      "value": "取引件数は相対的に一定の厚みがあり、極端な少数サンプル由来のブレは出にくい部類です。ただし物件条件（築年・面積帯）で結果が変わる点は残ります。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇が強く、過熱局面では期待が先行して価格が伸びやすい一方、前提が崩れると調整も起きやすくなります。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇が急で、短期的な反動（調整）リスクが高まります。購入検討では価格の納得感と資金余力を厚めに見てください。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "大河原",
+    "year": 2024,
+    "tx5y": 99,
+    "yoy": 20,
+    "up2y": 20,
+    "prevYear": null,
+    "score": 35
+  },
+  "trendData": [
+    {
+      "year": 2022,
+      "price": 23500000,
+      "txCount": 18
+    },
+    {
+      "year": 2023,
+      "price": 12500000,
+      "txCount": 24
+    },
+    {
+      "year": 2024,
+      "price": 12500000,
+      "txCount": 38
+    },
+    {
+      "year": 2025,
+      "price": 15000000,
+      "txCount": 19
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 85,
+    "hazardRisk": {
+      "flood": {
+        "level": 2,
+        "description": "想定最大規模の浸水深が0.5m未満（床下浸水相当）と予測されています。"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "土砂災害警戒区域に含まれていません。"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 23571,
+        "ageStructure": {
+          "0-14": 3032,
+          "15-64": 13987,
+          "65+": 6552
+        }
+      },
+      {
+        "year": 2025,
+        "total": 23191,
+        "ageStructure": {
+          "0-14": 2696,
+          "15-64": 13633,
+          "65+": 6862
+        }
+      },
+      {
+        "year": 2030,
+        "total": 22722,
+        "ageStructure": {
+          "0-14": 2410,
+          "15-64": 13339,
+          "65+": 6973
+        }
+      },
+      {
+        "year": 2035,
+        "total": 22165,
+        "ageStructure": {
+          "0-14": 2253,
+          "15-64": 12765,
+          "65+": 7147
+        }
+      },
+      {
+        "year": 2040,
+        "total": 21528,
+        "ageStructure": {
+          "0-14": 2170,
+          "15-64": 11800,
+          "65+": 7558
+        }
+      },
+      {
+        "year": 2045,
+        "total": 20788,
+        "ageStructure": {
+          "0-14": 2091,
+          "15-64": 10927,
+          "65+": 7770
+        }
+      },
+      {
+        "year": 2050,
+        "total": 19966,
+        "ageStructure": {
+          "0-14": 1968,
+          "15-64": 10177,
+          "65+": 7821
+        }
+      }
+    ],
+    "sourceCity": "大河原町",
+    "dynamicAdditions": [
+      {
+        "category": "safety",
+        "label": "交通事故リスク（半径500m）",
+        "ruleDescription": "駅周辺500m圏内で発生した人身事故は年間7件であり、標準的な交通リスクのエリアです。",
+        "targetMode": [
+          "default",
+          "family"
+        ],
+        "value": "平均的（7件）",
+        "scoreImpact": 0
+      },
+      {
+        "category": "safety",
+        "label": "避難所アクセス（半径1km）",
+        "value": "避難所アクセス懸念",
+        "scoreImpact": -3,
+        "ruleDescription": "駅周辺1km圏内に指定避難所が確認できず、災害時のアクセスに懸念があります。",
+        "targetMode": [
+          "default",
+          "family"
+        ]
+      },
+      {
+        "category": "safety",
+        "label": "地盤の強さ（表層地盤増幅率）",
+        "ruleDescription": "表層地盤増幅率が1.31であり、地震時に揺れが増幅されにくい比較的強固な地盤エリアに該当します。",
+        "targetMode": [
+          "default",
+          "asset"
+        ],
+        "value": "1.31（強い）",
+        "scoreImpact": 2
+      },
+      {
+        "category": "safety",
+        "label": "治安・犯罪リスク（ハイブリッド評価）",
+        "ruleDescription": "該当エリア（市区町村）の犯罪発生率は平均的です。 駅周辺の飲食店数は適度(38件)であり、過度な繁華街リスクは低いです。",
+        "targetMode": [
+          "default",
+          "family",
+          "asset"
+        ],
+        "value": "標準",
+        "scoreImpact": 0
+      }
+    ]
+  },
+  "totalScore": 35,
+  "metrics": {
+    "asset": 16,
+    "safety": 69,
+    "future": 32,
+    "convenience": 49,
+    "liquidity": 8
+  },
+  "lines": [
+    {
+      "name": "JR東北本線"
+    },
+    {
+      "name": "JR関西本線"
+    }
+  ],
+  "redevelopmentProjects": [],
+  "marketPrice": 16000000,
+  "tx5y": 99,
+  "trend": "DOWN",
+  "yoy": 20,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "publisher": "国土交通省",
+        "document_name": "不動産取引価格情報",
+        "year": 2025
+      },
+      "population": {
+        "publisher": "国立社会保障・人口問題研究所",
+        "document_name": "日本の地域別将来推計人口",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "publisher": "自社",
+        "document_name": "独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "publisher": "国土交通省 / 国土地理院",
+        "document_name": "ハザードマップポータルサイト",
+        "year": 2026
+      },
+      "redevelopment": {
+        "publisher": "各自治体・開発事業者",
+        "document_name": "各自治体開発事業者 公開情報",
+        "version": "2026年2月版"
+      }
+    }
+  }
+}

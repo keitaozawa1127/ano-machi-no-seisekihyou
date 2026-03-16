@@ -1,0 +1,214 @@
+{
+  "ok": true,
+  "verdict": "risky",
+  "headline": "価格は上昇傾向にありますが、過熱による反動リスクに注意してください",
+  "reasons": [
+    {
+      "label": "駅乗降客数推移",
+      "value": "衰退懸念エリア（乗降客数減少 -18.3%）"
+    },
+    {
+      "label": "直近5年の取引件数",
+      "value": "19 件"
+    },
+    {
+      "label": "平均成約価格",
+      "value": "1100 万円"
+    },
+    {
+      "label": "対前年変動率",
+      "value": "1.9%"
+    }
+  ],
+  "rules": [
+    {
+      "label": "駅乗降客数推移",
+      "value": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。"
+    },
+    {
+      "label": "将来人口（2050推計）",
+      "value": "推計人口指数が 66 と低く、過疎化による流動性低下のリスクがあります。"
+    },
+    {
+      "label": "取引件数",
+      "value": "直近5年の取引件数が20件未満のため、指標がブレやすく、単年の数値で判断しにくい状態です。周辺エリアや物件条件を変えた複数の見方で確認するのが安全です。"
+    },
+    {
+      "label": "中長期（年次プレ）",
+      "value": "中長期の上昇は強くありません。将来の上昇を前提にした判断は避け、住み替え・保有期間の前提でリスクを見てください。"
+    },
+    {
+      "label": "短期（直近2年）",
+      "value": "直近2年の上昇が急で、短期的な反動（調整）リスクが高まります。購入検討では価格の納得感と資金余力を厚めに見てください。"
+    }
+  ],
+  "note": "データ基準日: 2025年時点。 この診断は公開データにもとづく簡易的な目安であり、将来の価格や資産性を保証するものではありません。個別物件の条件（築年・面積・方角・管理状態など）で結果は大きく変わります。",
+  "debug": {
+    "stationName": "櫟本",
+    "year": 2024,
+    "tx5y": 19,
+    "yoy": 1.9,
+    "up2y": 25.7,
+    "prevYear": null,
+    "score": 39
+  },
+  "trendData": [
+    {
+      "year": 2022,
+      "price": 21000000,
+      "txCount": 2
+    },
+    {
+      "year": 2023,
+      "price": 8750000,
+      "txCount": 8
+    },
+    {
+      "year": 2024,
+      "price": 10800000,
+      "txCount": 4
+    },
+    {
+      "year": 2025,
+      "price": 11000000,
+      "txCount": 5
+    }
+  ],
+  "extendedMetrics": {
+    "futurePopulationRate": 66,
+    "hazardRisk": {
+      "flood": {
+        "level": 0,
+        "description": "データなし"
+      },
+      "landslide": {
+        "level": 0,
+        "description": "データなし"
+      }
+    },
+    "populationProjection": [
+      {
+        "year": 2020,
+        "total": 63889,
+        "ageStructure": {
+          "0-14": 7718,
+          "15-64": 39105,
+          "65+": 17066
+        }
+      },
+      {
+        "year": 2025,
+        "total": 58652,
+        "ageStructure": {
+          "0-14": 6677,
+          "15-64": 34976,
+          "65+": 16999
+        }
+      },
+      {
+        "year": 2030,
+        "total": 55881,
+        "ageStructure": {
+          "0-14": 5615,
+          "15-64": 32881,
+          "65+": 17385
+        }
+      },
+      {
+        "year": 2035,
+        "total": 52713,
+        "ageStructure": {
+          "0-14": 4955,
+          "15-64": 29954,
+          "65+": 17804
+        }
+      },
+      {
+        "year": 2040,
+        "total": 49072,
+        "ageStructure": {
+          "0-14": 4725,
+          "15-64": 26082,
+          "65+": 18265
+        }
+      },
+      {
+        "year": 2045,
+        "total": 45434,
+        "ageStructure": {
+          "0-14": 4469,
+          "15-64": 23077,
+          "65+": 17888
+        }
+      },
+      {
+        "year": 2050,
+        "total": 42057,
+        "ageStructure": {
+          "0-14": 4086,
+          "15-64": 20884,
+          "65+": 17087
+        }
+      }
+    ],
+    "sourceCity": "天理市",
+    "dynamicAdditions": [
+      {
+        "category": "asset",
+        "label": "駅乗降客数推移",
+        "ruleDescription": "駅利用者の減少が見られ、将来的な不動産需要の縮小に注意が必要です。",
+        "targetMode": [
+          "asset"
+        ],
+        "value": "衰退懸念エリア（乗降客数減少 -18.3%）",
+        "scoreImpact": -2
+      }
+    ]
+  },
+  "totalScore": 39,
+  "metrics": {
+    "asset": 9,
+    "safety": 100,
+    "future": 21,
+    "convenience": 50,
+    "liquidity": 3
+  },
+  "lines": [],
+  "redevelopmentProjects": [],
+  "marketPrice": 11000000,
+  "tx5y": 19,
+  "trend": "DOWN",
+  "yoy": 1.9,
+  "dataYear": 2025,
+  "metadata": {
+    "sources": {
+      "realEstate": {
+        "publisher": "国土交通省",
+        "document_name": "不動産取引価格情報",
+        "year": 2025
+      },
+      "population": {
+        "publisher": "国立社会保障・人口問題研究所",
+        "document_name": "日本の地域別将来推計人口",
+        "version": "推計",
+        "baseYear": 2020,
+        "targetYear": 2050
+      },
+      "algorithm": {
+        "publisher": "自社",
+        "document_name": "独自アルゴリズム算出",
+        "year": 2026
+      },
+      "hazard": {
+        "publisher": "国土交通省 / 国土地理院",
+        "document_name": "ハザードマップポータルサイト",
+        "year": 2026
+      },
+      "redevelopment": {
+        "publisher": "各自治体・開発事業者",
+        "document_name": "公開情報",
+        "version": "2026年2月時点"
+      }
+    }
+  }
+}
