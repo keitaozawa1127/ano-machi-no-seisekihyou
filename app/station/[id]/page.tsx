@@ -80,7 +80,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         breakdown = `資産性${metrics.asset} 安全性${metrics.safety} 将来性${metrics.future} 利便性${metrics.convenience} 流動性${metrics.liquidity}`;
     }
 
-    const ogImageUrl = `https://anomachi.jp/api/og?station=${encodeURIComponent(decodedName)}&score=${totalScore}&verdict=${encodeURIComponent(verdictLabel)}`;
+    // const ogImageUrl = `https://anomachi.jp/api/og?station=${encodeURIComponent(decodedName)}&score=${totalScore}&verdict=${encodeURIComponent(verdictLabel)}`;
+    const ogImageUrl = 'https://anomachi.jp/images/default-og.png';
 
     return {
         title: `【あの街の成績表】${decodedName}駅の住みやすさ・資産性診断（総合スコア: ${totalScore}点 / ${verdictLabel}）`,
