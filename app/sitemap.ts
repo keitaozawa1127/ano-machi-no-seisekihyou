@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import fs from 'fs/promises';
 import path from 'path';
 
+export const dynamic = 'force-static';
+
 // 本番ドメインを設定
 const BASE_URL = 'https://anomachi.jp';
 
