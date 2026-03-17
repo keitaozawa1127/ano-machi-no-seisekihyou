@@ -1,19 +1,9 @@
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import { authOptions } from "@/app/api/_auth/[...nextauth]/route";
+import AdminAuthGuard from "@/components/AdminAuthGuard";
 
-export const runtime = "edge";
-
-export default async function AdminLayout({
+export default function AdminLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const session = await getServerSession(authOptions);
-
-    if (!session) {
-        redirect("/login");
-    }
-
-    return <>{children}</>;
+    return <AdminAuthGuard>{children}</AdminAuthGuard>;
 }
