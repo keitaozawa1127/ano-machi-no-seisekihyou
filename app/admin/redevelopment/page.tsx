@@ -1,10 +1,6 @@
+"use client";
+
 import Link from "next/link";
-
-export const metadata = {
-  title: "Redevelopment Admin (Archived)",
-};
-
-export const runtime = "edge";
 
 export default function RedevelopmentAuditPage() {
   return (
