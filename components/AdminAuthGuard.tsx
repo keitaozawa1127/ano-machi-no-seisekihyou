@@ -1,20 +1,31 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+
+function hasSessionCookie(): boolean {
+    return document.cookie.split(";").some((c) => {
+        const name = c.trim().split("=")[0];
+        return (
+            name === "next-auth.session-token" ||
+            name === "__Secure-next-auth.session-token"
+        );
+    });
+}
 
 export default function AdminAuthGuard({ children }: { children: React.ReactNode }) {
-    const { status } = useSession();
     const router = useRouter();
+    const [checked, setChecked] = useState(false);
 
     useEffect(() => {
-        if (status === "unauthenticated") {
+        if (!hasSessionCookie()) {
             router.push("/login");
+        } else {
+            setChecked(true);
         }
-    }, [status, router]);
+    }, [router]);
 
-    if (status === "loading") {
+    if (!checked) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7]">
                 <p className="text-sm text-[#A0A0A0] tracking-widest" style={{ fontFamily: '"Zen Old Mincho", serif' }}>
@@ -22,10 +33,6 @@ export default function AdminAuthGuard({ children }: { children: React.ReactNode
                 </p>
             </div>
         );
-    }
-
-    if (status === "unauthenticated") {
-        return null;
     }
 
     return <>{children}</>;
