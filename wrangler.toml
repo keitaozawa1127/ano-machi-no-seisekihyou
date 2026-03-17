@@ -1,0 +1,8 @@
+name = "ano-machi-no-seisekihyou"
+compatibility_date = "2024-03-16"
+pages_build_output_dir = ".vercel/output/static"
+
+[[r2_buckets]]
+binding = "STATIONS_R2"
+bucket_name = "stations-data"
+preview_bucket_name = "stations-data-preview"

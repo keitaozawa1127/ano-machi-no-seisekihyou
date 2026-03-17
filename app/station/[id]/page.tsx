@@ -1,59 +1,33 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import fs from 'fs/promises';
-import path from 'path';
 import DiagnosisResult from '../../../components/DiagnosisResult';
 import StationFAQ from '../../../components/StationFAQ';
 import Link from 'next/link';
+import { getRequestContext } from '@cloudflare/next-on-pages';
 
 type Props = {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 };
 
-export const dynamicParams = false;
+export const runtime = 'edge';
 
-/**
- * Helper function to read pre-computed diagnosis data from local filesystem.
- * This ensures no dynamic API calls are made during build or runtime.
- */
 async function getStationData(id: string) {
+    const decodedId = decodeURIComponent(id);
     try {
-        const decodedId = decodeURIComponent(id);
-        const filePath = path.join(process.cwd(), 'data', 'stations', `${decodedId}.json`);
-        const content = await fs.readFile(filePath, 'utf-8');
-        return JSON.parse(content);
-    } catch (e) {
-        console.error(`[SSG] Data not found for station: ${id}`);
-        return null;
-    }
-}
+        const { env } = getRequestContext();
+        const bucket = (env as any).STATIONS_R2;
+        const object = await bucket.get(`${decodedId}.json`);
 
-/**
- * Generates static paths for all stations that have a pre-computed JSON file.
- */
-export async function generateStaticParams() {
-    try {
-        const dataDir = path.join(process.cwd(), 'data', 'stations');
-        
-        // Ensure directory exists
-        const stats = await fs.stat(dataDir).catch(() => null);
-        if (!stats || !stats.isDirectory()) {
-            console.warn(`[SSG] Data directory not found: ${dataDir}`);
-            return [];
+        if (!object) {
+            console.error(`[R2] Data not found for station: ${id}`);
+            return null;
         }
 
-        const files = await fs.readdir(dataDir);
-        const params = files
-            .filter(file => file.endsWith('.json'))
-            .map(file => ({
-                id: file.replace('.json', ''),
-            }));
-            
-        console.log(`[SSG] Generating static params for ${params.length} stations`);
-        return params;
+        const text = await object.text();
+        return JSON.parse(text);
     } catch (e) {
-        console.error("Error in generateStaticParams:", e);
-        return [];
+        console.error(`[R2] Failed to load data for station: ${id}`, e);
+        return null;
     }
 }
 

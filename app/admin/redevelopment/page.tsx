@@ -4,6 +4,8 @@ export const metadata = {
   title: "Redevelopment Admin (Archived)",
 };
 
+export const runtime = "edge";
+
 export default function RedevelopmentAuditPage() {
   return (
     <div className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
