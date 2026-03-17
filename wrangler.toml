@@ -1,5 +1,6 @@
 name = "ano-machi-no-seisekihyou"
 compatibility_date = "2024-03-16"
+compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
 
 [[r2_buckets]]
